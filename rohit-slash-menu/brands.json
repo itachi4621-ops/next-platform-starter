@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-08-24T11:17:00+05:30",
+  "brands": {
+    "Uji": {
+      "aliases": ["uji", "uji beverages", "uji beverage"],
+      "type": "beverage",
+      "audience": "young, mass-premium refreshment consumers",
+      "tone": ["playful", "fresh", "youthful", "vibrant"],
+      "style": ["fruity", "dynamic", "energetic", "bright premium", "flavour-led"],
+      "preferred": ["bold flavour storytelling", "refreshing scenarios", "playful scale", "motion", "unexpected composition", "colour-led visual worlds"],
+      "avoid": ["boring luxury poster", "generic headline-left layout", "spa mood", "dull static bottle shot", "supplement-style advertising", "train-table catalogue shot", "random fruit plate beside bottle"]
+    },
+    "ANS Performance": {
+      "aliases": ["ans", "ans performance", "ans performance india"],
+      "type": "sports nutrition",
+      "audience": "gym-goers, athletes, performance-focused supplement buyers",
+      "tone": ["bold", "strong", "performance-driven", "premium", "authoritative"],
+      "style": ["high-energy", "athletic", "powerful", "clean commercial", "performance CGI"],
+      "preferred": ["strength cues", "training energy", "performance environments", "premium supplement credibility", "dynamic product scale", "technical confidence"],
+      "avoid": ["cute playful treatment", "soft beverage mood", "weak pastel styling", "spa wellness look", "generic fruit-ad language"]
+    },
+    "Halt Nutrition": {
+      "aliases": ["halt", "halt nutrition", "halt uk"],
+      "type": "nutrition and supplements",
+      "audience": "health-conscious premium UK supplement buyers",
+      "tone": ["clean", "premium", "modern", "credible", "confident"],
+      "style": ["bright commercial", "modern wellness", "polished ecommerce", "refined CGI", "clean editorial"],
+      "preferred": ["clean product focus", "modern wellness art direction", "premium UK commercial feel", "fresh environments", "credible nutrition storytelling"],
+      "avoid": ["childish styling", "overcrowded design", "cheap sale-ad feel", "random playful props", "same dark background repeatedly"]
+    },
+    "Joker Nutrition": {
+      "aliases": ["joker", "joker nutrition", "joker uk", "joker india"],
+      "type": "sports nutrition",
+      "audience": "young fitness and performance audience",
+      "tone": ["bold", "edgy", "high-impact", "rebellious", "energetic"],
+      "style": ["dark premium", "aggressive", "graphic", "dramatic", "high-contrast"],
+      "preferred": ["dramatic lighting", "impact visuals", "attitude", "bold brand energy", "unconventional CGI", "strong framing"],
+      "avoid": ["soft wellness styling", "cute beverage look", "plain catalogue setup", "gentle pastel mood", "generic luxury serif poster"]
+    },
+    "Ace Vitals": {
+      "aliases": ["ace vitals", "acevitals"],
+      "type": "sports nutrition",
+      "audience": "UK supplement and fitness consumers",
+      "tone": ["clean", "energetic", "premium", "modern"],
+      "style": ["white premium", "fresh commercial", "performance-focused", "ingredient-led"],
+      "preferred": ["clean high-end product imagery", "fresh ingredient storytelling", "modern performance visual language", "bright controlled CGI"],
+      "avoid": ["muddy dark styling", "cheap gym poster", "overcrowded text", "repetitive pedestal scenes"]
+    },
+    "Muscle Mantra": {
+      "aliases": ["muscle mantra", "musclemantra"],
+      "type": "sports nutrition",
+      "audience": "Indian gym-goers and mass-premium supplement buyers",
+      "tone": ["strong", "energetic", "credible", "bold"],
+      "style": ["performance commercial", "bold product hero", "gym energy", "premium supplement"],
+      "preferred": ["athletic strength cues", "high-impact product focus", "ingredient/performance worlds", "clear hierarchy"],
+      "avoid": ["soft spa styling", "cute playful treatment", "luxury perfume ad language"]
+    },
+    "Bodybuilding India": {
+      "aliases": ["bbi", "bodybuilding india"],
+      "type": "sports nutrition retail and bodybuilding",
+      "audience": "Indian bodybuilding, gym and supplement community",
+      "tone": ["credible", "strong", "professional", "community-driven"],
+      "style": ["bright premium", "retail authority", "performance", "event-ready"],
+      "preferred": ["clear retail credibility", "product-first composition", "strong fitness cues", "premium event communication"],
+      "avoid": ["soft lifestyle-only imagery", "cute illustration language", "overly dark muddy design"]
+    },
+    "Chawla Bakers": {
+      "aliases": ["chawla bakers", "chawala bakers"],
+      "type": "bakery and food",
+      "audience": "local families, food lovers and celebration buyers",
+      "tone": ["warm", "delicious", "friendly", "premium local"],
+      "style": ["appetite-led", "warm editorial", "fresh bakery", "celebratory"],
+      "preferred": ["food texture", "freshness", "warm lighting", "celebration moments", "product appetite appeal"],
+      "avoid": ["supplement-style ad", "cold technical CGI", "generic bottle-poster composition"]
+    },
+    "Rasa": {
+      "aliases": ["rasa", "rasa indian cuisine"],
+      "type": "restaurant and hospitality",
+      "audience": "diners, families and Indian food lovers",
+      "tone": ["inviting", "appetizing", "premium", "warm", "cultural"],
+      "style": ["food-first", "hospitality editorial", "rich culinary", "modern Indian"],
+      "preferred": ["appetite appeal", "dining emotion", "food texture", "premium hospitality atmosphere", "modern Indian visual cues"],
+      "avoid": ["supplement-style product ad", "clinical layout", "generic packshot treatment", "overly dark inaccessible food"]
+    },
+    "Pashtun": {
+      "aliases": ["pashtun", "pashtun restaurant"],
+      "type": "restaurant and hospitality",
+      "audience": "urban diners, groups and nightlife food audience",
+      "tone": ["bold", "social", "flavourful", "warm", "premium casual"],
+      "style": ["food and drink lifestyle", "rich atmosphere", "social dining", "modern restaurant"],
+      "preferred": ["mood-driven dining scenes", "cocktail/food texture", "social energy", "restaurant atmosphere"],
+      "avoid": ["clinical ecommerce look", "supplement CGI language", "generic object-on-pedestal"]
+    },
+    "Ekyam": {
+      "aliases": ["ekyam", "ekyam.ai", "ekyam ai"],
+      "type": "enterprise technology and AI",
+      "audience": "enterprise operators, product teams and decision makers",
+      "tone": ["modern", "intelligent", "clear", "premium", "technical"],
+      "style": ["3D system visuals", "clean enterprise", "minimal information design", "soft blue technology"],
+      "preferred": ["clear visual systems", "3D diagrams", "minimal text", "editable component thinking", "modern enterprise polish"],
+      "avoid": ["consumer product advertising", "food styling", "random neon cyberpunk", "overloaded dashboards"]
+    },
+    "ACESTAR": {
+      "aliases": ["acestar", "ace star"],
+      "type": "sports nutrition",
+      "audience": "premium supplement buyers",
+      "tone": ["premium", "strong", "technical", "confident"],
+      "style": ["metallic gold", "black premium", "structured", "performance"],
+      "preferred": ["controlled metallic detailing", "premium performance hierarchy", "strong packaging presence"],
+      "avoid": ["cute styling", "soft pastel wellness", "random colourful props"]
+    }
+  }
+}
