@@ -1,0 +1,25 @@
+{
+  "runtimeVersion": "1.0.0",
+  "syncSeconds": 30,
+  "baseRules": "Use the uploaded product/image/reference whenever present. Preserve the exact product shape, packaging, label, logo, cap, colors, proportions and brand identity. Make the result feel like a real global advertising campaign, not a generic AI template. Do not default to a bottle standing on a glossy table with a headline on the left, a blurred lifestyle person in the background, random fruit props, pastel gradient panels, mirror/glass walls, symmetrical pedestal compositions, or a soft wellness/spa set. Each new creative must visibly change at least six major design decisions: composition, camera angle, scale, environment, lighting, material language, depth, typography treatment, prop logic, and visual storytelling. No unnecessary headline or body copy unless the user supplied copy or explicitly asked for text. Default output is one standalone 4:5 Instagram creative. Never combine multiple creatives into one collage unless explicitly requested.",
+  "families": [
+    "architecture-scale CGI with monumental spatial forms, dramatic scale and unusual perspective",
+    "ingredient world built from the product flavour or ingredient itself, immersive and concept-led",
+    "macro surrealism with extreme close-up material detail and unexpected scale relationships",
+    "kinetic diagonal composition with directional motion, asymmetry and layered depth",
+    "top-down designed scene with precise object choreography and strong negative space",
+    "editorial fashion-set art direction with sculptural styling and confident cropping",
+    "tactile material concept using one dominant material such as paper, fabric, foam, clay, glass, metal or ice",
+    "cinematic narrative frame that feels like a scene from a premium commercial rather than a static poster",
+    "product-as-landscape concept where product details, label graphics or flavour become the visual environment",
+    "abstract geometry with custom forms, depth and shadows forming a distinct brand world",
+    "scientific visualisation with elegant technical or microscopic visual language",
+    "real-world action moment with believable motion, hands, environment or consequence instead of passive display",
+    "low-angle iconic hero with strong foreshortening, environmental depth and unusual scale",
+    "monochrome shadow sculpture using controlled single-colour art direction and sculptural light",
+    "fake OOH / impossible scale with an oversized product integrated convincingly into a real location",
+    "graphic editorial system driven by cropping, shape, texture and image hierarchy rather than headline-first layout",
+    "floating spatial choreography with deliberate depth planes and realistic physics",
+    "nature transformed using one specific phenomenon such as mist, mineral, water, stone, sunlight or frost"
+  ]
+}
