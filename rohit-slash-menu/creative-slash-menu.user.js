@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Creative Slash Menu
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      6.3.0
-// @description  Universal Master Bar + right-docked Creative Studio + project awareness + LinkedIn auto-carousel.
+// @version      6.4.0
+// @description  Pinterest-inspired light Creative Discovery UI + universal commands + project-aware brand context.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -16,132 +16,119 @@
 // ==/UserScript==
 
 (()=>{'use strict';
-const V='6.3.0',BASE='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/';
+const V='6.4.0',BASE='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/';
 const URL={c:BASE+'commands.json',r:BASE+'runtime.json',b:BASE+'brands.json'};
-const K={c:'csm630.c',r:'csm630.r',b:'csm630.b',m:'csm630.manual',f:'csm630.family'};
-const J=(k,f)=>{try{let v=GM_getValue(k,'');return v?JSON.parse(v):f}catch{return f}},JS=(k,v)=>{try{GM_setValue(k,JSON.stringify(v))}catch{}},S=k=>{try{return String(GM_getValue(k,'')||'')}catch{return''}},SS=(k,v)=>{try{GM_setValue(k,String(v||''))}catch{}};
+const K={c:'csm640.c',r:'csm640.r',b:'csm640.b',m:'csm640.manual',f:'csm640.family'};
+const G=(k,f)=>{try{let v=GM_getValue(k,'');return v?JSON.parse(v):f}catch{return f}},P=(k,v)=>{try{GM_setValue(k,JSON.stringify(v))}catch{}},GS=k=>{try{return String(GM_getValue(k,'')||'')}catch{return''}},PS=(k,v)=>{try{GM_setValue(k,String(v||''))}catch{}};
 const FB=[
- {category:'Core',cmd:'/creative',label:'Fresh Creative',desc:'Finished social creative'},
- {category:'Core',cmd:'/trend',label:'Trend-Led',desc:'Current high-end direction'},
- {category:'Core',cmd:'/redesign',label:'Redesign',desc:'Complete visual redesign'},
+ {category:'Create',cmd:'/creative',label:'Fresh Creative',desc:'Finished social creative'},
+ {category:'Create',cmd:'/clean',label:'Clean Creative',desc:'Light, minimal, clean design'},
+ {category:'Create',cmd:'/lesscontent',label:'Less Content',desc:'Low-text airy layout'},
+ {category:'Create',cmd:'/poster',label:'Poster',desc:'Poster-style social design'},
+ {category:'Create',cmd:'/banner',label:'Banner',desc:'Banner / hero visual'},
+ {category:'Create',cmd:'/topicpost',label:'Topic Post',desc:'No-product topic-based post'},
+ {category:'Create',cmd:'/trend',label:'Trend-Led',desc:'Current high-end direction'},
+ {category:'Create',cmd:'/redesign',label:'Redesign',desc:'Complete visual redesign'},
  {category:'Product',cmd:'/productad',label:'Product Ad',desc:'Designed product advertisement'},
- {category:'Product',cmd:'/cgi',label:'CGI Creative',desc:'CGI + graphic design post'},
- {category:'Campaign',cmd:'/launch',label:'Launch',desc:'Launch campaign'},
- {category:'Campaign',cmd:'/offer',label:'Offer / Sale',desc:'Promotional offer creative'},
- {category:'Social',cmd:'/social',label:'Social Post',desc:'Standalone social post'},
- {category:'Social',cmd:'/story',label:'Story',desc:'Vertical social story'},
+ {category:'3D / CGI',cmd:'/cgi',label:'CGI Creative',desc:'CGI + graphic design post'},
+ {category:'3D / CGI',cmd:'/3dcreative',label:'3D Creative',desc:'Premium 3D designed creative'},
+ {category:'3D / CGI',cmd:'/mockup',label:'Mockup Style',desc:'Presentation / mockup direction'},
  {category:'Social',cmd:'/carousel',label:'Carousel',desc:'Separate social carousel slides'},
- {category:'Social',cmd:'/linkedin-carousel',label:'LinkedIn Profile Carousel',desc:'Analyze LinkedIn URL and create a complete carousel'},
- {category:'Info',cmd:'/infographic',label:'Infographic',desc:'Visual information design'},
- {category:'Print',cmd:'/poster',label:'Poster',desc:'Campaign poster'},
- {category:'Brand',cmd:'/brandstyle',label:'Brand Style',desc:'Extend the current brand system'},
+ {category:'Social',cmd:'/linkedinpost',label:'LinkedIn Post',desc:'Professional LinkedIn design'},
+ {category:'Social',cmd:'/linkedin-carousel',label:'LinkedIn Profile Carousel',desc:'Analyze LinkedIn URL and create carousel'},
+ {category:'Info',cmd:'/infographic',label:'Infographic',desc:'Information-led visual design'},
+ {category:'Reference',cmd:'/references',label:'General References',desc:'Design-reference direction'},
+ {category:'Reference',cmd:'/pinterest',label:'Pinterest References',desc:'Pinterest-style visual direction'},
+ {category:'Reference',cmd:'/behance',label:'Behance References',desc:'Portfolio-grade visual direction'},
+ {category:'Reference',cmd:'/bannerref',label:'Banner References',desc:'Banner / KV references'},
+ {category:'Style',cmd:'/light',label:'Light Theme',desc:'Bright premium light look'},
+ {category:'Style',cmd:'/premium',label:'Premium Style',desc:'Refined premium design'},
+ {category:'Style',cmd:'/editorial',label:'Editorial Style',desc:'Magazine/editorial composition'},
+ {category:'Style',cmd:'/playful',label:'Playful Style',desc:'Energetic playful direction'},
+ {category:'Edit',cmd:'/edit',label:'General Edit',desc:'Edit/redesign existing image'},
+ {category:'Edit',cmd:'/remove',label:'Remove Object',desc:'Remove unwanted object'},
+ {category:'Edit',cmd:'/replace',label:'Replace Object',desc:'Replace object / element'},
+ {category:'Edit',cmd:'/background',label:'Background Change',desc:'Change/rebuild background'},
+ {category:'Fix / Enhance',cmd:'/cc',label:'Color Correction',desc:'Professional colour correction'},
+ {category:'Fix / Enhance',cmd:'/recolor',label:'Recolor',desc:'Change colour palette / colorway'},
+ {category:'Fix / Enhance',cmd:'/restore',label:'Restore Image',desc:'Restore old/damaged image'},
+ {category:'Fix / Enhance',cmd:'/enhance',label:'Enhance Image',desc:'Improve clarity and finish'},
+ {category:'Fix / Enhance',cmd:'/upscale',label:'Upscale',desc:'Upscale / sharpen image'},
+ {category:'Camera',cmd:'/camera',label:'Camera Motion',desc:'Choose premium camera motion'},
+ {category:'Camera',cmd:'/pushin',label:'Push-In',desc:'Slow premium push-in'},
+ {category:'Camera',cmd:'/pan',label:'Pan Shot',desc:'Smooth left-right pan'},
+ {category:'Camera',cmd:'/orbit',label:'Orbit Shot',desc:'Smooth subject orbit'},
+ {category:'Camera',cmd:'/gimbal',label:'Gimbal Motion',desc:'Stable premium gimbal move'},
+ {category:'Camera',cmd:'/macro',label:'Macro Motion',desc:'Macro detail movement'},
  {category:'Video',cmd:'/video',label:'Video Concept',desc:'Complete AI video concept'},
- {category:'UGC Video',cmd:'/ugcvideo',label:'UGC Video',desc:'Natural creator UGC'},
- {category:'Camera',cmd:'/camera',label:'Camera Motion',desc:'Cinematic camera moves'}
+ {category:'UGC Video',cmd:'/ugcvideo',label:'UGC Video',desc:'Natural creator UGC'}
 ];
-const FBR={syncSeconds:30,baseRules:'Create a finished social-media creative, not just a product photo. Preserve exact product and brand identity. Default 2 separate creatives per product. If the user asks for N images/posts/slides, output exactly N separate standalone image files/generations. Never combine them into a collage, grid, contact sheet, preview sheet, storyboard board, split-screen or multi-panel image unless explicitly requested.',families:['typography-led poster','editorial social poster','kinetic diagonal layout','CGI + graphic campaign','ingredient/flavour world','technical performance poster','playful branded poster','minimal premium poster']};
-let C=J(K.c,FB),R={...FBR,...J(K.r,{})},B=J(K.b,{brands:{}}).brands||{},auto='',project='',status='Cached',syncing=false,lastSync=0,host,sh,menu,badge,ed,items=[],sel=0,mode='Creatives',cat='All',query='';
-const req=url=>new Promise((ok,no)=>GM_xmlhttpRequest({method:'GET',url:url+'?t='+Date.now(),timeout:10000,onload:r=>{try{if(r.status<200||r.status>=300)throw 0;ok(JSON.parse(r.responseText))}catch(e){no(e)}},onerror:no,ontimeout:no}));
+const FBR={syncSeconds:30,baseRules:'Create a finished social-media design, not just a product photo. Default to a light, bright, clean premium look; do not use a dark theme unless explicitly requested. Preserve exact product and brand identity when present. If no product is provided, create a real designed post using typography, icons, illustration, layout and relevant imagery. Default to 2 separate creatives per product. If the user asks for N images/posts/slides, output exactly N separate standalone images. Never combine them into a collage, grid, contact sheet, preview sheet, storyboard, split-screen or multi-panel image unless explicitly requested.',families:['typography-led campaign poster','editorial social poster','kinetic diagonal layout','CGI + graphic campaign','ingredient/flavour world','technical performance poster','playful branded poster','minimal premium poster']};
+let C=G(K.c,FB),R={...FBR,...G(K.r,{})},B=G(K.b,{brands:{}}).brands||{},auto='',project='',status='Cached',busy=false,last=0,host,sh,menu,badge,ed,items=[],sel=0,mode='Creatives',cat='All',query='';
+const req=u=>new Promise((ok,no)=>GM_xmlhttpRequest({method:'GET',url:u+'?t='+Date.now(),timeout:10000,onload:r=>{try{if(r.status<200||r.status>=300)throw 0;ok(JSON.parse(r.responseText))}catch(e){no(e)}},onerror:no,ontimeout:no}));
 const norm=s=>String(s||'').toLowerCase().replace(/[_\-–—|/]+/g,' ').replace(/[^\p{L}\p{N}. ]/gu,' ').replace(/\s+/g,' ').trim();
 function merge(x){let m=new Map();[...FB,...(Array.isArray(x?.commands)?x.commands:[])].forEach(i=>i?.cmd&&m.set(i.cmd,{...(m.get(i.cmd)||{}),...i}));return[...m.values()]}
-function brandMatch(t){let q=norm(t),h=[];Object.entries(B).forEach(([n,p])=>{let a=[n,...(p.aliases||[])].map(norm);if(a.some(x=>q===x||q.startsWith(x+' ')||q.endsWith(' '+x)||q.includes(' '+x+' ')))h.push(n)});h=[...new Set(h)];return h.length===1?h[0]:''}
-function key(){let p=decodeURIComponent(location.pathname);return(p.match(/\/g\/(g-p-[^/]+)/i)||p.match(/\/projects?\/([^/]+)/i)||[])[1]||''}
+function bmatch(t){let q=norm(t),h=[];Object.entries(B).forEach(([n,p])=>{let a=[n,...(p.aliases||[])].map(norm);if(a.some(x=>q===x||q.startsWith(x+' ')||q.endsWith(' '+x)||q.includes(' '+x+' ')))h.push(n)});h=[...new Set(h)];return h.length===1?h[0]:''}
+function pkey(){let p=decodeURIComponent(location.pathname);return(p.match(/\/g\/(g-p-[^/]+)/i)||p.match(/\/projects?\/([^/]+)/i)||[])[1]||''}
 function vis(e){if(!e)return'';try{let r=e.getBoundingClientRect();if(!r.width||!r.height)return''}catch{}return String(e.innerText||e.textContent||'').replace(/\s+/g,' ').trim()}
-function detect(){let k=key(),c=[];if(k)document.querySelectorAll('a[href]').forEach(a=>{if(!(a.getAttribute('href')||'').includes(k))return;[a.getAttribute('aria-label'),a.getAttribute('title'),vis(a)].filter(Boolean).forEach(x=>c.push(x));let p=a.closest('[aria-current="page"],[data-state="active"],[data-active="true"],li'),t=vis(p);if(t)c.unshift(t)});['[aria-current="page"][data-testid*="project" i]','[data-testid*="project" i][data-state="active"]','header [aria-label*="project" i]'].forEach(s=>document.querySelectorAll(s).forEach(e=>{let t=vis(e);if(t)c.push(t)}));auto='';project='';for(let t of c){let b=brandMatch(t);if(b){auto=b;project=t;break}}if(!project&&c.length)project=c[0];status=auto?'Brand → '+auto:project?'Project → '+project:status;ui()}
-async function sync(force=false){if(syncing)return;if(!force&&Date.now()-lastSync<10000){detect();return}syncing=true;status='Syncing…';ui();try{let[c,r,b]=await Promise.all([req(URL.c),req(URL.r),req(URL.b)]);C=merge(c);R={...FBR,...r};B=b?.brands||{};JS(K.c,C);JS(K.r,R);JS(K.b,{brands:B});lastSync=Date.now();status='Live';detect();if(menu?.classList.contains('show'))render(query,false)}catch{status='Offline';ui()}finally{syncing=false}}
-const manual=()=>S(K.m),active=()=>auto||manual();
-function family(){let a=R.families?.length?R.families:FBR.families,r=J(K.f,[]),p=a.map((_,i)=>i).filter(i=>!r.includes(i));if(!p.length)p=a.map((_,i)=>i);let i=p[Math.floor(Math.random()*p.length)];JS(K.f,[i,...r.filter(x=>x!==i)].slice(0,5));return a[i]}
-function context(){detect();let a=active(),p=B[a];if(a&&p)return `${auto?'AUTO-DETECTED PROJECT':'MANUAL BRAND'}: ${a}. CATEGORY: ${p.type||''}. TONE: ${(p.tone||[]).join(', ')}. STYLE: ${(p.style||[]).join(', ')}. PREFERRED: ${(p.preferred||[]).join(', ')}. AVOID: ${(p.avoid||[]).join(', ')}.`;if(project)return `CURRENT CHATGPT PROJECT: ${project}. Infer its brand/category from project context and uploaded references; do not borrow another brand's styling.`;return'Infer the brand/category from the current brief and uploaded references.'}
-function liPrompt(url=''){return `${url?`LINKEDIN URL: ${url}. `:'Use the LinkedIn URL already included in my message. '}Research the public LinkedIn profile/company and reliable public web sources. Create a polished 7–9 slide LinkedIn carousel using only verified information. Each slide must be a SEPARATE 1080×1350 4:5 image. NEVER make a collage, grid, contact sheet, preview sheet, storyboard, 3x3 overview, split-screen or multi-panel image. ONE output = ONE slide. Build a strong profile-specific hook, logical story, concise copy, cohesive premium LinkedIn editorial design, strong typography hierarchy, deliberate grid, clean spacing and subject-relevant styling. Generate Slide 1 separately, then Slide 2 separately, and continue until all slides are delivered. Do not stop at only a plan if image generation is available.`}
-function prompt(x){if(x.cmd==='/linkedin-carousel')return liPrompt();let c=context(),base=R.baseRules||FBR.baseRules;if(['Video','UGC Video','Camera'].includes(x.category))return `${c} ${x.prompt||x.desc||x.label}. Build a production-ready vertical AI video prompt with stable identity, realistic motion and coherent flow.`;let i=x.cmd==='/cgi'?'Create a high-end CGI social ad but finish it as a true graphic-designed post, not a standalone CGI image.':x.cmd==='/redesign'?'Completely redesign the uploaded creative into an agency-level social post.':x.cmd==='/trend'?'Create a current trend-led agency-level social creative.':'Create a finished agency-level social creative, NOT just a beautiful product photograph.';return `${c} ${i} Art direction: ${family()}. ${base}`}
-const CSS=`:host{all:initial}*{box-sizing:border-box}
-.m{
-  --line:#ffffff12;--muted:#8f8f9b;--accent:#a78bfa;
-  position:fixed;z-index:2147483647;display:none;flex-direction:column;
-  right:16px;top:66px;bottom:74px;width:min(790px,calc(100vw - 300px));min-width:640px;
-  max-width:calc(100vw - 24px);overflow:hidden;border:1px solid #ffffff20;border-radius:22px;
-  background:
-    radial-gradient(700px 260px at 82% -8%,#7666ff22,transparent 55%),
-    radial-gradient(520px 220px at -10% 20%,#1e8fff12,transparent 50%),
-    linear-gradient(180deg,#18181dfb,#101014fb);
-  color:#f7f7fa;box-shadow:0 34px 105px #000b,0 0 0 1px #ffffff04 inset;
-  backdrop-filter:blur(22px) saturate(120%);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}
-.m.show{display:flex;animation:csmOpen .16s cubic-bezier(.2,.8,.2,1)}
-@keyframes csmOpen{from{opacity:.45;transform:translateX(12px) scale(.995)}to{opacity:1;transform:none}}
-.h{
-  flex:0 0 auto;display:flex;justify-content:space-between;gap:14px;align-items:flex-start;
-  padding:14px 16px 12px;border-bottom:1px solid var(--line);background:#18181cee;
-}
-.head{display:flex;gap:10px;min-width:0}.mark{flex:0 0 auto;width:34px;height:34px;border-radius:11px;
-  display:grid;place-items:center;background:linear-gradient(145deg,#9c82ff,#628cff);
-  color:white;font-weight:850;font-size:11px;letter-spacing:.3px;box-shadow:0 8px 24px #7564ff33}
-.t{font-size:15px;font-weight:790;letter-spacing:-.2px}.s{font-size:10px;color:#ffffff70;margin-top:3px}
-.br{display:inline-flex;margin-top:6px;max-width:560px;padding:4px 7px;border-radius:8px;background:#a78bfa11;color:#ddd3ff;font-size:10.5px;font-weight:720;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.st{font-size:9.5px;color:#bdbdc7;background:#ffffff0c;border:1px solid #ffffff0e;padding:5px 8px;border-radius:999px;white-space:nowrap}
-.modes{flex:0 0 auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:8px 10px;border-bottom:1px solid var(--line)}
-.btn,.chip,.sync,.ubtn{border:0;cursor:pointer;color:#b9b9c2;background:#ffffff08;transition:.13s ease}
-.btn{border:1px solid #ffffff08;border-radius:10px;padding:8px 5px;font-size:10.5px;font-weight:680}
-.btn:hover{background:#ffffff12;color:#fff}.btn.a{background:#a78bfa24;border-color:#a78bfa30;color:#f5f1ff}
-.universal{
-  flex:0 0 auto;padding:8px 10px 9px;border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,#131317f4,#111115f4);
-}
-.utitle{display:flex;align-items:center;justify-content:space-between;margin:0 2px 7px;font-size:9px;text-transform:uppercase;letter-spacing:.85px;color:#6f6f79}
-.ugrid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}
-.ubtn{min-width:0;border:1px solid #ffffff0d;border-radius:9px;padding:7px 5px;background:linear-gradient(180deg,#ffffff0a,#ffffff05);font-size:9.7px;font-weight:680;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ubtn:hover{background:#ffffff14;color:#fff;transform:translateY(-1px)}
-.ubtn.linked{color:#afd8ff;background:#0a66c21f;border-color:#2084de38}
-.ubtn.info{color:#bfeccf;background:#4bbf7f13;border-color:#4bbf7f24}
-.ubtn.video{color:#ffd4ba;background:#d66d3512;border-color:#d66d3524}
-.body{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:182px minmax(0,1fr);overflow:hidden;background:#0f0f13a8}
-.cats{min-height:0;display:flex;flex-direction:column;gap:4px;overflow-y:auto;padding:9px;border-right:1px solid var(--line);background:#ffffff025;scrollbar-width:thin;scrollbar-color:#ffffff1c transparent}
-.chip{flex:0 0 auto;width:100%;border:1px solid transparent;border-radius:9px;padding:8px 9px;font-size:10.5px;text-align:left}
-.chip:hover{background:#ffffff0c;color:#fff}.chip.a{background:linear-gradient(90deg,#a78bfa20,#a78bfa08);border-color:#a78bfa1b;color:#f2ecff;font-weight:700}
-.list{min-height:0;overflow-y:auto;padding:9px;scrollbar-width:thin;scrollbar-color:#ffffff1c transparent}
-.cats::-webkit-scrollbar,.list::-webkit-scrollbar{width:7px}.cats::-webkit-scrollbar-thumb,.list::-webkit-scrollbar-thumb{background:#ffffff1b;border-radius:99px}
-.row{display:grid;grid-template-columns:150px minmax(0,1fr) 16px;gap:10px;align-items:center;padding:10px 11px;margin-bottom:3px;border:1px solid transparent;border-radius:11px;cursor:pointer}
-.row:hover,.row.a{background:linear-gradient(90deg,#ffffff0d,#ffffff06);border-color:#ffffff0c}
-.cmd{width:max-content;max-width:145px;padding:4px 7px;border-radius:7px;background:#a78bfa0e;border:1px solid #a78bfa16;font:750 10.5px ui-monospace,SFMono-Regular,Menlo,monospace;color:#bba9ff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.lab{font-size:12.4px;font-weight:710}.d{font-size:10.7px;color:#8d8d98;margin-top:3px;line-height:1.28}.arr{color:#595964;font-size:15px}.row:hover .arr{color:#b09cff}
-.f{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-top:1px solid var(--line);font-size:9.5px;color:#74747e;background:#17171bf7}
-.sync{border:1px solid #a78bfa20;border-radius:8px;padding:6px 10px;background:#a78bfa17;color:#d9ceff;font-weight:680}.sync:hover{background:#a78bfa27;color:#fff}
-.badge{position:fixed;right:18px;bottom:92px;z-index:2147483647;display:flex;gap:7px;align-items:center;max-width:350px;padding:8px 11px;border:1px solid #ffffff1b;border-radius:999px;background:#17171bea;color:#fff;box-shadow:0 10px 30px #0008;font:700 10.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer}.m.show+.badge{display:none}
-.dot{width:7px;height:7px;border-radius:50%;background:#4bd58b}.badge.none .dot{background:#f2b84b}.src{font-size:8.5px;color:#7f7f89}
-@media(max-width:1100px){.ugrid{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:980px){.m{right:12px;top:62px;bottom:76px;width:calc(100vw - 24px);min-width:0}.body{grid-template-columns:154px 1fr}.row{grid-template-columns:128px 1fr 16px}}
-@media(max-width:700px){.m{right:8px;top:56px;bottom:72px;width:calc(100vw - 16px);border-radius:17px}.modes{grid-template-columns:repeat(3,1fr)}.ugrid{grid-template-columns:repeat(3,1fr)}.body{grid-template-columns:124px 1fr}.row{grid-template-columns:1fr 16px}.row>div:nth-child(2){grid-column:1}.arr{grid-column:2;grid-row:1/3}.br{max-width:68vw}.badge{right:10px;bottom:82px;max-width:240px}}`;
-function make(){if(menu)return;host=document.createElement('div');document.documentElement.appendChild(host);sh=host.attachShadow({mode:'open'});let st=document.createElement('style');st.textContent=CSS;sh.appendChild(st);menu=document.createElement('div');menu.className='m';menu.innerHTML=`<div class="h"><div class="head"><div class="mark">CS</div><div><div class="t">Creative Studio</div><div class="s">Universal creative workspace</div><div class="br"></div></div></div><div class="st">Ready</div></div><div class="modes"></div><div class="universal"><div class="utitle"><span>Universal Master Bar</span><span>Best entry points</span></div><div class="ugrid"></div></div><div class="body"><div class="cats"></div><div class="list"></div></div><div class="f"><span>Creative Studio • v${V}</span><button class="sync">Sync now</button></div>`;sh.appendChild(menu);badge=document.createElement('div');badge.className='badge none';badge.innerHTML='<span class="dot"></span><span class="bt">! Project/Brand not detected</span><span class="src">AUTO</span>';badge.onclick=()=>{mode='Brand';cat='All';query='';ed=ed||document.querySelector('textarea')||document.querySelector('[contenteditable="true"]');render('',true)};sh.appendChild(badge);menu.querySelector('.sync').onclick=()=>sync(true);ui()}
-function ui(){if(!menu)return;let main=auto?`✓ Brand: ${auto}`:project?`✓ Project: ${project}`:manual()?`✓ Brand: ${manual()}`:'! Project/Brand not detected',src=auto?'AUTO PROJECT':project?'AUTO PROJECT':manual()?'MANUAL':'AUTO';menu.querySelector('.br').textContent=`${main} • ${src}`;menu.querySelector('.st').textContent=status;badge.classList.toggle('none',!(auto||project||manual()));badge.querySelector('.bt').textContent=main;badge.querySelector('.src').textContent=src}
-function rows(){if(mode==='Brand')return[{category:'Brand',cmd:'@auto',label:'Auto Project',desc:auto||project||'Not detected'},...Object.keys(B).sort().map(x=>({category:'Brand',cmd:'@brand:'+x,label:x,desc:B[x].type||'Brand'}))];let a=[...C];if(mode==='Videos')a=a.filter(x=>x.category==='Video');else if(mode==='UGC')a=a.filter(x=>x.category==='UGC Video');else if(mode==='Camera')a=a.filter(x=>x.category==='Camera');else if(mode==='Creatives')a=a.filter(x=>!['Video','UGC Video','Camera','Brand'].includes(x.category));if(cat!=='All')a=a.filter(x=>x.category===cat);if(query)a=a.filter(x=>[x.cmd,x.label,x.desc].join(' ').toLowerCase().includes(query.toLowerCase()));return a}
-function universal(){let e=menu.querySelector('.ugrid');e.innerHTML='';[
- ['/creative','✦ Creative',''],
- ['/redesign','↻ Redesign',''],
- ['/productad','◆ Product',''],
- ['/cgi','◈ CGI',''],
- ['/launch','🚀 Launch',''],
- ['/offer','% Offer',''],
- ['/social','◎ Social',''],
- ['/story','▯ Story',''],
- ['/carousel','▦ Carousel',''],
- ['/linkedin-carousel','in LinkedIn','linked'],
- ['/infographic','i Infographic','info'],
- ['/poster','▤ Poster',''],
- ['/brandstyle','◇ Brand',''],
- ['/video','▶ Video','video'],
- ['/ugcvideo','◉ UGC','video'],
- ['/camera','⌖ Camera','video']
-].forEach(([cmd,l,cls])=>{let x=C.find(i=>i.cmd===cmd)||FB.find(i=>i.cmd===cmd);if(!x)return;let b=document.createElement('button');b.className='ubtn '+cls;b.textContent=l;b.title=x.label+' — '+(x.desc||'');b.onclick=()=>choose(x);e.appendChild(b)})}
-function render(q='',doSync=true){make();if(doSync)sync();detect();query=q;let m=menu.querySelector('.modes');m.innerHTML='';['Creatives','Videos','UGC','Camera','Brand','All'].forEach(z=>{let b=document.createElement('button');b.className='btn'+(mode===z?' a':'');b.textContent=z;b.onclick=()=>{mode=z;cat='All';render('',true)};m.appendChild(b)});universal();let cs=mode==='Videos'?['Video']:mode==='UGC'?['UGC Video']:mode==='Camera'?['Camera']:mode==='Brand'?['Brand']:[...new Set(C.map(x=>x.category).filter(z=>mode!=='Creatives'||!['Video','UGC Video','Camera','Brand'].includes(z)))],order=['Core','Social','Product','Campaign','Style','Environment','Info','Print','Utility','Brand','Video','UGC Video','Camera'];cs.sort((a,b)=>(order.indexOf(a)<0?99:order.indexOf(a))-(order.indexOf(b)<0?99:order.indexOf(b)));let ce=menu.querySelector('.cats');ce.innerHTML='';['All',...cs].forEach(z=>{let b=document.createElement('button');b.className='chip'+(cat===z?' a':'');b.textContent=z;b.onclick=()=>{cat=z;render(query,false)};ce.appendChild(b)});items=rows().slice(0,40);sel=Math.min(sel,Math.max(0,items.length-1));let le=menu.querySelector('.list');le.innerHTML='';items.forEach((x,i)=>{let r=document.createElement('div');r.className='row'+(sel===i?' a':'');r.innerHTML='<div class="cmd"></div><div><div class="lab"></div><div class="d"></div></div><div class="arr">›</div>';r.querySelector('.cmd').textContent=x.cmd.startsWith('@brand:')?'SELECT':x.cmd==='@auto'?'AUTO':x.cmd;r.querySelector('.lab').textContent=x.label;r.querySelector('.d').textContent=x.desc||'';r.onclick=()=>choose(x);le.appendChild(r)});ui();menu.classList.add('show')}
+function detect(){let k=pkey(),a=[];if(k)document.querySelectorAll('a[href]').forEach(x=>{if(!(x.getAttribute('href')||'').includes(k))return;[x.getAttribute('aria-label'),x.getAttribute('title'),vis(x)].filter(Boolean).forEach(t=>a.push(t));let p=x.closest('[aria-current="page"],[data-state="active"],[data-active="true"],li'),t=vis(p);if(t)a.unshift(t)});['[aria-current="page"][data-testid*="project" i]','[data-testid*="project" i][data-state="active"]','header [aria-label*="project" i]'].forEach(s=>document.querySelectorAll(s).forEach(e=>{let t=vis(e);if(t)a.push(t)}));auto='';project='';for(let t of a){let b=bmatch(t);if(b){auto=b;project=t;break}}if(!project&&a.length)project=a[0];if(auto)status='Brand → '+auto;else if(project)status='Project → '+project;ui()}
+async function sync(force=false){if(busy)return;if(!force&&Date.now()-last<10000){detect();return}busy=true;status='Syncing…';ui();try{let[c,r,b]=await Promise.all([req(URL.c),req(URL.r),req(URL.b)]);C=merge(c);R={...FBR,...r};B=b?.brands||{};P(K.c,C);P(K.r,R);P(K.b,{brands:B});last=Date.now();status='Live';detect();if(menu?.classList.contains('show'))render(query,false,true)}catch{status='Offline';ui()}finally{busy=false}}
+const manual=()=>GS(K.m),active=()=>auto||manual();
+function family(){let a=R.families?.length?R.families:FBR.families,r=G(K.f,[]),pool=a.map((_,i)=>i).filter(i=>!r.includes(i));if(!pool.length)pool=a.map((_,i)=>i);let i=pool[Math.floor(Math.random()*pool.length)];P(K.f,[i,...r.filter(x=>x!==i)].slice(0,5));return a[i]}
+function ctx(){detect();let a=active(),p=B[a];if(a&&p)return `${auto?'AUTO-DETECTED PROJECT':'MANUAL BRAND'}: ${a}. CATEGORY: ${p.type||''}. TONE: ${(p.tone||[]).join(', ')}. STYLE: ${(p.style||[]).join(', ')}. PREFERRED: ${(p.preferred||[]).join(', ')}. AVOID: ${(p.avoid||[]).join(', ')}.`;if(project)return `CURRENT CHATGPT PROJECT: ${project}. Infer its brand/category from project context and uploaded references. Do not borrow another brand's styling.`;return'Infer brand/category from the current brief and uploaded references.'}
+function liPrompt(url=''){return `${url?`LINKEDIN URL: ${url}. `:'Use the LinkedIn URL already included in my message. '}Research the public LinkedIn profile/company and reliable public sources. Create a polished 7–9 slide LinkedIn carousel using verified information only. Each slide must be a SEPARATE 1080×1350 4:5 image. NEVER make a collage, grid, contact sheet, preview sheet, storyboard, 3x3 overview, split-screen or multi-panel image. ONE output = ONE slide. Build a profile-specific hook, logical story, concise copy and cohesive premium LinkedIn editorial design. Generate Slide 1 separately, then Slide 2 separately, continuing until all slides are delivered.`}
+function special(x){const c=ctx(),base=R.baseRules||FBR.baseRules,m={
+ '/clean':'Create a clean, minimal, light-theme social creative with reduced clutter, premium spacing and strong hierarchy.',
+ '/lesscontent':'Create a low-text, airy social creative with very limited copy and strong visual hierarchy.',
+ '/poster':'Create a poster-style designed social creative with a strong focal point and premium layout.',
+ '/banner':'Create a banner/key-visual style creative with campaign-ready composition and typography.',
+ '/topicpost':'Create a topic-based designed social post without forcing a product.',
+ '/productad':'Create a professional product advertisement with strong social-ready design hierarchy.',
+ '/cgi':'Create a high-end CGI social ad finished as a true graphic-designed post, not a standalone CGI image.',
+ '/3dcreative':'Create a premium 3D-based social creative with an advertising finish.',
+ '/mockup':'Create a polished mockup-style presentation visual with premium realism and layout.',
+ '/linkedinpost':'Create a professional LinkedIn-focused creative with editorial clarity and business-friendly hierarchy.',
+ '/infographic':'Create a professional information-led infographic with strong hierarchy, icons/visual systems and no invented facts.',
+ '/references':'Find and synthesize strong current visual references relevant to the brief, then convert them into an original art direction.',
+ '/pinterest':'Use Pinterest-style visual discovery logic: research current relevant design references when web access is available, identify recurring composition/typography/material ideas, then synthesize an original direction rather than copying one Pin.',
+ '/behance':'Use Behance-style reference research and build a portfolio-grade original art direction.',
+ '/bannerref':'Research banner/key-visual references and derive a campaign-ready original direction.',
+ '/light':'Create a bright light-theme creative with clean backgrounds and premium contrast.',
+ '/premium':'Create a polished premium creative with refined hierarchy and high-end finish.',
+ '/editorial':'Create an editorial-style social design with magazine-inspired typography and composition.',
+ '/playful':'Create a playful energetic light-theme social creative with lively graphic accents.',
+ '/edit':'Edit/redesign the existing image while preserving core subject identity and improving the result substantially.',
+ '/remove':'Remove the specified object/element cleanly while preserving realism and composition.',
+ '/replace':'Replace the specified object/element while keeping the rest cohesive.',
+ '/background':'Change or rebuild the image background to better match the brief.',
+ '/cc':'Apply professional colour correction with clean premium tonality.',
+ '/recolor':'Change the colour palette/colorway while preserving details and identity.',
+ '/restore':'Restore the provided old/damaged image, repairing damage and improving clarity while preserving identity.',
+ '/enhance':'Enhance the provided image with cleaner details, better sharpness and polished finish.',
+ '/upscale':'Upscale/sharpen the provided image while keeping details natural.',
+ '/camera':'Create a camera-motion prompt with smooth premium natural movement and bright/clean lighting by default.',
+ '/pushin':'Create a slow premium push-in camera-motion prompt with stable natural movement.',
+ '/pan':'Create a smooth left-right pan camera-motion prompt with controlled framing.',
+ '/orbit':'Create a smooth orbit camera-motion prompt around the subject/product.',
+ '/gimbal':'Create a stable premium gimbal camera-motion prompt with natural flow.',
+ '/macro':'Create a macro-detail camera-motion prompt with premium close-up movement.',
+ '/video':'Create a production-ready AI video prompt with bright/premium treatment and coherent flow.',
+ '/ugcvideo':'Create a natural production-ready UGC video prompt with clean bright styling.'};return m[x.cmd]?`${c} ${m[x.cmd]} ${base}`:''}
+function prompt(x){if(x.cmd==='/linkedin-carousel')return liPrompt();let sp=special(x);if(sp)return sp;let c=ctx(),base=R.baseRules||FBR.baseRules;if(['Video','UGC Video','Camera'].includes(x.category))return `${c} ${x.prompt||x.desc||x.label}. Build a production-ready AI video/camera prompt with stable identity, realistic motion and coherent flow.`;let i=x.cmd==='/redesign'?'Completely redesign the uploaded creative into an agency-level social post.':x.cmd==='/trend'?'Create a current trend-led agency-level social creative.':'Create a finished agency-level social creative, NOT just a beautiful product photograph.';return `${c} ${i} Art direction: ${family()}. ${base}`}
+const CSS=`:host{all:initial}*{box-sizing:border-box}.m{--red:#e60023;position:fixed;z-index:2147483647;display:none;flex-direction:column;right:16px;top:66px;bottom:74px;width:min(820px,calc(100vw - 290px));min-width:650px;max-width:calc(100vw - 24px);overflow:hidden;border:1px solid #dedede;border-radius:24px;background:#fff;color:#111;box-shadow:0 24px 80px #00000024,0 2px 8px #0000000d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.m.show{display:flex;animation:o .14s ease-out}@keyframes o{from{opacity:.35;transform:translateX(10px)}to{opacity:1;transform:none}}.h{flex:0 0 auto;display:flex;justify-content:space-between;gap:14px;padding:15px 16px 12px}.head{display:flex;gap:10px;min-width:0}.logo{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#fff;font-size:11px;font-weight:850}.title{font-size:16px;font-weight:760;letter-spacing:-.25px}.sub{font-size:10.5px;color:#767676;margin-top:2px}.brand{display:inline-flex;margin-top:5px;max-width:560px;padding:4px 8px;border-radius:999px;background:#fff0f2;color:#a8001a;font-size:10px;font-weight:720;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.status{font-size:9.5px;color:#666;background:#f4f4f4;border:1px solid #ececec;padding:5px 9px;border-radius:999px;height:max-content}.searchwrap{flex:0 0 auto;padding:0 14px 11px}.searchbox{height:42px;display:flex;align-items:center;gap:8px;padding:0 14px;border-radius:999px;background:#e9e9e9;border:2px solid transparent}.searchbox:focus-within{background:#fff;border-color:#111}.glass{font-size:14px;color:#555}.search{width:100%;border:0;outline:0;background:transparent;color:#111;font-size:13px;font-weight:560}.tabs{flex:0 0 auto;display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px;border-bottom:1px solid #eee}.tab,.cat,.quick,.sync{border:0;cursor:pointer;transition:.13s ease}.tab{border-radius:999px;padding:7px 12px;background:#f1f1f1;color:#333;font-size:10.5px;font-weight:700}.tab:hover{background:#e2e2e2}.tab.on{background:#111;color:#fff}.quickbar{flex:0 0 auto;display:flex;gap:7px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid #eee}.quick{border-radius:999px;padding:8px 11px;background:#f1f1f1;color:#222;font-size:10.3px;font-weight:700}.quick:hover{background:#dedede;transform:translateY(-1px)}.quick.primary{background:var(--red);color:#fff}.quick.li{background:#e8f2ff;color:#0a5aa6}.body{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:178px 1fr;overflow:hidden}.cats{min-height:0;display:flex;flex-direction:column;gap:3px;overflow-y:auto;padding:10px 8px 12px 10px;border-right:1px solid #eee}.cat{width:100%;display:flex;align-items:center;gap:8px;border-radius:12px;padding:9px 10px;background:#fff;color:#555;font-size:10.5px;text-align:left;font-weight:630}.cat:hover{background:#f1f1f1;color:#111}.cat.on{background:#111;color:#fff;font-weight:730}.ico{width:18px;text-align:center}.list{min-height:0;overflow-y:auto;padding:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:start}.row{min-width:0;min-height:112px;display:flex;flex-direction:column;justify-content:space-between;gap:9px;padding:13px;border-radius:18px;background:#f5f5f5;border:1px solid transparent;cursor:pointer;transition:.14s ease;position:relative}.row:hover{background:#ededed;transform:translateY(-2px)}.row.on{background:#fff;border-color:#111}.cmd{align-self:flex-start;max-width:100%;padding:4px 8px;border-radius:999px;background:#fff;color:#b0001b;border:1px solid #ffd5dc;font:750 10px ui-monospace,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lab{font-size:13px;font-weight:760}.desc{font-size:10.7px;color:#707070;margin-top:4px;line-height:1.3}.arr{position:absolute;right:12px;top:12px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#777;font-size:16px}.row:hover .arr{background:#111;color:#fff}.foot{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-top:1px solid #eee;color:#8a8a8a;font-size:9.5px}.sync{border-radius:999px;padding:7px 11px;background:#f1f1f1;color:#222;font-weight:700}.badge{position:fixed;right:18px;bottom:92px;z-index:2147483647;display:flex;gap:7px;align-items:center;max-width:350px;padding:8px 12px;border:1px solid #e0e0e0;border-radius:999px;background:#fff;color:#111;box-shadow:0 10px 30px #00000018;font:700 10.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer}.m.show+.badge{display:none}.dot{width:7px;height:7px;border-radius:50%;background:#2f9e5b}.badge.none .dot{background:#e9a12e}.src{font-size:8.5px;color:#888}@media(max-width:1000px){.m{right:12px;top:62px;bottom:76px;width:calc(100vw - 24px);min-width:0}.body{grid-template-columns:155px 1fr}}@media(max-width:720px){.m{right:8px;top:56px;bottom:72px;width:calc(100vw - 16px);border-radius:20px}.body{grid-template-columns:126px 1fr}.list{grid-template-columns:1fr}.brand{max-width:65vw}.badge{right:10px;bottom:82px;max-width:240px}}`;
+function make(){if(menu)return;host=document.createElement('div');document.documentElement.appendChild(host);sh=host.attachShadow({mode:'open'});let st=document.createElement('style');st.textContent=CSS;sh.appendChild(st);menu=document.createElement('div');menu.className='m';menu.innerHTML=`<div class="h"><div class="head"><div class="logo">CS</div><div><div class="title">Creative Discovery</div><div class="sub">Find the right creative tool visually</div><div class="brand"></div></div></div><div class="status">Ready</div></div><div class="searchwrap"><div class="searchbox"><span class="glass">⌕</span><input class="search" placeholder="Search creative, edit, camera, CGI, restore, references…"></div></div><div class="tabs"></div><div class="quickbar"></div><div class="body"><div class="cats"></div><div class="list"></div></div><div class="foot"><span>Creative Discovery • v${V}</span><button class="sync">Sync now</button></div>`;sh.appendChild(menu);badge=document.createElement('div');badge.className='badge none';badge.innerHTML='<span class="dot"></span><span class="bt">! Project/Brand not detected</span><span class="src">AUTO</span>';badge.onclick=()=>{mode='Brand';cat='All';query='';ed=ed||document.querySelector('textarea')||document.querySelector('[contenteditable="true"]');render('',true)};sh.appendChild(badge);menu.querySelector('.sync').onclick=()=>sync(true);menu.querySelector('.search').addEventListener('input',e=>{query=e.target.value||'';sel=0;render(query,false,true)});ui()}
+function ui(){if(!menu)return;let main=auto?`✓ Brand: ${auto}`:project?`✓ Project: ${project}`:manual()?`✓ Brand: ${manual()}`:'! Project/Brand not detected',src=auto?'AUTO PROJECT':project?'AUTO PROJECT':manual()?'MANUAL':'AUTO';menu.querySelector('.brand').textContent=`${main} • ${src}`;menu.querySelector('.status').textContent=status;badge.classList.toggle('none',!(auto||project||manual()));badge.querySelector('.bt').textContent=main;badge.querySelector('.src').textContent=src}
+function rows(){if(mode==='Brand')return[{category:'Brand',cmd:'@auto',label:'Auto Project',desc:auto||project||'Not detected'},...Object.keys(B).sort().map(x=>({category:'Brand',cmd:'@brand:'+x,label:x,desc:B[x].type||'Brand'}))];let a=[...C];if(mode==='Videos')a=a.filter(x=>x.category==='Video');else if(mode==='UGC')a=a.filter(x=>x.category==='UGC Video');else if(mode==='Camera')a=a.filter(x=>x.category==='Camera');else if(mode==='Creatives')a=a.filter(x=>!['Video','UGC Video','Camera','Brand'].includes(x.category));if(cat!=='All')a=a.filter(x=>x.category===cat);if(query)a=a.filter(x=>[x.cmd,x.label,x.desc,...(x.tags||[])].join(' ').toLowerCase().includes(query.toLowerCase()));return a}
+function quick(){let e=menu.querySelector('.quickbar');e.innerHTML='';[['/creative','Create','primary'],['/clean','Clean',''],['/edit','Edit',''],['/restore','Restore',''],['/camera','Camera',''],['/cgi','CGI',''],['/infographic','Infographic',''],['/pinterest','Pinterest Refs',''],['/linkedin-carousel','LinkedIn','li']].forEach(([cmd,l,cls])=>{let x=C.find(i=>i.cmd===cmd)||FB.find(i=>i.cmd===cmd);if(!x)return;let b=document.createElement('button');b.className='quick '+cls;b.textContent=l;b.onclick=()=>choose(x);e.appendChild(b)})}
+function render(q='',doSync=true,fromSearch=false){make();if(doSync)sync();detect();query=q;if(!fromSearch)menu.querySelector('.search').value=query;let t=menu.querySelector('.tabs');t.innerHTML='';[['Creatives','Discover'],['Videos','Video'],['UGC','UGC'],['Camera','Camera'],['Brand','Brand'],['All','All']].forEach(([v,l])=>{let b=document.createElement('button');b.className='tab'+(mode===v?' on':'');b.textContent=l;b.onclick=()=>{mode=v;cat='All';render('',true)};t.appendChild(b)});quick();let cs=mode==='Videos'?['Video']:mode==='UGC'?['UGC Video']:mode==='Camera'?['Camera']:mode==='Brand'?['Brand']:[...new Set(C.map(x=>x.category).filter(z=>mode!=='Creatives'||!['Video','UGC Video','Camera','Brand'].includes(z)))],order=['Create','Core','Product','3D / CGI','Social','Campaign','Info','Reference','Style','Environment','Edit','Fix / Enhance','Print','Utility','Video','UGC Video','Camera','Brand'],icons={All:'◈',Create:'✦',Core:'✦',Product:'◆','3D / CGI':'◈',Social:'◎',Campaign:'✺',Info:'i',Reference:'↗',Style:'◐',Environment:'⌁',Edit:'↺','Fix / Enhance':'✚',Print:'▤',Utility:'⌘',Brand:'◇',Video:'▶','UGC Video':'◉',Camera:'⌖'};cs.sort((a,b)=>(order.indexOf(a)<0?99:order.indexOf(a))-(order.indexOf(b)<0?99:order.indexOf(b)));let ce=menu.querySelector('.cats');ce.innerHTML='';['All',...cs].forEach(v=>{let b=document.createElement('button');b.className='cat'+(cat===v?' on':'');b.innerHTML=`<span class="ico">${icons[v]||'•'}</span><span>${v}</span>`;b.onclick=()=>{cat=v;render(query,false,true)};ce.appendChild(b)});items=rows().slice(0,80);sel=Math.min(sel,Math.max(0,items.length-1));let le=menu.querySelector('.list');le.innerHTML='';items.forEach((x,i)=>{let r=document.createElement('div');r.className='row'+(sel===i?' on':'');r.innerHTML='<div class="cmd"></div><div class="copy"><div class="lab"></div><div class="desc"></div></div><div class="arr">›</div>';r.querySelector('.cmd').textContent=x.cmd.startsWith('@brand:')?'SELECT':x.cmd==='@auto'?'AUTO':x.cmd;r.querySelector('.lab').textContent=x.label;r.querySelector('.desc').textContent=x.desc||'';r.onclick=()=>choose(x);le.appendChild(r)});ui();menu.classList.add('show')}
 const isEd=e=>!!e&&(e.tagName==='TEXTAREA'||e.isContentEditable||e.closest?.('[contenteditable="true"]')),getEd=e=>e?.tagName==='TEXTAREA'?e:(e?.isContentEditable?e:e?.closest?.('[contenteditable="true"]')),text=e=>e?.tagName==='TEXTAREA'?e.value:(e?.innerText||'');
 function setText(e,t){if(!e)return;if(e.tagName==='TEXTAREA'){let s=Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value')?.set;s?s.call(e,t):e.value=t;e.dispatchEvent(new Event('input',{bubbles:true}));e.focus();return}e.focus();let se=getSelection(),r=document.createRange();r.selectNodeContents(e);se.removeAllRanges();se.addRange(r);let ok=false;try{ok=document.execCommand('insertText',false,t)}catch{}if(!ok){e.textContent=t;e.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:t}))}}
-function choose(x){if(x.cmd==='@auto'){SS(K.m,'');detect();if(ed)setText(ed,text(ed).replace(/(?:^|\n)\/[\w-]*$/,''));menu.classList.remove('show');return}if(x.cmd.startsWith('@brand:')){SS(K.m,x.cmd.slice(7));detect();if(ed)setText(ed,text(ed).replace(/(?:^|\n)\/[\w-]*$/,''));menu.classList.remove('show');return}let t=text(ed);setText(ed,t.replace(/(?:^|\n)\/[\w-]*$/,m=>(m.startsWith('\n')?'\n':'')+prompt(x)));menu.classList.remove('show')}
+function choose(x){if(x.cmd==='@auto'){PS(K.m,'');detect();if(ed)setText(ed,text(ed).replace(/(?:^|\n)\/[\w-]*$/,''));menu.classList.remove('show');return}if(x.cmd.startsWith('@brand:')){PS(K.m,x.cmd.slice(7));detect();if(ed)setText(ed,text(ed).replace(/(?:^|\n)\/[\w-]*$/,''));menu.classList.remove('show');return}let t=text(ed);setText(ed,t.replace(/(?:^|\n)\/[\w-]*$/,m=>(m.startsWith('\n')?'\n':'')+prompt(x)));menu.classList.remove('show')}
 function slash(t){let m=String(t).match(/(?:^|\n)\/([\w-]*)$/);return m?m[1]:null}
 function liURL(raw){let s=String(raw||'').trim();if(!/^(https?:\/\/)?(www\.)?linkedin\.com\/(in|company)\/[^\s?#]+\/?(?:\?[^\s]*)?$/i.test(s))return'';return /^https?:\/\//i.test(s)?s:'https://'+s}
 function send(){let b=document.querySelector('button[data-testid="send-button"],button[aria-label*="Send message" i],button[aria-label^="Send" i]');if(b&&!b.disabled)b.click()}
 document.addEventListener('keydown',e=>{if(e.key!=='Enter'||e.shiftKey||!isEd(e.target)||menu?.classList.contains('show'))return;let t=getEd(e.target),u=liURL(text(t));if(!u)return;e.preventDefault();e.stopImmediatePropagation();ed=t;setText(t,liPrompt(u));status='LinkedIn → Carousel';ui();setTimeout(send,150)},true);
-document.addEventListener('input',e=>{if(!isEd(e.target))return;ed=getEd(e.target);let z=slash(text(ed));if(z===null){menu?.classList.remove('show');return}sync();detect();let s=z.toLowerCase();if(!s)mode='Creatives';else if(s.startsWith('brand'))mode='Brand';else if(s.startsWith('ugc'))mode='UGC';else if(s.includes('video')||['seedance','kling','runway'].some(k=>k.startsWith(s)))mode='Videos';else if(['camera','transition','slowmotion'].some(k=>k.startsWith(s)||s.startsWith(k)))mode='Camera';else mode='All';cat='All';render(mode==='Brand'?'':z,false)},true);
-document.addEventListener('keydown',e=>{if(!menu?.classList.contains('show')||!isEd(e.target))return;if(e.key==='ArrowDown'){e.preventDefault();sel=(sel+1)%Math.max(1,items.length);render(query,false)}else if(e.key==='ArrowUp'){e.preventDefault();sel=(sel-1+Math.max(1,items.length))%Math.max(1,items.length);render(query,false)}else if(e.key==='Enter'&&!e.shiftKey&&items.length){e.preventDefault();e.stopPropagation();choose(items[sel])}else if(e.key==='Escape')menu.classList.remove('show')},true);
+document.addEventListener('input',e=>{if(!isEd(e.target))return;ed=getEd(e.target);let z=slash(text(ed));if(z===null){menu?.classList.remove('show');return}sync();detect();let s=z.toLowerCase();if(!s)mode='Creatives';else if(s.startsWith('brand'))mode='Brand';else if(s.startsWith('ugc'))mode='UGC';else if(s.includes('video')||['seedance','kling','runway'].some(k=>k.startsWith(s)))mode='Videos';else if(['camera','transition','slowmotion','pushin','pan','orbit','gimbal','macro'].some(k=>k.startsWith(s)||s.startsWith(k)))mode='Camera';else mode='All';cat='All';render(mode==='Brand'?'':z,false)},true);
+document.addEventListener('keydown',e=>{if(!menu?.classList.contains('show')||!isEd(e.target))return;if(e.key==='ArrowDown'){e.preventDefault();sel=(sel+1)%Math.max(1,items.length);render(query,false,true)}else if(e.key==='ArrowUp'){e.preventDefault();sel=(sel-1+Math.max(1,items.length))%Math.max(1,items.length);render(query,false,true)}else if(e.key==='Enter'&&!e.shiftKey&&items.length){e.preventDefault();e.stopPropagation();choose(items[sel])}else if(e.key==='Escape')menu.classList.remove('show')},true);
 addEventListener('focus',()=>{sync(true);detect()});document.addEventListener('visibilitychange',()=>{if(!document.hidden){sync(true);detect()}});new MutationObserver(()=>detect()).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['aria-current','data-state','data-active','href']});make();sync(true);setInterval(()=>sync(true),30000);
 })();
