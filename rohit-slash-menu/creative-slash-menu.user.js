@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      8.0.1
+// @version      8.0.2
 // @description  Virag Lite loader: cleans legacy storage and lazy-loads the full creative OS only when needed.
 // @author       Rohit
 // @match        https://chatgpt.com/*
@@ -18,7 +18,7 @@
 // ==/UserScript==
 
 (()=>{'use strict';
-const V='8.0.1';
+const V='8.0.2';
 const CORE='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/5a8b3b5f2d644da8d30f6343fb6c68a1e2d43ec9/rohit-slash-menu/creative-slash-menu.user.js';
 const KEEP=new Set(['virag.brand','virag.format','virag.layout','virag.platform','virag.quality','virag.products','virag.perProduct','virag.favorites','virag.recent','virag.diversity','virag.lastSync','virag.cleanupVersion']);
 let loading=false,loaded=false,badge=null;
@@ -36,7 +36,8 @@ function requestText(url){return new Promise((ok,no)=>GM_xmlhttpRequest({method:
 async function loadCore(replayTarget=null){
  if(loaded||loading)return;loading=true;if(badge)badge.textContent='Virag…';
  try{
-  const code=await requestText(CORE);
+  let code=await requestText(CORE);
+  code=code.replace("const V='8.0.0';",`const V='${V}';`);
   badge?.remove();badge=null;
   (0,eval)(code);
   loaded=true;
