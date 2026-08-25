@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      8.1.2
-// @description  Virag Lite stable loader with Flyer Studio, hard separate-image output rules and lazy-loaded Creative OS.
+// @version      8.1.3
+// @description  Virag Lite stable loader with Flyer Studio, sequential one-image-per-concept lock and lazy-loaded Creative OS.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -18,7 +18,7 @@
 // ==/UserScript==
 
 (()=>{'use strict';
-const V='8.1.2';
+const V='8.1.3';
 const CORE='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/5a8b3b5f2d644da8d30f6343fb6c68a1e2d43ec9/rohit-slash-menu/creative-slash-menu.user.js';
 const KEEP=new Set(['virag.brand','virag.format','virag.layout','virag.platform','virag.quality','virag.products','virag.perProduct','virag.favorites','virag.recent','virag.diversity','virag.lastSync','virag.cleanupVersion']);
 let loading=false,loaded=false,badge=null;
@@ -28,7 +28,7 @@ function clean(){try{if(get('virag.cleanupVersion')===V)return;for(const k of GM
 const requestText=url=>new Promise((ok,no)=>GM_xmlhttpRequest({method:'GET',url:url+'?lazy='+Date.now(),timeout:12000,onload:r=>r.status>=200&&r.status<300?ok(r.responseText):no(new Error('HTTP '+r.status)),onerror:no,ontimeout:no}));
 function patchCore(code){
  code=code.replace("const V='8.0.0';",`const V='${V}';`);
- code=code.replace("const MULTI=`All requested outputs must be separate standalone images. Never combine them into a collage/contact sheet unless explicitly requested.`;","const MULTI=`MULTI-IMAGE OUTPUT LOCK — NON-NEGOTIABLE: when N images are requested, generate EXACTLY N separate standalone image outputs. Never combine multiple creatives into one canvas, collage, grid, contact sheet, split-screen, multi-panel layout, storyboard, carousel preview or moodboard. If N is greater than 1, DO NOT STOP AFTER IMAGE 1; continue until all N separate image outputs are completed. Every output must be independently usable and visually distinct.`;");
+ code=code.replace("const MULTI=`All requested outputs must be separate standalone images. Never combine them into a collage/contact sheet unless explicitly requested.`;","const MULTI=`SEQUENTIAL MULTI-IMAGE OUTPUT LOCK — NON-NEGOTIABLE: when N images are requested, complete N separate standalone image outputs. ONE OUTPUT = ONE IMAGE = ONE CONCEPT ONLY. Never place alternate concepts together in one canvas, collage, grid, contact sheet, split-screen, multi-panel layout, storyboard, carousel preview, moodboard, or multiple billboard/poster variations. For 1 product × 5 creatives: output Creative 1 as one standalone image, then Creative 2 as another standalone image, continuing separately through Creative 5. Do not stop after image 1. Each output must be independently usable and visually distinct while product identity and geometry remain locked.`;");
  code=code.replace('.loadMore{display:block;', '.loadMore[hidden]{display:none!important}.loadMore{display:block;');
  const flyerRule="FLYER STUDIO — NON-NEGOTIABLE: do not create a basic information flyer. Create a scroll-stopping, memory-sticking campaign flyer with one strong hook and one clear CTA. Use bold hierarchy, appetite/emotion/benefit-led storytelling, intentional typography, custom graphic devices and a clear focal point. Keep copy understandable in 2–3 seconds. The flyer must feel like an ad campaign, not a template. Use supplied facts exactly; never invent prices, dates, rewards, food varieties or claims. For food/restaurant flyers, make food genuinely appetizing and brand-specific. If seating/experience references are supplied, make them part of the visual story. Repeated flyer requests must use materially different concepts, layouts, hero crops, type systems and CTA architecture.";
  code=code.replace('const c=(category,cmd,label,desc,tags=[])=>',`const FLYER_RULE=\`${flyerRule}\`;\nconst c=(category,cmd,label,desc,tags=[])=>`);
