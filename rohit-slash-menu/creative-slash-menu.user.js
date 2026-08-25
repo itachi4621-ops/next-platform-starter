@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      8.1.3
-// @description  Virag Lite stable loader with Flyer Studio, sequential one-image-per-concept lock and lazy-loaded Creative OS.
+// @version      8.1.4
+// @description  Virag Lite stable loader with clearer product-count controls, Flyer Studio and sequential one-image-per-concept lock.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -18,7 +18,7 @@
 // ==/UserScript==
 
 (()=>{'use strict';
-const V='8.1.3';
+const V='8.1.4';
 const CORE='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/5a8b3b5f2d644da8d30f6343fb6c68a1e2d43ec9/rohit-slash-menu/creative-slash-menu.user.js';
 const KEEP=new Set(['virag.brand','virag.format','virag.layout','virag.platform','virag.quality','virag.products','virag.perProduct','virag.favorites','virag.recent','virag.diversity','virag.lastSync','virag.cleanupVersion']);
 let loading=false,loaded=false,badge=null;
@@ -30,6 +30,9 @@ function patchCore(code){
  code=code.replace("const V='8.0.0';",`const V='${V}';`);
  code=code.replace("const MULTI=`All requested outputs must be separate standalone images. Never combine them into a collage/contact sheet unless explicitly requested.`;","const MULTI=`SEQUENTIAL MULTI-IMAGE OUTPUT LOCK — NON-NEGOTIABLE: when N images are requested, complete N separate standalone image outputs. ONE OUTPUT = ONE IMAGE = ONE CONCEPT ONLY. Never place alternate concepts together in one canvas, collage, grid, contact sheet, split-screen, multi-panel layout, storyboard, carousel preview, moodboard, or multiple billboard/poster variations. For 1 product × 5 creatives: output Creative 1 as one standalone image, then Creative 2 as another standalone image, continuing separately through Creative 5. Do not stop after image 1. Each output must be independently usable and visually distinct while product identity and geometry remain locked.`;");
  code=code.replace('.loadMore{display:block;', '.loadMore[hidden]{display:none!important}.loadMore{display:block;');
+ code=code.replace('<div class="label">PRODUCTS</div><select class="select products"></select>','<div class="label">PRODUCT COUNT</div><select class="select products" title="Number of distinct products"></select>');
+ code=code.replace('<div class="label">CREATIVES / PRODUCT</div><select class="select per"></select>','<div class="label">CREATIVES EACH</div><select class="select per" title="Separate creative images for each product"></select>');
+ code=code.replaceAll('separate outputs','separate images').replaceAll('separate output','separate image');
  const flyerRule="FLYER STUDIO — NON-NEGOTIABLE: do not create a basic information flyer. Create a scroll-stopping, memory-sticking campaign flyer with one strong hook and one clear CTA. Use bold hierarchy, appetite/emotion/benefit-led storytelling, intentional typography, custom graphic devices and a clear focal point. Keep copy understandable in 2–3 seconds. The flyer must feel like an ad campaign, not a template. Use supplied facts exactly; never invent prices, dates, rewards, food varieties or claims. For food/restaurant flyers, make food genuinely appetizing and brand-specific. If seating/experience references are supplied, make them part of the visual story. Repeated flyer requests must use materially different concepts, layouts, hero crops, type systems and CTA architecture.";
  code=code.replace('const c=(category,cmd,label,desc,tags=[])=>',`const FLYER_RULE=\`${flyerRule}\`;\nconst c=(category,cmd,label,desc,tags=[])=>`);
  const flyers=`\n c('Flyers','/flyer','Campaign Flyer','High-attention promotional flyer built around one memorable hook and one clear CTA',['flyer','cta','campaign']),\n c('Flyers','/loyaltyflyer','Loyalty Points Flyer','Introduce loyalty points for online orders with a reward-first visual hook and clear order CTA',['loyalty','online','cta']),\n c('Flyers','/pulavflyer','20+ Pulav Launch Flyer','Launch a 20+ Pulav varieties story using the supplied local-first/first-time claim exactly as provided',['food','pulav','launch']),\n c('Flyers','/foodflyer','Food Hero Flyer','Appetite-led food promotion with a bold campaign hook, hero dish and direct CTA',['food','restaurant','cta']),\n c('Flyers','/restaurantflyer','Restaurant Campaign Flyer','Restaurant promotion that sells both the food and the dining experience',['restaurant','campaign']),\n c('Flyers','/mandiflyer','Mandi Experience Flyer','Mandi plate as the food hero plus supplied special Mandi seating as a memorable dining-experience hook',['mandi','food','experience']),\n c('Flyers','/mandicampaign','Mandi Flyer + Reel','Create one standalone Mandi flyer and one separate reel concept using supplied Mandi plate and seating references',['mandi','flyer','reel']),\n c('Flyers','/ctaflyer','CTA Flyer','Action-first flyer optimized around one unmistakable next step',['cta','conversion']),\n c('Flyers','/menuflyer','Menu Highlight Flyer','Promote a menu range or signature selection without turning the design into a dense menu card',['menu','food']),\n c('Flyers','/launchflyer','Launch Flyer','Big-news launch flyer with a curiosity hook and immediate action cue',['launch','cta']),\n c('Flyers','/experienceflyer','Experience Flyer','Sell a distinctive in-person experience using environment, seating and food/service references',['experience','hospitality']),\n c('Flyers','/boldflyer','Bold Attention Flyer','Maximum-impact flyer with unconventional art direction and strong recall',['bold','attention']),\n c('Flyers','/flyerreel','Flyer + Reel Campaign','Build a standalone flyer plus a separate short-form reel direction sharing one campaign idea',['flyer','reel','campaign']),`;
