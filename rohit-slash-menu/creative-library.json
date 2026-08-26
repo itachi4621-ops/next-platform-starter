@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "name": "Virag Creative Library",
+  "promptOrder": ["context", "preset", "format", "output", "artDirection", "mode", "product", "safety"],
+  "modules": {
+    "format": "FORMAT LOCK: Deliver the final canvas in the selected aspect ratio exactly. Recompose the environment, typography and negative space to fit. Never stretch, squash or reshape the product or face.",
+    "singleOutput": "ONE OUTPUT = ONE STANDALONE IMAGE = ONE COMPLETE CONCEPT. No collage, grid, contact sheet, split-screen, multi-panel, alternate options, storyboard, moodboard or multiple billboard/poster variants on one canvas.",
+    "product": "PRODUCT LOCK: If a product reference is supplied, treat it as immutable. Preserve visible silhouette, proportions, container/cap/lid/neck/base geometry, label size/position, logo/artwork placement, colors, materials and distinctive details. Camera perspective may change apparent screen size only; do not redesign or morph the product unless explicitly requested.",
+    "diversity": "FRESH DESIGN: Same preset means same technique, not the same layout. Make each run materially different at thumbnail level by rotating composition, product scale/placement, camera/crop, environment, lighting, materials, typography, graphic devices, depth, props and visual story. Avoid recolors or minor rearrangements.",
+    "safety": "FACTUAL LOCK: Use uploaded references and user-supplied facts as source-of-truth. Do not invent claims, prices, certifications, nutrition, ingredients, specifications, legal/regulatory copy, hidden internals, awards or unsupported performance results.",
+    "creative": "CREATIVE MODE: Produce a finished agency-level designed asset, not merely a nice photograph. Establish a clear campaign idea, focal point, hierarchy, brand-specific visual language, deliberate typography when useful, and polished commercial finish.",
+    "productAd": "PRODUCT AD MODE: Keep the exact product as hero and build a commercial advertising concept around it. Product fidelity outranks decoration. Use believable scale, contact, lighting and brand-relevant graphic language.",
+    "cgi3d": "CGI / 3D MODE: Treat 3D as a broad design language, not a repeated floating-product template. Use physically coherent materials, scale, perspective, shadows and product/environment interaction. Never invent unseen internal components.",
+    "flyer": "FLYER MODE: Do not make a basic information flyer. Create a memory-sticking, scroll-stopping campaign flyer with one strong hook, one clear CTA, bold hierarchy and 2–3 second readability. For food/hospitality, sell appetite and experience together when relevant.",
+    "packaging": "PACKAGING MODE: Output the packaging/label/form-factor itself, not a social post unless explicitly requested. Respect the selected physical form, print hierarchy, safe margins, curvature/seams, front/side/back logic, material/finish and shelf readability.",
+    "edit": "EDIT MODE: Perform only the requested edit. Preserve all unspecified important content, identity, composition and product geometry unless the request explicitly changes them.",
+    "fix": "FIX / ENHANCE MODE: Repair, restore, recolor, upscale or correct without redesigning the subject/product or changing identity.",
+    "identity": "IDENTITY MODE: Preserve stable face/character identity, facial proportions, distinguishing features, hair/beard, skin tone, body proportions and requested expression. Reframe the scene rather than reshaping the person.",
+    "video": "VIDEO / CAMERA MODE: Produce production-ready motion direction with stable subject/product identity, coherent camera movement, continuity, realistic physics and no geometry drift between shots.",
+    "reference": "REFERENCE MODE: Research/analyze references and extract reusable principles without copying any one design or fabricating reference details.",
+    "ad3x": "AD3X MODE: Use the dedicated Ad Multiplier 3X runtime. Require Product + Target Region + Run Mode, preserve product/brand zero drift, separate verified performance evidence from inferred signals, keep the Female/Male/Both test controlled, use one CTA, and never fabricate metrics or claims."
+  },
+  "artDirection": {
+    "composition": [
+      "asymmetric editorial grid",
+      "large centered hero with off-axis support",
+      "edge-anchored hero with strong negative space",
+      "radial spatial hierarchy",
+      "macro-detail plus full-hero dual scale",
+      "low-angle monumental composition",
+      "high-angle graphic composition",
+      "layered foreground/midground/background depth",
+      "diagonal kinetic hierarchy",
+      "modular poster-like grid",
+      "oversized crop with micro-detail counterpoint",
+      "architectural frame-within-frame composition"
+    ],
+    "camera": [
+      "eye-level commercial",
+      "low-angle wide",
+      "high-angle graphic",
+      "telephoto compressed",
+      "macro detail",
+      "three-quarter hero",
+      "front-on orthographic-inspired",
+      "close wide-angle environmental hero",
+      "long-lens editorial crop",
+      "top-down designed flat perspective"
+    ],
+    "environment": [
+      "clean architectural set",
+      "brand-color graphic world",
+      "material-driven sculptural set",
+      "real-world contextual location",
+      "minimal seamless studio",
+      "layered translucent world",
+      "monumental installation",
+      "kinetic typographic environment",
+      "premium retail/display environment",
+      "surreal but physically believable brand world"
+    ],
+    "typography": [
+      "oversized condensed type",
+      "editorial serif plus sans",
+      "Swiss modular sans",
+      "minimal micro-label system",
+      "kinetic diagonal typography",
+      "edge typography plus labels",
+      "large numeric/type-led hierarchy",
+      "quiet luxury editorial typography",
+      "bold stacked campaign typography",
+      "minimal wordmark-scale headline system"
+    ]
+  },
+  "categoryMap": {
+    "Create": "creative",
+    "Product Ads": "productAd",
+    "CGI / 3D": "cgi3d",
+    "Flyers": "flyer",
+    "Packaging": "packaging",
+    "Edit": "edit",
+    "Fix / Enhance": "fix",
+    "Identity / Face": "identity",
+    "Camera": "video",
+    "Video / UGC": "video",
+    "Video": "video",
+    "UGC Video": "video",
+    "References": "reference",
+    "Ad Multiplier & Performance Ads": "ad3x"
+  }
+}
