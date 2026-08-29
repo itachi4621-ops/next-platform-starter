@@ -1,0 +1,50 @@
+{
+  "name": "virag-ai",
+  "version": "2.0.0",
+  "description": "Virag for Windows 11 — free local voice AI desktop assistant powered by Ollama and whisper.cpp",
+  "main": "src/main.cjs",
+  "author": "Virag",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "install-browser": "playwright install chromium",
+    "build:dir": "electron-builder --dir",
+    "build:mac": "electron-builder --mac dmg zip",
+    "build:win": "electron-builder --win nsis --x64",
+    "build:linux": "electron-builder --linux AppImage"
+  },
+  "dependencies": {
+    "openai": "^5.20.0",
+    "playwright": "^1.55.0"
+  },
+  "devDependencies": {
+    "electron": "^37.3.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "ai.virag.desktop",
+    "productName": "Virag",
+    "asar": true,
+    "files": ["src/**/*", "assets/**/*", "package.json"],
+    "directories": {"output": "dist"},
+    "win": {
+      "target": [{"target": "nsis", "arch": ["x64"]}],
+      "executableName": "Virag"
+    },
+    "artifactName": "Virag-Setup-Windows-11-x64-${version}.${ext}",
+    "extraResources": [
+      {"from": "scripts/Setup Virag Free AI.ps1", "to": "scripts/Setup Virag Free AI.ps1"}
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Virag",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
