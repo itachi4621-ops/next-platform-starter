@@ -1,7 +1,7 @@
 {
-  "version": "1.3.1",
+  "version": "1.3.2",
   "releaseDate": "2026-08-29",
-  "notes": "Virag 1.3.1 validates OpenAI Platform API keys before saving, adds Clear key, improves invalid-key guidance, and keeps Realtime plus auto-update fixes.",
+  "notes": "Virag 1.3.2 repairs self-update reliability on macOS. Check Now installs an available update, restart no longer depends only on npm being on the GUI PATH, and the API-key validation improvements from 1.3.1 are included.",
   "baseUrl": "https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/virag-desktop/current/",
   "files": [
     { "path": "package.json" },
