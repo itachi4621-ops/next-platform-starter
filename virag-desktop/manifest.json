@@ -1,7 +1,11 @@
 {
   "version": "1.3.0",
   "releaseDate": "2026-08-29",
-  "notes": "Virag Desktop 1.3 adds automatic update checks, automatic in-place installation, restart after update, and preserves API key, memory, and settings.",
-  "zipUrl": "https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/virag-desktop/Virag-AI-Update-1.3.0.zip",
-  "sha256": "07a75fbdc4b06659fbda9c746e45fe40a9f4511481183bc85c246320175a391f"
+  "notes": "Virag Desktop 1.3 adds automatic update checks, verified file-by-file updates, automatic in-place installation and restart while preserving API key, memory and settings.",
+  "baseUrl": "https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/virag-desktop/current/",
+  "files": [
+    { "path": "package.json" },
+    { "path": "src/core/updater.cjs" }
+  ],
+  "delete": []
 }
