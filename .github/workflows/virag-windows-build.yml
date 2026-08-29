@@ -1,0 +1,84 @@
+name: Build Virag Windows 11
+
+on:
+  push:
+    paths:
+      - "virag-windows/**"
+      - ".github/workflows/virag-windows-build.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assemble Windows source
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force virag-windows-build/src/core | Out-Null
+          New-Item -ItemType Directory -Force virag-windows-build/src/renderer | Out-Null
+          New-Item -ItemType Directory -Force virag-windows-build/scripts | Out-Null
+
+          Copy-Item virag-windows/overrides/package.json virag-windows-build/package.json -Force
+          Copy-Item virag-windows/overrides/src/* virag-windows-build/src -Recurse -Force
+          Copy-Item virag-windows/overrides/scripts/* virag-windows-build/scripts -Recurse -Force
+          Copy-Item virag-desktop/current/src/core/updater.cjs virag-windows-build/src/core/updater.cjs -Force
+
+          # The first Windows build may not include a tray icon. Ensure the global shortcut
+          # always re-opens a hidden Virag window even if the tray could not be created.
+          $mainPath = 'virag-windows-build/src/main.cjs'
+          $main = Get-Content $mainPath -Raw
+          $main = $main.Replace("globalShortcut.register('CommandOrControl+Shift+Space',()=>mainWindow?.webContents.send('shortcut:toggle'));", "globalShortcut.register('CommandOrControl+Shift+Space',()=>{ mainWindow?.show(); mainWindow?.focus(); mainWindow?.webContents.send('shortcut:toggle'); });")
+          Set-Content -Path $mainPath -Value $main -Encoding UTF8
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: virag-windows-build/package.json
+
+      - name: Install dependencies
+        working-directory: virag-windows-build
+        run: npm install
+
+      - name: Syntax checks
+        shell: pwsh
+        working-directory: virag-windows-build
+        run: |
+          node --check src/main.cjs
+          node --check src/preload.cjs
+          node --check src/core/config.cjs
+          node --check src/core/memory.cjs
+          node --check src/core/browser.cjs
+          node --check src/core/tools.cjs
+          node --check src/core/local-ai.cjs
+          node --check src/core/updater.cjs
+          node --check src/renderer/app.js
+
+      - name: Build Windows installer
+        working-directory: virag-windows-build
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+        run: npm run build:win
+
+      - name: Verify installer
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem virag-windows-build/dist -Filter '*.exe' | Where-Object { $_.Name -like 'Virag-Setup-Windows-11-x64-*' } | Select-Object -First 1
+          if (-not $exe) { throw 'Virag Windows installer was not created.' }
+          Write-Host "Installer: $($exe.FullName)"
+          Write-Host "Size: $($exe.Length) bytes"
+          Get-FileHash $exe.FullName -Algorithm SHA256 | Format-List
+
+      - name: Upload Windows installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: Virag-Windows-11-v2.0.0
+          path: virag-windows-build/dist/Virag-Setup-Windows-11-x64-*.exe
+          if-no-files-found: error
+          retention-days: 30
