@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; media-src 'self' blob:; img-src 'self' data:; connect-src https://api.openai.com;" />
+  <title>Virag</title><link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="brand"><div class="mini-orb"></div><span>VIRAG</span></div>
+      <button class="nav active" data-view="assistant">◉<span>Assistant</span></button>
+      <button class="nav" data-view="memory">◇<span>Memory</span></button>
+      <button class="nav" data-view="settings">⚙<span>Settings</span></button>
+      <div class="spacer"></div><div class="hotkey">Ctrl + Shift + Space</div>
+    </aside>
+
+    <main class="stage">
+      <section id="assistant" class="view active">
+        <header><div><p class="eyebrow">PERSONAL INTELLIGENCE</p><h1>Virag</h1></div><div id="statusPill" class="status offline"><span></span> Offline</div></header>
+        <div class="hero">
+          <div id="orb" class="orb"><div class="orb-core"></div><div class="orb-ring r1"></div><div class="orb-ring r2"></div></div>
+          <div id="stateText" class="state-text">Ready when you are.</div>
+          <div class="controls"><button id="connectBtn" class="primary">Start Virag</button><button id="muteBtn" class="round" disabled title="Mute microphone">⌁</button><button id="interruptBtn" class="round" disabled title="Interrupt Virag">■</button></div>
+        </div>
+        <div id="transcript" class="transcript"></div>
+        <div class="composer"><textarea id="textInput" rows="1" placeholder="Ask Virag anything or tell it what to do…"></textarea><button id="sendBtn">➜</button></div>
+      </section>
+
+      <section id="memory" class="view"><header><div><p class="eyebrow">LONG-TERM CONTEXT</p><h1>Memory</h1></div><button id="clearMemory" class="danger-ghost">Clear all</button></header><div id="memoryList" class="memory-list"></div></section>
+
+      <section id="settings" class="view">
+        <header><div><p class="eyebrow">WINDOWS 11 SYSTEM</p><h1>Settings</h1></div></header>
+        <div class="settings-grid">
+          <div class="card wide">
+            <h3>AI Engine</h3><label>Virag brain</label>
+            <select id="aiProvider"><option value="local">Free Local AI — no API credits</option><option value="openai">OpenAI Cloud — optional paid API</option></select>
+            <small>Free Local runs on your Windows 11 PC through Ollama. OpenAI remains optional and can be switched on later.</small>
+          </div>
+
+          <div class="card" id="localCard">
+            <h3>Free Local AI</h3>
+            <div class="statusline"><b>Engine status</b><small id="localState">Checking…</small></div>
+            <div class="row actionrow"><button id="setupLocal">Install / Repair Free Engine</button><button id="checkLocal" class="secondary-btn">Re-check</button></div>
+            <label>Brain model</label><select id="localModel"><option value="auto">Auto — best for this PC</option><option value="qwen3-vl:2b">Qwen3-VL 2B — fastest</option><option value="qwen3-vl:4b">Qwen3-VL 4B — balanced</option><option value="qwen3-vl:8b">Qwen3-VL 8B — stronger</option><option value="qwen3-vl:30b">Qwen3-VL 30B — high RAM</option></select>
+            <label>Vision model</label><select id="localVisionModel"><option value="auto">Same as brain</option><option value="qwen3-vl:2b">Qwen3-VL 2B</option><option value="qwen3-vl:4b">Qwen3-VL 4B</option><option value="qwen3-vl:8b">Qwen3-VL 8B</option></select>
+            <label>Local Windows voice</label><input id="localVoice" placeholder="Leave blank = Windows system voice" />
+            <label>Whisper model</label><input id="whisperModelPath" />
+            <label>Voice sensitivity</label><input id="voiceThreshold" type="number" min="0.008" max="0.15" step="0.002" />
+            <small>No API key, token balance, or per-message charge. Model downloads use disk space and your PC's CPU/GPU/RAM.</small>
+          </div>
+
+          <div class="card" id="openaiCard"><h3>OpenAI — Optional</h3><label>API key</label><div class="row"><input id="apiKey" type="password" placeholder="Only needed for cloud mode"/><button id="saveKey">Save & test</button><button id="clearKey" type="button">Clear</button></div><small id="keyState"></small></div>
+          <div class="card" id="cloudBrainCard"><h3>Cloud Voice & Brain</h3><label>Realtime model</label><input id="realtimeModel"/><label>Reasoning model</label><input id="reasoningModel"/><label>Voice</label><select id="voice"><option>marin</option><option>cedar</option><option>alloy</option><option>ash</option><option>ballad</option><option>coral</option><option>echo</option><option>sage</option><option>shimmer</option><option>verse</option></select></div>
+
+          <div class="card"><h3>Wake mode</h3><div class="switchrow"><div><b>Always-listening wake phrase</b><small>Virag only acts after the wake phrase when enabled.</small></div><input id="wakeMode" type="checkbox"/></div><label>Wake phrase</label><input id="wakePhrase" value="hey virag"/></div>
+          <div class="card"><h3>Power tools</h3><div class="switchrow"><div><b>Shell commands</b><small>Every command still asks approval.</small></div><input id="allowShellTools" type="checkbox"/></div><div class="switchrow"><div><b>Windows UI automation</b><small>Advanced PowerShell UI control; every action still asks approval.</small></div><input id="allowUiAutomation" type="checkbox"/></div></div>
+          <div class="card"><h3>Browser automation</h3><div class="switchrow"><div><b>Visible Microsoft Edge</b><small>Virag can inspect, click and fill web pages in Edge.</small></div><input id="browserHeadless" type="checkbox"/></div><small>Toggle on only if you want browser automation hidden.</small></div>
+          <div class="card"><h3>Startup</h3><div class="switchrow"><div><b>Launch Virag at login</b><small>Keep Virag available from tray and shortcut.</small></div><input id="launchAtLogin" type="checkbox"/></div></div>
+          <div class="card"><h3>Virag Updates</h3><div class="switchrow"><div><b>Automatic update checks</b><small>Virag checks the update channel automatically.</small></div><input id="autoUpdateEnabled" type="checkbox"/></div><div class="switchrow"><div><b>Install updates automatically</b><small>Supported update packages can install and restart Virag.</small></div><input id="autoInstallUpdates" type="checkbox"/></div><div class="row"><button id="checkUpdate" style="height:40px">Check now</button><small id="updateState" style="margin:10px 0 0">Checking version…</small></div></div>
+        </div>
+        <button id="saveSettings" class="primary save">Save settings</button>
+      </section>
+    </main>
+  </div>
+  <audio id="remoteAudio" autoplay></audio><script src="app.js"></script>
+</body>
+</html>
