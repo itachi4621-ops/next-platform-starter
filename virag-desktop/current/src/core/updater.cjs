@@ -47,7 +47,7 @@ class ViragUpdater {
     try{
       const m=await this.fetchManifest(), available=compareVersions(m.version,this.app.getVersion())>0;
       this.emit({status:available?'available':'up-to-date',latestVersion:m.version,notes:m.notes||'',releaseDate:m.releaseDate||null,error:null});
-      if(available && this.config.data.autoInstallUpdates){ await sleep(silent?900:300); return await this.downloadAndInstall(m); }
+      if(available && (this.config.data.autoInstallUpdates || !silent)){ await sleep(silent?900:300); return await this.downloadAndInstall(m); }
       return this.publicState();
     }catch(e){ this.emit({status:'error',error:e.message||String(e)}); return this.publicState(); }
   }
@@ -97,7 +97,7 @@ class ViragUpdater {
         let prep='';
         if(staged.mode==='zip') prep=`STAGE="$BASE/stage"\nmkdir -p "$STAGE"\n/usr/bin/ditto -x -k ${q(staged.zipPath)} "$STAGE"\n`;
         else prep=`STAGE=${q(staged.stage)}\n`;
-        fs.writeFileSync(helper,`#!/bin/bash\nset -e\nROOT=${q(root)}\nBASE=${q(base)}\nPID=${pid}\nfor i in {1..80}; do if ! kill -0 "$PID" 2>/dev/null; then break; fi; sleep 0.25; done\n${prep}[ -f "$STAGE/package.json" ] || exit 2\nDELETE_FILE="$BASE/delete.json"\nif [ -f "$DELETE_FILE" ]; then\n  /usr/bin/python3 - "$ROOT" "$DELETE_FILE" <<'PY'\nimport json, os, shutil, sys\nroot, f = sys.argv[1:3]\nfor rel in json.load(open(f)):\n    p=os.path.realpath(os.path.join(root, rel))\n    if not p.startswith(os.path.realpath(root)+os.sep): continue\n    if os.path.isdir(p) and not os.path.islink(p): shutil.rmtree(p, ignore_errors=True)\n    elif os.path.lexists(p): os.remove(p)\nPY\nfi\ncp -R "$STAGE"/. "$ROOT"/\nchmod +x "$ROOT"/scripts/*.command 2>/dev/null || true\ncd "$ROOT"\nnpm install >/tmp/virag-update-install.log 2>&1 || true\nnohup npm start >/tmp/virag-start.log 2>&1 &\n`,{mode:0o755});
+        fs.writeFileSync(helper,`#!/bin/bash\nset -e\nROOT=${q(root)}\nBASE=${q(base)}\nPID=${pid}\nfor i in {1..80}; do if ! kill -0 "$PID" 2>/dev/null; then break; fi; sleep 0.25; done\n${prep}[ -f "$STAGE/package.json" ] || exit 2\nDELETE_FILE="$BASE/delete.json"\nif [ -f "$DELETE_FILE" ]; then\n  /usr/bin/python3 - "$ROOT" "$DELETE_FILE" <<'PY'\nimport json, os, shutil, sys\nroot, f = sys.argv[1:3]\nfor rel in json.load(open(f)):\n    p=os.path.realpath(os.path.join(root, rel))\n    if not p.startswith(os.path.realpath(root)+os.sep): continue\n    if os.path.isdir(p) and not os.path.islink(p): shutil.rmtree(p, ignore_errors=True)\n    elif os.path.lexists(p): os.remove(p)\nPY\nfi\ncp -R "$STAGE"/. "$ROOT"/\nchmod +x "$ROOT"/scripts/*.command 2>/dev/null || true\nexport PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"\ncd "$ROOT"\nif command -v npm >/dev/null 2>&1; then npm install >/tmp/virag-update-install.log 2>&1 || true; fi\nif [ -x "$ROOT/node_modules/.bin/electron" ]; then\n  nohup "$ROOT/node_modules/.bin/electron" "$ROOT" >/tmp/virag-start.log 2>&1 &\nelif command -v npm >/dev/null 2>&1; then\n  nohup npm start >/tmp/virag-start.log 2>&1 &\nelse\n  echo "Virag update installed but restart failed: npm/electron not found" >/tmp/virag-start.log\nfi\n`,{mode:0o755});
         spawn('/bin/bash',[helper],{detached:true,stdio:'ignore'}).unref();
       }
       this.emit({status:'restarting',progress:100}); setTimeout(()=>{this.app.isQuitting=true;this.app.quit()},500); return this.publicState();
