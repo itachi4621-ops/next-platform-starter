@@ -1,8 +1,12 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "0.0.0",
-  "updatedAt": "2026-09-02T14:23:00+05:30",
-  "name": "Virag Creative Brain — RESET",
-  "modules": {},
-  "categoryMap": {}
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-09-02T14:35:00+05:30",
+  "name": "Virag V1 Minimal Brain",
+  "modules": {
+    "master": "CURRENT BRIEF ONLY. Use the current composer text, current uploads and the selected visual operator. Treat the slash code as creative shorthand and translate it into a precise visual instruction. Do not import old campaigns, styles, moods, offers or concepts.",
+    "sourceLock": "SOURCE LOCK. Preserve recognizable product/package geometry, label/logo/artwork/colors and supplied person identity unless the current user explicitly asks to change them. Do not invent factual claims, prices, certifications, nutrition, specifications, awards, testimonials or hidden internals.",
+    "conflict": "CONFLICT RULE. The user's explicit current brief outranks the visual operator. The operator controls only its named visual dimension; do not let it silently redesign unrelated aspects.",
+    "output": "EXECUTE NOW. Generate exactly one standalone final image unless the current user explicitly requests another quantity or format. Do not answer with only a prompt, plan or explanation."
+  }
 }
