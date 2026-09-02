@@ -1,24 +1,6 @@
 {
   "name": "virag-creative-os",
-  "version": "0.1.0",
-  "description": "Creative workflow system for source-locked social design, product advertising, 3D Studio, Movie Lab, packaging, flyers, identity preservation, AI writing modes, and sequential standalone outputs.",
-  "author": {
-    "name": "Rohit"
-  },
-  "repository": "https://github.com/itachi4621-ops/next-platform-starter",
-  "keywords": ["creative", "design", "3d", "advertising", "social", "packaging", "movie-poster"],
-  "skills": "./skills/",
-  "interface": {
-    "displayName": "Virag Creative OS",
-    "shortDescription": "Source-locked creative workflows and 3D Studio",
-    "longDescription": "Use Virag Creative OS for current-brief-only creative direction, strict source fidelity, premium social and product design, 3D Studio presets, Movie Lab, packaging, flyers, identity preservation, AI writing modes, and sequential standalone image outputs.",
-    "developerName": "Rohit",
-    "category": "Productivity",
-    "defaultPrompt": [
-      "Use Virag Creative OS to create a premium social creative from my current upload.",
-      "Use Virag 3D Studio to build a source-accurate cinematic 3D product hero.",
-      "Use Virag Movie Lab to create an original cinematic poster from my current brief."
-    ],
-    "brandColor": "#8B5CFF"
-  }
+  "display_name": "Virag Creative OS — RESET",
+  "version": "0.0.0",
+  "description": "Reset baseline. No active Virag skills or workflows. Ready for a clean V1 rebuild."
 }
