@@ -1,0 +1,23 @@
+{
+  "name": "Virag pre-reset snapshot",
+  "createdAt": "2026-09-02T14:23:00+05:30",
+  "note": "Active Virag was intentionally reset to zero after this snapshot. Git history remains the source of truth for full rollback.",
+  "files": {
+    "creative-slash-menu.user.js": "3f468feb6dacf33fb17190ae8bfe2beb6c4509f0",
+    "creative-library.json": "06c19ae957bad5314140c3b4bea11b8b5e231914",
+    "commands.json": "9af5f7ad8a47faa5acf32852dce5580bcd2586e8",
+    "3d-library.json": "3955bcb608f84ab7577b43dbe9fccdfea1398209",
+    "ai-tools.json": "64aebbc1e26d86388a064efea2016801d189ebb8",
+    "movie-lab.json": "46588e7aaf4e1fed9be5133765af0d63089dba3e",
+    "ad3x.json": "24db757910c3f76c70f94b829849b86dbcfcdc24",
+    "brands.json": "4ef3041bb5019d78f0a3712dc83d9093688fb6a3",
+    "runtime.json": "79cb6690cd91f0270296f81a84fef5f3168dde9c",
+    "virag-version-monitor.user.js": "f376db5f4931681bc3bc7f4406fe98c855c4606b"
+  },
+  "recentKnownCommits": {
+    "brain_2_7_0": "42ed42286508f4d46a3f25ac01aed544729200ab",
+    "brain_2_6_0": "98edc501bee387b586f6b7a7e595aedc57b42baa",
+    "brain_2_5_0": "9db15b058e847a1147bb9e7705d9261753a771fe",
+    "stable_core_9_0_0": "85df558b249008ad61af7a887aa0c0c6b1ae02d8"
+  }
+}
