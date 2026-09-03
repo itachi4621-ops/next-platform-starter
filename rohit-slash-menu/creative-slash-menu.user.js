@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      1.1.0
-// @description  Virag V1.1 — 100 visual operators plus a dedicated 25-preset static 3D Creative Library.
+// @version      1.2.0
+// @description  Virag V1.2 — clean six-library workspace: Creative, Flyer, 3D, Packaging, Video and AI Tools.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -16,324 +16,161 @@
 // ==/UserScript==
 (()=>{'use strict';
 
-const V='1.1.0';
+const V='1.2.0';
 const ROOT='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/';
-const U={c:ROOT+'commands.json',b:ROOT+'creative-library.json',d:ROOT+'3d-creative.json'};
-const D={
-  master:'CURRENT BRIEF ONLY. Use current composer text and current uploads only. Do not import old campaigns, styles, moods, offers, headlines, products or concepts unless the user explicitly references them.',
-  sourceLock:'SOURCE LOCK. Preserve recognizable product/package geometry, proportions, label/logo/artwork/colors and supplied person identity unless the current user explicitly asks to change them. Do not invent factual claims, prices, certifications, nutrition, specifications, awards, testimonials or hidden internals.',
-  conflict:"CONFLICT RULE. The user's explicit current brief outranks the visual operator. The operator controls only its named visual dimension; do not silently redesign unrelated aspects.",
-  output:'EXECUTE NOW. Generate exactly one standalone final image unless the current user explicitly requests another quantity or format. Do not answer with only a prompt, plan or explanation.',
-  d3:'3D STATIC CREATIVE MODE. Create one finished static 3D/CGI advertising image, never a video or storyboard. Use physically believable scale, perspective, materials, contact, reflections, shadows and lighting. Same technique must not force the same layout: avoid repeating centered floating-product, pedestal, smoke or generic sci-fi templates.'
+const U={
+  Creative:ROOT+'creative-presets.json',
+  Flyer:ROOT+'flyer-presets.json',
+  '3D':ROOT+'3d-creative.json',
+  Packaging:ROOT+'packaging-presets.json',
+  Video:ROOT+'video-presets.json',
+  'AI Tools':ROOT+'ai-tools.json'
 };
+const TABS=['Creative','Flyer','3D','Packaging','Video','AI Tools'];
+const MODE={
+  Creative:'STATIC CREATIVE MODE. Create one finished standalone static advertising/social creative for the current brief. Use a deliberate hierarchy, strong focal idea, polished typography when useful and category-fit art direction. Do not answer with only a prompt or plan.',
+  Flyer:'FLYER MODE. Create one finished standalone flyer for the current brief only. Prioritize one dominant hook, clear hierarchy, concise factual copy and one CTA when supported. Do not reuse an older flyer topic.',
+  '3D':'3D CAMPAIGN MODE. Create one finished standalone static CGI/3D campaign creative, not a video, storyboard, technical demo or generic pedestal render. Use physically believable scale, perspective, materials, contact, reflections, shadows and environmental lighting.',
+  Packaging:'PACKAGING MODE. Design the actual package, label or form-factor for the current brief. Use print-aware hierarchy, safe margins, material/finish logic and shelf readability. Do not turn the task into a social post unless explicitly requested.',
+  Video:'VIDEO MODE. Return a production-ready video concept, script, motion prompt, camera direction or storyboard according to the selected tool. Keep timing, continuity, product/person identity and motion physically believable. Do not generate a static-image brief unless explicitly requested.'
+};
+const MASTER='CURRENT BRIEF LOCK. Use only the current composer text, current-turn uploads/attachments and the selected tool. Never import an older campaign, product, festival, offer, headline, CTA, script, visual style or topic unless the user explicitly says previous, above, same as before, continue or reuse.';
+const LOCK='SOURCE LOCK. Preserve recognizable product/package geometry, proportions, cap/lid, label/logo/artwork/colors and supplied person identity unless the current user explicitly asks to change them. Do not invent prices, offers, ingredients, nutrition, certifications, specifications, medical/performance claims, awards, testimonials or hidden internals.';
+const CONFLICT="CONFLICT RULE. The user's explicit current request outranks the selected preset. The preset controls its named creative task only; do not silently change unrelated facts or requirements.";
 
 const gv=(k,d=null)=>{try{return GM_getValue(k,d)}catch{return d}};
 const sv=(k,v)=>{try{GM_setValue(k,v)}catch{}};
 const sleep=m=>new Promise(r=>setTimeout(r,m));
-const getJSON=u=>new Promise((ok,no)=>GM_xmlhttpRequest({
-  method:'GET',url:u+'?v='+Date.now(),timeout:12000,
-  onload:r=>{try{if(r.status<200||r.status>299)throw Error('HTTP '+r.status);ok(JSON.parse(r.responseText))}catch(e){no(e)}},
-  onerror:no,ontimeout:no
-}));
-
-let S={
-  base:new Map(),d3:new Map(),m:new Map(),
-  brain:{...D},baseVer:'?',d3Ver:'?',src:'OFFLINE',
-  mode:'All',q:'',syncing:false,host:null,sh:null,dock:null,toast:null
-};
-
+const getJSON=u=>new Promise((ok,no)=>GM_xmlhttpRequest({method:'GET',url:u+'?v='+Date.now(),timeout:12000,onload:r=>{try{if(r.status<200||r.status>299)throw Error('HTTP '+r.status);ok(JSON.parse(r.responseText))}catch(e){no(e)}},onerror:no,ontimeout:no}));
 const norm=c=>{c=String(c||'').trim();return c?(c.startsWith('/')?c:'/'+c):''};
-const key=c=>norm(c).toLowerCase();
 
-function toMap(v){
+let S={libs:{},vers:{},mode:'Creative',q:'',syncing:false,online:false,host:null,sh:null,panel:null,toast:null};
+for(const t of TABS){S.libs[t]=new Map();S.vers[t]='?'}
+
+function toMap(v,tab){
   const m=new Map();
   for(const r of v?.commands||[]){
     if(!r?.cmd)continue;
     const cmd=norm(r.cmd);
-    m.set(cmd.toLowerCase(),{
-      id:+r.id||0,
-      category:String(r.category||'Visual'),
-      cmd,
-      label:String(r.label||cmd.slice(1)),
-      desc:String(r.desc||''),
-      instruction:String(r.instruction||r.desc||r.label||cmd)
-    });
+    m.set(cmd.toLowerCase(),{id:+r.id||0,tab,cmd,label:String(r.label||cmd.slice(1)),desc:String(r.desc||''),instruction:String(r.instruction||r.prompt||r.desc||r.label||cmd)});
   }
   return m;
 }
-function rebuild(){
-  const m=new Map(S.base);
-  for(const [k,v] of S.d3)m.set(k,v);
-  S.m=m;
+function load(tab,v){
+  const m=toMap(v,tab);
+  if(!m.size)return false;
+  S.libs[tab]=m;
+  S.vers[tab]=String(v.libraryVersion||'?');
+  return true;
 }
-function loadBase(v,src){
-  const m=toMap(v);
-  if(m.size>=100){
-    S.base=m;
-    S.baseVer=String(v.libraryVersion||'?');
-    S.src=src;
-    rebuild();
-  }
+for(const tab of TABS){
+  try{const c=JSON.parse(gv('virag.v12.'+tab.replace(/\s/g,'_'),'null'));if(c)load(tab,c)}catch{}
 }
-function load3D(v){
-  const m=toMap(v);
-  if(m.size){
-    S.d3=m;
-    S.d3Ver=String(v.libraryVersion||'?');
-    rebuild();
-  }
-}
-
-try{
-  const c=JSON.parse(gv('virag.v11.base',gv('virag.v1.commands','null')));
-  if(c)loadBase(c,'CACHE');
-}catch{}
-try{
-  const d=JSON.parse(gv('virag.v11.3d','null'));
-  if(d)load3D(d);
-}catch{}
-try{
-  const b=JSON.parse(gv('virag.v11.brain',gv('virag.v1.brain','null')));
-  if(b?.modules)S.brain={...D,...b.modules,d3:D.d3};
-}catch{}
 
 async function sync(manual=false){
   if(S.syncing)return;
-  S.syncing=true;
-  status('SYNCING');
-  const [a,b,d]=await Promise.allSettled([getJSON(U.c),getJSON(U.b),getJSON(U.d)]);
-  if(a.status==='fulfilled'&&a.value?.commands?.length>=100){
-    loadBase(a.value,'LIVE');
-    sv('virag.v11.base',JSON.stringify(a.value));
-  }
-  if(d.status==='fulfilled'&&d.value?.commands?.length){
-    load3D(d.value);
-    sv('virag.v11.3d',JSON.stringify(d.value));
-  }
-  if(b.status==='fulfilled'&&b.value?.modules){
-    S.brain={...D,...b.value.modules,d3:D.d3};
-    sv('virag.v11.brain',JSON.stringify(b.value));
-  }
+  S.syncing=true;status('SYNCING');
+  const rs=await Promise.allSettled(TABS.map(t=>getJSON(U[t])));
+  let ok=0;
+  rs.forEach((r,i)=>{if(r.status==='fulfilled'&&load(TABS[i],r.value)){sv('virag.v12.'+TABS[i].replace(/\s/g,'_'),JSON.stringify(r.value));ok++}});
+  S.online=ok===TABS.length;
   S.syncing=false;
-  const ok=S.base.size>=100&&S.d3.size>0;
-  status(`${S.base.size} CORE + ${S.d3.size} 3D · ${ok?'LIVE':S.src}`);
+  status(S.online?'ONLINE':`PARTIAL ${ok}/${TABS.length}`);
   render();
-  if(manual)toast(`Core ${S.baseVer} · ${S.base.size} | 3D ${S.d3Ver} · ${S.d3.size}`);
+  if(manual)toast(TABS.map(t=>`${t} ${S.vers[t]} · ${S.libs[t].size}`).join('  |  '),!S.online);
 }
 
-function visible(e){
-  if(!e||!e.isConnected)return false;
-  const r=e.getBoundingClientRect?.();
-  return !!(r&&r.width>20&&r.height>12);
-}
-function editor(){
-  for(const s of ['#prompt-textarea','textarea[data-testid="prompt-textarea"]','[data-lexical-editor="true"]','div.ProseMirror','[contenteditable="true"][role="textbox"]','form [contenteditable="true"]','textarea','[contenteditable="true"]'])
-    for(const e of document.querySelectorAll(s))
-      if(visible(e))return e;
-  return null;
-}
+function visible(e){if(!e||!e.isConnected)return false;const r=e.getBoundingClientRect?.();return !!(r&&r.width>20&&r.height>12)}
+function editor(){for(const s of ['#prompt-textarea','textarea[data-testid="prompt-textarea"]','[data-lexical-editor="true"]','div.ProseMirror','[contenteditable="true"][role="textbox"]','form [contenteditable="true"]','textarea','[contenteditable="true"]'])for(const e of document.querySelectorAll(s))if(visible(e))return e;return null}
 const read=e=>e?.tagName==='TEXTAREA'?e.value:(e?.innerText||e?.textContent||'');
-
 function setText(e,t){
+  if(!e)return false;
   try{e.focus({preventScroll:true})}catch{}
   if(e.tagName==='TEXTAREA'){
     const p=Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value')?.set;
     p?p.call(e,t):e.value=t;
     e.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:t}));
-    e.dispatchEvent(new Event('change',{bubbles:true}));
-    return true;
+    e.dispatchEvent(new Event('change',{bubbles:true}));return true;
   }
-  try{
-    const s=getSelection(),r=document.createRange();
-    r.selectNodeContents(e);s.removeAllRanges();s.addRange(r);
-    document.execCommand('delete',false,null);
-    if(document.execCommand('insertText',false,t)){
-      e.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:t}));
-      return true;
-    }
-  }catch{}
-  try{
-    e.replaceChildren(document.createTextNode(t));
-    e.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:t}));
-    return true;
-  }catch{return false}
+  try{const s=getSelection(),r=document.createRange();r.selectNodeContents(e);s.removeAllRanges();s.addRange(r);document.execCommand('delete',false,null);if(document.execCommand('insertText',false,t)){e.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:t}));return true}}catch{}
+  try{e.replaceChildren(document.createTextNode(t));e.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:t}));return true}catch{return false}
 }
-
-function strip(raw){
-  return String(raw||'').replace(/(?:^|\n)\s*\/[A-Za-z0-9_-]*\s*$/,'').trim();
+function stripSlash(raw){return String(raw||'').replace(/(?:^|\n)\s*\/[A-Za-z0-9_-]*\s*$/,'').trim()}
+function cleanKnown(raw){
+  const known=new Set();for(const t of TABS)for(const k of S.libs[t].keys())known.add(k);
+  return String(raw||'').replace(/\/[A-Za-z0-9_-]+/g,m=>known.has(m.toLowerCase())?'':m).replace(/[ \t]{2,}/g,' ').trim();
 }
-function collect(raw,last){
-  const a=[],seen=new Set();
-  for(const m of String(raw||'').matchAll(/\/[A-Za-z0-9_-]+/g)){
-    const x=S.m.get(m[0].toLowerCase());
-    if(x&&!seen.has(x.cmd.toLowerCase())){
-      a.push(x);seen.add(x.cmd.toLowerCase());
-    }
-  }
-  if(last&&!seen.has(last.cmd.toLowerCase()))a.push(last);
-  return a.slice(-4);
+function currentBase(){const e=editor();return e?cleanKnown(stripSlash(read(e))):''}
+function buildPrompt(x){
+  const base=currentBase();
+  return [MASTER,base?`CURRENT REQUEST / IDEA: ${base}`:'CURRENT REQUEST / IDEA: use the current-turn uploaded reference(s) and current composer intent only.',`SELECTED ${x.tab.toUpperCase()} TOOL: ${x.label}. ${x.instruction}`,MODE[x.tab],CONFLICT,LOCK].filter(Boolean).join(' ');
 }
-function cleanBase(raw){
-  return String(raw||'')
-    .replace(/\/[A-Za-z0-9_-]+/g,m=>S.m.has(m.toLowerCase())?'':m)
-    .replace(/\s{2,}/g,' ')
-    .trim();
+function insertToken(x){
+  const e=editor();if(!e){status('EDITOR MISSING');toast('ChatGPT composer not found',1);return}
+  const raw=read(e)||'';
+  const rx=/(?:^|\n)\s*\/[A-Za-z0-9_-]*\s*$/;
+  const token=x.cmd+' ';
+  const next=rx.test(raw)?raw.replace(rx,m=>(m.includes('\n')?'\n':'')+token):(!raw.trim()?token:raw.trimEnd()+' '+token);
+  setText(e,next);hide();
 }
-function prompt(ops,base){
-  const b=S.brain;
-  const lines=ops.map(x=>`${x.cmd} — ${x.label}: ${x.instruction}`).join(' | ');
-  const has3D=ops.some(x=>x.category==='3D Creative');
-  return [
-    b.master,
-    base?`CURRENT REQUEST / IDEA: ${base}`:'CURRENT REQUEST / IDEA: use only the current-turn uploaded reference(s) and current composer intent as the subject; do not pull an older unrelated topic.',
-    `SELECTED VISUAL OPERATORS (${ops.length}): ${lines}`,
-    has3D?(b.d3||D.d3):'',
-    b.conflict,
-    b.sourceLock,
-    b.output
-  ].filter(Boolean).join(' ');
-}
-
-function sendBtn(e){
-  const f=e?.closest?.('form');
-  const sels=['button[data-testid="send-button"]','button[aria-label="Send prompt"]','button[aria-label*="Send" i]','button[type="submit"]'];
-  if(f)for(const s of sels)for(const b of f.querySelectorAll(s))if(visible(b))return b;
-  for(const s of sels)for(const b of document.querySelectorAll(s))if(visible(b))return b;
-  return null;
-}
-async function send(e){
-  for(let i=0;i<100;i++){
-    const b=sendBtn(e)||sendBtn(editor());
-    if(b&&!b.disabled){b.click();return true}
-    await sleep(80);
-  }
-  const f=e?.closest?.('form');
-  if(f?.requestSubmit){try{f.requestSubmit();return true}catch{}}
-  return false;
-}
+function sendBtn(e){const f=e?.closest?.('form'),sels=['button[data-testid="send-button"]','button[aria-label="Send prompt"]','button[aria-label*="Send" i]','button[type="submit"]'];if(f)for(const s of sels)for(const b of f.querySelectorAll(s))if(visible(b))return b;for(const s of sels)for(const b of document.querySelectorAll(s))if(visible(b))return b;return null}
+async function send(e){for(let i=0;i<100;i++){const b=sendBtn(e)||sendBtn(editor());if(b&&!b.disabled){b.click();return true}await sleep(80)}const f=e?.closest?.('form');if(f?.requestSubmit){try{f.requestSubmit();return true}catch{}}return false}
 async function exec(x){
   if(!x)return;
-  const e=editor();
-  if(!e){status('EDITOR MISSING');toast('ChatGPT composer not found',1);return}
-  const raw=strip(read(e)),ops=collect(raw,x),base=cleanBase(raw),t=prompt(ops,base);
+  if(x.tab==='AI Tools'){insertToken(x);return}
+  const e=editor();if(!e){status('EDITOR MISSING');toast('ChatGPT composer not found',1);return}
+  const t=buildPrompt(x);
   if(!setText(e,t)){status('INSERT FAILED');toast('Could not write to composer',1);return}
-  status(`SENDING ${ops.length} OP`);
-  hide();
+  status('SENDING');hide();
   if(!await send(e)){status('SEND FAILED');toast('Prompt inserted but Send could not be activated.',1)}
 }
 
-function all(){return [...S.m.values()].sort((a,b)=>a.id-b.id)}
-function cats(){
-  const c=[...new Set(all().map(x=>x.category))];
-  c.sort((a,b)=>{
-    if(a==='3D Creative')return -1;
-    if(b==='3D Creative')return 1;
-    return a.localeCompare(b);
-  });
-  return ['All',...c];
-}
 function list(){
-  let a=all();
-  if(S.mode!=='All')a=a.filter(x=>x.category===S.mode);
+  let a=[...S.libs[S.mode].values()].sort((a,b)=>a.id-b.id);
   const q=S.q.trim().toLowerCase().replace(/^\//,'');
-  if(q)a=a.filter(x=>`${x.cmd} ${x.label} ${x.desc} ${x.category}`.toLowerCase().includes(q));
+  if(q)a=a.filter(x=>`${x.cmd} ${x.label} ${x.desc}`.toLowerCase().includes(q));
   return a;
 }
+function findTabForQuery(q){
+  q=String(q||'').toLowerCase();if(!q)return null;
+  const hits=[];
+  for(const t of TABS){for(const x of S.libs[t].values()){const c=x.cmd.slice(1).toLowerCase();if(c===q||c.startsWith(q)){hits.push(t);break}}}
+  return hits.length===1?hits[0]:null;
+}
 
-const CSS=`:host{all:initial}*{box-sizing:border-box}.dock{position:fixed;z-index:2147483647;left:50%;bottom:78px;transform:translateX(-50%);width:min(1080px,calc(100vw - 18px));display:none;color:#f7f5fb;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.dock.on{display:block}.shell{border:1px solid #aa82ff38;border-radius:22px;background:#0b0b0ff5;box-shadow:0 24px 70px #000b;overflow:hidden}.top{display:flex;gap:8px;align-items:center;padding:10px;border-bottom:1px solid #ffffff17}.logo{width:42px;height:42px;border:1px solid #b995ff55;border-radius:12px;background:#2a1848;color:#fff;font-weight:950;cursor:pointer}.brand{min-width:165px}.brand b{display:block;font-size:12px}.brand small{font-size:8px;color:#a6a0ae}.q{flex:1;height:40px;border:1px solid #ffffff17;border-radius:12px;background:#111117;color:#fff;padding:0 12px;outline:none}.ver{font:800 9px ui-monospace,monospace;color:#cdb7ff;white-space:nowrap}.tabs{display:flex;gap:5px;overflow:auto;padding:8px;border-bottom:1px solid #ffffff17}.tab,.btn,.chip{height:28px;border:1px solid #ffffff17;border-radius:9px;background:#15151b;color:#c8c1cf;padding:0 9px;font-size:8px;font-weight:800;white-space:nowrap}.tab{cursor:pointer}.tab.on{background:#6f3bc0;color:#fff;border-color:#b88cff66}.tab.d3{border-color:#2dd4bf55;color:#99f6e4}.tab.d3.on{background:#0f766e;color:#fff;border-color:#5eead4}.list{max-height:540px;overflow:auto;padding:9px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.card{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:8px;align-items:center;min-height:72px;padding:10px;border:1px solid #ffffff17;border-radius:13px;background:#15151b;cursor:pointer}.card:hover{border-color:#a676ff66;background:#1a1721}.card.d3{border-color:#2dd4bf2c;background:#101919}.card.d3:hover{border-color:#5eead477;background:#112020}.num{width:42px;height:34px;display:grid;place-items:center;border-radius:10px;background:#25193a;color:#cdb7ff;font:900 9px ui-monospace,monospace}.card.d3 .num{background:#103c38;color:#99f6e4}.name{font-size:10px;font-weight:900}.desc{font-size:8px;color:#a6a0ae;margin-top:3px;line-height:1.35}.cmd{border:1px solid #9d72df55;border-radius:99px;padding:5px 7px;color:#d9c4ff;font:800 8px ui-monospace,monospace}.card.d3 .cmd{border-color:#2dd4bf55;color:#99f6e4}.foot{display:flex;gap:7px;align-items:center;padding:9px;border-top:1px solid #ffffff17}.chip{display:flex;align-items:center}.ok{color:#8ee2a5}.warn{color:#f0ca77}.bad{color:#ff9da5}.d3chip{color:#99f6e4;border-color:#2dd4bf44}.sp{flex:1}.btn{cursor:pointer;color:#fff}.launcher{position:fixed;right:22px;bottom:78px;z-index:2147483647;width:56px;height:46px;border:1px solid #b88cff55;border-radius:14px;background:#0b0b10;color:#d9c4ff;font-weight:950;box-shadow:0 12px 35px #0009;cursor:pointer}.dock.on~.launcher{display:none}.toast{position:fixed;right:20px;bottom:138px;z-index:2147483647;display:none;max-width:460px;padding:10px 12px;border:1px solid #7acb9155;border-radius:11px;background:#0b0b10;color:#dfe8e1;font:9px Inter,system-ui}.toast.on{display:block}.toast.bad{border-color:#ff777d55;color:#ffb1b5}@media(max-width:760px){.list{grid-template-columns:1fr}.brand{display:none}.ver{display:none}}`;
+const CSS=`:host{all:initial;--ink:#111827;--muted:#64748b;--line:#dfe4ee;--violet:#7c3aed;--panel:rgba(248,250,252,.98)}*{box-sizing:border-box}.panel{position:fixed;z-index:2147483647;right:18px;top:72px;bottom:78px;width:min(980px,calc(100vw - 260px));min-width:720px;display:none;flex-direction:column;overflow:hidden;color:var(--ink);border:1px solid #d8deea;border-radius:22px;background:radial-gradient(620px 220px at 0 0,#ede9fe 0,transparent 65%),radial-gradient(520px 220px at 100% 0,#cffafe 0,transparent 62%),var(--panel);box-shadow:0 28px 80px #0f172a2b;backdrop-filter:blur(18px);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.panel.on{display:flex}.top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 11px;border-bottom:1px solid var(--line);background:#ffffffd9}.brand{display:flex;gap:10px;align-items:center}.logo{width:36px;height:36px;border:0;border-radius:11px;color:#fff;background:linear-gradient(135deg,#7c3aed,#4f46e5 58%,#0891b2);font-weight:950;cursor:pointer}.brand b{display:block;font-size:15px}.brand small{display:block;margin-top:2px;color:#64748b;font-size:8px;font-weight:700}.status{border:1px solid #a7f3d0;background:#ecfdf5;color:#047857;border-radius:999px;padding:6px 9px;font-size:8px;font-weight:900}.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;padding:10px 12px;border-bottom:1px solid var(--line);background:#fff9}.tab{height:36px;border:1px solid #e2e8f0;border-radius:11px;background:#fff;color:#64748b;font-size:9px;font-weight:900;cursor:pointer}.tab.on{border-color:#c4b5fd;background:#f5f3ff;color:#5b21b6;box-shadow:0 0 0 2px #8b5cf612}.tab[data-t="3D"].on{border-color:#99f6e4;background:#ecfdf5;color:#047857}.searchrow{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 12px}.q{height:40px;border:1px solid #d7deea;border-radius:12px;background:#fff;color:#0f172a;padding:0 12px;outline:none;font-size:10px}.q:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px #8b5cf61a}.sync{height:40px;border:1px solid #d7deea;border-radius:12px;background:#fff;color:#334155;padding:0 12px;font-size:9px;font-weight:900;cursor:pointer}.bar{display:flex;align-items:center;justify-content:space-between;padding:0 14px 9px}.title{font-size:13px;font-weight:950}.meta{font-size:8.5px;color:#64748b}.grid{flex:1;overflow:auto;padding:3px 12px 14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-content:start;gap:10px}.card{position:relative;min-height:114px;padding:12px;border:1px solid #dde3ed;border-radius:15px;background:#fff;cursor:pointer;transition:.15s}.card:before{content:"";position:absolute;inset:0 0 auto;height:3px;border-radius:15px 15px 0 0;background:linear-gradient(90deg,#8b5cf6,#22d3ee);opacity:.75}.card:hover{transform:translateY(-2px);border-color:#c4b5fd;box-shadow:0 12px 28px #64748b22}.card[data-tab="3D"]:before{background:linear-gradient(90deg,#10b981,#22d3ee)}.card[data-tab="Flyer"]:before{background:linear-gradient(90deg,#f43f5e,#fb923c)}.card[data-tab="Packaging"]:before{background:linear-gradient(90deg,#059669,#84cc16)}.card[data-tab="Video"]:before{background:linear-gradient(90deg,#2563eb,#7c3aed)}.card[data-tab="AI Tools"]:before{background:linear-gradient(90deg,#0891b2,#2563eb)}.cmd{display:inline-block;border:1px solid #e5e7eb;border-radius:999px;padding:4px 7px;background:#f8fafc;color:#64748b;font:800 8.5px ui-monospace,monospace}.name{margin-top:10px;font-size:12px;font-weight:950}.desc{margin-top:5px;color:#64748b;font-size:9.5px;line-height:1.4}.empty{grid-column:1/-1;padding:30px;border:1px dashed #cbd5e1;border-radius:15px;text-align:center;color:#64748b;font-size:10px}.foot{display:flex;gap:7px;align-items:center;padding:8px 11px;border-top:1px solid var(--line);background:#fff;overflow:auto}.chip{border:1px solid #e2e8f0;border-radius:999px;padding:5px 8px;background:#f8fafc;color:#64748b;font:800 7.5px ui-monospace,monospace;white-space:nowrap}.launcher{position:fixed;right:20px;bottom:88px;z-index:2147483647;width:46px;height:46px;border:1px solid #c4b5fd;border-radius:14px;background:linear-gradient(145deg,#7c3aed,#4f46e5 55%,#0891b2);color:#fff;box-shadow:0 12px 32px #7c3aed40;font-weight:950;cursor:pointer}.panel.on~.launcher{display:none}.toast{position:fixed;right:20px;bottom:145px;z-index:2147483647;display:none;max-width:520px;padding:10px 12px;border:1px solid #7acb9155;border-radius:11px;background:#111827;color:#f8fafc;font:9px Inter,system-ui}.toast.on{display:block}.toast.bad{border-color:#fb7185}@media(max-width:1050px){.panel{right:8px;width:calc(100vw - 16px);min-width:0}.tabs{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.grid{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(2,1fr)}}`;
 
 function mount(){
-  if(S.dock)return;
-  S.host=document.createElement('div');
-  document.documentElement.appendChild(S.host);
-  S.sh=S.host.attachShadow({mode:'open'});
-  S.sh.innerHTML=`<style>${CSS}</style><div class="dock"><div class="shell"><div class="top"><button class="logo">V1</button><div class="brand"><b>Virag V1.1</b><small>100 Visual Operators + Dedicated 3D</small></div><input class="q" placeholder="Search /cgihero, /billboardcgi, /lowangle…"><div class="ver">v${V}</div></div><div class="tabs"></div><div class="list"></div><div class="foot"><span class="chip health warn">BOOTING</span><span class="chip codebook">Core ?</span><span class="chip d3chip">3D ?</span><span class="sp"></span><button class="btn sync">Sync</button></div></div></div><button class="launcher">V1</button><div class="toast"></div>`;
-  S.dock=S.sh.querySelector('.dock');
-  S.toast=S.sh.querySelector('.toast');
-  S.sh.querySelector('.launcher').onclick=show;
-  S.sh.querySelector('.logo').onclick=hide;
-  S.sh.querySelector('.sync').onclick=()=>sync(true);
-  const q=S.sh.querySelector('.q');
-  q.oninput=()=>{S.q=q.value;S.mode='All';render()};
-  q.onkeydown=e=>{
-    if(e.key==='Enter'){
-      const x=S.m.get(key(q.value))||list()[0];
-      if(x){e.preventDefault();exec(x)}
-    }
-    if(e.key==='Escape')hide();
-  };
+  if(S.panel)return;
+  S.host=document.createElement('div');document.documentElement.appendChild(S.host);S.sh=S.host.attachShadow({mode:'open'});
+  S.sh.innerHTML=`<style>${CSS}</style><div class="panel"><div class="top"><div class="brand"><button class="logo">V</button><div><b>Virag Creative OS</b><small>SIX CLEAN LIBRARIES · NO MIXED WORKSPACES</small></div></div><div class="status">v${V} · READY</div></div><div class="tabs"></div><div class="searchrow"><input class="q" placeholder="Search inside Creative…"><button class="sync">SYNC</button></div><div class="bar"><div class="title"></div><div class="meta"></div></div><div class="grid"></div><div class="foot"></div></div><button class="launcher">V</button><div class="toast"></div>`;
+  S.panel=S.sh.querySelector('.panel');S.toast=S.sh.querySelector('.toast');
+  S.sh.querySelector('.launcher').onclick=show;S.sh.querySelector('.logo').onclick=hide;S.sh.querySelector('.sync').onclick=()=>sync(true);
+  const q=S.sh.querySelector('.q');q.oninput=()=>{S.q=q.value;render()};q.onkeydown=e=>{if(e.key==='Escape')hide();if(e.key==='Enter'){const x=list()[0];if(x){e.preventDefault();exec(x)}}};
   render();
 }
-function status(s){
-  mount();
-  const e=S.sh.querySelector('.health');
-  e.textContent=s;
-  e.className='chip health '+(/100 CORE \+ \d+ 3D · LIVE/.test(s)?'ok':/FAILED|MISSING/.test(s)?'bad':'warn');
-}
-function toast(m,b=0){
-  mount();
-  const e=S.toast;
-  e.textContent=m;
-  e.className='toast on'+(b?' bad':'');
-  clearTimeout(toast.t);
-  toast.t=setTimeout(()=>e.className='toast',5000);
-}
+function status(s){mount();S.sh.querySelector('.status').textContent=`v${V} · ${s}`}
+function toast(m,b=0){mount();const e=S.toast;e.textContent=m;e.className='toast on'+(b?' bad':'');clearTimeout(toast.t);toast.t=setTimeout(()=>e.className='toast',5000)}
 function render(){
-  if(!S.dock)return;
-  S.sh.querySelector('.codebook').textContent=`Core ${S.baseVer}`;
-  S.sh.querySelector('.d3chip').textContent=`3D ${S.d3Ver} · ${S.d3.size}`;
-  const tabs=S.sh.querySelector('.tabs');
-  tabs.innerHTML='';
-  for(const c of cats()){
-    const b=document.createElement('button');
-    b.className='tab'+(c==='3D Creative'?' d3':'')+(S.mode===c?' on':'');
-    b.textContent=c;
-    b.onclick=()=>{S.mode=c;S.q='';S.sh.querySelector('.q').value='';render()};
-    tabs.appendChild(b);
-  }
-  const box=S.sh.querySelector('.list');
-  box.innerHTML='';
-  for(const x of list()){
-    const c=document.createElement('div');
-    c.className='card'+(x.category==='3D Creative'?' d3':'');
-    c.innerHTML='<div class="num"></div><div><div class="name"></div><div class="desc"></div></div><div class="cmd"></div>';
-    c.querySelector('.num').textContent=x.id>=200?`3D${x.id-200}`:String(x.id).padStart(2,'0');
-    c.querySelector('.name').textContent=x.label;
-    c.querySelector('.desc').textContent=x.desc;
-    c.querySelector('.cmd').textContent=x.cmd;
-    c.onmousedown=e=>e.preventDefault();
-    c.onclick=()=>exec(x);
-    box.appendChild(c);
-  }
+  if(!S.panel)return;
+  const tabs=S.sh.querySelector('.tabs');tabs.innerHTML='';
+  for(const t of TABS){const b=document.createElement('button');b.className='tab'+(S.mode===t?' on':'');b.dataset.t=t;b.textContent=t;b.onclick=()=>{S.mode=t;S.q='';const q=S.sh.querySelector('.q');q.value='';q.placeholder=`Search inside ${t}…`;render()};tabs.appendChild(b)}
+  const a=list();S.sh.querySelector('.title').textContent=S.mode;S.sh.querySelector('.meta').textContent=`Library ${S.vers[S.mode]} · ${S.libs[S.mode].size} tools`;
+  const g=S.sh.querySelector('.grid');g.innerHTML='';
+  for(const x of a){const c=document.createElement('div');c.className='card';c.dataset.tab=x.tab;c.innerHTML='<span class="cmd"></span><div class="name"></div><div class="desc"></div>';c.querySelector('.cmd').textContent=x.cmd;c.querySelector('.name').textContent=x.label;c.querySelector('.desc').textContent=x.desc;c.onmousedown=e=>e.preventDefault();c.onclick=()=>exec(x);g.appendChild(c)}
+  if(!a.length)g.innerHTML='<div class="empty">No tools found in this library.</div>';
+  const f=S.sh.querySelector('.foot');f.innerHTML='';for(const t of TABS){const c=document.createElement('span');c.className='chip';c.textContent=`${t} ${S.vers[t]}`;f.appendChild(c)}
 }
-function show(){
-  mount();
-  S.dock.classList.add('on');
-  setTimeout(()=>S.sh.querySelector('.q')?.focus({preventScroll:true}),0);
-}
-function hide(){S.dock?.classList.remove('on')}
+function show(){mount();S.panel.classList.add('on');setTimeout(()=>S.sh.querySelector('.q')?.focus({preventScroll:true}),0)}
+function hide(){S.panel?.classList.remove('on')}
 
 document.addEventListener('input',ev=>{
-  const t=ev.target;
-  if(!(t?.tagName==='TEXTAREA'||t?.isContentEditable||t?.closest?.('[contenteditable="true"]')))return;
+  const t=ev.target;if(!(t?.tagName==='TEXTAREA'||t?.isContentEditable||t?.closest?.('[contenteditable="true"]')))return;
   const e=t.tagName==='TEXTAREA'||t.isContentEditable?t:t.closest('[contenteditable="true"]');
-  const m=read(e).match(/(?:^|\n)\s*\/([A-Za-z0-9_-]*)$/);
-  if(!m)return;
-  S.q=m[1]||'';
-  S.mode='All';
-  show();
-  S.sh.querySelector('.q').value=S.q;
-  render();
+  const m=read(e).match(/(?:^|\n)\s*\/([A-Za-z0-9_-]*)$/);if(!m)return;
+  mount();S.q=m[1]||'';const inferred=findTabForQuery(S.q);if(inferred)S.mode=inferred;show();const q=S.sh.querySelector('.q');q.value=S.q;q.placeholder=`Search inside ${S.mode}…`;render();
 },true);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&S.panel?.classList.contains('on'))hide()},true);
 
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&S.dock?.classList.contains('on'))hide();
-},true);
-
-(window.requestIdleCallback||((f)=>setTimeout(f,400)))(()=>{
-  mount();
-  status(`${S.base.size} CORE + ${S.d3.size} 3D · ${S.src}`);
-  sync(false);
-});
-
+(window.requestIdleCallback||((f)=>setTimeout(f,450)))(()=>{mount();status('READY');sync(false)});
 })();
