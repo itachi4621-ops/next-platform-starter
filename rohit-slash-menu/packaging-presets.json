@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-09-03T11:03:00+05:30",
+  "name": "Virag Packaging Library",
+  "commandCount": 10,
+  "mode": "packaging-only",
+  "principles": [
+    "Use only the current packaging brief, current composer text and current uploads.",
+    "Design the package, label or form-factor itself; do not turn the task into a social post or flyer unless explicitly requested.",
+    "Preserve any explicitly locked package silhouette, dimensions, cap/lid, structure, logo and mandatory visible facts.",
+    "Use print-aware hierarchy, safe margins, curvature/seam awareness, material/finish logic and shelf readability.",
+    "Never invent ingredients, nutrition, certifications, legal/regulatory copy, net weight, claims or compliance marks.",
+    "If the user asks only for a label redesign, do not silently change the container form."
+  ],
+  "commands": [
+    {"id":301,"category":"Packaging","cmd":"/packaging","label":"Packaging Design","desc":"Complete packaging design for the current product.","instruction":"Design the actual packaging for the current product using supplied brand/product facts only. Build a professional front-facing hierarchy, material/finish direction and shelf-ready visual system while preserving any locked form factor."},
+    {"id":302,"category":"Packaging","cmd":"/label","label":"Label Design","desc":"Redesign the product label without changing container form.","instruction":"Design or redesign the current product label only. Preserve the container geometry unless explicitly asked otherwise. Build clear brand/product hierarchy, print-aware spacing and realistic curvature/seam behavior."},
+    {"id":303,"category":"Packaging","cmd":"/jarpack","label":"Jar Packaging","desc":"Packaging system optimized for jars/tubs.","instruction":"Create a jar/tub packaging design for the current product with realistic wrap geometry, front-panel hierarchy, cap/lid coordination and shelf readability. Do not alter supplied jar proportions unless explicitly requested."},
+    {"id":304,"category":"Packaging","cmd":"/bottlepack","label":"Bottle Packaging","desc":"Bottle label and material system.","instruction":"Create a bottle packaging design using the current product facts and brand cues. Account for bottle curvature, label panel visibility, cap relationship and practical front/back hierarchy without inventing regulatory content."},
+    {"id":305,"category":"Packaging","cmd":"/pouchpack","label":"Pouch Packaging","desc":"Stand-up pouch or flexible-pack design.","instruction":"Create a flexible pouch packaging design with realistic seals, gusset logic, safe print zones and strong shelf hierarchy. Preserve supplied product facts and avoid unsupported claims."},
+    {"id":306,"category":"Packaging","cmd":"/boxpack","label":"Box Packaging","desc":"Folding-carton or rigid-box visual system.","instruction":"Create a box packaging design with coherent front/side/back panel logic, brand hierarchy, print-safe spacing and realistic material/finish direction. Do not invent mandatory product information."},
+    {"id":307,"category":"Packaging","cmd":"/tubepack","label":"Tube Packaging","desc":"Tube-form packaging and label layout.","instruction":"Create a tube packaging design with realistic cylindrical/flattened print behavior, cap relationship and front-panel readability. Preserve current product/brand facts exactly."},
+    {"id":308,"category":"Packaging","cmd":"/canpack","label":"Can Packaging","desc":"Can/wrap packaging with 360-degree label logic.","instruction":"Create a can packaging design with strong front read, realistic wrap continuity, top/bottom relationship and material finish. Use only supplied factual copy."},
+    {"id":309,"category":"Packaging","cmd":"/wrapperpack","label":"Wrapper Design","desc":"Wrapper/sleeve packaging for bars, food or compact products.","instruction":"Create a wrapper or sleeve packaging design with realistic folds/seams, strong front hierarchy and brand-fit materials. Preserve product facts and do not invent ingredients or claims."},
+    {"id":310,"category":"Packaging","cmd":"/packrefresh","label":"Packaging Refresh","desc":"Modernize existing packaging while preserving recognition.","instruction":"Refresh the current existing package design without losing brand/product recognition. Improve hierarchy, typography, spacing, materials and shelf impact while preserving supplied facts, logo and locked structural elements."}
+  ]
+}
