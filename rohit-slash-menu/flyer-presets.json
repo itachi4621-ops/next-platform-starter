@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-09-03T11:01:00+05:30",
+  "name": "Virag Flyer Library",
+  "commandCount": 10,
+  "mode": "flyer-only",
+  "principles": [
+    "Use only the current flyer brief, current composer text and current uploads.",
+    "Never reuse an older flyer topic, campaign, offer, festival, headline or CTA unless explicitly referenced.",
+    "Create one standalone finished flyer unless another quantity is explicitly requested.",
+    "Prioritize one dominant hook, one clear CTA when supported, strong hierarchy and 2–3 second readability.",
+    "Preserve supplied facts exactly and never invent prices, dates, offers, rewards, claims or event details.",
+    "Food/restaurant flyers should feel appetizing and brand-specific rather than template-like.",
+    "Repeated requests must materially change layout, hero treatment, typography, visual story and composition."
+  ],
+  "commands": [
+    {"id":201,"category":"Flyer","cmd":"/flyer","label":"Campaign Flyer","desc":"Best-fit promotional flyer for the current brief.","instruction":"Create one finished campaign flyer for the current brief only. Use one dominant hook, clear hierarchy, strong brand/category fit and one CTA when supported. Do not reuse any older flyer topic or campaign."},
+    {"id":202,"category":"Flyer","cmd":"/promoflyer","label":"Promo Flyer","desc":"General promotion with strong campaign hierarchy.","instruction":"Create one promotional flyer for the current offer/product/service using only supplied facts. Make the promotion easy to understand in 2–3 seconds and avoid generic template styling."},
+    {"id":203,"category":"Flyer","cmd":"/offerflyer","label":"Offer Flyer","desc":"Offer-led flyer without inventing deal details.","instruction":"Create one offer-led flyer using only the exact supplied discount, price, bundle or promotion details. If no factual offer is supplied, do not invent one; instead build the visual structure around the current message."},
+    {"id":204,"category":"Flyer","cmd":"/eventflyer","label":"Event Flyer","desc":"Event-focused flyer with date/time/location clarity.","instruction":"Create one event flyer using the exact supplied event name, date, time, location and participant details. Prioritize event hierarchy, atmosphere and fast readability without inventing missing event information."},
+    {"id":205,"category":"Flyer","cmd":"/restaurantflyer","label":"Restaurant Flyer","desc":"Restaurant promotion with appetite-led art direction.","instruction":"Create one restaurant flyer from the current food/restaurant brief. Use appetizing hero food, brand-fit environment and clear message hierarchy. Avoid generic menu-board styling unless requested."},
+    {"id":206,"category":"Flyer","cmd":"/foodflyer","label":"Food Flyer","desc":"Dish/product-led food promotion.","instruction":"Create one food-focused promotional flyer using the current dish/product image as the visual hero. Preserve visible food identity and use premium appetite cues, strong typography and concise factual copy."},
+    {"id":207,"category":"Flyer","cmd":"/loyaltyflyer","label":"Loyalty Flyer","desc":"Membership/reward communication with clear value.","instruction":"Create one loyalty or membership flyer using only supplied reward mechanics and facts. Make participation and value easy to understand while avoiding invented benefits or conditions."},
+    {"id":208,"category":"Flyer","cmd":"/launchflyer","label":"Launch Flyer","desc":"New launch announcement with strong reveal energy.","instruction":"Create one launch flyer for the current product/service/event. Build anticipation and a strong reveal hierarchy using only supplied launch facts. Do not invent launch dates, availability or claims."},
+    {"id":209,"category":"Flyer","cmd":"/festivalflyer","label":"Festival Flyer","desc":"Festival campaign adapted to the current brand.","instruction":"Create one festival flyer only when the current brief explicitly names or clearly requires a festival/occasion. Adapt the visual language to the brand and avoid generic cliché decoration or pulling an old festival from chat history."},
+    {"id":210,"category":"Flyer","cmd":"/announcementflyer","label":"Announcement Flyer","desc":"Clear announcement with strong message hierarchy.","instruction":"Create one announcement flyer for the current supplied message. Make the announcement the dominant readable element, support it with relevant brand visuals, and preserve all factual details exactly."}
+  ]
+}
