@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      1.2.1
-// @description  Virag V1.2.1 — six clean libraries with hard-refreshed CGI + 3D v2 concept/theme filtering.
+// @version      9.0.0
+// @description  Virag V9 — six clean libraries with CGI + 3D v2 concept/theme filtering and monotonic update versioning.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -16,7 +16,7 @@
 // ==/UserScript==
 (()=>{'use strict';
 
-const V='1.2.1';
+const V='9.0.0';
 const ROOT='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/';
 const U={
   Creative:ROOT+'creative-presets.json',
@@ -28,7 +28,7 @@ const U={
 };
 const TABS=['Creative','Flyer','3D','Packaging','Video','AI Tools'];
 const GROUPS=['All','CGI Concepts','Environment Themes'];
-const CACHE='virag.v121.';
+const CACHE='virag.v900.';
 const MODE={
   Creative:'STATIC CREATIVE MODE. Create one finished standalone static advertising/social creative for the current brief. Use deliberate hierarchy, a strong focal idea, polished typography when useful and category-fit art direction. Do not answer with only a prompt or plan.',
   Flyer:'FLYER MODE. Create one finished standalone flyer for the current brief only. Prioritize one dominant hook, clear hierarchy, concise factual copy and one CTA when supported. Never reuse an older flyer topic.',
