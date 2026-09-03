@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-09-03T11:05:00+05:30",
+  "name": "Virag Video Library",
+  "commandCount": 12,
+  "mode": "video-only",
+  "principles": [
+    "Use only the current video brief, current composer text and current uploads.",
+    "Never import an older script, product, campaign or visual story unless explicitly referenced.",
+    "Preserve product/package identity and supplied person identity throughout every shot.",
+    "Keep motion physically believable: no random morphing, broken hands, impossible object transitions or product drift.",
+    "Default social video should feel human-paced, coherent and commercially polished rather than over-edited.",
+    "Do not invent product claims, usage instructions, ingredients, performance results or factual copy.",
+    "When a user specifies Seedance, duration, ratio or voice style, obey those current instructions exactly."
+  ],
+  "commands": [
+    {"id":401,"category":"Video","cmd":"/video","label":"Fresh Video Concept","desc":"Complete fresh AI video concept with shot flow.","instruction":"Create a complete premium video concept for the current brief and current upload. Build a coherent shot-by-shot flow with a strong opening, visual progression, natural camera movement, realistic motion and a clean ending. Default to 15 seconds 9:16 only when no duration/ratio is specified."},
+    {"id":402,"category":"Video","cmd":"/productvideo","label":"Product Video","desc":"Cinematic product advertising video.","instruction":"Create a premium product advertising video using the current product as the exact visual reference. Preserve package shape, label, logo, colors and proportions in every shot. Use varied but coherent angles and a strong final hero frame."},
+    {"id":403,"category":"Video","cmd":"/cgivideo","label":"CGI Product Video","desc":"High-end CGI product animation.","instruction":"Create a high-end CGI product advertising video using the exact current product. Use physically believable 3D materials, reflections, shadows, camera movement and product motion. Keep every frame product-accurate and avoid random morphing or repetitive pedestal shots."},
+    {"id":404,"category":"Video","cmd":"/reelvideo","label":"Reel Video","desc":"High-retention Instagram/Reel concept.","instruction":"Create a high-retention vertical Reel concept for the current brief. Use a strong first-second hook, coherent short shots, clean transitions, natural pacing and a satisfying final beat. Avoid random effects or overly fast robotic editing."},
+    {"id":405,"category":"Video","cmd":"/ugcvideo","label":"UGC Video","desc":"Natural phone-native creator video.","instruction":"Create a believable phone-native UGC video for the current product/brief. Keep creator behavior, speech rhythm, framing, product handling and room lighting natural. Do not invent personal testimonial results or unsupported product claims."},
+    {"id":406,"category":"Video","cmd":"/productreveal","label":"Product Reveal","desc":"Premium reveal sequence with anticipation and payoff.","instruction":"Create a premium product reveal sequence. Build anticipation through light, camera, environment or material interaction, reveal the exact product progressively, and finish on a clean hero frame without changing package geometry or label."},
+    {"id":407,"category":"Video","cmd":"/unboxing","label":"Unboxing","desc":"Natural unboxing-style video flow.","instruction":"Create a natural unboxing video for the current supplied product. Show believable hands, package interaction, opening, product reveal, close-up details and final product presentation. Avoid impossible packaging behavior or fake reactions."},
+    {"id":408,"category":"Video","cmd":"/testimonial","label":"Testimonial","desc":"Creator testimonial structure without fabricated results.","instruction":"Create a natural testimonial-style video structure for the current product/service. Use only supplied factual experience/claims. If no real testimonial outcome is supplied, write it as creator-style product commentary rather than fabricating results."},
+    {"id":409,"category":"Video","cmd":"/motionprompt","label":"Motion Prompt","desc":"Add controlled motion to an existing image.","instruction":"Write precise motion direction for the current image. Preserve layout, typography, product shape and locked elements unless the user explicitly asks them to move. Add only physically believable subject/environment/camera motion."},
+    {"id":410,"category":"Video","cmd":"/cameramotion","label":"Camera Motion","desc":"Practical cinematic camera movement prompt.","instruction":"Create practical camera movement direction for the current image/scene. Specify movement path, speed, lens feel, stabilization and parallax while keeping subject geometry stable and avoiding warping or artificial zoom artifacts."},
+    {"id":411,"category":"Video","cmd":"/storyboard","label":"Storyboard","desc":"Shot-by-shot visual plan for the current video.","instruction":"Create a shot-by-shot storyboard for the current video brief with shot purpose, framing, action, camera movement, continuity and transition logic. Keep the current product/person consistent across all shots."},
+    {"id":412,"category":"Video","cmd":"/seedance","label":"Seedance Script","desc":"Production-ready Seedance prompt/script.","instruction":"Create a production-ready Seedance prompt for the current brief. Respect the current requested duration, aspect ratio, casting, voice, product locks and style. Use coherent shot timing, realistic motion and concise instructions that reduce identity/product drift and text errors."}
+  ]
+}
