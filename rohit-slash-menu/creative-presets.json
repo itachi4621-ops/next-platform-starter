@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.0.0",
-  "updatedAt": "2026-09-03T10:58:00+05:30",
+  "libraryVersion": "1.1.0",
+  "updatedAt": "2026-09-07T00:00:00Z",
   "name": "Virag Creative Library",
   "commandCount": 14,
   "mode": "static-creative-only",
   "principles": [
+    "For every new or fresh request, start from a blank canvas and exclude all prior assistant-generated images from image-generation inputs. Earlier outputs are negative examples only unless the user explicitly requests a redesign of one.",
     "Use only the current brief, current composer text and current uploads for the current run.",
     "Do not import an older campaign, festival, offer, topic, headline or product story unless the user explicitly references it.",
     "One command produces one standalone finished static creative unless another quantity is explicitly requested.",
@@ -15,19 +16,117 @@
     "Never invent prices, offers, certifications, nutrition, ingredients, specs, medical/performance claims, awards, testimonials or hidden facts."
   ],
   "commands": [
-    {"id":101,"category":"Creative","cmd":"/creative","label":"Fresh Creative","desc":"Best-fit fresh static campaign/social creative.","instruction":"Create one finished static creative for the current brief and current upload. Choose the strongest brand/category-fit art direction automatically. Build a clear focal idea, strong hierarchy and polished commercial finish. Do not reuse an older topic or recent layout."},
-    {"id":102,"category":"Creative","cmd":"/surprise","label":"Surprise Me","desc":"Unexpected but brand-relevant fresh concept.","instruction":"Create one unexpected static creative direction for the current subject. Make one memorable visual idea that feels fresh and brand-relevant, while preserving source accuracy and avoiding gimmicks that do not fit the category."},
-    {"id":103,"category":"Creative","cmd":"/variation","label":"Fresh Variation","desc":"A genuinely different concept, not a recolor.","instruction":"Create one genuinely new variation for the current brief. Change composition, hero scale, camera/crop, environment, typography, graphic devices, lighting and visual story enough that it reads as a new concept rather than a recolor or minor rearrangement."},
-    {"id":104,"category":"Creative","cmd":"/redesign","label":"Redesign","desc":"Rebuild an existing post with new art direction.","instruction":"Redesign the current supplied post/design into one stronger finished creative. Preserve factual content and important brand elements unless the user asks to change them, but rebuild hierarchy, composition, typography, spacing and visual system with a clearly different art direction."},
-    {"id":105,"category":"Creative","cmd":"/productad","label":"Product Ad","desc":"Premium product-led advertising creative.","instruction":"Create one premium static product advertisement using the current product as the exact visual hero. Preserve packaging and label accuracy. Build a strong commercial idea, useful headline space and polished brand-fit environment without defaulting to a plain product shot."},
-    {"id":106,"category":"Creative","cmd":"/producthero","label":"Product Hero","desc":"Hero-led product composition with strong hierarchy.","instruction":"Create one static hero creative centered on the current product. Use premium scale, framing, depth, typography and supporting elements to make the product dominant while keeping the overall design campaign-ready rather than catalogue-like."},
-    {"id":107,"category":"Creative","cmd":"/social","label":"Social Post","desc":"Mobile-first Instagram/LinkedIn-style static creative.","instruction":"Create one mobile-first static social creative for the current brief. Prioritize immediate 2–3 second readability, clear hierarchy, strong hook when supported, brand-fit typography and a finished feed-ready composition."},
-    {"id":108,"category":"Creative","cmd":"/editorial","label":"Editorial Creative","desc":"Magazine/editorial advertising language.","instruction":"Create one static editorial-style advertising creative for the current subject. Use sophisticated composition, typography, cropping, negative space and image hierarchy while preserving current product/person/brand accuracy."},
-    {"id":109,"category":"Creative","cmd":"/poster","label":"Campaign Poster","desc":"Bold standalone poster with one memorable idea.","instruction":"Create one bold static campaign poster for the current brief. Use one dominant visual idea, strong typography hierarchy and clear distance readability. Keep factual copy accurate and avoid clutter."},
-    {"id":110,"category":"Creative","cmd":"/ecommerce","label":"E-commerce Creative","desc":"Clean conversion-focused product creative.","instruction":"Create one clean conversion-focused static e-commerce creative. Keep the product exact, emphasize visual clarity and useful value communication from supplied facts, and maintain a polished branded look without inventing claims or offer data."},
-    {"id":111,"category":"Creative","cmd":"/linkedincreative","label":"LinkedIn Creative","desc":"Professional static creative designed for LinkedIn feed.","instruction":"Create one professional LinkedIn-ready static creative for the current topic. Use clean hierarchy, credible brand language, restrained typography and strong readability. Avoid consumer-ad clutter unless the brief specifically needs it."},
-    {"id":112,"category":"Creative","cmd":"/typographycreative","label":"Typography-Led","desc":"Type becomes the main visual device.","instruction":"Create one static typography-led campaign creative. Make concise supplied or non-factual campaign wording the dominant visual device while keeping the current subject/product integrated clearly. Typography must be intentional, highly readable and brand-fit."},
-    {"id":113,"category":"Creative","cmd":"/minimalcreative","label":"Minimal Creative","desc":"Premium negative-space composition with restraint.","instruction":"Create one minimal static creative using controlled negative space, precise hierarchy, clean framing and a small number of strong visual elements. Keep it premium and intentional, not empty or generic."},
-    {"id":114,"category":"Creative","cmd":"/boldcreative","label":"Bold Creative","desc":"High-impact composition with assertive visual hierarchy.","instruction":"Create one bold static campaign creative with confident scale, strong typography and assertive composition. Keep the design controlled and readable; do not sacrifice product accuracy or factual correctness for impact."}
+    {
+      "id": 101,
+      "category": "Creative",
+      "cmd": "/creative",
+      "label": "Fresh Creative",
+      "desc": "Blank-canvas campaign creative with a genuinely new concept family.",
+      "instruction": "Create one finished static creative from a blank canvas using only the current-turn user uploads. Do not include or imitate any earlier generated image, background, composition or prop setup. Choose a genuinely new campaign concept family and build a clear focal idea, human-designed hierarchy, real typography and polished commercial finish. Reject background swaps and routine category scenes."
+    },
+    {
+      "id": 102,
+      "category": "Creative",
+      "cmd": "/surprise",
+      "label": "Surprise Me",
+      "desc": "Unexpected blank-canvas concept from a different campaign family.",
+      "instruction": "Start from a blank canvas and create one unexpected but brand-relevant static campaign concept using only current-turn user uploads. Exclude every previous generated output from the generation inputs. Use an original visual metaphor or graphic mechanism, preserve exact source identity, and avoid routine category props, generic AI spectacle and background-only variation."
+    },
+    {
+      "id": 103,
+      "category": "Creative",
+      "cmd": "/variation",
+      "label": "Fresh Variation",
+      "desc": "Independent blank-canvas concept—not a remix, recolor or background swap.",
+      "instruction": "Create one independent blank-canvas concept for the current brief. Do not use the previous output as an image reference and do not preserve its background, camera, composition, props, lighting or type structure. Move to a different campaign family and rebuild the core visual idea, spatial logic, hero placement, graphic system and typography from zero while preserving only the exact product, brand facts and explicit current brief."
+    },
+    {
+      "id": 104,
+      "category": "Creative",
+      "cmd": "/redesign",
+      "label": "Redesign",
+      "desc": "Explicitly rebuild a supplied earlier design with new art direction.",
+      "instruction": "This is the explicit edit exception: redesign only the specific image that the user currently supplies or clearly identifies for revision. Preserve factual content and immutable product identity, but rebuild hierarchy, composition, typography, spacing and visual system with a clearly different art direction. Do not pull in any other earlier generated image."
+    },
+    {
+      "id": 105,
+      "category": "Creative",
+      "cmd": "/productad",
+      "label": "Product Ad",
+      "desc": "Premium product-led advertising creative.",
+      "instruction": "Create one premium static product advertisement using the current product as the exact visual hero. Preserve packaging and label accuracy. Build a strong commercial idea, useful headline space and polished brand-fit environment without defaulting to a plain product shot."
+    },
+    {
+      "id": 106,
+      "category": "Creative",
+      "cmd": "/producthero",
+      "label": "Product Hero",
+      "desc": "Hero-led product composition with strong hierarchy.",
+      "instruction": "Create one static hero creative centered on the current product. Use premium scale, framing, depth, typography and supporting elements to make the product dominant while keeping the overall design campaign-ready rather than catalogue-like."
+    },
+    {
+      "id": 107,
+      "category": "Creative",
+      "cmd": "/social",
+      "label": "Social Post",
+      "desc": "Mobile-first Instagram/LinkedIn-style static creative.",
+      "instruction": "Create one mobile-first static social creative for the current brief. Prioritize immediate 2–3 second readability, clear hierarchy, strong hook when supported, brand-fit typography and a finished feed-ready composition."
+    },
+    {
+      "id": 108,
+      "category": "Creative",
+      "cmd": "/editorial",
+      "label": "Editorial Creative",
+      "desc": "Magazine/editorial advertising language.",
+      "instruction": "Create one static editorial-style advertising creative for the current subject. Use sophisticated composition, typography, cropping, negative space and image hierarchy while preserving current product/person/brand accuracy."
+    },
+    {
+      "id": 109,
+      "category": "Creative",
+      "cmd": "/poster",
+      "label": "Campaign Poster",
+      "desc": "Bold standalone poster with one memorable idea.",
+      "instruction": "Create one bold static campaign poster for the current brief. Use one dominant visual idea, strong typography hierarchy and clear distance readability. Keep factual copy accurate and avoid clutter."
+    },
+    {
+      "id": 110,
+      "category": "Creative",
+      "cmd": "/ecommerce",
+      "label": "E-commerce Creative",
+      "desc": "Clean conversion-focused product creative.",
+      "instruction": "Create one clean conversion-focused static e-commerce creative. Keep the product exact, emphasize visual clarity and useful value communication from supplied facts, and maintain a polished branded look without inventing claims or offer data."
+    },
+    {
+      "id": 111,
+      "category": "Creative",
+      "cmd": "/linkedincreative",
+      "label": "LinkedIn Creative",
+      "desc": "Professional static creative designed for LinkedIn feed.",
+      "instruction": "Create one professional LinkedIn-ready static creative for the current topic. Use clean hierarchy, credible brand language, restrained typography and strong readability. Avoid consumer-ad clutter unless the brief specifically needs it."
+    },
+    {
+      "id": 112,
+      "category": "Creative",
+      "cmd": "/typographycreative",
+      "label": "Typography-Led",
+      "desc": "Type becomes the main visual device.",
+      "instruction": "Create one static typography-led campaign creative. Make concise supplied or non-factual campaign wording the dominant visual device while keeping the current subject/product integrated clearly. Typography must be intentional, highly readable and brand-fit."
+    },
+    {
+      "id": 113,
+      "category": "Creative",
+      "cmd": "/minimalcreative",
+      "label": "Minimal Creative",
+      "desc": "Premium negative-space composition with restraint.",
+      "instruction": "Create one minimal static creative using controlled negative space, precise hierarchy, clean framing and a small number of strong visual elements. Keep it premium and intentional, not empty or generic."
+    },
+    {
+      "id": 114,
+      "category": "Creative",
+      "cmd": "/boldcreative",
+      "label": "Bold Creative",
+      "desc": "High-impact composition with assertive visual hierarchy.",
+      "instruction": "Create one bold static campaign creative with confident scale, strong typography and assertive composition. Keep the design controlled and readable; do not sacrifice product accuracy or factual correctness for impact."
+    }
   ]
 }
