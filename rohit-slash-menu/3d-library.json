@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "5.2.0",
-  "updatedAt": "2026-09-09T09:45:00Z",
+  "libraryVersion": "5.3.0",
+  "updatedAt": "2026-09-09T10:25:00Z",
   "name": "Virag 3D Studio",
   "enabled": true,
   "commandCount": 100,
-  "mode": "instagram-cgi-creative",
+  "mode": "instagram-content-with-3d-technique",
   "compatibility": {
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
@@ -21,41 +21,38 @@
   "sections": [
     {
       "name": "Signature CGI Concepts",
-      "version": "5.2.0",
+      "version": "5.3.0",
       "file": "3d-signature.json",
       "commands": 20
     },
     {
       "name": "FOOH & Experiential",
-      "version": "5.2.0",
+      "version": "5.3.0",
       "file": "3d-fooh.json",
       "commands": 20
     },
     {
       "name": "Transformations & Kinetics",
-      "version": "5.2.0",
+      "version": "5.3.0",
       "file": "3d-transform.json",
       "commands": 20
     },
     {
       "name": "Materials & Simulation",
-      "version": "5.2.0",
+      "version": "5.3.0",
       "file": "3d-materials.json",
       "commands": 20
     },
     {
       "name": "Environment Themes",
-      "version": "5.2.0",
+      "version": "5.3.0",
       "file": "3d-environments.json",
       "commands": 20
     }
   ],
   "globalRules": [
-    "Create a finished 4:5 Instagram CGI post, not a raw render.",
-    "Preserve the exact supplied product.",
-    "Use current-turn references only.",
-    "Every requested result is a separate image.",
-    "UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling.",
-    "3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results."
+    "Default every 3D command to a finished 4:5 Instagram content design unless Native Tool Output is selected.",
+    "CGI is only the visual mechanism; short readable copy, information modules and 2D graphic layers define the final creative.",
+    "Preserve the exact product and return each output separately."
   ]
 }
