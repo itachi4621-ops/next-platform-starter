@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "libraryVersion": "5.1.0",
+  "libraryVersion": "5.2.0",
   "name": "Virag CGI + 3D — Signature CGI Concepts",
   "section": "Signature CGI Concepts",
   "commandCount": 20,
@@ -13,7 +13,8 @@
     "Keep impossible scenes physically convincing through perspective, scale cues, support/contact, weight, shadows, reflections, atmospheric depth and environmental lighting.",
     "Never invent prices, offers, ingredients, nutrition, certifications, specifications, medical/performance claims, awards, partnerships, sponsorships or hidden product internals.",
     "Same preset means the same mechanism, not the same layout. Vary composition, hero scale, camera, environment, depth, lighting, props and typography across repeated runs.",
-    "If no format is specified, compose as a premium mobile-first 4:5 advertising key visual with room for concise non-factual campaign typography when useful."
+    "If no format is specified, compose as a premium mobile-first 4:5 advertising key visual with room for concise non-factual campaign typography when useful.",
+    "UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
   ],
   "commands": [
     {
@@ -21,143 +22,143 @@
       "cmd": "/cgihero",
       "label": "Campaign CGI Hero",
       "desc": "Flagship product-first CGI key visual with one memorable idea.",
-      "instruction": "Build one premium static CGI campaign around the exact current product/subject. Choose a strong commercial metaphor, deliberate scale, depth, category-fit world and polished lighting. Avoid plain pedestal staging."
+      "instruction": "Build one premium static CGI campaign around the exact current product/subject. Choose a strong commercial metaphor, deliberate scale, depth, category-fit world and polished lighting. Avoid plain pedestal staging. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 202,
       "cmd": "/productworld3d",
       "label": "Product Universe",
       "desc": "Layered foreground, midground and background world designed around the product.",
-      "instruction": "Build a coherent brand world with distinct foreground, midground and background. Derive forms, props and materials from current brand/category cues while keeping the exact product dominant."
+      "instruction": "Build a coherent brand world with distinct foreground, midground and background. Derive forms, props and materials from current brand/category cues while keeping the exact product dominant. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 203,
       "cmd": "/productbuilding3d",
       "label": "Product as Architecture",
       "desc": "Product silhouette becomes a believable store, kiosk, pavilion or structure.",
-      "instruction": "Turn the recognizable product form into a brand-fit architectural structure with believable entrances, windows, people and spatial scale. Preserve key packaging identity."
+      "instruction": "Turn the recognizable product form into a brand-fit architectural structure with believable entrances, windows, people and spatial scale. Preserve key packaging identity. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 204,
       "cmd": "/giantproduct3d",
       "label": "Giant Product",
       "desc": "Monumental product integrated into a real environment.",
-      "instruction": "Scale the exact product to monumental size and integrate it physically into a believable scene using correct perspective, contact, human/vehicle scale cues, reflections and atmospheric depth."
+      "instruction": "Scale the exact product to monumental size and integrate it physically into a believable scene using correct perspective, contact, human/vehicle scale cues, reflections and atmospheric depth. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 205,
       "cmd": "/miniworld3d",
       "label": "Miniature Brand World",
       "desc": "Tiny people and environments build a story around the product.",
-      "instruction": "Create a miniature-world campaign around the exact product using purposeful tiny people, architecture, tools, roads, food or category-relevant details. Use believable macro depth of field."
+      "instruction": "Create a miniature-world campaign around the exact product using purposeful tiny people, architecture, tools, roads, food or category-relevant details. Use believable macro depth of field. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 206,
       "cmd": "/insideproduct3d",
       "label": "World Inside Product",
       "desc": "Symbolic brand world appears inside or through the product form.",
-      "instruction": "Reveal an imaginative campaign world inside or through the visual volume of the product while preserving its recognizable exterior. Do not invent technical internals."
+      "instruction": "Reveal an imaginative campaign world inside or through the visual volume of the product while preserving its recognizable exterior. Do not invent technical internals. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 207,
       "cmd": "/productlandscape3d",
       "label": "Product Landscape",
       "desc": "Brand and packaging cues become terrain and spatial geography.",
-      "instruction": "Let product shapes, colors or brand cues inspire terrain, paths, cliffs, platforms or gardens while keeping the exact hero product clearly visible and readable."
+      "instruction": "Let product shapes, colors or brand cues inspire terrain, paths, cliffs, platforms or gardens while keeping the exact hero product clearly visible and readable. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 208,
       "cmd": "/surrealscale3d",
       "label": "Surreal Scale",
       "desc": "Huge and tiny objects interact in one photographic campaign world.",
-      "instruction": "Create a single readable surreal-scale relationship between the exact product and unusually large or tiny people, objects or environments. Sell the illusion with strong perspective and scale cues."
+      "instruction": "Create a single readable surreal-scale relationship between the exact product and unusually large or tiny people, objects or environments. Sell the illusion with strong perspective and scale cues. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 209,
       "cmd": "/gravity3d",
       "label": "Gravity Defying",
       "desc": "Impossible balance or levitation used as a campaign metaphor.",
-      "instruction": "Use suspension, impossible balance or controlled levitation as the core advertising idea. Keep weight, shadows and spatial choreography believable; avoid a generic centered floating-product layout."
+      "instruction": "Use suspension, impossible balance or controlled levitation as the core advertising idea. Keep weight, shadows and spatial choreography believable; avoid a generic centered floating-product layout. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 210,
       "cmd": "/hangingproduct3d",
       "label": "Hanging Installation",
       "desc": "Product suspended from a believable support system.",
-      "instruction": "Suspend the exact product from a crane, cable, facade, gallery rig, bridge, transport structure or other believable support. Show attachment points, tension, gravity and shadows."
+      "instruction": "Suspend the exact product from a crane, cable, facade, gallery rig, bridge, transport structure or other believable support. Show attachment points, tension, gravity and shadows. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 211,
       "cmd": "/handinteraction3d",
       "label": "Giant Hand Interaction",
       "desc": "Oversized realistic hand places, pulls, opens or reveals the product.",
-      "instruction": "Use a large realistic hand or controlled human gesture as the main spatial device. Keep anatomy, grip, contact, shadows and scale convincing and make the gesture communicate the idea instantly."
+      "instruction": "Use a large realistic hand or controlled human gesture as the main spatial device. Keep anatomy, grip, contact, shadows and scale convincing and make the gesture communicate the idea instantly. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 212,
       "cmd": "/characterproduct3d",
       "label": "Character × Product",
       "desc": "Adult human, mascot or original generic character interacts with product.",
-      "instruction": "Create a static character-interaction campaign using an adult human, supplied mascot or original generic character. Make pose, action and scale tell one clear story while preserving product accuracy."
+      "instruction": "Create a static character-interaction campaign using an adult human, supplied mascot or original generic character. Make pose, action and scale tell one clear story while preserving product accuracy. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 213,
       "cmd": "/ingredientworld3d",
       "label": "Ingredient / Flavor World",
       "desc": "Verified ingredients or flavor cues become an immersive CGI world.",
-      "instruction": "Build a rich ingredient/flavor environment using only ingredients, flavors or sensory cues visible in current references or explicitly supplied. Never invent ingredients or nutrition claims."
+      "instruction": "Build a rich ingredient/flavor environment using only ingredients, flavors or sensory cues visible in current references or explicitly supplied. Never invent ingredients or nutrition claims. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 214,
       "cmd": "/foodstory3d",
       "label": "Food Story CGI",
       "desc": "Dish or beverage becomes a cinematic 3D storytelling scene.",
-      "instruction": "Turn the current food/beverage into one premium story scene using scale, steam, utensils, architecture, miniature activity or verified ingredients as appropriate. Avoid generic splash-only advertising."
+      "instruction": "Turn the current food/beverage into one premium story scene using scale, steam, utensils, architecture, miniature activity or verified ingredients as appropriate. Avoid generic splash-only advertising. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 215,
       "cmd": "/typearchitecture3d",
       "label": "Typography as Architecture",
       "desc": "Brand text or short headline becomes a spatial 3D structure.",
-      "instruction": "Turn supplied brand text or a short non-factual headline into dimensional walls, ramps, paths or sculptural architecture interacting with the exact product. Keep text legible."
+      "instruction": "Turn supplied brand text or a short non-factual headline into dimensional walls, ramps, paths or sculptural architecture interacting with the exact product. Keep text legible. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 216,
       "cmd": "/productportal3d",
       "label": "Product Portal",
       "desc": "Product connects two distinct worlds through a dimensional portal.",
-      "instruction": "Use a believable portal to connect two brand-relevant environments. Keep portal depth, edge light, occlusion and reflections coherent while preserving the exact product."
+      "instruction": "Use a believable portal to connect two brand-relevant environments. Keep portal depth, edge light, occlusion and reflections coherent while preserving the exact product. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 217,
       "cmd": "/productjourney3d",
       "label": "Product Journey",
       "desc": "One visual scene suggests a clear branded journey or transformation of context.",
-      "instruction": "Stage the exact product along a route, track, path, travel system or sequence of environmental cues that implies a journey in one static key visual without becoming a storyboard."
+      "instruction": "Stage the exact product along a route, track, path, travel system or sequence of environmental cues that implies a journey in one static key visual without becoming a storyboard. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 218,
       "cmd": "/productmonument3d",
       "label": "Brand Monument",
       "desc": "Product or logo becomes a monumental public sculpture.",
-      "instruction": "Create a premium monumental sculpture derived from the product or brand symbol in a believable public, architectural or landscape setting. Use realistic structural support and human scale."
+      "instruction": "Create a premium monumental sculpture derived from the product or brand symbol in a believable public, architectural or landscape setting. Use realistic structural support and human scale. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 219,
       "cmd": "/categorymetaphor3d",
       "label": "Category Metaphor",
       "desc": "Translate the product category into one unexpected physical world.",
-      "instruction": "Infer the current category and create one strong non-factual visual metaphor from it—speed, freshness, comfort, precision, indulgence, ritual, etc.—without inventing performance claims."
+      "instruction": "Infer the current category and create one strong non-factual visual metaphor from it—speed, freshness, comfort, precision, indulgence, ritual, etc.—without inventing performance claims. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     },
     {
       "id": 220,
       "cmd": "/surprise3d",
       "label": "Surprise CGI Concept",
       "desc": "Automatically choose the strongest unexpected commercial CGI mechanism.",
-      "instruction": "Infer current brand/category cues and choose one unexpected but commercially relevant static CGI concept not already implied by the brief. Prioritize memorability and brand fit over trendy effects."
+      "instruction": "Infer current brand/category cues and choose one unexpected but commercially relevant static CGI concept not already implied by the brief. Prioritize memorability and brand fit over trendy effects. UNIVERSAL 3D SOCIAL LOCK: 3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results. Follow the selected product/output plan, exact-source lock, real-font rule, human-finish check and independent fresh-variation rule."
     }
   ],
-  "updatedAt": "2026-09-09T06:45:00Z",
+  "updatedAt": "2026-09-09T09:45:00Z",
   "compatibility": {
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
@@ -174,6 +175,7 @@
     "Use current-turn references only.",
     "Return one separate finished 4:5 Instagram CGI post per requested output.",
     "Preserve the exact supplied product and factual details.",
-    "Reject raw renders, print-poster layouts and generic category scenes."
+    "Reject raw renders, print-poster layouts and generic category scenes.",
+    "3D FINAL GATE: deliver a complete full-bleed 4:5 Instagram CGI campaign post, not a raw 3D visualization. The selected 3D mechanism must serve an original campaign idea and be assembled with the exact product, physically credible scale/contact/lighting plus at least three visible 2D social-design layers and a compact information hierarchy. Reject generic pedestals, decorative rooms, enlarged duplicate packs, random levitation and render-only results."
   ]
 }
