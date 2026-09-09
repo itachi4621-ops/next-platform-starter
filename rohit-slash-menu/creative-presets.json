@@ -1,132 +1,132 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
-  "updatedAt": "2026-09-07T00:00:00Z",
-  "name": "Virag Creative Library",
+  "libraryVersion": "1.2.0",
+  "updatedAt": "2026-09-09T00:00:00Z",
+  "name": "Virag Instagram Creative Library",
   "commandCount": 14,
-  "mode": "static-creative-only",
+  "mode": "instagram-feed-post-only",
   "principles": [
-    "For every new or fresh request, start from a blank canvas and exclude all prior assistant-generated images from image-generation inputs. Earlier outputs are negative examples only unless the user explicitly requests a redesign of one.",
-    "Use only the current brief, current composer text and current uploads for the current run.",
-    "Do not import an older campaign, festival, offer, topic, headline or product story unless the user explicitly references it.",
-    "One command produces one standalone finished static creative unless another quantity is explicitly requested.",
-    "Preserve supplied product geometry, proportions, label/logo/artwork/colors and supplied person identity unless explicitly asked to change them.",
-    "Create a finished agency-level design with deliberate hierarchy, spacing, typography, focal idea and category-fit visual language.",
-    "Same preset means the same creative purpose, not the same layout. Avoid repeated templates, recolors and minor rearrangements.",
-    "Never invent prices, offers, certifications, nutrition, ingredients, specs, medical/performance claims, awards, testimonials or hidden facts."
+    "Every Creative command returns a separate, full-bleed 4:5 Instagram feed post—not a print poster, flyer, plain product photo, raw CGI render, collage or preview board.",
+    "Design for phone viewing with a clear two-second hierarchy, balanced product scale, safe margins and a premium social-native composition.",
+    "Use only current composer text and current-turn uploads unless the user explicitly identifies an earlier image for redesign.",
+    "For every new or fresh request, start from a blank canvas and exclude all prior assistant-generated images from image-generation inputs.",
+    "Preserve every supplied product, package, logo, label and factual detail exactly; never rename, restyle, recolor or invent claims.",
+    "Use added text only when supplied or safely derived from exact visible wording. A no-heading request means no added headline.",
+    "Use real readable fonts and human-designed typography; reject pseudo-lettering, gibberish and AI-looking glyphs.",
+    "Same preset means the same purpose, not the same layout. New variations must use different concept families."
   ],
   "commands": [
     {
       "id": 101,
       "category": "Creative",
       "cmd": "/creative",
-      "label": "Fresh Creative",
-      "desc": "Blank-canvas campaign creative with a genuinely new concept family.",
-      "instruction": "Create one finished static creative from a blank canvas using only the current-turn user uploads. Do not include or imitate any earlier generated image, background, composition or prop setup. Choose a genuinely new campaign concept family and build a clear focal idea, human-designed hierarchy, real typography and polished commercial finish. Reject background swaps and routine category scenes."
+      "label": "Fresh Instagram Post",
+      "desc": "Original blank-canvas 4:5 feed creative.",
+      "instruction": "Generate one finished, full-bleed 4:5 Instagram feed post using only the current-turn product and references. Create a fresh social-native idea with a clear two-second hierarchy, balanced product scale, premium graphic language and natural mobile composition. Do not make a print poster, giant-title layout, flyer, plain product photo or background swap."
     },
     {
       "id": 102,
       "category": "Creative",
       "cmd": "/surprise",
-      "label": "Surprise Me",
-      "desc": "Unexpected blank-canvas concept from a different campaign family.",
-      "instruction": "Start from a blank canvas and create one unexpected but brand-relevant static campaign concept using only current-turn user uploads. Exclude every previous generated output from the generation inputs. Use an original visual metaphor or graphic mechanism, preserve exact source identity, and avoid routine category props, generic AI spectacle and background-only variation."
+      "label": "Surprise Instagram Post",
+      "desc": "Unexpected social-native 4:5 concept.",
+      "instruction": "Create one unexpected but brand-relevant 4:5 Instagram feed post from a blank canvas. Use a fresh visual metaphor or graphic mechanism and preserve the exact product. Keep the composition mobile-first and post-ready; no print-poster structure, giant centered slogan, routine category props or generic AI spectacle."
     },
     {
       "id": 103,
       "category": "Creative",
       "cmd": "/variation",
-      "label": "Fresh Variation",
-      "desc": "Independent blank-canvas concept—not a remix, recolor or background swap.",
-      "instruction": "Create one independent blank-canvas concept for the current brief. Do not use the previous output as an image reference and do not preserve its background, camera, composition, props, lighting or type structure. Move to a different campaign family and rebuild the core visual idea, spatial logic, hero placement, graphic system and typography from zero while preserving only the exact product, brand facts and explicit current brief."
+      "label": "Fresh Feed Variation",
+      "desc": "Independent 4:5 post—not a remix.",
+      "instruction": "Create one independent 4:5 Instagram feed variation from a blank canvas. Do not use the previous output as an image reference or inherit its scene. Move to a different concept family and rebuild the core idea, crop, product placement, graphic system, color rhythm and typography while preserving only the exact product and supplied facts."
     },
     {
       "id": 104,
       "category": "Creative",
       "cmd": "/redesign",
-      "label": "Redesign",
-      "desc": "Explicitly rebuild a supplied earlier design with new art direction.",
-      "instruction": "This is the explicit edit exception: redesign only the specific image that the user currently supplies or clearly identifies for revision. Preserve factual content and immutable product identity, but rebuild hierarchy, composition, typography, spacing and visual system with a clearly different art direction. Do not pull in any other earlier generated image."
+      "label": "Redesign Instagram Post",
+      "desc": "Rebuild one supplied design as a 4:5 feed post.",
+      "instruction": "Redesign only the specific currently supplied or identified image into a stronger full-bleed 4:5 Instagram post. Preserve factual content and immutable product identity, but rebuild hierarchy, crop, spacing, graphic system and typography for phone viewing. Remove print-poster cues unless explicitly required."
     },
     {
       "id": 105,
       "category": "Creative",
       "cmd": "/productad",
-      "label": "Product Ad",
-      "desc": "Premium product-led advertising creative.",
-      "instruction": "Create one premium static product advertisement using the current product as the exact visual hero. Preserve packaging and label accuracy. Build a strong commercial idea, useful headline space and polished brand-fit environment without defaulting to a plain product shot."
+      "label": "Product Instagram Ad",
+      "desc": "Conversion-ready product feed post.",
+      "instruction": "Create one premium 4:5 Instagram product-ad post with the exact product as the visual hero. Build a social-native commercial idea, balanced hierarchy and branded design system. Keep added copy concise and supplied; do not produce a poster, catalogue packshot or generic product-on-background scene."
     },
     {
       "id": 106,
       "category": "Creative",
       "cmd": "/producthero",
-      "label": "Product Hero",
-      "desc": "Hero-led product composition with strong hierarchy.",
-      "instruction": "Create one static hero creative centered on the current product. Use premium scale, framing, depth, typography and supporting elements to make the product dominant while keeping the overall design campaign-ready rather than catalogue-like."
+      "label": "Product Hero Post",
+      "desc": "High-impact product-led Instagram post.",
+      "instruction": "Create one full-bleed 4:5 Instagram hero post centered on the exact product. Use confident social scale, dynamic crop, layered depth and supporting graphic elements, while keeping the feed composition balanced and mobile-readable. Do not use movie-poster or event-poster structure."
     },
     {
       "id": 107,
       "category": "Creative",
       "cmd": "/social",
-      "label": "Social Post",
-      "desc": "Mobile-first Instagram/LinkedIn-style static creative.",
-      "instruction": "Create one mobile-first static social creative for the current brief. Prioritize immediate 2–3 second readability, clear hierarchy, strong hook when supported, brand-fit typography and a finished feed-ready composition."
+      "label": "Instagram Feed Post",
+      "desc": "Native mobile-first 4:5 social creative.",
+      "instruction": "Create one native 4:5 Instagram feed post. Prioritize immediate phone readability, a clear focal hook, exact product identity, clean branded rhythm and a finished edge-to-edge composition. Avoid poster title stacks, excessive copy, flyer formatting and plain lifestyle photography."
     },
     {
       "id": 108,
       "category": "Creative",
       "cmd": "/editorial",
-      "label": "Editorial Creative",
-      "desc": "Magazine/editorial advertising language.",
-      "instruction": "Create one static editorial-style advertising creative for the current subject. Use sophisticated composition, typography, cropping, negative space and image hierarchy while preserving current product/person/brand accuracy."
+      "label": "Editorial Feed Post",
+      "desc": "Magazine-inspired Instagram composition.",
+      "instruction": "Create one sophisticated 4:5 editorial Instagram post using asymmetric layout, art-directed crop, controlled negative space, exact product identity and refined type when supplied. It should feel like premium feed content, not a magazine cover or print poster."
     },
     {
       "id": 109,
       "category": "Creative",
       "cmd": "/poster",
-      "label": "Campaign Poster",
-      "desc": "Bold standalone poster with one memorable idea.",
-      "instruction": "Create one bold static campaign poster for the current brief. Use one dominant visual idea, strong typography hierarchy and clear distance readability. Keep factual copy accurate and avoid clutter."
+      "label": "Bold Instagram Post",
+      "desc": "Bold social layout without poster styling.",
+      "instruction": "Create one bold, full-bleed 4:5 Instagram feed post with one memorable visual idea, confident scale and clear phone-size hierarchy. Do not use print-poster composition, event information, credit lines, title-card stacking, borders or a giant centered slogan unless explicitly requested."
     },
     {
       "id": 110,
       "category": "Creative",
       "cmd": "/ecommerce",
-      "label": "E-commerce Creative",
-      "desc": "Clean conversion-focused product creative.",
-      "instruction": "Create one clean conversion-focused static e-commerce creative. Keep the product exact, emphasize visual clarity and useful value communication from supplied facts, and maintain a polished branded look without inventing claims or offer data."
+      "label": "E-commerce Feed Post",
+      "desc": "Clean conversion-focused Instagram creative.",
+      "instruction": "Create one clean conversion-focused 4:5 Instagram feed post. Preserve the exact product, communicate only supplied value points and use a polished social-commerce layout with strong visual clarity. Avoid marketplace listing style, poster formatting and invented offer data."
     },
     {
       "id": 111,
       "category": "Creative",
       "cmd": "/linkedincreative",
-      "label": "LinkedIn Creative",
-      "desc": "Professional static creative designed for LinkedIn feed.",
-      "instruction": "Create one professional LinkedIn-ready static creative for the current topic. Use clean hierarchy, credible brand language, restrained typography and strong readability. Avoid consumer-ad clutter unless the brief specifically needs it."
+      "label": "Professional Instagram Post",
+      "desc": "Clean business-led Instagram feed creative.",
+      "instruction": "Create one professional 4:5 Instagram post with credible brand language, restrained graphic hierarchy and strong mobile readability. Keep the layout social-native and visually engaging without consumer-ad clutter, print-poster structure or unsupported facts."
     },
     {
       "id": 112,
       "category": "Creative",
       "cmd": "/typographycreative",
-      "label": "Typography-Led",
-      "desc": "Type becomes the main visual device.",
-      "instruction": "Create one static typography-led campaign creative. Make concise supplied or non-factual campaign wording the dominant visual device while keeping the current subject/product integrated clearly. Typography must be intentional, highly readable and brand-fit."
+      "label": "Typography-Led Feed Post",
+      "desc": "Real type integrated into a 4:5 social design.",
+      "instruction": "Create one 4:5 Instagram feed post where concise supplied wording acts as a graphic device within the composition. Integrate real readable typography with the exact product using mobile-safe scale and rhythm. Do not turn the canvas into a text-heavy poster, quote card or announcement."
     },
     {
       "id": 113,
       "category": "Creative",
       "cmd": "/minimalcreative",
-      "label": "Minimal Creative",
-      "desc": "Premium negative-space composition with restraint.",
-      "instruction": "Create one minimal static creative using controlled negative space, precise hierarchy, clean framing and a small number of strong visual elements. Keep it premium and intentional, not empty or generic."
+      "label": "Minimal Instagram Post",
+      "desc": "Premium restrained 4:5 feed design.",
+      "instruction": "Create one minimal 4:5 Instagram feed post using controlled negative space, precise product placement, subtle brand graphics and a clear mobile focal hierarchy. Keep it intentional and post-ready—not empty, catalogue-like or poster-like."
     },
     {
       "id": 114,
       "category": "Creative",
       "cmd": "/boldcreative",
-      "label": "Bold Creative",
-      "desc": "High-impact composition with assertive visual hierarchy.",
-      "instruction": "Create one bold static campaign creative with confident scale, strong typography and assertive composition. Keep the design controlled and readable; do not sacrifice product accuracy or factual correctness for impact."
+      "label": "Bold Feed Creative",
+      "desc": "High-impact Instagram composition.",
+      "instruction": "Create one high-impact 4:5 Instagram post with assertive product scale, energetic social composition and a controlled branded system. Preserve product accuracy and phone readability. Avoid giant poster headlines, event-poster geometry, excessive text and generic AI effects."
     }
   ]
 }
