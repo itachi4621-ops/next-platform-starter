@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "version": "1.2.0",
-  "libraryVersion": "1.2.0",
-  "updatedAt": "2026-09-09T09:45:00Z",
-  "name": "Virag Ad3X — Instagram Assembly",
+  "version": "1.3.0",
+  "libraryVersion": "1.3.0",
+  "updatedAt": "2026-09-09T10:25:00Z",
+  "name": "Virag Ad3X — Instagram Content System",
   "enabled": true,
   "mode": "three-pass-ad-system",
   "compatibility": {
@@ -21,24 +21,24 @@
   "runtime": "creative-slash-menu.user.js",
   "passes": [
     {
-      "id": "brief",
-      "name": "Brief + Planner Pass",
-      "rule": "Lock current-turn assets, exact product identity, selected product count, Separate/Together arrangement and exact output total."
-    },
-    {
-      "id": "concept",
-      "name": "Fresh Concept Pass",
-      "rule": "Give every output an independent product-relevant campaign idea and change at least ten creative-direction decisions; reject background swaps and category clichés."
+      "id": "copy",
+      "name": "Copy Deck Pass",
+      "rule": "Extract exact supplied copy plus the allowed number of clearly readable label facts; never invent content and never choose a text-free fallback."
     },
     {
       "id": "layout",
-      "name": "Instagram Assembly Pass",
-      "rule": "Assemble a finished 4:5 mobile post with the exact product, purposeful hierarchy, at least three visible 2D brand-design layers and real readable typesetting."
+      "name": "Information Architecture Pass",
+      "rule": "Allocate visible zones for product, hook, two to four information modules, at least three graphic layers and a restrained footer."
+    },
+    {
+      "id": "visual",
+      "name": "Campaign Artwork Pass",
+      "rule": "Use the selected visual technique as supporting artwork inside the designed grid, not as a full-canvas cinematic packshot."
     },
     {
       "id": "quality",
-      "name": "Human Quality Pass",
-      "rule": "Reject raw renders, packshots, duplicated-package backgrounds, generic spectacle, AI typography, altered products, invented copy, artifacts and repeated variations."
+      "name": "Phone-Size QA Pass",
+      "rule": "Reject unreadable type, static posters, raw renders, altered products, generic templates and repeated layouts."
     }
   ],
   "commands": [
@@ -46,19 +46,19 @@
       "id": 701,
       "cmd": "/ad3x",
       "label": "Ad3X Instagram Creative",
-      "instruction": "Run all three Ad3X passes and return one separate finished 4:5 Instagram post. UNIVERSAL AD3X LOCK: CREATIVE FINAL GATE: deliver a complete full-bleed 4:5 Instagram feed advertisement, not a product picture. It must visibly combine the exact product, one strong campaign idea, an intentional mobile-first layout, at least three brand-relevant 2D graphic layers and a compact information hierarchy. Reject raw packshots, ecommerce photos, pedestal renders, giant duplicate labels, poster/title-card formatting and scenes whose only idea is ribbons, arches, gloss or particles. UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
+      "instruction": "Run all three Ad3X passes and return one separate finished 4:5 Instagram post. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation."
     },
     {
       "id": 702,
       "cmd": "/ad3xfresh",
       "label": "Ad3X Fresh Concept",
-      "instruction": "Run Ad3X from a blank canvas with a genuinely new concept family. UNIVERSAL AD3X LOCK: CREATIVE FINAL GATE: deliver a complete full-bleed 4:5 Instagram feed advertisement, not a product picture. It must visibly combine the exact product, one strong campaign idea, an intentional mobile-first layout, at least three brand-relevant 2D graphic layers and a compact information hierarchy. Reject raw packshots, ecommerce photos, pedestal renders, giant duplicate labels, poster/title-card formatting and scenes whose only idea is ribbons, arches, gloss or particles. UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
+      "instruction": "Run Ad3X from a blank canvas with a genuinely new concept family. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation."
     },
     {
       "id": 703,
       "cmd": "/ad3xproduct",
       "label": "Ad3X Product Ad",
-      "instruction": "Run Ad3X with absolute product identity lock and conversion-focused social composition. UNIVERSAL AD3X LOCK: CREATIVE FINAL GATE: deliver a complete full-bleed 4:5 Instagram feed advertisement, not a product picture. It must visibly combine the exact product, one strong campaign idea, an intentional mobile-first layout, at least three brand-relevant 2D graphic layers and a compact information hierarchy. Reject raw packshots, ecommerce photos, pedestal renders, giant duplicate labels, poster/title-card formatting and scenes whose only idea is ribbons, arches, gloss or particles. UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
+      "instruction": "Run Ad3X with absolute product identity lock and conversion-focused social composition. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation."
     }
   ]
 }
