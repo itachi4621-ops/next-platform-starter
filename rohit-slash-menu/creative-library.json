@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "2.0.0",
-  "updatedAt": "2026-09-09T06:45:00Z",
-  "name": "Virag Creative Brain",
+  "libraryVersion": "2.1.0",
+  "updatedAt": "2026-09-09T08:10:00Z",
+  "name": "Virag Creative Brain — Social Assembly",
   "compatibility": {
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
@@ -18,12 +18,12 @@
   "modules": {
     "master": "CURRENT-BRIEF AUTHORITY. Use the current composer request, current-turn uploads and selected Virag tool. Do not import unrelated content from earlier turns.",
     "chatgpt": "CURRENT CHATGPT WORKFLOW. Generate the requested final image or deliverable directly. New generation and image editing are different workflows: earlier generated images are excluded unless the user explicitly identifies one for editing.",
-    "instagram": "INSTAGRAM FEED MODE. Creative output is one separate, full-bleed 4:5 Instagram feed post with mobile-first hierarchy, balanced product scale and a social-native branded visual system. It is not a print poster, flyer, plain photograph or raw CGI render.",
-    "fresh": "FRESH CONCEPT. Start independently from a blank canvas. Use a new campaign idea, composition, environment, product placement, graphic language and type structure. Never create a background-only variation.",
+    "instagram": "OUTPUT TYPE — FINISHED INSTAGRAM AD CREATIVE. Generate one separate full-bleed 4:5 image that looks designed for a real brand feed. Assemble a deliberate mobile grid with the exact product, art-directed source artwork, at least three visible 2D brand-design layers, and a compact supporting information zone. The design layers may use frames, masks, crop windows, color blocks, linework, patterns, textures, labels, badges or information cards. A nice product render alone is not an Instagram creative.",
+    "fresh": "FRESH SOCIAL CONCEPT. Start from a blank canvas and choose a new campaign idea plus a new layout system. Do not reuse the previous environment, product placement, color structure, graphic devices or type composition. Reject centered product-on-pedestal scenes, oversized duplicate packaging or label in the background, decorative ribbons or arches as the whole idea, and background-only variations.",
     "sourceLock": "ABSOLUTE SOURCE LOCK. Preserve supplied product/package identity, brand name, logo, spelling, label artwork, colors, geometry and factual details exactly. Composite the source unchanged when regeneration risks identity drift.",
-    "typography": "REAL TYPE ONLY. Use exact supplied wording and a real readable font. If no headline or campaign copy is supplied, add no headline, slogan, CTA or invented text.",
+    "typography": "SOCIAL COPY POLICY. Use exact supplied wording when provided. Otherwise, never invent a slogan or claim. You may use only the exact readable product name and up to two short factual phrases visibly printed on the supplied label as small supporting information modules. Do not use a giant headline. If label wording is unclear, omit added text but keep the designed graphic hierarchy.",
     "batch": "BATCH CONTROL. Follow the selected product count, layout and outputs-per-product exactly. Every output is a separate image; never make a collage, grid, contact sheet or multi-panel canvas unless explicitly requested.",
-    "output": "QUALITY GATE. Return only finished publish-ready results. Reject AI artifacts, altered packaging, gibberish, generic category clichés, plain renders and print-poster layouts.",
+    "output": "SOCIAL CREATIVE QUALITY GATE. Return only the complete post-ready image. Fail any draft that could pass as a plain ecommerce photo or standalone 3D render, lacks visible graphic-layout layers, uses an enlarged duplicate pack as background, has AI-looking type, changes the product, or repeats another variation.",
     "conflict": "CONFLICT RULE. The explicit current user request outranks a preset; product identity, factual accuracy and requested output count remain locked."
   }
 }
