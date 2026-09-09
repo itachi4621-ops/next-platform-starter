@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "manifestVersion": "1.0.0",
-  "release": "10.5.0",
-  "updatedAt": "2026-09-09T06:45:00Z",
+  "release": "10.5.1",
+  "updatedAt": "2026-09-09T08:10:00Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 300,
@@ -15,14 +15,14 @@
     {
       "id": "core",
       "name": "Core",
-      "version": "10.5.0",
+      "version": "10.5.1",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
     {
       "id": "brain",
       "name": "Creative Brain",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "file": "creative-library.json",
       "type": "json"
     },
@@ -57,7 +57,7 @@
     {
       "id": "ad3x",
       "name": "Ad3X",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "file": "ad3x.json",
       "type": "json"
     }
@@ -65,7 +65,7 @@
   "libraries": [
     {
       "name": "Creative Presets",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "file": "creative-presets.json"
     },
     {
