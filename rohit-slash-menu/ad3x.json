@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "version": "1.0.0",
-  "libraryVersion": "1.0.0",
-  "updatedAt": "2026-09-09T06:45:00Z",
-  "name": "Virag Ad3X",
+  "version": "1.1.0",
+  "libraryVersion": "1.1.0",
+  "updatedAt": "2026-09-09T08:10:00Z",
+  "name": "Virag Ad3X — Instagram Assembly",
   "enabled": true,
   "mode": "three-pass-ad-system",
   "compatibility": {
@@ -23,17 +23,17 @@
     {
       "id": "concept",
       "name": "Concept Pass",
-      "rule": "Choose one fresh product-relevant social idea; reject background swaps and category clichés."
+      "rule": "Choose one fresh product-relevant social idea; reject background swaps, centered packshots and category clichés."
     },
     {
-      "id": "design",
-      "name": "Design Pass",
-      "rule": "Build a full-bleed 4:5 Instagram composition with mobile hierarchy and human art direction."
+      "id": "layout",
+      "name": "Social Layout Pass",
+      "rule": "Assemble the exact product with an asymmetric 4:5 mobile grid, at least three visible 2D brand-design layers and a compact information zone."
     },
     {
       "id": "quality",
       "name": "Quality Pass",
-      "rule": "Verify product identity, spelling, real typography, realism and post-ready finish before delivery."
+      "rule": "Reject plain renders, enlarged duplicate-package backgrounds, generic glossy scenes, altered products, invented copy, bad typography and repeated variations."
     }
   ],
   "commands": [
