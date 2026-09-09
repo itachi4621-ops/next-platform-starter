@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "manifestVersion": "1.0.0",
+  "release": "10.5.0",
+  "updatedAt": "2026-09-09T06:45:00Z",
+  "name": "Virag Live Module Manifest",
+  "autoUpdate": {
+    "monitorIntervalSeconds": 300,
+    "moduleIntervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true,
+    "cacheBust": true
+  },
+  "modules": [
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "10.5.0",
+      "file": "creative-slash-menu.user.js",
+      "type": "userscript"
+    },
+    {
+      "id": "brain",
+      "name": "Creative Brain",
+      "version": "2.0.0",
+      "file": "creative-library.json",
+      "type": "json"
+    },
+    {
+      "id": "commands",
+      "name": "Commands",
+      "version": "2.0.0",
+      "file": "commands.json",
+      "type": "json"
+    },
+    {
+      "id": "3d",
+      "name": "3D Studio",
+      "version": "5.1.0",
+      "file": "3d-library.json",
+      "type": "json"
+    },
+    {
+      "id": "ai",
+      "name": "AI Tools",
+      "version": "1.1.0",
+      "file": "ai-tools.json",
+      "type": "json"
+    },
+    {
+      "id": "movie",
+      "name": "Movie Lab",
+      "version": "1.1.0",
+      "file": "movie-lab.json",
+      "type": "json"
+    },
+    {
+      "id": "ad3x",
+      "name": "Ad3X",
+      "version": "1.0.0",
+      "file": "ad3x.json",
+      "type": "json"
+    }
+  ],
+  "libraries": [
+    {
+      "name": "Creative Presets",
+      "version": "1.3.0",
+      "file": "creative-presets.json"
+    },
+    {
+      "name": "Flyer Presets",
+      "version": "1.1.0",
+      "file": "flyer-presets.json"
+    },
+    {
+      "name": "Packaging Presets",
+      "version": "1.1.0",
+      "file": "packaging-presets.json"
+    },
+    {
+      "name": "Video Presets",
+      "version": "1.1.0",
+      "file": "video-presets.json"
+    },
+    {
+      "name": "3d-signature",
+      "version": "5.1.0",
+      "file": "3d-signature.json"
+    },
+    {
+      "name": "3d-fooh",
+      "version": "5.1.0",
+      "file": "3d-fooh.json"
+    },
+    {
+      "name": "3d-transform",
+      "version": "5.1.0",
+      "file": "3d-transform.json"
+    },
+    {
+      "name": "3d-materials",
+      "version": "5.1.0",
+      "file": "3d-materials.json"
+    },
+    {
+      "name": "3d-environments",
+      "version": "5.1.0",
+      "file": "3d-environments.json"
+    }
+  ]
+}
