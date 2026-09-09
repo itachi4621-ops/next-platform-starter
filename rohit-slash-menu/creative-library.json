@@ -1,12 +1,29 @@
 {
-  "schemaVersion": 1,
-  "libraryVersion": "1.0.0",
-  "updatedAt": "2026-09-02T14:35:00+05:30",
-  "name": "Virag V1 Minimal Brain",
+  "schemaVersion": 2,
+  "libraryVersion": "2.0.0",
+  "updatedAt": "2026-09-09T06:45:00Z",
+  "name": "Virag Creative Brain",
+  "compatibility": {
+    "chatgpt": "current-web",
+    "imageWorkflow": "current-built-in",
+    "composerSelectors": "2026-09"
+  },
+  "autoUpdate": {
+    "enabled": true,
+    "manifest": "virag-manifest.json",
+    "intervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  },
   "modules": {
-    "master": "CURRENT BRIEF ONLY. Use the current composer text, current uploads and the selected visual operator. Treat the slash code as creative shorthand and translate it into a precise visual instruction. Do not import old campaigns, styles, moods, offers or concepts.",
-    "sourceLock": "SOURCE LOCK. Preserve recognizable product/package geometry, label/logo/artwork/colors and supplied person identity unless the current user explicitly asks to change them. Do not invent factual claims, prices, certifications, nutrition, specifications, awards, testimonials or hidden internals.",
-    "conflict": "CONFLICT RULE. The user's explicit current brief outranks the visual operator. The operator controls only its named visual dimension; do not let it silently redesign unrelated aspects.",
-    "output": "EXECUTE NOW. Generate exactly one standalone final image unless the current user explicitly requests another quantity or format. Do not answer with only a prompt, plan or explanation."
+    "master": "CURRENT-BRIEF AUTHORITY. Use the current composer request, current-turn uploads and selected Virag tool. Do not import unrelated content from earlier turns.",
+    "chatgpt": "CURRENT CHATGPT WORKFLOW. Generate the requested final image or deliverable directly. New generation and image editing are different workflows: earlier generated images are excluded unless the user explicitly identifies one for editing.",
+    "instagram": "INSTAGRAM FEED MODE. Creative output is one separate, full-bleed 4:5 Instagram feed post with mobile-first hierarchy, balanced product scale and a social-native branded visual system. It is not a print poster, flyer, plain photograph or raw CGI render.",
+    "fresh": "FRESH CONCEPT. Start independently from a blank canvas. Use a new campaign idea, composition, environment, product placement, graphic language and type structure. Never create a background-only variation.",
+    "sourceLock": "ABSOLUTE SOURCE LOCK. Preserve supplied product/package identity, brand name, logo, spelling, label artwork, colors, geometry and factual details exactly. Composite the source unchanged when regeneration risks identity drift.",
+    "typography": "REAL TYPE ONLY. Use exact supplied wording and a real readable font. If no headline or campaign copy is supplied, add no headline, slogan, CTA or invented text.",
+    "batch": "BATCH CONTROL. Follow the selected product count, layout and outputs-per-product exactly. Every output is a separate image; never make a collage, grid, contact sheet or multi-panel canvas unless explicitly requested.",
+    "output": "QUALITY GATE. Return only finished publish-ready results. Reject AI artifacts, altered packaging, gibberish, generic category clichés, plain renders and print-poster layouts.",
+    "conflict": "CONFLICT RULE. The explicit current user request outranks a preset; product identity, factual accuracy and requested output count remain locked."
   }
 }
