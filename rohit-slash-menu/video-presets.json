@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "1.1.0",
-  "updatedAt": "2026-09-09T06:45:00Z",
+  "libraryVersion": "1.2.0",
+  "updatedAt": "2026-09-09T09:45:00Z",
   "name": "Virag Movie Lab Presets",
   "commandCount": 12,
   "mode": "video-only",
@@ -12,7 +12,8 @@
     "Keep motion physically believable: no random morphing, broken hands, impossible object transitions or product drift.",
     "Default social video should feel human-paced, coherent and commercially polished rather than over-edited.",
     "Do not invent product claims, usage instructions, ingredients, performance results or factual copy.",
-    "When a user specifies Seedance, duration, ratio or voice style, obey those current instructions exactly."
+    "When a user specifies Seedance, duration, ratio or voice style, obey those current instructions exactly.",
+    "UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
   ],
   "commands": [
     {
@@ -21,7 +22,7 @@
       "cmd": "/video",
       "label": "Fresh Video Concept",
       "desc": "Complete fresh AI video concept with shot flow.",
-      "instruction": "Create a complete premium video concept for the current brief and current upload. Build a coherent shot-by-shot flow with a strong opening, visual progression, natural camera movement, realistic motion and a clean ending. Default to 15 seconds 9:16 only when no duration/ratio is specified."
+      "instruction": "Create a complete premium video concept for the current brief and current upload. Build a coherent shot-by-shot flow with a strong opening, visual progression, natural camera movement, realistic motion and a clean ending. Default to 15 seconds 9:16 only when no duration/ratio is specified. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 402,
@@ -29,7 +30,7 @@
       "cmd": "/productvideo",
       "label": "Product Video",
       "desc": "Cinematic product advertising video.",
-      "instruction": "Create a premium product advertising video using the current product as the exact visual reference. Preserve package shape, label, logo, colors and proportions in every shot. Use varied but coherent angles and a strong final hero frame."
+      "instruction": "Create a premium product advertising video using the current product as the exact visual reference. Preserve package shape, label, logo, colors and proportions in every shot. Use varied but coherent angles and a strong final hero frame. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 403,
@@ -37,7 +38,7 @@
       "cmd": "/cgivideo",
       "label": "CGI Product Video",
       "desc": "High-end CGI product animation.",
-      "instruction": "Create a high-end CGI product advertising video using the exact current product. Use physically believable 3D materials, reflections, shadows, camera movement and product motion. Keep every frame product-accurate and avoid random morphing or repetitive pedestal shots."
+      "instruction": "Create a high-end CGI product advertising video using the exact current product. Use physically believable 3D materials, reflections, shadows, camera movement and product motion. Keep every frame product-accurate and avoid random morphing or repetitive pedestal shots. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 404,
@@ -45,7 +46,7 @@
       "cmd": "/reelvideo",
       "label": "Reel Video",
       "desc": "High-retention Instagram/Reel concept.",
-      "instruction": "Create a high-retention vertical Reel concept for the current brief. Use a strong first-second hook, coherent short shots, clean transitions, natural pacing and a satisfying final beat. Avoid random effects or overly fast robotic editing."
+      "instruction": "Create a high-retention vertical Reel concept for the current brief. Use a strong first-second hook, coherent short shots, clean transitions, natural pacing and a satisfying final beat. Avoid random effects or overly fast robotic editing. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 405,
@@ -53,7 +54,7 @@
       "cmd": "/ugcvideo",
       "label": "UGC Video",
       "desc": "Natural phone-native creator video.",
-      "instruction": "Create a believable phone-native UGC video for the current product/brief. Keep creator behavior, speech rhythm, framing, product handling and room lighting natural. Do not invent personal testimonial results or unsupported product claims."
+      "instruction": "Create a believable phone-native UGC video for the current product/brief. Keep creator behavior, speech rhythm, framing, product handling and room lighting natural. Do not invent personal testimonial results or unsupported product claims. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 406,
@@ -61,7 +62,7 @@
       "cmd": "/productreveal",
       "label": "Product Reveal",
       "desc": "Premium reveal sequence with anticipation and payoff.",
-      "instruction": "Create a premium product reveal sequence. Build anticipation through light, camera, environment or material interaction, reveal the exact product progressively, and finish on a clean hero frame without changing package geometry or label."
+      "instruction": "Create a premium product reveal sequence. Build anticipation through light, camera, environment or material interaction, reveal the exact product progressively, and finish on a clean hero frame without changing package geometry or label. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 407,
@@ -69,7 +70,7 @@
       "cmd": "/unboxing",
       "label": "Unboxing",
       "desc": "Natural unboxing-style video flow.",
-      "instruction": "Create a natural unboxing video for the current supplied product. Show believable hands, package interaction, opening, product reveal, close-up details and final product presentation. Avoid impossible packaging behavior or fake reactions."
+      "instruction": "Create a natural unboxing video for the current supplied product. Show believable hands, package interaction, opening, product reveal, close-up details and final product presentation. Avoid impossible packaging behavior or fake reactions. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 408,
@@ -77,7 +78,7 @@
       "cmd": "/testimonial",
       "label": "Testimonial",
       "desc": "Creator testimonial structure without fabricated results.",
-      "instruction": "Create a natural testimonial-style video structure for the current product/service. Use only supplied factual experience/claims. If no real testimonial outcome is supplied, write it as creator-style product commentary rather than fabricating results."
+      "instruction": "Create a natural testimonial-style video structure for the current product/service. Use only supplied factual experience/claims. If no real testimonial outcome is supplied, write it as creator-style product commentary rather than fabricating results. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 409,
@@ -85,7 +86,7 @@
       "cmd": "/motionprompt",
       "label": "Motion Prompt",
       "desc": "Add controlled motion to an existing image.",
-      "instruction": "Write precise motion direction for the current image. Preserve layout, typography, product shape and locked elements unless the user explicitly asks them to move. Add only physically believable subject/environment/camera motion."
+      "instruction": "Write precise motion direction for the current image. Preserve layout, typography, product shape and locked elements unless the user explicitly asks them to move. Add only physically believable subject/environment/camera motion. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 410,
@@ -93,7 +94,7 @@
       "cmd": "/cameramotion",
       "label": "Camera Motion",
       "desc": "Practical cinematic camera movement prompt.",
-      "instruction": "Create practical camera movement direction for the current image/scene. Specify movement path, speed, lens feel, stabilization and parallax while keeping subject geometry stable and avoiding warping or artificial zoom artifacts."
+      "instruction": "Create practical camera movement direction for the current image/scene. Specify movement path, speed, lens feel, stabilization and parallax while keeping subject geometry stable and avoiding warping or artificial zoom artifacts. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 411,
@@ -101,7 +102,7 @@
       "cmd": "/storyboard",
       "label": "Storyboard",
       "desc": "Shot-by-shot visual plan for the current video.",
-      "instruction": "Create a shot-by-shot storyboard for the current video brief with shot purpose, framing, action, camera movement, continuity and transition logic. Keep the current product/person consistent across all shots."
+      "instruction": "Create a shot-by-shot storyboard for the current video brief with shot purpose, framing, action, camera movement, continuity and transition logic. Keep the current product/person consistent across all shots. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     },
     {
       "id": 412,
@@ -109,7 +110,7 @@
       "cmd": "/seedance",
       "label": "Seedance Script",
       "desc": "Production-ready Seedance prompt/script.",
-      "instruction": "Create a production-ready Seedance prompt for the current brief. Respect the current requested duration, aspect ratio, casting, voice, product locks and style. Use coherent shot timing, realistic motion and concise instructions that reduce identity/product drift and text errors."
+      "instruction": "Create a production-ready Seedance prompt for the current brief. Respect the current requested duration, aspect ratio, casting, voice, product locks and style. Use coherent shot timing, realistic motion and concise instructions that reduce identity/product drift and text errors. UNIVERSAL VIDEO LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow the selected product/output plan, exact-source lock and independent fresh-variation rule."
     }
   ],
   "compatibility": {
@@ -127,6 +128,7 @@
   "globalRules": [
     "Return separate production-ready video concepts or shot plans according to the selected count.",
     "Use the current brief and current-turn references only.",
-    "Preserve product and character identity across every shot."
+    "Preserve product and character identity across every shot.",
+    "VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims."
   ]
 }
