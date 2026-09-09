@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "1.3.0",
-  "updatedAt": "2026-09-09T10:25:00Z",
-  "name": "Virag AI Tools Library v1.3",
+  "libraryVersion": "1.4.0",
+  "updatedAt": "2026-09-09T11:10:00Z",
+  "name": "Virag AI Tools Library v1.4",
   "commandCount": 30,
   "mode": "command-token-only",
   "commands": [
@@ -264,6 +264,7 @@
     "Work with the current ChatGPT composer.",
     "Keep commands independently auto-updatable from Core.",
     "UNIVERSAL CURRENT-BRIEF LOCK: Preserve the user's current request exactly, never import an unrelated older task, and let the selected AI token modify only the requested response behavior.",
-    "AI Tools remain non-visual command tokens; Instagram Output Format and Content Level affect visual-generation tabs only."
+    "AI Tools remain non-visual command tokens; Instagram Output Format and Content Level affect visual-generation tabs only.",
+    "Design Direction applies to visual and video generation; AI Tools remain non-visual command tokens."
   ]
 }
