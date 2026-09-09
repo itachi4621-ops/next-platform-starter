@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "2.1.0",
-  "updatedAt": "2026-09-09T09:45:00Z",
+  "libraryVersion": "2.2.0",
+  "updatedAt": "2026-09-09T10:25:00Z",
   "name": "Virag Visual Commands v2",
   "source": {
     "title": "Try These 100 Codes That Make Your ChatGPT / Gemini Images Look Better (No Design Skills Needed)",
@@ -15,7 +15,7 @@
     "A clear subject/use case matters more than adding many codes.",
     "Prefer one meaningful operator at a time in V1; future combo mode may combine a small compatible set.",
     "If a visual operator conflicts with the current brief, preserve the user's explicit current brief.",
-    "UNIVERSAL VISUAL OPERATOR LOCK: A camera, lighting or style code may modify only that visual axis; it must never override the current brief, exact source identity, requested output count, aspect ratio, real typography rule or mode-specific final quality gate."
+    "A visual code controls only its named camera, lighting, composition or style axis. Under an Instagram format it must remain inside the social-content blueprint and may never collapse the result into a cinematic shot or static poster."
   ],
   "categories": [
     "Camera & Angles",
@@ -849,7 +849,7 @@
     "2": "For Creative work, default to one separate full-bleed 4:5 Instagram feed post rather than a print poster.",
     "3": "Generate the final requested result directly; do not stop at a prompt or plan.",
     "4": "Preserve exact product identity and use real readable typography.",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "currentBriefOnly": true,
     "exactSourceIdentity": true,
     "plannerAware": true,
@@ -857,6 +857,11 @@
     "noCollageByDefault": true,
     "realTypographyOnly": true,
     "humanArtDirection": true,
-    "modeSpecificFinalGate": true
+    "modeSpecificFinalGate": true,
+    "outputFormatAware": true,
+    "contentLevelAware": true,
+    "defaultFormat": "instagram",
+    "mandatoryReadableCopy": true,
+    "cinematicShotIsNotFinalCreative": true
   }
 }
