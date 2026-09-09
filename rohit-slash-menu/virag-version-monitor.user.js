@@ -1,19 +1,32 @@
 // ==UserScript==
 // @name         Virag Update Monitor
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      1.0.0
-// @description  Live status for Virag V1 Core, 100-code Codebook and Minimal Brain.
+// @version      2.0.0
+// @description  Automatic live update status for every Virag module.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @run-at       document-idle
 // @grant        GM_xmlhttpRequest
+// @grant        GM_getValue
+// @grant        GM_setValue
 // @connect      raw.githubusercontent.com
 // @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/virag-version-monitor.user.js
 // @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/virag-version-monitor.user.js
 // ==/UserScript==
 (()=>{'use strict';
-const R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/';
-const get=u=>new Promise((ok,no)=>GM_xmlhttpRequest({method:'GET',url:u+'?v='+Date.now(),timeout:10000,onload:r=>{try{if(r.status<200||r.status>299)throw Error();ok(r.responseText)}catch(e){no(e)}},onerror:no,ontimeout:no}));
-const h=document.createElement('div');document.documentElement.appendChild(h);const s=h.attachShadow({mode:'open'});s.innerHTML='<style>:host{all:initial}.b{position:fixed;right:22px;bottom:140px;z-index:2147483646;padding:7px 10px;border:1px solid #5ec67d55;border-radius:10px;background:#0b0d0bed;color:#91e3a8;font:800 8px Inter,system-ui;cursor:pointer}.p{position:fixed;right:22px;bottom:178px;z-index:2147483646;width:250px;display:none;padding:10px;border:1px solid #9f72d744;border-radius:14px;background:#0b0910f7;color:#eee6f8;font:9px Inter,system-ui}.p.on{display:block}.r{display:flex;justify-content:space-between;padding:6px 2px;border-top:1px solid #ffffff0d}.ok{color:#8fe1a6}</style><button class="b">Virag V1 · CHECKING</button><div class="p"><div class="r"><span>Core</span><b class="core">—</b></div><div class="r"><span>Codebook</span><b class="code">—</b></div><div class="r"><span>Brain</span><b class="brain">—</b></div><div class="r"><span>Commands</span><b class="count">—</b></div></div>';const b=s.querySelector('.b'),p=s.querySelector('.p');b.onclick=()=>p.classList.toggle('on');
-async function run(){try{const [ct,cj,bj]=await Promise.all([get(R+'creative-slash-menu.user.js'),get(R+'commands.json'),get(R+'creative-library.json')]);const c=JSON.parse(cj),br=JSON.parse(bj),cv=ct.match(/@version\s+([^\s]+)/)?.[1]||'?';s.querySelector('.core').textContent=cv;s.querySelector('.code').textContent=c.libraryVersion||'?';s.querySelector('.brain').textContent=br.libraryVersion||'?';s.querySelector('.count').textContent=(c.commands?.length||0)+'/100';b.textContent=`Virag V1 · ${c.commands?.length===100?'100/100 LIVE':'CHECK'}`}catch{b.textContent='Virag V1 · CHECK'}}run();setInterval(run,300000);})();
+const R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',M=R+'virag-manifest.json',EVERY=300000;
+const get=u=>new Promise((ok,no)=>GM_xmlhttpRequest({method:'GET',url:u+(u.includes('?')?'&':'?')+'v='+Date.now(),headers:{'Cache-Control':'no-cache'},timeout:12000,onload:r=>r.status>=200&&r.status<300?ok(r.responseText):no(Error(String(r.status))),onerror:no,ontimeout:no}));
+const version=(text,type)=>{if(type==='userscript')return text.match(/@version\s+([^\s]+)/)?.[1]||'?';try{const j=JSON.parse(text);return String(j.libraryVersion||j.version||j.release||'?')}catch{return'?'}};
+const root=document.createElement('div');document.documentElement.appendChild(root);const s=root.attachShadow({mode:'open'});
+s.innerHTML=`<style>:host{all:initial}.b{position:fixed;right:22px;bottom:140px;z-index:2147483646;height:34px;padding:0 11px;border:1px solid #9f72d766;border-radius:10px;background:#0b0910f2;color:#eee6f8;font:800 9px Inter,system-ui;cursor:pointer;box-shadow:0 10px 28px #0008}.p{position:fixed;right:22px;bottom:182px;z-index:2147483646;width:278px;display:none;overflow:hidden;border:1px solid #9f72d75c;border-radius:14px;background:#0b0910fa;color:#eee6f8;font:9px Inter,system-ui;box-shadow:0 22px 70px #000b}.p.on{display:block}.h,.f{display:flex;align-items:center;justify-content:space-between;padding:11px 10px}.h{font-weight:900}.time{color:#8f849a;font-size:8px}.rows{border-top:1px solid #ffffff12}.r{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid #ffffff0d}.v{font:800 8px ui-monospace,monospace}.ok{color:#6ee89a}.warn{color:#ffd166}.bad{color:#ff7b8d}.tag{font-size:7px;font-weight:950;letter-spacing:.08em}.f{background:#ffffff05}.check{height:30px;padding:0 11px;border:1px solid #a77bd080;border-radius:9px;background:#25172e;color:#f7efff;font:800 8px Inter,system-ui;cursor:pointer}.auto{color:#8f849a;font-size:7px}</style><button class="b">Virag · CHECKING</button><div class="p on"><div class="h"><span>Virag Update Monitor</span><span class="time">—</span></div><div class="rows"></div><div class="f"><button class="check">Check Now</button><span class="auto">AUTO · 5 MIN</span></div></div>`;
+const b=s.querySelector('.b'),p=s.querySelector('.p'),rows=s.querySelector('.rows'),time=s.querySelector('.time'),check=s.querySelector('.check');let busy=0;
+b.onclick=()=>p.classList.toggle('on');
+const render=(mods,states)=>{rows.innerHTML='';mods.forEach((m,i)=>{const st=states[i]||{status:'OFFLINE',actual:'?'};const r=document.createElement('div');r.className='r';const cls=st.status==='LIVE'?'ok':st.status==='UPDATE'?'warn':'bad';r.innerHTML='<span></span><b class="v"></b><span class="tag '+cls+'"></span>';r.children[0].textContent=m.name;r.children[1].textContent=st.actual;r.children[2].textContent=st.status;rows.appendChild(r)})};
+async function run(manual=0){if(busy)return;busy=1;b.textContent='Virag · CHECKING';check.disabled=true;try{
+const mt=await get(M),man=JSON.parse(mt),mods=Array.isArray(man.modules)?man.modules:[];GM_setValue('virag.manifest.cache',mt);
+const rs=await Promise.allSettled(mods.map(m=>get(R+m.file)));const states=mods.map((m,i)=>{const r=rs[i];if(r.status!=='fulfilled')return{status:'OFFLINE',actual:'?'};const v=version(r.value,m.type);return{status:v===String(m.version)?'LIVE':'UPDATE',actual:v}});
+render(mods,states);const live=states.filter(x=>x.status==='LIVE').length;const all=live===mods.length;b.textContent=all?'Virag · ALL LIVE':`Virag · ${live}/${mods.length} LIVE`;time.textContent=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});GM_setValue('virag.last.check',Date.now());
+}catch(e){try{const man=JSON.parse(GM_getValue('virag.manifest.cache','{}')),mods=man.modules||[];render(mods,mods.map(m=>({status:'CACHED',actual:m.version})));b.textContent='Virag · OFFLINE'}catch{b.textContent='Virag · CHECK'}}finally{busy=0;check.disabled=false;if(manual){check.textContent='Updated';setTimeout(()=>check.textContent='Check Now',1600)}}}
+check.onclick=()=>run(1);const wake=()=>{if(!document.hidden)run()};run();setInterval(wake,EVERY);window.addEventListener('focus',wake);window.addEventListener('online',wake);document.addEventListener('visibilitychange',wake);
+})();
