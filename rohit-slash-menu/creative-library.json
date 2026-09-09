@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "2.3.0",
-  "updatedAt": "2026-09-09T10:25:00Z",
-  "name": "Virag Creative Brain — Instagram Content Architecture",
+  "libraryVersion": "2.4.0",
+  "updatedAt": "2026-09-09T11:10:00Z",
+  "name": "Virag Creative Brain — Curated Social Design Router",
   "compatibility": {
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
@@ -16,14 +16,14 @@
     "refreshOnOnline": true
   },
   "modules": {
-    "master": "DEFAULT OUTPUT ROUTER. For every visual generation tool, default to a finished Instagram content design unless the user selects Native Tool Output. The selected preset is a technique inside the result—not the result itself. Creative, Flyer, 3D and Packaging must therefore use the chosen 4:5 Instagram format; Video must use the chosen vertical Reel format.",
+    "master": "DEFAULT OUTPUT + DESIGN ROUTER. For every visual generation tool, default to the selected Instagram content format unless Native Tool Output is chosen. The selected preset controls only the visual technique. The selected Design Direction controls the full visual system: grid, crop, product placement, typography architecture, information modules, graphic devices, palette and texture.",
     "chatgpt": "EXECUTION. Produce the final requested deliverable directly using only current-turn assets. Before generation, silently extract the exact copy deck and define the layout zones. Do not return only a prompt or concept explanation when a finished visual is requested.",
     "instagram": "INSTAGRAM CONTENT ANATOMY. A passing 4:5 design visibly combines: exact product; short readable product/brand copy; two to four information cards, fact badges, labelled callouts or infographic modules; at least three 2D graphic layers; and a clear mobile hierarchy. The scene or CGI is supporting artwork and may not occupy the whole canvas as an undivided cinematic image.",
-    "fresh": "FRESHNESS. Every output starts independently and changes the campaign idea, grid, product placement, graphic language, information-module design, type composition, supporting elements, crop, lighting and color rhythm. Never make variations by swapping only the background.",
+    "fresh": "FRESH DESIGN MEANS A NEW SYSTEM. Every output starts independently with a different campaign idea and compatible design family. Change the grid skeleton, hero scale and position, crop, type composition, information-module geometry, graphic language, palette, texture, supporting elements, lighting and content rhythm. Reject background swaps and repeated templates.",
     "sourceLock": "SOURCE IDENTITY. Preserve every supplied product, package, label, logo, name, spelling, color, geometry, person and factual detail exactly. Composite supplied assets unchanged when regeneration could alter them. Never invent offers, claims, ingredients, specifications or certifications.",
     "typography": "MANDATORY READABLE COPY. Do not use a text-free fallback for Instagram formats. Use the selected content level: exact supplied copy first, otherwise exact readable brand/product name and clearly visible label facts only. Typeset short copy as clean 2D overlays using the chosen named real-font direction. Check spelling character by character and rebuild malformed type.",
     "batch": "PLANNER. Obey product count, Separate/Together arrangement and outputs-per-product exactly. Group alternate views of one product together. Return every output separately in upload order; never create a collage or multi-panel preview unless explicitly requested.",
-    "output": "FAILURE GATE. Rebuild any cinematic beauty shot, ecommerce packshot, product-on-pedestal scene, decorative 3D room, static title poster, giant duplicate package, text-free image, tiny unreadable copy, generic template, AI typography, malformed source asset or repeated layout. Return only a finished use-ready result for the selected format.",
+    "output": "DESIGN QUALITY GATE. A passing result must look deliberately art-directed and clearly different from every other variation. Rebuild generic template layouts, cinematic beauty shots, static title posters, repeated hero placement, repeated type architecture, raw renders, text-free images, malformed typography or any output whose only change is the background.",
     "conflict": "PRIORITY. Explicit current user instructions override the preset. Output count, source identity, factual accuracy and separate-output rules remain locked."
   }
 }
