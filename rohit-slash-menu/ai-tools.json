@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "1.1.0",
-  "updatedAt": "2026-09-09T06:45:00Z",
-  "name": "Virag AI Tools Library v1.1",
+  "libraryVersion": "1.2.0",
+  "updatedAt": "2026-09-09T09:45:00Z",
+  "name": "Virag AI Tools Library v1.2",
   "commandCount": 30,
   "mode": "command-token-only",
   "commands": [
@@ -262,6 +262,8 @@
   "principles": [
     "Insert the selected command token without replacing the user request.",
     "Work with the current ChatGPT composer.",
-    "Keep commands independently auto-updatable from Core."
+    "Keep commands independently auto-updatable from Core.",
+    "UNIVERSAL CURRENT-BRIEF LOCK: Preserve the user's current request exactly, never import an unrelated older task, and let the selected AI token modify only the requested response behavior.",
+    "AI Tools are non-visual token utilities, so product-count and image-output controls do not apply to this tab."
   ]
 }
