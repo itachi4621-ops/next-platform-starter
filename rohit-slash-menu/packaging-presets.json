@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "1.1.0",
-  "updatedAt": "2026-09-09T06:45:00Z",
+  "libraryVersion": "1.2.0",
+  "updatedAt": "2026-09-09T09:45:00Z",
   "name": "Virag Packaging Library",
   "commandCount": 10,
   "mode": "packaging-only",
@@ -11,7 +11,8 @@
     "Preserve any explicitly locked package silhouette, dimensions, cap/lid, structure, logo and mandatory visible facts.",
     "Use print-aware hierarchy, safe margins, curvature/seam awareness, material/finish logic and shelf readability.",
     "Never invent ingredients, nutrition, certifications, legal/regulatory copy, net weight, claims or compliance marks.",
-    "If the user asks only for a label redesign, do not silently change the container form."
+    "If the user asks only for a label redesign, do not silently change the container form.",
+    "UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
   ],
   "commands": [
     {
@@ -20,7 +21,7 @@
       "cmd": "/packaging",
       "label": "Packaging Design",
       "desc": "Complete packaging design for the current product.",
-      "instruction": "Design the actual packaging for the current product using supplied brand/product facts only. Build a professional front-facing hierarchy, material/finish direction and shelf-ready visual system while preserving any locked form factor."
+      "instruction": "Design the actual packaging for the current product using supplied brand/product facts only. Build a professional front-facing hierarchy, material/finish direction and shelf-ready visual system while preserving any locked form factor. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 302,
@@ -28,7 +29,7 @@
       "cmd": "/label",
       "label": "Label Design",
       "desc": "Redesign the product label without changing container form.",
-      "instruction": "Design or redesign the current product label only. Preserve the container geometry unless explicitly asked otherwise. Build clear brand/product hierarchy, print-aware spacing and realistic curvature/seam behavior."
+      "instruction": "Design or redesign the current product label only. Preserve the container geometry unless explicitly asked otherwise. Build clear brand/product hierarchy, print-aware spacing and realistic curvature/seam behavior. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 303,
@@ -36,7 +37,7 @@
       "cmd": "/jarpack",
       "label": "Jar Packaging",
       "desc": "Packaging system optimized for jars/tubs.",
-      "instruction": "Create a jar/tub packaging design for the current product with realistic wrap geometry, front-panel hierarchy, cap/lid coordination and shelf readability. Do not alter supplied jar proportions unless explicitly requested."
+      "instruction": "Create a jar/tub packaging design for the current product with realistic wrap geometry, front-panel hierarchy, cap/lid coordination and shelf readability. Do not alter supplied jar proportions unless explicitly requested. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 304,
@@ -44,7 +45,7 @@
       "cmd": "/bottlepack",
       "label": "Bottle Packaging",
       "desc": "Bottle label and material system.",
-      "instruction": "Create a bottle packaging design using the current product facts and brand cues. Account for bottle curvature, label panel visibility, cap relationship and practical front/back hierarchy without inventing regulatory content."
+      "instruction": "Create a bottle packaging design using the current product facts and brand cues. Account for bottle curvature, label panel visibility, cap relationship and practical front/back hierarchy without inventing regulatory content. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 305,
@@ -52,7 +53,7 @@
       "cmd": "/pouchpack",
       "label": "Pouch Packaging",
       "desc": "Stand-up pouch or flexible-pack design.",
-      "instruction": "Create a flexible pouch packaging design with realistic seals, gusset logic, safe print zones and strong shelf hierarchy. Preserve supplied product facts and avoid unsupported claims."
+      "instruction": "Create a flexible pouch packaging design with realistic seals, gusset logic, safe print zones and strong shelf hierarchy. Preserve supplied product facts and avoid unsupported claims. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 306,
@@ -60,7 +61,7 @@
       "cmd": "/boxpack",
       "label": "Box Packaging",
       "desc": "Folding-carton or rigid-box visual system.",
-      "instruction": "Create a box packaging design with coherent front/side/back panel logic, brand hierarchy, print-safe spacing and realistic material/finish direction. Do not invent mandatory product information."
+      "instruction": "Create a box packaging design with coherent front/side/back panel logic, brand hierarchy, print-safe spacing and realistic material/finish direction. Do not invent mandatory product information. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 307,
@@ -68,7 +69,7 @@
       "cmd": "/tubepack",
       "label": "Tube Packaging",
       "desc": "Tube-form packaging and label layout.",
-      "instruction": "Create a tube packaging design with realistic cylindrical/flattened print behavior, cap relationship and front-panel readability. Preserve current product/brand facts exactly."
+      "instruction": "Create a tube packaging design with realistic cylindrical/flattened print behavior, cap relationship and front-panel readability. Preserve current product/brand facts exactly. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 308,
@@ -76,7 +77,7 @@
       "cmd": "/canpack",
       "label": "Can Packaging",
       "desc": "Can/wrap packaging with 360-degree label logic.",
-      "instruction": "Create a can packaging design with strong front read, realistic wrap continuity, top/bottom relationship and material finish. Use only supplied factual copy."
+      "instruction": "Create a can packaging design with strong front read, realistic wrap continuity, top/bottom relationship and material finish. Use only supplied factual copy. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 309,
@@ -84,7 +85,7 @@
       "cmd": "/wrapperpack",
       "label": "Wrapper Design",
       "desc": "Wrapper/sleeve packaging for bars, food or compact products.",
-      "instruction": "Create a wrapper or sleeve packaging design with realistic folds/seams, strong front hierarchy and brand-fit materials. Preserve product facts and do not invent ingredients or claims."
+      "instruction": "Create a wrapper or sleeve packaging design with realistic folds/seams, strong front hierarchy and brand-fit materials. Preserve product facts and do not invent ingredients or claims. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     },
     {
       "id": 310,
@@ -92,7 +93,7 @@
       "cmd": "/packrefresh",
       "label": "Packaging Refresh",
       "desc": "Modernize existing packaging while preserving recognition.",
-      "instruction": "Refresh the current existing package design without losing brand/product recognition. Improve hierarchy, typography, spacing, materials and shelf impact while preserving supplied facts, logo and locked structural elements."
+      "instruction": "Refresh the current existing package design without losing brand/product recognition. Improve hierarchy, typography, spacing, materials and shelf impact while preserving supplied facts, logo and locked structural elements. UNIVERSAL PACKAGING LOCK: PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift. Follow the selected product/output plan, real-font rule, source-fact lock and independent fresh-variation rule."
     }
   ],
   "compatibility": {
@@ -111,6 +112,7 @@
     "Use the current brief only.",
     "Preserve brand identity and supplied facts.",
     "Do not alter existing product packaging unless redesign is explicitly requested.",
-    "Use real readable typography."
+    "Use real readable typography.",
+    "PACKAGING FINAL GATE: deliver a complete human-designed packaging, label or form-factor solution according to the selected tool. Change only the packaging elements the current request authorizes; keep all supplied brand names, factual copy and protected source details exact. Use a deliberate information grid, real type, print-aware hierarchy and plausible construction. Reject AI-gibberish labels, generic mockups and arbitrary brand drift."
   ]
 }
