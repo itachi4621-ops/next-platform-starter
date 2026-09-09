@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "version": "1.3.0",
-  "libraryVersion": "1.3.0",
-  "updatedAt": "2026-09-09T10:25:00Z",
+  "version": "1.4.0",
+  "libraryVersion": "1.4.0",
+  "updatedAt": "2026-09-09T11:10:00Z",
   "name": "Virag Ad3X — Instagram Content System",
   "enabled": true,
   "mode": "three-pass-ad-system",
@@ -31,6 +31,11 @@
       "rule": "Allocate visible zones for product, hook, two to four information modules, at least three graphic layers and a restrained footer."
     },
     {
+      "id": "design",
+      "name": "Design-System Pass",
+      "rule": "Apply the selected design family to the complete grid, type architecture, information modules, graphic devices, palette and texture; Auto Fresh cannot repeat a family or layout skeleton."
+    },
+    {
       "id": "visual",
       "name": "Campaign Artwork Pass",
       "rule": "Use the selected visual technique as supporting artwork inside the designed grid, not as a full-canvas cinematic packshot."
@@ -46,19 +51,19 @@
       "id": 701,
       "cmd": "/ad3x",
       "label": "Ad3X Instagram Creative",
-      "instruction": "Run all three Ad3X passes and return one separate finished 4:5 Instagram post. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation."
+      "instruction": "Run all three Ad3X passes and return one separate finished 4:5 Instagram post. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 702,
       "cmd": "/ad3xfresh",
       "label": "Ad3X Fresh Concept",
-      "instruction": "Run Ad3X from a blank canvas with a genuinely new concept family. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation."
+      "instruction": "Run Ad3X from a blank canvas with a genuinely new concept family. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 703,
       "cmd": "/ad3xproduct",
       "label": "Ad3X Product Ad",
-      "instruction": "Run Ad3X with absolute product identity lock and conversion-focused social composition. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation."
+      "instruction": "Run Ad3X with absolute product identity lock and conversion-focused social composition. SOCIAL CONTENT EXECUTION: The selected preset controls only the visual technique. Under Instagram Creative or Instagram Infographic format, compose a finished 4:5 feed design with the exact product, short accurate readable copy, two to four visible information modules, at least three deliberate 2D graphic layers and a clear phone-size hierarchy. The product scene must occupy only part of the designed layout. Never return a cinematic product shot, plain packshot, pedestal render, static title poster, text-free image or background-only variation. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     }
   ]
 }
