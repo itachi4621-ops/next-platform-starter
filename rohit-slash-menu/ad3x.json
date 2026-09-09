@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "version": "1.1.0",
-  "libraryVersion": "1.1.0",
-  "updatedAt": "2026-09-09T08:10:00Z",
+  "version": "1.2.0",
+  "libraryVersion": "1.2.0",
+  "updatedAt": "2026-09-09T09:45:00Z",
   "name": "Virag Ad3X — Instagram Assembly",
   "enabled": true,
   "mode": "three-pass-ad-system",
@@ -21,19 +21,24 @@
   "runtime": "creative-slash-menu.user.js",
   "passes": [
     {
+      "id": "brief",
+      "name": "Brief + Planner Pass",
+      "rule": "Lock current-turn assets, exact product identity, selected product count, Separate/Together arrangement and exact output total."
+    },
+    {
       "id": "concept",
-      "name": "Concept Pass",
-      "rule": "Choose one fresh product-relevant social idea; reject background swaps, centered packshots and category clichés."
+      "name": "Fresh Concept Pass",
+      "rule": "Give every output an independent product-relevant campaign idea and change at least ten creative-direction decisions; reject background swaps and category clichés."
     },
     {
       "id": "layout",
-      "name": "Social Layout Pass",
-      "rule": "Assemble the exact product with an asymmetric 4:5 mobile grid, at least three visible 2D brand-design layers and a compact information zone."
+      "name": "Instagram Assembly Pass",
+      "rule": "Assemble a finished 4:5 mobile post with the exact product, purposeful hierarchy, at least three visible 2D brand-design layers and real readable typesetting."
     },
     {
       "id": "quality",
-      "name": "Quality Pass",
-      "rule": "Reject plain renders, enlarged duplicate-package backgrounds, generic glossy scenes, altered products, invented copy, bad typography and repeated variations."
+      "name": "Human Quality Pass",
+      "rule": "Reject raw renders, packshots, duplicated-package backgrounds, generic spectacle, AI typography, altered products, invented copy, artifacts and repeated variations."
     }
   ],
   "commands": [
@@ -41,19 +46,19 @@
       "id": 701,
       "cmd": "/ad3x",
       "label": "Ad3X Instagram Creative",
-      "instruction": "Run all three Ad3X passes and return one separate finished 4:5 Instagram post."
+      "instruction": "Run all three Ad3X passes and return one separate finished 4:5 Instagram post. UNIVERSAL AD3X LOCK: CREATIVE FINAL GATE: deliver a complete full-bleed 4:5 Instagram feed advertisement, not a product picture. It must visibly combine the exact product, one strong campaign idea, an intentional mobile-first layout, at least three brand-relevant 2D graphic layers and a compact information hierarchy. Reject raw packshots, ecommerce photos, pedestal renders, giant duplicate labels, poster/title-card formatting and scenes whose only idea is ribbons, arches, gloss or particles. UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
     },
     {
       "id": 702,
       "cmd": "/ad3xfresh",
       "label": "Ad3X Fresh Concept",
-      "instruction": "Run Ad3X from a blank canvas with a genuinely new concept family."
+      "instruction": "Run Ad3X from a blank canvas with a genuinely new concept family. UNIVERSAL AD3X LOCK: CREATIVE FINAL GATE: deliver a complete full-bleed 4:5 Instagram feed advertisement, not a product picture. It must visibly combine the exact product, one strong campaign idea, an intentional mobile-first layout, at least three brand-relevant 2D graphic layers and a compact information hierarchy. Reject raw packshots, ecommerce photos, pedestal renders, giant duplicate labels, poster/title-card formatting and scenes whose only idea is ribbons, arches, gloss or particles. UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
     },
     {
       "id": 703,
       "cmd": "/ad3xproduct",
       "label": "Ad3X Product Ad",
-      "instruction": "Run Ad3X with absolute product identity lock and conversion-focused social composition."
+      "instruction": "Run Ad3X with absolute product identity lock and conversion-focused social composition. UNIVERSAL AD3X LOCK: CREATIVE FINAL GATE: deliver a complete full-bleed 4:5 Instagram feed advertisement, not a product picture. It must visibly combine the exact product, one strong campaign idea, an intentional mobile-first layout, at least three brand-relevant 2D graphic layers and a compact information hierarchy. Reject raw packshots, ecommerce photos, pedestal renders, giant duplicate labels, poster/title-card formatting and scenes whose only idea is ribbons, arches, gloss or particles. UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling."
     }
   ]
 }
