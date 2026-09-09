@@ -1,8 +1,25 @@
 {
-  "schemaVersion": 1,
-  "version": "0.0.0",
-  "updatedAt": "2026-09-02T14:23:00+05:30",
-  "name": "Virag Runtime — RESET",
-  "enabled": false,
-  "rules": []
+  "schemaVersion": 2,
+  "version": "1.0.0",
+  "updatedAt": "2026-09-09T06:45:00Z",
+  "name": "Virag Auto-Update Runtime",
+  "enabled": true,
+  "manifest": "virag-manifest.json",
+  "intervalSeconds": 300,
+  "triggers": [
+    "startup",
+    "interval",
+    "window-focus",
+    "visibility-return",
+    "online"
+  ],
+  "cacheBust": true,
+  "modules": [
+    "brain",
+    "commands",
+    "3d",
+    "ai",
+    "movie",
+    "ad3x"
+  ]
 }
