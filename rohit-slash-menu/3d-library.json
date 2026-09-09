@@ -1,7 +1,59 @@
 {
-  "schemaVersion": 1,
-  "libraryVersion": "0.0.0",
-  "updatedAt": "2026-09-02T14:23:00+05:30",
-  "name": "Virag 3D Studio — RESET",
-  "commands": []
+  "schemaVersion": 2,
+  "libraryVersion": "5.1.0",
+  "updatedAt": "2026-09-09T06:45:00Z",
+  "name": "Virag 3D Studio",
+  "enabled": true,
+  "commandCount": 100,
+  "mode": "instagram-cgi-creative",
+  "compatibility": {
+    "chatgpt": "current-web",
+    "imageWorkflow": "current-built-in",
+    "composerSelectors": "2026-09"
+  },
+  "autoUpdate": {
+    "enabled": true,
+    "manifest": "virag-manifest.json",
+    "intervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  },
+  "sections": [
+    {
+      "name": "Signature CGI Concepts",
+      "version": "5.1.0",
+      "file": "3d-signature.json",
+      "commands": 20
+    },
+    {
+      "name": "FOOH & Experiential",
+      "version": "5.1.0",
+      "file": "3d-fooh.json",
+      "commands": 20
+    },
+    {
+      "name": "Transformations & Kinetics",
+      "version": "5.1.0",
+      "file": "3d-transform.json",
+      "commands": 20
+    },
+    {
+      "name": "Materials & Simulation",
+      "version": "5.1.0",
+      "file": "3d-materials.json",
+      "commands": 20
+    },
+    {
+      "name": "Environment Themes",
+      "version": "5.1.0",
+      "file": "3d-environments.json",
+      "commands": 20
+    }
+  ],
+  "globalRules": [
+    "Create a finished 4:5 Instagram CGI post, not a raw render.",
+    "Preserve the exact supplied product.",
+    "Use current-turn references only.",
+    "Every requested result is a separate image."
+  ]
 }
