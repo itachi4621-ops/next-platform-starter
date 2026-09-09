@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "1.2.0",
-  "updatedAt": "2026-09-09T09:45:00Z",
+  "libraryVersion": "1.3.0",
+  "updatedAt": "2026-09-09T10:25:00Z",
   "name": "Virag Movie Lab",
   "enabled": true,
   "commandCount": 12,
-  "mode": "video-production",
+  "mode": "instagram-reel-content-engine",
   "compatibility": {
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
@@ -26,7 +26,7 @@
       "cmd": "/video",
       "label": "Fresh Video Concept",
       "desc": "Complete fresh AI video concept with shot flow.",
-      "instruction": "Create a complete premium video concept for the current brief and current upload. Build a coherent shot-by-shot flow with a strong opening, visual progression, natural camera movement, realistic motion and a clean ending. Default to 15 seconds 9:16 only when no duration/ratio is specified. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a complete premium video concept for the current brief and current upload. Build a coherent shot-by-shot flow with a strong opening, visual progression, natural camera movement, realistic motion and a clean ending. Default to 15 seconds 9:16 only when no duration/ratio is specified. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 402,
@@ -34,7 +34,7 @@
       "cmd": "/productvideo",
       "label": "Product Video",
       "desc": "Cinematic product advertising video.",
-      "instruction": "Create a premium product advertising video using the current product as the exact visual reference. Preserve package shape, label, logo, colors and proportions in every shot. Use varied but coherent angles and a strong final hero frame. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a premium product advertising video using the current product as the exact visual reference. Preserve package shape, label, logo, colors and proportions in every shot. Use varied but coherent angles and a strong final hero frame. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 403,
@@ -42,7 +42,7 @@
       "cmd": "/cgivideo",
       "label": "CGI Product Video",
       "desc": "High-end CGI product animation.",
-      "instruction": "Create a high-end CGI product advertising video using the exact current product. Use physically believable 3D materials, reflections, shadows, camera movement and product motion. Keep every frame product-accurate and avoid random morphing or repetitive pedestal shots. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a high-end CGI product advertising video using the exact current product. Use physically believable 3D materials, reflections, shadows, camera movement and product motion. Keep every frame product-accurate and avoid random morphing or repetitive pedestal shots. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 404,
@@ -50,7 +50,7 @@
       "cmd": "/reelvideo",
       "label": "Reel Video",
       "desc": "High-retention Instagram/Reel concept.",
-      "instruction": "Create a high-retention vertical Reel concept for the current brief. Use a strong first-second hook, coherent short shots, clean transitions, natural pacing and a satisfying final beat. Avoid random effects or overly fast robotic editing. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a high-retention vertical Reel concept for the current brief. Use a strong first-second hook, coherent short shots, clean transitions, natural pacing and a satisfying final beat. Avoid random effects or overly fast robotic editing. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 405,
@@ -58,7 +58,7 @@
       "cmd": "/ugcvideo",
       "label": "UGC Video",
       "desc": "Natural phone-native creator video.",
-      "instruction": "Create a believable phone-native UGC video for the current product/brief. Keep creator behavior, speech rhythm, framing, product handling and room lighting natural. Do not invent personal testimonial results or unsupported product claims. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a believable phone-native UGC video for the current product/brief. Keep creator behavior, speech rhythm, framing, product handling and room lighting natural. Do not invent personal testimonial results or unsupported product claims. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 406,
@@ -66,7 +66,7 @@
       "cmd": "/productreveal",
       "label": "Product Reveal",
       "desc": "Premium reveal sequence with anticipation and payoff.",
-      "instruction": "Create a premium product reveal sequence. Build anticipation through light, camera, environment or material interaction, reveal the exact product progressively, and finish on a clean hero frame without changing package geometry or label. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a premium product reveal sequence. Build anticipation through light, camera, environment or material interaction, reveal the exact product progressively, and finish on a clean hero frame without changing package geometry or label. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 407,
@@ -74,7 +74,7 @@
       "cmd": "/unboxing",
       "label": "Unboxing",
       "desc": "Natural unboxing-style video flow.",
-      "instruction": "Create a natural unboxing video for the current supplied product. Show believable hands, package interaction, opening, product reveal, close-up details and final product presentation. Avoid impossible packaging behavior or fake reactions. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a natural unboxing video for the current supplied product. Show believable hands, package interaction, opening, product reveal, close-up details and final product presentation. Avoid impossible packaging behavior or fake reactions. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 408,
@@ -82,7 +82,7 @@
       "cmd": "/testimonial",
       "label": "Testimonial",
       "desc": "Creator testimonial structure without fabricated results.",
-      "instruction": "Create a natural testimonial-style video structure for the current product/service. Use only supplied factual experience/claims. If no real testimonial outcome is supplied, write it as creator-style product commentary rather than fabricating results. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a natural testimonial-style video structure for the current product/service. Use only supplied factual experience/claims. If no real testimonial outcome is supplied, write it as creator-style product commentary rather than fabricating results. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 409,
@@ -90,7 +90,7 @@
       "cmd": "/motionprompt",
       "label": "Motion Prompt",
       "desc": "Add controlled motion to an existing image.",
-      "instruction": "Write precise motion direction for the current image. Preserve layout, typography, product shape and locked elements unless the user explicitly asks them to move. Add only physically believable subject/environment/camera motion. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Write precise motion direction for the current image. Preserve layout, typography, product shape and locked elements unless the user explicitly asks them to move. Add only physically believable subject/environment/camera motion. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 410,
@@ -98,7 +98,7 @@
       "cmd": "/cameramotion",
       "label": "Camera Motion",
       "desc": "Practical cinematic camera movement prompt.",
-      "instruction": "Create practical camera movement direction for the current image/scene. Specify movement path, speed, lens feel, stabilization and parallax while keeping subject geometry stable and avoiding warping or artificial zoom artifacts. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create practical camera movement direction for the current image/scene. Specify movement path, speed, lens feel, stabilization and parallax while keeping subject geometry stable and avoiding warping or artificial zoom artifacts. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 411,
@@ -106,7 +106,7 @@
       "cmd": "/storyboard",
       "label": "Storyboard",
       "desc": "Shot-by-shot visual plan for the current video.",
-      "instruction": "Create a shot-by-shot storyboard for the current video brief with shot purpose, framing, action, camera movement, continuity and transition logic. Keep the current product/person consistent across all shots. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a shot-by-shot storyboard for the current video brief with shot purpose, framing, action, camera movement, continuity and transition logic. Keep the current product/person consistent across all shots. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     },
     {
       "id": 412,
@@ -114,14 +114,12 @@
       "cmd": "/seedance",
       "label": "Seedance Script",
       "desc": "Production-ready Seedance prompt/script.",
-      "instruction": "Create a production-ready Seedance prompt for the current brief. Respect the current requested duration, aspect ratio, casting, voice, product locks and style. Use coherent shot timing, realistic motion and concise instructions that reduce identity/product drift and text errors. UNIVERSAL MOVIE LOCK: VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims. Follow exact source identity and independent concept rules."
+      "instruction": "Create a production-ready Seedance prompt for the current brief. Respect the current requested duration, aspect ratio, casting, voice, product locks and style. Use coherent shot timing, realistic motion and concise instructions that reduce identity/product drift and text errors. VIDEO SOCIAL EXECUTION: Under Instagram formats, deliver a coherent vertical Reel or information-led motion-graphics plan with readable exact overlays, a strong hook, connected shots, natural pacing and a designed end frame. Never answer with one static product poster, a disconnected list of cinematic shots or a repetitive packshot sequence."
     }
   ],
   "globalRules": [
-    "Return separate production-ready video concepts or shot plans according to the selected count.",
-    "Use the current brief and current-turn references only.",
-    "Preserve product and character identity across every shot.",
-    "UNIVERSAL VIRAG EXECUTION CONTRACT — ACTIVE IN EVERY GENERATION SECTION. Obey the selected number of distinct products, Separate or Together arrangement, and outputs-per-product exactly. Group alternate views of one item as one product. Return the exact calculated number of independent deliverables in upload order. Each output must be standalone—never a collage, grid, contact sheet, split-screen or multi-panel preview unless the user explicitly requests a collage. Use only the current brief and current-turn assets. Preserve every supplied product, person, logo, spelling, label, color, geometry and factual detail exactly; do not invent offers, claims or copy. Every variation must start independently with a genuinely different concept, composition, visual system, crop, placement, supporting-element family and typography structure—not a background swap. Use believable human art direction, natural texture and physically coherent detail; reject default AI symmetry, generic spectacle, warped anatomy, fake reflections, duplicated objects and malformed packaging. Added text must use real readable typesetting and exact supplied wording; if real font rendering cannot be guaranteed, omit added text and leave intentional type-safe space. Default to bright, clean, optimistic commercial art direction unless the current request explicitly requires dark styling.",
-    "VIDEO FINAL GATE: deliver the selected number of independent production-ready video outputs in the requested aspect ratio and duration. Preserve product and character identity across every shot. Use a coherent hook, shot logic, natural pacing, practical camera motion, believable physics and a satisfying final beat. Reject disconnected shot lists, repetitive pedestal shots, artificial zooms, morphing products, robotic timing and invented claims."
+    "Default to a coherent vertical Instagram Reel with a content structure, exact readable overlays and a designed end frame.",
+    "Never return one static poster or a disconnected list of cinematic product shots.",
+    "Preserve product and character identity and obey exact output count."
   ]
 }
