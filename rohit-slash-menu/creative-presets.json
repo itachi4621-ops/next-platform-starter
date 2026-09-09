@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 1,
-  "libraryVersion": "1.2.0",
-  "updatedAt": "2026-09-09T00:00:00Z",
+  "schemaVersion": 2,
+  "libraryVersion": "1.3.0",
+  "updatedAt": "2026-09-09T06:45:00Z",
   "name": "Virag Instagram Creative Library",
   "commandCount": 14,
   "mode": "instagram-feed-post-only",
@@ -128,5 +128,17 @@
       "desc": "High-impact Instagram composition.",
       "instruction": "Create one high-impact 4:5 Instagram post with assertive product scale, energetic social composition and a controlled branded system. Preserve product accuracy and phone readability. Avoid giant poster headlines, event-poster geometry, excessive text and generic AI effects."
     }
-  ]
+  ],
+  "compatibility": {
+    "chatgpt": "current-web",
+    "imageWorkflow": "current-built-in",
+    "composerSelectors": "2026-09"
+  },
+  "autoUpdate": {
+    "enabled": true,
+    "manifest": "virag-manifest.json",
+    "intervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  }
 }
