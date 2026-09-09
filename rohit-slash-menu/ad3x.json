@@ -1,8 +1,59 @@
 {
-  "schemaVersion": 1,
-  "version": "0.0.0",
-  "updatedAt": "2026-09-02T14:23:00+05:30",
-  "name": "Virag Ad3X — RESET",
-  "runtime": "",
-  "commands": []
+  "schemaVersion": 2,
+  "version": "1.0.0",
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-09-09T06:45:00Z",
+  "name": "Virag Ad3X",
+  "enabled": true,
+  "mode": "three-pass-ad-system",
+  "compatibility": {
+    "chatgpt": "current-web",
+    "imageWorkflow": "current-built-in",
+    "composerSelectors": "2026-09"
+  },
+  "autoUpdate": {
+    "enabled": true,
+    "manifest": "virag-manifest.json",
+    "intervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  },
+  "runtime": "creative-slash-menu.user.js",
+  "passes": [
+    {
+      "id": "concept",
+      "name": "Concept Pass",
+      "rule": "Choose one fresh product-relevant social idea; reject background swaps and category clichés."
+    },
+    {
+      "id": "design",
+      "name": "Design Pass",
+      "rule": "Build a full-bleed 4:5 Instagram composition with mobile hierarchy and human art direction."
+    },
+    {
+      "id": "quality",
+      "name": "Quality Pass",
+      "rule": "Verify product identity, spelling, real typography, realism and post-ready finish before delivery."
+    }
+  ],
+  "commands": [
+    {
+      "id": 701,
+      "cmd": "/ad3x",
+      "label": "Ad3X Instagram Creative",
+      "instruction": "Run all three Ad3X passes and return one separate finished 4:5 Instagram post."
+    },
+    {
+      "id": 702,
+      "cmd": "/ad3xfresh",
+      "label": "Ad3X Fresh Concept",
+      "instruction": "Run Ad3X from a blank canvas with a genuinely new concept family."
+    },
+    {
+      "id": 703,
+      "cmd": "/ad3xproduct",
+      "label": "Ad3X Product Ad",
+      "instruction": "Run Ad3X with absolute product identity lock and conversion-focused social composition."
+    }
+  ]
 }
