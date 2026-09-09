@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "1.3.0",
-  "updatedAt": "2026-09-09T10:25:00Z",
+  "libraryVersion": "1.4.0",
+  "updatedAt": "2026-09-09T11:10:00Z",
   "name": "Virag Flyer Library",
   "commandCount": 10,
   "mode": "instagram-social-flyer-default",
@@ -9,7 +9,8 @@
     "Default to a finished 4:5 Instagram social flyer unless Native Tool Output is selected.",
     "Use exact supplied copy with a clear reading order, information modules and real readable typography.",
     "The selected flyer type controls content structure, not permission to return a generic poster.",
-    "Preserve products and factual details; each output is separate and structurally fresh."
+    "Preserve products and factual details; each output is separate and structurally fresh.",
+    "DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
   ],
   "commands": [
     {
@@ -18,7 +19,7 @@
       "cmd": "/flyer",
       "label": "Campaign Flyer",
       "desc": "Best-fit promotional flyer for the current brief.",
-      "instruction": "Create one finished campaign flyer for the current brief only. Use one dominant hook, clear hierarchy, strong brand/category fit and one CTA when supported. Do not reuse any older flyer topic or campaign. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one finished campaign flyer for the current brief only. Use one dominant hook, clear hierarchy, strong brand/category fit and one CTA when supported. Do not reuse any older flyer topic or campaign. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 202,
@@ -26,7 +27,7 @@
       "cmd": "/promoflyer",
       "label": "Promo Flyer",
       "desc": "General promotion with strong campaign hierarchy.",
-      "instruction": "Create one promotional flyer for the current offer/product/service using only supplied facts. Make the promotion easy to understand in 2–3 seconds and avoid generic template styling. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one promotional flyer for the current offer/product/service using only supplied facts. Make the promotion easy to understand in 2–3 seconds and avoid generic template styling. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 203,
@@ -34,7 +35,7 @@
       "cmd": "/offerflyer",
       "label": "Offer Flyer",
       "desc": "Offer-led flyer without inventing deal details.",
-      "instruction": "Create one offer-led flyer using only the exact supplied discount, price, bundle or promotion details. If no factual offer is supplied, do not invent one; instead build the visual structure around the current message. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one offer-led flyer using only the exact supplied discount, price, bundle or promotion details. If no factual offer is supplied, do not invent one; instead build the visual structure around the current message. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 204,
@@ -42,7 +43,7 @@
       "cmd": "/eventflyer",
       "label": "Event Flyer",
       "desc": "Event-focused flyer with date/time/location clarity.",
-      "instruction": "Create one event flyer using the exact supplied event name, date, time, location and participant details. Prioritize event hierarchy, atmosphere and fast readability without inventing missing event information. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one event flyer using the exact supplied event name, date, time, location and participant details. Prioritize event hierarchy, atmosphere and fast readability without inventing missing event information. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 205,
@@ -50,7 +51,7 @@
       "cmd": "/restaurantflyer",
       "label": "Restaurant Flyer",
       "desc": "Restaurant promotion with appetite-led art direction.",
-      "instruction": "Create one restaurant flyer from the current food/restaurant brief. Use appetizing hero food, brand-fit environment and clear message hierarchy. Avoid generic menu-board styling unless requested. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one restaurant flyer from the current food/restaurant brief. Use appetizing hero food, brand-fit environment and clear message hierarchy. Avoid generic menu-board styling unless requested. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 206,
@@ -58,7 +59,7 @@
       "cmd": "/foodflyer",
       "label": "Food Flyer",
       "desc": "Dish/product-led food promotion.",
-      "instruction": "Create one food-focused promotional flyer using the current dish/product image as the visual hero. Preserve visible food identity and use premium appetite cues, strong typography and concise factual copy. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one food-focused promotional flyer using the current dish/product image as the visual hero. Preserve visible food identity and use premium appetite cues, strong typography and concise factual copy. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 207,
@@ -66,7 +67,7 @@
       "cmd": "/loyaltyflyer",
       "label": "Loyalty Flyer",
       "desc": "Membership/reward communication with clear value.",
-      "instruction": "Create one loyalty or membership flyer using only supplied reward mechanics and facts. Make participation and value easy to understand while avoiding invented benefits or conditions. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one loyalty or membership flyer using only supplied reward mechanics and facts. Make participation and value easy to understand while avoiding invented benefits or conditions. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 208,
@@ -74,7 +75,7 @@
       "cmd": "/launchflyer",
       "label": "Launch Flyer",
       "desc": "New launch announcement with strong reveal energy.",
-      "instruction": "Create one launch flyer for the current product/service/event. Build anticipation and a strong reveal hierarchy using only supplied launch facts. Do not invent launch dates, availability or claims. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one launch flyer for the current product/service/event. Build anticipation and a strong reveal hierarchy using only supplied launch facts. Do not invent launch dates, availability or claims. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 209,
@@ -82,7 +83,7 @@
       "cmd": "/festivalflyer",
       "label": "Festival Flyer",
       "desc": "Festival campaign adapted to the current brand.",
-      "instruction": "Create one festival flyer only when the current brief explicitly names or clearly requires a festival/occasion. Adapt the visual language to the brand and avoid generic cliché decoration or pulling an old festival from chat history. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one festival flyer only when the current brief explicitly names or clearly requires a festival/occasion. Adapt the visual language to the brand and avoid generic cliché decoration or pulling an old festival from chat history. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     },
     {
       "id": 210,
@@ -90,7 +91,7 @@
       "cmd": "/announcementflyer",
       "label": "Announcement Flyer",
       "desc": "Clear announcement with strong message hierarchy.",
-      "instruction": "Create one announcement flyer for the current supplied message. Make the announcement the dominant readable element, support it with relevant brand visuals, and preserve all factual details exactly. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+      "instruction": "Create one announcement flyer for the current supplied message. Make the announcement the dominant readable element, support it with relevant brand visuals, and preserve all factual details exactly. SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected. DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
     }
   ],
   "compatibility": {
@@ -106,6 +107,7 @@
     "refreshOnOnline": true
   },
   "globalRules": [
-    "SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected."
+    "SOCIAL FLYER EXECUTION: Default to the selected Instagram format. Build a finished 4:5 social flyer with exact supplied copy, real readable type, clear offer/event/information modules, brand-specific graphic layers and phone-size hierarchy. Do not return a plain background picture, cinematic product shot or generic static poster. Use Native Tool Output only when explicitly selected.",
+    "DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
   ]
 }
