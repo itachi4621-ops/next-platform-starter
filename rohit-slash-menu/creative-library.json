@@ -1,12 +1,14 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "2.5.0",
-  "updatedAt": "2026-09-12T05:05:00Z",
-  "name": "Virag Creative Brain — Pixel-Locked Product Fidelity",
+  "libraryVersion": "2.6.0",
+  "updatedAt": "2026-09-12T06:01:09.409Z",
+  "name": "Virag Creative Brain — Human Studio + Pixel Fidelity",
   "compatibility": {
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
-    "composerSelectors": "2026-09"
+    "composerSelectors": "2026-09",
+    "core": "11.0.0+",
+    "humanStudio": "1.0.0+"
   },
   "autoUpdate": {
     "enabled": true,
@@ -23,7 +25,8 @@
     "sourceLock": "PIXEL-LOCKED SOURCE COMPOSITE — DEFAULT. Treat each uploaded product as an immutable source layer. Isolate and reuse its original pixels; do not redraw, regenerate, reconstruct, inpaint, relight, recolor, stretch, squash, bend, morph or perspective-warp it. Create the scene and graphic design around a reserved silhouette, then composite the unchanged product. Add shadows, reflections and foreground overlap on separate external layers only. Use a new view only under Geometry-Locked New View with adequate supplied references.",
     "typography": "MANDATORY READABLE COPY. Do not use a text-free fallback for Instagram formats. Use the selected content level: exact supplied copy first, otherwise exact readable brand/product name and clearly visible label facts only. Typeset short copy as clean 2D overlays using the chosen named real-font direction. Check spelling character by character and rebuild malformed type.",
     "batch": "PLANNER. Obey product count, Separate/Together arrangement and outputs-per-product exactly. Group alternate views of one product together. Return every output separately in upload order; never create a collage or multi-panel preview unless explicitly requested.",
-    "output": "PRODUCT + DESIGN QA. Before delivery, compare every product with the source: full silhouette, height-to-width ratio, lid/cap size, neck/shoulders, body taper, base, label bounds, logo placement, colors and printed text must match. Rebuild any deviation. Also reject cinematic packshots, static posters, repeated design systems, unreadable typography and text-free Instagram outputs.",
-    "conflict": "PRIORITY. Explicit current user instructions override the preset. Output count, source identity, factual accuracy and separate-output rules remain locked."
+    "output": "PRODUCT + DESIGN QA. Before delivery, compare every product with the source: full silhouette, height-to-width ratio, lid/cap size, neck/shoulders, body taper, base, label bounds, logo placement, colors and printed text must match. Rebuild any deviation. Also reject cinematic packshots, static posters, repeated design systems, unreadable typography and text-free Instagram outputs. Run a human-authenticity pass and rebuild visible generative artifacts, physically impossible details, over-rendered surfaces, generic AI lighting, effect clutter or fused typography.",
+    "conflict": "PRIORITY. Explicit current user instructions override the preset. Output count, source identity, factual accuracy and separate-output rules remain locked.",
+    "humanAuthenticity": "HUMAN STUDIO AUTHENTICITY. Every visual must look deliberately art-directed by a human team. Start from one communication idea and a purposeful asymmetric layout. Use believable light, coherent perspective, controlled color, tactile imperfections, restrained effects and real 2D typesetting. Default bright and clean unless dark/cinematic is explicitly requested. Reject generic glossy CGI, neon glow, random particles, centered pedestals, perfect plastic surfaces, fake bokeh, impossible reflections, uncanny people, pseudo-fonts and decorative spectacle."
   }
 }
