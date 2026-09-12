@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "5.4.0",
-  "updatedAt": "2026-09-09T11:10:00Z",
+  "libraryVersion": "5.5.0",
+  "updatedAt": "2026-09-12T05:05:00Z",
   "name": "Virag 3D Studio",
   "enabled": true,
   "commandCount": 100,
@@ -21,31 +21,31 @@
   "sections": [
     {
       "name": "Signature CGI Concepts",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-signature.json",
       "commands": 20
     },
     {
       "name": "FOOH & Experiential",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-fooh.json",
       "commands": 20
     },
     {
       "name": "Transformations & Kinetics",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-transform.json",
       "commands": 20
     },
     {
       "name": "Materials & Simulation",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-materials.json",
       "commands": 20
     },
     {
       "name": "Environment Themes",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-environments.json",
       "commands": 20
     }
@@ -54,6 +54,7 @@
     "Default every 3D command to a finished 4:5 Instagram content design unless Native Tool Output is selected.",
     "CGI is only the visual mechanism; short readable copy, information modules and 2D graphic layers define the final creative.",
     "Preserve the exact product and return each output separately.",
-    "DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text."
+    "DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text.",
+    "PRODUCT PIXEL LOCK: In Pixel-Locked Composite mode, isolate and reuse the uploaded product as an unchanged source cutout. Never redraw, regenerate, relight, recolor, inpaint, stretch, squash, bend, morph, perspective-warp or reconstruct it. Use only aspect-ratio-locked uniform scale and translation; keep the full silhouette by default. Build the design around it and add shadows, reflections or overlaps on separate outside layers. Reject any change to silhouette, proportions, lid/cap, shoulders, base, label bounds, logo, colors or printed text."
   ]
 }
