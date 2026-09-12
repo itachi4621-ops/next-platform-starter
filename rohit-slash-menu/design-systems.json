@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
-  "updatedAt": "2026-09-12T05:05:00Z",
-  "name": "Virag Curated Social Design Systems",
+  "libraryVersion": "1.2.0",
+  "updatedAt": "2026-09-12T06:01:09.409Z",
+  "name": "Virag Human-Authored Instagram Design Systems",
   "enabled": true,
   "mode": "principle-based-social-design-router",
   "sourceBasis": "Design principles extracted from the user's supplied Pinterest Instagram-design references. Do not copy individual artwork, brands, compositions or text.",
@@ -12,7 +12,8 @@
     "Every output is one standalone image, never a multi-output collage, contact sheet or preview grid.",
     "Auto Fresh assigns a different design system to each output and does not repeat a family until all compatible families are used.",
     "Choose category-relevant systems and reject decorative style that does not communicate the product.",
-    "PRODUCT PIXEL LOCK: In Pixel-Locked Composite mode, isolate and reuse the uploaded product as an unchanged source cutout. Never redraw, regenerate, relight, recolor, inpaint, stretch, squash, bend, morph, perspective-warp or reconstruct it. Use only aspect-ratio-locked uniform scale and translation; keep the full silhouette by default. Build the design around it and add shadows, reflections or overlaps on separate outside layers. Reject any change to silhouette, proportions, lid/cap, shoulders, base, label bounds, logo, colors or printed text."
+    "PRODUCT PIXEL LOCK: In Pixel-Locked Composite mode, isolate and reuse the uploaded product as an unchanged source cutout. Never redraw, regenerate, relight, recolor, inpaint, stretch, squash, bend, morph, perspective-warp or reconstruct it. Use only aspect-ratio-locked uniform scale and translation; keep the full silhouette by default. Build the design around it and add shadows, reflections or overlaps on separate outside layers. Reject any change to silhouette, proportions, lid/cap, shoulders, base, label bounds, logo, colors or printed text.",
+    "HUMAN STUDIO: Every system must be manually art-directed in appearance—purposeful asymmetry, optical spacing, restrained effects, believable materials and real 2D typesetting."
   ],
   "autoRouter": {
     "sequence": [
@@ -58,7 +59,8 @@
       "graphics": "Use one or two crop windows, fine rules, page markers, restrained symbols and subtle texture.",
       "color": "Mostly neutral or brand-light base with one confident accent color.",
       "information": "One short hook, two compact supporting facts and a small footer.",
-      "avoid": "Magazine-cover imitation, random barcodes, excessive microcopy or unrelated fashion styling."
+      "avoid": "Magazine-cover imitation, random barcodes, excessive microcopy or unrelated fashion styling. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "benefit-infographic",
@@ -70,7 +72,8 @@
       "graphics": "Use icon containers, leader lines, numbered facts, pills, progress/data bars, dividers and soft panels.",
       "color": "Use the product palette plus one neutral background and one contrast accent.",
       "information": "Exact product name plus two to four supplied or label-derived facts; CTA only when supplied.",
-      "avoid": "Tiny fact text, fake statistics, clinical clutter or an ecommerce image with floating icons."
+      "avoid": "Tiny fact text, fake statistics, clinical clutter or an ecommerce image with floating icons. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "bold-type-integration",
@@ -82,7 +85,8 @@
       "graphics": "Use masks, outlines, underlines, directional bars and controlled shadow layers.",
       "color": "High-contrast brand color blocking with no generic neon gradient.",
       "information": "Dominant product/brand phrase plus one or two supporting facts.",
-      "avoid": "Movie-title poster stacking, unreadable decorative type, giant slogan with no information or fake lettering."
+      "avoid": "Movie-title poster stacking, unreadable decorative type, giant slogan with no information or fake lettering. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "minimal-spatial",
@@ -94,7 +98,8 @@
       "graphics": "Use one geometric frame, one line system and one subtle texture or shadow plane.",
       "color": "Warm white, soft neutral or pale brand tint with one deep accent.",
       "information": "Product name, one exact fact and a restrained supplied CTA or footer.",
-      "avoid": "Empty studio packshot, excessive luxury clichés, random spheres or design that becomes only blank space."
+      "avoid": "Empty studio packshot, excessive luxury clichés, random spheres or design that becomes only blank space. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "brand-pattern-system",
@@ -106,7 +111,8 @@
       "graphics": "Use tape strips, labels, stamps, arrows, cropped brand shapes and controlled repetition.",
       "color": "Use two or three brand-derived colors with strong rhythm.",
       "information": "One clear hook and two exact facts in labelled modules.",
-      "avoid": "Unreadable wallpaper text, duplicated product packs, chaotic sticker bombing or fake logos."
+      "avoid": "Unreadable wallpaper text, duplicated product packs, chaotic sticker bombing or fake logos. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "miniature-brand-world",
@@ -118,7 +124,8 @@
       "graphics": "Use route lines, signs, small info cards and environmental brand details.",
       "color": "Category-relevant daylight palette with natural material contrast.",
       "information": "Short concept hook plus two factual product callouts.",
-      "avoid": "Random tiny people, generic toy world, impossible scale/contact or a raw CGI scene without social layout."
+      "avoid": "Random tiny people, generic toy world, impossible scale/contact or a raw CGI scene without social layout. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "contextual-story",
@@ -130,7 +137,8 @@
       "graphics": "Use hand-drawn accents, contextual icons, soft shapes, frames and a branded footer.",
       "color": "Bright natural daylight and optimistic brand-derived colors.",
       "information": "One contextual hook plus one to three exact product facts.",
-      "avoid": "Generic festival symbols, random lifestyle models, unsupported occasion copy or cinematic scene with no designed content."
+      "avoid": "Generic festival symbols, random lifestyle models, unsupported occasion copy or cinematic scene with no designed content. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "premium-natural",
@@ -142,7 +150,8 @@
       "graphics": "Use organic masks, leaf/ingredient silhouettes, soft circles, fine dividers and benefit badges.",
       "color": "Muted botanical, mineral or warm neutral palette derived from the product.",
       "information": "Product name plus two to four exact feature/benefit statements.",
-      "avoid": "Generic leaves, silk, water splash or flowers used without product relevance."
+      "avoid": "Generic leaves, silk, water splash or flowers used without product relevance. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "energetic-commercial",
@@ -154,7 +163,8 @@
       "graphics": "Use bursts, speed lines, blocks, arrows, cut shapes and controlled texture.",
       "color": "Two strong brand colors plus one contrasting accent.",
       "information": "One concise hook, two exact facts and supplied CTA.",
-      "avoid": "Generic particles, explosive splash as the whole idea, sports clichés or loud design without hierarchy."
+      "avoid": "Generic particles, explosive splash as the whole idea, sports clichés or loud design without hierarchy. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "data-callout",
@@ -166,7 +176,8 @@
       "graphics": "Use diagrams, data bars, numbered nodes, rings, check modules and precise dividers.",
       "color": "Clean high-contrast palette with one data accent and ample neutral space.",
       "information": "Three to six exact supplied metrics or facts; omit any unavailable field rather than inventing it.",
-      "avoid": "Fake dashboards, meaningless percentages, tiny technical clutter or sci-fi HUD styling."
+      "avoid": "Fake dashboards, meaningless percentages, tiny technical clutter or sci-fi HUD styling. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "crafted-layer",
@@ -178,7 +189,8 @@
       "graphics": "Use torn edges, paper grain, marker lines, stamps, halftone and cut shapes.",
       "color": "Limited two-to-four color print palette derived from the brand.",
       "information": "One expressive hook and two compact fact labels.",
-      "avoid": "A collage/contact sheet, random scrapbook objects, illegible handwriting or distressed product packaging."
+      "avoid": "A collage/contact sheet, random scrapbook objects, illegible handwriting or distressed product packaging. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     },
     {
       "id": "surreal-metaphor",
@@ -190,18 +202,20 @@
       "graphics": "Use controlled masks, scale shifts, visual arrows and one symbolic graphic motif.",
       "color": "Purposeful limited palette tied to the metaphor and product.",
       "information": "One concept hook plus two exact product facts.",
-      "avoid": "Random surrealism, impossible decorative objects, generic portals, cosmic scenes or a cinematic render with no social information system."
+      "avoid": "Random surrealism, impossible decorative objects, generic portals, cosmic scenes or a cinematic render with no social information system. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography.",
+      "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature."
     }
   ],
   "compatibility": {
-    "core": "10.9.0+",
+    "core": "11.0.0+",
     "chatgpt": "current-web",
     "outputFormats": [
       "instagram",
       "infographic",
       "native"
     ],
-    "productFidelity": "1.0.0+"
+    "productFidelity": "1.0.0+",
+    "humanStudio": "1.0.0+"
   },
   "autoUpdate": {
     "enabled": true,
@@ -209,5 +223,19 @@
     "intervalSeconds": 300,
     "refreshOnFocus": true,
     "refreshOnOnline": true
+  },
+  "humanAuthenticity": {
+    "default": "bright-clean-commercial",
+    "rule": "Use one dominant communication idea and one supporting graphic device. Prefer natural or practical light, credible surfaces, limited palettes, optical alignment and small tactile imperfections.",
+    "forbidden": [
+      "generic glossy CGI",
+      "default dark/neon styling",
+      "centered pedestal symmetry",
+      "random particles or floating props",
+      "fake bokeh",
+      "impossible reflections",
+      "pseudo-fonts",
+      "effect clutter"
+    ]
   }
 }
