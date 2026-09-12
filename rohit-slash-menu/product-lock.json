@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-09-12T05:05:00Z",
+  "name": "Virag Product Fidelity Engine",
+  "enabled": true,
+  "defaultMode": "exact-composite",
+  "mode": "source-first-nondestructive-product-compositing",
+  "modes": [
+    {
+      "id": "exact-composite",
+      "label": "Pixel-Locked Composite",
+      "useWhen": "Default for every creative, flyer, 3D scene, social post and video frame.",
+      "rule": "Use the uploaded product as an immutable pixel source. Isolate it as a clean cutout and composite those original pixels into the final design. Do not redraw, regenerate, reconstruct, inpaint, relight, recolor, retouch or reinterpret any pixel inside the product silhouette.",
+      "allowed": [
+        "uniform scaling with locked aspect ratio",
+        "translation",
+        "whole-object rotation only when it does not distort the source",
+        "external masking for clean edge isolation",
+        "separate contact shadow",
+        "separate cast shadow",
+        "separate reflection that does not modify the source",
+        "foreground overlap that does not deform the source"
+      ],
+      "forbidden": [
+        "non-uniform scaling",
+        "perspective warp",
+        "mesh warp",
+        "liquify",
+        "bend",
+        "morph",
+        "stretch",
+        "squash",
+        "label replacement",
+        "cap or lid reconstruction",
+        "container reshaping",
+        "AI relighting painted onto product",
+        "AI text repair that changes label",
+        "invented rear or side geometry"
+      ]
+    },
+    {
+      "id": "geometry-locked",
+      "label": "Geometry-Locked New View",
+      "useWhen": "Only when the user explicitly requests a new camera angle or view that cannot use the supplied pixels unchanged.",
+      "rule": "Reconstruct only the requested view while locking the exact silhouette ratios, cross-section, height-to-width ratio, lid/cap dimensions, shoulder profile, base, material, label placement and all visible identity details. Use multiple supplied angles when available. If confidence is insufficient, do not generate the new view; request an appropriate reference.",
+      "allowed": [
+        "requested camera-angle change",
+        "physically consistent lighting",
+        "perspective produced by the new view rather than a 2D warp"
+      ],
+      "forbidden": [
+        "shape redesign",
+        "beautification",
+        "proportion correction",
+        "label simplification",
+        "invented hidden details",
+        "container substitution"
+      ]
+    },
+    {
+      "id": "authorized-redesign",
+      "label": "Authorized Packaging Redesign",
+      "useWhen": "Only in Packaging mode when the current user request explicitly asks to redesign packaging.",
+      "rule": "Change only the specifically authorized packaging components. Preserve protected brand names, factual copy, dimensions and structural constraints unless the user explicitly authorizes those changes.",
+      "allowed": [
+        "explicitly requested label or structural design changes"
+      ],
+      "forbidden": [
+        "unrequested renaming",
+        "invented claims",
+        "unrequested container changes",
+        "silent product replacement"
+      ]
+    }
+  ],
+  "workflow": [
+    "SOURCE AUDIT: identify the clearest uploaded product view and record its silhouette, width-to-height ratio, cap/lid height and diameter, shoulder, body, base, label bounds, logo and distinctive details.",
+    "CUTOUT: isolate the supplied product while retaining original internal pixels and natural edge detail.",
+    "RESERVED COMPOSITION: create the background and graphic layout with a reserved product-shaped area; do not ask the image model to generate a substitute pack.",
+    "COMPOSITE: place the unchanged source cutout using aspect-ratio-locked uniform scale and translation.",
+    "INTEGRATION: add contact shadow, cast shadow, reflection, rim separation and foreground overlap outside the source layer only.",
+    "PIXEL + GEOMETRY QA: compare the final product against the uploaded source before delivery; reject any silhouette, ratio, lid, label, color or text drift."
+  ],
+  "geometryChecklist": [
+    "overall silhouette",
+    "height-to-width ratio",
+    "top and base widths",
+    "cap/lid diameter and height",
+    "neck and shoulder profile",
+    "corner radii",
+    "body taper",
+    "label position and bounds",
+    "logo scale and placement",
+    "variant/flavour panel",
+    "badges and factual text",
+    "material and transparency",
+    "color values",
+    "number of products"
+  ],
+  "batchRules": [
+    "Use the same source-locked product cutout consistently across all variations unless different current-turn angles are supplied.",
+    "Never allow a fresh design system to alter product geometry.",
+    "For Together mode, preserve and count every distinct product exactly once unless the current brief requests multiples.",
+    "If a source is too low-resolution, obstructed or missing the required view, ask for a clearer reference instead of inventing shape."
+  ],
+  "compatibility": {
+    "core": "10.9.0+",
+    "chatgpt": "current-web",
+    "designSystems": "1.1.0+"
+  },
+  "autoUpdate": {
+    "enabled": true,
+    "manifest": "virag-manifest.json",
+    "intervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  }
+}
