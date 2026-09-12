@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "2.4.0",
-  "updatedAt": "2026-09-12T05:05:00Z",
-  "name": "Virag Visual Commands v2",
+  "libraryVersion": "2.5.0",
+  "updatedAt": "2026-09-12T06:01:09.409Z",
+  "name": "Virag Visual Command Dictionary — Human Studio",
   "source": {
     "title": "Try These 100 Codes That Make Your ChatGPT / Gemini Images Look Better (No Design Skills Needed)",
     "author": "Abhijay Arora Vuyyuru",
@@ -17,7 +17,8 @@
     "If a visual operator conflicts with the current brief, preserve the user's explicit current brief.",
     "A visual code controls only its named camera, lighting, composition or style axis. Under an Instagram format it must remain inside the social-content blueprint and may never collapse the result into a cinematic shot or static poster.",
     "DESIGN-SYSTEM LOCK: Obey the selected Design Direction. Auto Fresh must assign every requested output a different compatible design family and must change the grid skeleton, crop, product placement, type architecture, information-module design, graphic devices, palette and texture—not merely the background. Use the supplied reference principles without copying any brand, artwork, composition or text.",
-    "PRODUCT PIXEL LOCK: In Pixel-Locked Composite mode, isolate and reuse the uploaded product as an unchanged source cutout. Never redraw, regenerate, relight, recolor, inpaint, stretch, squash, bend, morph, perspective-warp or reconstruct it. Use only aspect-ratio-locked uniform scale and translation; keep the full silhouette by default. Build the design around it and add shadows, reflections or overlaps on separate outside layers. Reject any change to silhouette, proportions, lid/cap, shoulders, base, label bounds, logo, colors or printed text."
+    "PRODUCT PIXEL LOCK: In Pixel-Locked Composite mode, isolate and reuse the uploaded product as an unchanged source cutout. Never redraw, regenerate, relight, recolor, inpaint, stretch, squash, bend, morph, perspective-warp or reconstruct it. Use only aspect-ratio-locked uniform scale and translation; keep the full silhouette by default. Build the design around it and add shadows, reflections or overlaps on separate outside layers. Reject any change to silhouette, proportions, lid/cap, shoulders, base, label bounds, logo, colors or printed text.",
+    "HUMAN STUDIO LOCK: Visual operators must preserve believable physical craft and human art direction. A camera, lighting or style command never authorizes generic glossy CGI, default neon, random spectacle, pseudo-fonts or visible generative artifacts."
   ],
   "categories": [
     "Camera & Angles",
@@ -836,7 +837,9 @@
   "compatibility": {
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
-    "composerSelectors": "2026-09"
+    "composerSelectors": "2026-09",
+    "core": "11.0.0+",
+    "humanStudio": "1.0.0+"
   },
   "autoUpdate": {
     "enabled": true,
@@ -851,7 +854,7 @@
     "2": "For Creative work, default to one separate full-bleed 4:5 Instagram feed post rather than a print poster.",
     "3": "Generate the final requested result directly; do not stop at a prompt or plan.",
     "4": "Preserve exact product identity and use real readable typography.",
-    "version": "2.4.0",
+    "version": "2.5.0",
     "currentBriefOnly": true,
     "exactSourceIdentity": true,
     "plannerAware": true,
@@ -882,6 +885,13 @@
     "nonUniformScaling": false,
     "perspectiveWarp": false,
     "productMorph": false,
-    "geometryQA": true
+    "geometryQA": true,
+    "humanStudioVersion": "1.0.0",
+    "humanAuthoredDefault": true,
+    "brightFirstDefault": true,
+    "rejectGeneratedLook": true,
+    "realTwoDimensionalTypesetting": true,
+    "restrainedEffects": true,
+    "physicalPlausibility": true
   }
 }
