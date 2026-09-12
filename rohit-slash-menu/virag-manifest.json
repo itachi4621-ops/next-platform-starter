@@ -79,47 +79,47 @@
   "libraries": [
     {
       "name": "Creative Presets",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "file": "creative-presets.json"
     },
     {
       "name": "Flyer Presets",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "file": "flyer-presets.json"
     },
     {
       "name": "Packaging Presets",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "file": "packaging-presets.json"
     },
     {
       "name": "Video Presets",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "file": "video-presets.json"
     },
     {
       "name": "3d-signature",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-signature.json"
     },
     {
       "name": "3d-fooh",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-fooh.json"
     },
     {
       "name": "3d-transform",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-transform.json"
     },
     {
       "name": "3d-materials",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-materials.json"
     },
     {
       "name": "3d-environments",
-      "version": "5.4.0",
+      "version": "5.5.0",
       "file": "3d-environments.json"
     }
   ]
