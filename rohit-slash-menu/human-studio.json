@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-09-12T06:01:09.409Z",
+  "name": "Virag Human Studio Authenticity Engine",
+  "enabled": true,
+  "defaultMode": "human-authored",
+  "globalRule": "HUMAN-AUTHORED VISUAL STANDARD. The result must feel art-directed, photographed, typeset and finished by an experienced human creative team. Begin with one clear communication idea and a purposeful layout—not an effects list. Prefer believable light, coherent perspective, real material response, controlled color, optical spacing, restrained depth and small tactile imperfections. Default to bright, clean commercial art direction unless the current request explicitly asks for dark or cinematic styling. Never imitate the common image-model aesthetic.",
+  "process": [
+    "REFERENCE READING: extract only the useful art-direction principles from supplied references—grid, hierarchy, crop, type character, color rhythm, texture and finish—without copying their subject arrangement.",
+    "CONCEPT: write one silent one-sentence communication idea with a reason for every major element.",
+    "LAYOUT: establish an asymmetric human-designed grid, optical alignment and intentional negative space before producing decorative detail.",
+    "IMAGE CRAFT: use physically credible lens behavior, light direction, shadows, scale, surface texture and environmental context.",
+    "TYPE CRAFT: typeset exact short copy as a separate clean 2D design layer using real named font behavior; never ask the image model to invent pseudo-lettering.",
+    "RESTRAINT: use one dominant visual idea, one supporting device and a limited palette; remove effects that do not communicate.",
+    "AUTHENTICITY QA: inspect the full result at phone size and reject anything that feels synthetic, templated, over-rendered or impossible."
+  ],
+  "categoryRules": {
+    "Creative": "Create a finished contemporary Instagram design with an editorial layout, useful information hierarchy and one distinctive human-made graphic device. The photography or illustration supports the message; it is not a standalone beauty render.",
+    "Flyer": "Create a readable social flyer with clear information architecture, disciplined spacing, intentional type scale and controlled supporting imagery. It must feel manually typeset, not generated as one fused image.",
+    "3D": "Use CGI as a deliberately art-directed campaign technique. Keep materials, gravity, scale, contact, reflections and shadows physically coherent; add subtle real-world imperfections and restrained post-production. Avoid spectacular complexity that has no communication purpose.",
+    "Packaging": "Present packaging through practical design logic, print-aware hierarchy, credible materials and shelf context. Never add fake microcopy, imaginary claims or ornamental details merely to make it look complex.",
+    "Video": "Build shots and edits like a human director and editor: motivated camera movement, plausible lens physics, stable object continuity, natural timing, intentional cuts and clean motion-graphic typography. Avoid AI morphing, texture boiling and endless synthetic drift."
+  },
+  "typographyRule": "REAL HUMAN TYPESETTING. Use exact supplied wording. Prefer reliable families and believable pairings such as Inter, Helvetica Neue, Neue Haas Grotesk, Archivo, DM Sans, Manrope, Georgia, Times New Roman, Playfair Display or Cormorant Garamond according to the brand direction. Use no more than two families and three weights. Preserve real glyph structure, kerning, baseline, line breaks and optical margins. Reject warped letters, pseudo-fonts, gibberish, fake microcopy and decorative text generated inside photographic surfaces.",
+  "rejectIf": [
+    "default centered product on a pedestal",
+    "perfect bilateral symmetry without a concept reason",
+    "generic glossy CGI or plastic-looking surfaces",
+    "neon rim glow or dark gradient used by default",
+    "random floating objects, particles, smoke or splashes",
+    "impossible reflections, shadows, scale or perspective",
+    "excessive bloom, bokeh, sharpening or depth of field",
+    "unmotivated dramatic lighting",
+    "too many unrelated props or effects",
+    "empty cinematic image presented as an Instagram creative",
+    "fused, warped or misspelled typography",
+    "uncanny hands, people, anatomy or expressions",
+    "repeated template or merely changed background",
+    "sterile perfection with no tactile material detail",
+    "any alteration to the pixel-locked product"
+  ],
+  "qaChecklist": [
+    "one clear communication idea",
+    "human-designed asymmetric composition",
+    "credible light and perspective",
+    "restrained palette and effects",
+    "tactile material detail",
+    "accurate unchanged product",
+    "real readable typography",
+    "useful Instagram information hierarchy",
+    "no obvious generative artifacts",
+    "visibly different from previous outputs"
+  ],
+  "compatibility": {
+    "core": "11.0.0+",
+    "productFidelity": "1.0.0+",
+    "designSystems": "1.2.0+"
+  },
+  "autoUpdate": {
+    "enabled": true,
+    "manifest": "virag-manifest.json",
+    "intervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  }
+}
