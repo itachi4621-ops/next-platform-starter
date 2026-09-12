@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "2.4.0",
-  "updatedAt": "2026-09-09T11:10:00Z",
-  "name": "Virag Creative Brain — Curated Social Design Router",
+  "libraryVersion": "2.5.0",
+  "updatedAt": "2026-09-12T05:05:00Z",
+  "name": "Virag Creative Brain — Pixel-Locked Product Fidelity",
   "compatibility": {
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
@@ -20,10 +20,10 @@
     "chatgpt": "EXECUTION. Produce the final requested deliverable directly using only current-turn assets. Before generation, silently extract the exact copy deck and define the layout zones. Do not return only a prompt or concept explanation when a finished visual is requested.",
     "instagram": "INSTAGRAM CONTENT ANATOMY. A passing 4:5 design visibly combines: exact product; short readable product/brand copy; two to four information cards, fact badges, labelled callouts or infographic modules; at least three 2D graphic layers; and a clear mobile hierarchy. The scene or CGI is supporting artwork and may not occupy the whole canvas as an undivided cinematic image.",
     "fresh": "FRESH DESIGN MEANS A NEW SYSTEM. Every output starts independently with a different campaign idea and compatible design family. Change the grid skeleton, hero scale and position, crop, type composition, information-module geometry, graphic language, palette, texture, supporting elements, lighting and content rhythm. Reject background swaps and repeated templates.",
-    "sourceLock": "SOURCE IDENTITY. Preserve every supplied product, package, label, logo, name, spelling, color, geometry, person and factual detail exactly. Composite supplied assets unchanged when regeneration could alter them. Never invent offers, claims, ingredients, specifications or certifications.",
+    "sourceLock": "PIXEL-LOCKED SOURCE COMPOSITE — DEFAULT. Treat each uploaded product as an immutable source layer. Isolate and reuse its original pixels; do not redraw, regenerate, reconstruct, inpaint, relight, recolor, stretch, squash, bend, morph or perspective-warp it. Create the scene and graphic design around a reserved silhouette, then composite the unchanged product. Add shadows, reflections and foreground overlap on separate external layers only. Use a new view only under Geometry-Locked New View with adequate supplied references.",
     "typography": "MANDATORY READABLE COPY. Do not use a text-free fallback for Instagram formats. Use the selected content level: exact supplied copy first, otherwise exact readable brand/product name and clearly visible label facts only. Typeset short copy as clean 2D overlays using the chosen named real-font direction. Check spelling character by character and rebuild malformed type.",
     "batch": "PLANNER. Obey product count, Separate/Together arrangement and outputs-per-product exactly. Group alternate views of one product together. Return every output separately in upload order; never create a collage or multi-panel preview unless explicitly requested.",
-    "output": "DESIGN QUALITY GATE. A passing result must look deliberately art-directed and clearly different from every other variation. Rebuild generic template layouts, cinematic beauty shots, static title posters, repeated hero placement, repeated type architecture, raw renders, text-free images, malformed typography or any output whose only change is the background.",
+    "output": "PRODUCT + DESIGN QA. Before delivery, compare every product with the source: full silhouette, height-to-width ratio, lid/cap size, neck/shoulders, body taper, base, label bounds, logo placement, colors and printed text must match. Rebuild any deviation. Also reject cinematic packshots, static posters, repeated design systems, unreadable typography and text-free Instagram outputs.",
     "conflict": "PRIORITY. Explicit current user instructions override the preset. Output count, source identity, factual accuracy and separate-output rules remain locked."
   }
 }
