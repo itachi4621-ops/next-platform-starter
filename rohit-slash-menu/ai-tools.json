@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "1.4.0",
-  "updatedAt": "2026-09-09T11:10:00Z",
-  "name": "Virag AI Tools Library v1.4",
+  "libraryVersion": "1.5.0",
+  "updatedAt": "2026-09-12T05:05:00Z",
+  "name": "Virag AI Tools Library v1.5",
   "commandCount": 30,
   "mode": "command-token-only",
   "commands": [
@@ -265,6 +265,7 @@
     "Keep commands independently auto-updatable from Core.",
     "UNIVERSAL CURRENT-BRIEF LOCK: Preserve the user's current request exactly, never import an unrelated older task, and let the selected AI token modify only the requested response behavior.",
     "AI Tools remain non-visual command tokens; Instagram Output Format and Content Level affect visual-generation tabs only.",
-    "Design Direction applies to visual and video generation; AI Tools remain non-visual command tokens."
+    "Design Direction applies to visual and video generation; AI Tools remain non-visual command tokens.",
+    "Product Fidelity settings apply to visual and video generation; AI Tools remain non-visual command tokens."
   ]
 }
