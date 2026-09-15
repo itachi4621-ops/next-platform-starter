@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-09-15T05:46:34.495Z",
+  "name": "Virag Browser Compatibility Layer",
+  "enabled": true,
+  "core": "11.1.0+",
+  "supportLevel": "modern-desktop",
+  "browsers": [
+    {
+      "family": "Chromium",
+      "browsers": [
+        "Google Chrome",
+        "Brave",
+        "Microsoft Edge",
+        "Opera",
+        "Vivaldi",
+        "Arc"
+      ],
+      "minimum": "Chromium 100+",
+      "managers": [
+        "Tampermonkey",
+        "Violentmonkey"
+      ]
+    },
+    {
+      "family": "Gecko",
+      "browsers": [
+        "Mozilla Firefox"
+      ],
+      "minimum": "Firefox 100+",
+      "managers": [
+        "Tampermonkey",
+        "Violentmonkey",
+        "Greasemonkey"
+      ]
+    },
+    {
+      "family": "WebKit",
+      "browsers": [
+        "Apple Safari"
+      ],
+      "minimum": "Safari 16+",
+      "managers": [
+        "Userscripts for Safari",
+        "Tampermonkey for Safari"
+      ]
+    }
+  ],
+  "fallbacks": {
+    "requests": [
+      "GM_xmlhttpRequest",
+      "GM.xmlHttpRequest",
+      "native fetch"
+    ],
+    "storage": [
+      "GM_getValue/GM_setValue",
+      "origin localStorage"
+    ],
+    "inputEvents": [
+      "InputEvent",
+      "Event"
+    ],
+    "contentEditing": [
+      "execCommand",
+      "DOM replacement"
+    ],
+    "UI": [
+      "Shadow DOM",
+      "light DOM"
+    ]
+  },
+  "requirements": [
+    "A userscript manager must be installed and enabled.",
+    "The script must be allowed to run on https://chatgpt.com/*.",
+    "raw.githubusercontent.com must be allowed for automatic module updates.",
+    "Use a current desktop browser; private or hardened modes may require explicit site permission."
+  ],
+  "notes": [
+    "Brave Shields can remain enabled; if the panel does not appear, allow the userscript manager on chatgpt.com.",
+    "Firefox users should permit the userscript extension in Private Windows when using private mode.",
+    "Safari users must enable the userscript extension in Safari Settings and grant chatgpt.com access.",
+    "Only one Virag Creative OS userscript should be enabled at a time."
+  ],
+  "autoUpdate": {
+    "enabled": true,
+    "manifest": "virag-manifest.json",
+    "intervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  }
+}
