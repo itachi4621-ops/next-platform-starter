@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": "1.5.0",
-  "release": "11.0.0",
-  "updatedAt": "2026-09-12T06:01:09.409Z",
+  "manifestVersion": "1.6.0",
+  "release": "11.1.0",
+  "updatedAt": "2026-09-15T05:46:34.495Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 300,
@@ -15,7 +15,7 @@
     {
       "id": "core",
       "name": "Core",
-      "version": "11.0.0",
+      "version": "11.1.0",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
@@ -45,6 +45,13 @@
       "name": "Human Studio",
       "version": "1.0.0",
       "file": "human-studio.json",
+      "type": "json"
+    },
+    {
+      "id": "browser",
+      "name": "Browser Compatibility",
+      "version": "1.0.0",
+      "file": "browser-compat.json",
       "type": "json"
     },
     {
