@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.3.0",
-  "updatedAt": "2026-09-17T07:44:39.560Z",
+  "libraryVersion": "1.4.0",
+  "updatedAt": "2026-09-17T08:03:56.386Z",
   "name": "Virag Clean Human Instagram Design Systems",
   "enabled": true,
   "mode": "principle-based-social-design-router",
@@ -31,7 +31,7 @@
       "crafted-layer",
       "surreal-metaphor"
     ],
-    "selection": "Assign systems in output order. Begin with the family best suited to the product/category, then rotate through compatible unused families.",
+    "selection": "Assign systems in output order. Begin with the family best suited to the product/category, then rotate through compatible unused families. Render every family at Premium Designed richness unless the user selects Minimal Editorial or Bold Campaign.",
     "noRepeatUntilExhausted": true,
     "diversityAxes": [
       "core idea",
@@ -47,7 +47,7 @@
       "lighting",
       "content rhythm"
     ],
-    "rejection": "Reject the batch if any two outputs share the same grid skeleton, hero placement, dominant type arrangement, callout style or background system."
+    "rejection": "Reject the batch if any two outputs share the same grid skeleton, hero placement, dominant type arrangement, callout style or background system. Also reject any output that feels sparse, basic, template-like or like a product render with text added."
   },
   "designSystems": [
     {
@@ -62,7 +62,8 @@
       "information": "One short hook, two compact supporting facts and a small footer.",
       "avoid": "Magazine-cover imitation, random barcodes, excessive microcopy or unrelated fashion styling. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Use one dramatic crop window, an oversized editorial headline, fine rules, page-like micro-labels, one textured color field and one or two precision fact modules."
     },
     {
       "id": "benefit-infographic",
@@ -76,7 +77,8 @@
       "information": "Exact product name plus two to four supplied or label-derived facts; CTA only when supplied.",
       "avoid": "Tiny fact text, fake statistics, clinical clutter or an ecommerce image with floating icons. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Make the information architecture visually central: two or three differentiated fact modules, connector lines or icons, a strong product crop and one bold brand-color movement."
     },
     {
       "id": "bold-type-integration",
@@ -90,7 +92,8 @@
       "information": "Dominant product/brand phrase plus one or two supporting facts.",
       "avoid": "Movie-title poster stacking, unreadable decorative type, giant slogan with no information or fake lettering. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Let oversized type become architecture: crop it at edges, overlap behind and around the unchanged product, add directional geometry and compact metric cards."
     },
     {
       "id": "minimal-spatial",
@@ -104,7 +107,8 @@
       "information": "Product name, one exact fact and a restrained supplied CTA or footer.",
       "avoid": "Empty studio packshot, excessive luxury clichés, random spheres or design that becomes only blank space. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Keep generous space but create sophistication through extreme scale contrast, exact alignment, one strong material plane, subtle depth, a precision fact module and editorial micro-details."
     },
     {
       "id": "brand-pattern-system",
@@ -118,7 +122,8 @@
       "information": "One clear hook and two exact facts in labelled modules.",
       "avoid": "Unreadable wallpaper text, duplicated product packs, chaotic sticker bombing or fake logos. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Build a campaign identity from product-specific strips, repeated words, modular marks, controlled pattern rhythm, one hero interruption and grouped facts."
     },
     {
       "id": "miniature-brand-world",
@@ -132,7 +137,8 @@
       "information": "Short concept hook plus two factual product callouts.",
       "avoid": "Random tiny people, generic toy world, impossible scale/contact or a raw CGI scene without social layout. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Use a believable branded spatial idea, but frame it with real typography, campaign graphics and compact information modules so it reads as a social design rather than a render."
     },
     {
       "id": "contextual-story",
@@ -146,7 +152,8 @@
       "information": "One contextual hook plus one to three exact product facts.",
       "avoid": "Generic festival symbols, random lifestyle models, unsupported occasion copy or cinematic scene with no designed content. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Combine a believable human or real-world moment with strong type framing, product-specific annotation, an intentional crop and useful facts; avoid stock-photo advertising."
     },
     {
       "id": "premium-natural",
@@ -160,7 +167,8 @@
       "information": "Product name plus two to four exact feature/benefit statements.",
       "avoid": "Generic leaves, silk, water splash or flowers used without product relevance. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Pair tactile ingredient or material storytelling with editorial serif/sans contrast, organic framing shapes, fine annotation and one or two elegant fact modules."
     },
     {
       "id": "energetic-commercial",
@@ -174,7 +182,8 @@
       "information": "One concise hook, two exact facts and supplied CTA.",
       "avoid": "Generic particles, explosive splash as the whole idea, sports clichés or loud design without hierarchy. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Use bold brand-color bands, diagonal or directional movement, oversized display type, layered product interaction, controlled print texture and retail-clear metric cards."
     },
     {
       "id": "data-callout",
@@ -188,7 +197,8 @@
       "information": "Three to six exact supplied metrics or facts; omit any unavailable field rather than inventing it.",
       "avoid": "Fake dashboards, meaningless percentages, tiny technical clutter or sci-fi HUD styling. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Use numbers and exact facts as the visual hook through large metrics, comparison bars, annotated connectors, modular cards and an anchored product hero."
     },
     {
       "id": "crafted-layer",
@@ -202,7 +212,8 @@
       "information": "One expressive hook and two compact fact labels.",
       "avoid": "A collage/contact sheet, random scrapbook objects, illegible handwriting or distressed product packaging. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Use visibly crafted paper, print, tape, cut-edge or ink textures with disciplined layering, strong type blocks and hand-positioned information modules; keep the product pixels unchanged."
     },
     {
       "id": "surreal-metaphor",
@@ -216,7 +227,8 @@
       "information": "One concept hook plus two exact product facts.",
       "avoid": "Random surrealism, impossible decorative objects, generic portals, cosmic scenes or a cinematic render with no social information system. Also avoid generic glossy CGI, default neon glow, random particles, perfect plastic surfaces, fake bokeh, impossible reflections, centered-pedestal symmetry and generated-looking typography. Reject excessive copy, crowded modules, random decorative shapes, fake fonts, unnecessary gradients/effects and more than one competing focal point.",
       "humanFinish": "Use optical rather than mathematical spacing, one dominant idea, restrained depth, believable material detail and a clean separately typeset information layer. Remove any generic AI-render signature.",
-      "cleanFinish": "Use one dominant focal point, a short hook, zero to two compact fact modules, generous outer margins, a maximum of two real font families and one dominant graphic device."
+      "cleanFinish": "Edit for coherence and readability without making the composition sparse. Preserve expressive typography, useful information modules, coordinated graphic devices, tactile detail and a complete campaign finish.",
+      "artDirectionFinish": "Stage one memorable product-relevant metaphor, then discipline it with an editorial grid, expressive real typography, one directional graphic device and compact facts."
     }
   ],
   "compatibility": {
@@ -262,5 +274,6 @@
     "dominantGraphicDevices": 1,
     "supportingGraphicDevicesMaximum": 2,
     "rule": "When a trend or preset creates clutter, simplify it until the composition is understandable in two seconds."
-  }
+  },
+  "defaultRichness": "premium"
 }
