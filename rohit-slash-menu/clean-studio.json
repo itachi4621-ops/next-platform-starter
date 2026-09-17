@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.1.0",
-  "updatedAt": "2026-09-17T08:03:56.386Z",
+  "libraryVersion": "1.2.0",
+  "updatedAt": "2026-09-17T09:46:44.627Z",
   "name": "Virag Clean Human Design Engine",
   "enabled": true,
   "defaultMode": "clean-art-directed",
   "authority": "final-art-direction-gate",
-  "globalRule": "CLEAN HUMAN DESIGN — FINAL AUTHORITY. Every output must feel deliberately made by a skilled human graphic designer: one strong idea, decisive hierarchy, a complete composition, optical alignment, controlled contrast, tactile finish and purposeful detail. Clean means coherent and edited—not empty, generic, simplistic or under-designed. Retain enough visual structure to make the post feel campaign-ready.",
+  "globalRule": "CLEAN HUMAN DESIGN — FINAL AUTHORITY. Every output must feel deliberately made by a skilled human graphic designer: one strong idea, decisive hierarchy, a complete composition, optical alignment, controlled contrast, tactile finish and purposeful detail. Clean means coherent and edited—not empty, generic, simplistic or under-designed. Retain enough visual structure to make the post feel campaign-ready. HUMAN-MADE FINISH: retain campaign-level typography, information design, graphic architecture, tactile detail and spatial depth; never simplify into an AI-looking product render or basic product-plus-headline layout.",
   "contentBudgets": {
     "clean": "Use one short hook plus one exact fact. Copy may be minimal, but the composition still requires sophisticated hierarchy, graphic architecture and a finished campaign feel.",
     "light": "Use the exact brand/product name plus one exact supplied fact and only useful micro-labels.",
@@ -87,6 +87,7 @@
     "any change to the locked product"
   ],
   "qaChecklist": [
+    "passes the Human-Made Creative Master gate",
     "feels premium and fully designed rather than basic",
     "understandable in two seconds",
     "one dominant product-and-headline relationship",
@@ -109,7 +110,7 @@
     "humanStudio": "1.1.0+",
     "designSystems": "1.3.0+",
     "dailyTrends": "2026.09.17+",
-    "minimumCoreVersion": "11.4.0"
+    "minimumCoreVersion": "11.5.0"
   },
   "autoUpdate": {
     "enabled": true,
