@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.0.0",
-  "updatedAt": "2026-09-17T07:44:39.560Z",
+  "libraryVersion": "1.1.0",
+  "updatedAt": "2026-09-17T08:03:56.386Z",
   "name": "Virag Clean Human Design Engine",
   "enabled": true,
-  "defaultMode": "clean-human",
+  "defaultMode": "clean-art-directed",
   "authority": "final-art-direction-gate",
-  "globalRule": "CLEAN HUMAN DESIGN — FINAL AUTHORITY. Every output must feel deliberately made by a skilled human graphic designer: one clear idea, strong hierarchy, generous breathing room, optical alignment, controlled contrast, restrained effects and believable material detail. Remove every element that does not improve the message. Clean means intentional—not empty, generic or template-like.",
+  "globalRule": "CLEAN HUMAN DESIGN — FINAL AUTHORITY. Every output must feel deliberately made by a skilled human graphic designer: one strong idea, decisive hierarchy, a complete composition, optical alignment, controlled contrast, tactile finish and purposeful detail. Clean means coherent and edited—not empty, generic, simplistic or under-designed. Retain enough visual structure to make the post feel campaign-ready.",
   "contentBudgets": {
-    "clean": "Use one short hook of two to five words, the exact product or brand name only when needed, and no more than two compact supporting facts. Add a CTA only when the user supplies one. No paragraphs, filler microcopy or duplicate wording.",
-    "light": "Use the exact product or brand name plus one supplied fact. Keep the total copy extremely short.",
-    "balanced": "Use one short hook plus two or three exact supplied facts in compact modules. No body paragraph.",
-    "rich": "Use one short hook plus four to six exact supplied facts, but distribute them with strong whitespace and clear grouping. Never invent copy to fill space."
+    "clean": "Use one short hook plus one exact fact. Copy may be minimal, but the composition still requires sophisticated hierarchy, graphic architecture and a finished campaign feel.",
+    "light": "Use the exact brand/product name plus one exact supplied fact and only useful micro-labels.",
+    "balanced": "Use one short hook plus two or three exact supplied facts as metric tiles, labelled callouts or compact information modules. This is the default.",
+    "rich": "Use one short hook plus four to six exact supplied facts in a disciplined infographic system with clear grouping and breathing room."
   },
   "fontSystem": {
     "rule": "Typeset all added copy as a separate clean 2D design layer. Use actual, named, professional font behavior with correct glyphs, kerning, baselines, line breaks and optical margins. Use a maximum of two font families and three weights. If optional copy cannot be rendered accurately, remove that optional copy instead of inventing or warping letters.",
@@ -50,29 +50,31 @@
   },
   "layoutSystem": {
     "hierarchy": [
-      "one primary focal point",
-      "one short headline",
-      "zero to two supporting information modules",
-      "one restrained footer only when required"
+      "one dominant product-and-headline relationship",
+      "one expressive typographic gesture",
+      "one to three supporting information modules",
+      "micro-labels, rules or footer details only when they complete the system"
     ],
-    "spacing": "Use a consistent spacing rhythm, generous outer margins, clean alignment lines and optical—not merely mathematical—centering.",
-    "graphicBudget": "Use one dominant graphic device and up to two supporting devices. Prefer blocks, rules, frames, masks or subtle texture with a clear functional role.",
-    "colorBudget": "Use the exact brand colors plus one supporting neutral and at most one trend accent. Maintain strong text contrast.",
-    "imageCraft": "Use believable photography or controlled CGI, natural scale, coherent perspective, grounded contact shadows and subtle real-world imperfection."
+    "spacing": "Use a deliberate grid, confident outer margins, varied internal spacing, controlled overlaps and optical—not merely mathematical—alignment. Whitespace should create tension and focus, not emptiness.",
+    "graphicBudget": "Use two to five coordinated graphic devices from one visual language: directional bands, blocks, frames, rules, masks, patterns, texture fields, metric cards or annotation lines. Every device must improve hierarchy, rhythm or meaning.",
+    "colorBudget": "Use the exact brand colors, a deliberate neutral field and up to two controlled accents when needed. Allow bold color movement while protecting text contrast.",
+    "imageCraft": "Use believable photography or controlled CGI, natural scale, coherent perspective, grounded contact shadows, tactile texture, subtle imperfection and clear foreground/background separation."
   },
   "categoryRules": {
-    "Creative": "Create a clean, post-ready 4:5 Instagram design with one memorable concept, one clear product hero and a compact information hierarchy. It must not resemble a cinematic poster or a generated product render with text added afterward.",
-    "Flyer": "Use clear reading order, short information groups, disciplined margins and one prominent action or event detail. Remove decorative clutter before delivery.",
-    "3D": "Keep the CGI concept simple enough to understand instantly. Use physically coherent materials and one spatial idea; the social layout, copy and typography must remain clean and human-designed.",
-    "Packaging": "Use practical shelf hierarchy, accurate print behavior and controlled materials. Show only necessary information and never add fake regulatory copy or ornamental complexity.",
-    "Video": "Use clean shot design, motivated camera movement, natural timing and concise typography cards. Each shot must communicate one thing; remove transitions or effects that do not advance the message."
+    "Creative": "Create a premium post-ready 4:5 Instagram design with a memorable concept, strong product/type relationship, one to three useful information modules and a coordinated graphic system. It must feel like an agency campaign asset—not a cinematic render, plain poster or basic template.",
+    "Flyer": "Create an art-directed social flyer with dynamic reading order, strong type scale, grouped information, expressive but controlled shapes and campaign-level finishing.",
+    "3D": "Use one clear CGI mechanism inside a fully designed social composition. Combine it with real typography, graphic architecture, compact facts and believable depth; never deliver the raw render alone.",
+    "Packaging": "Use practical shelf hierarchy plus a premium launch-design system: expressive typography, controlled material detail, callouts and campaign framing without changing protected facts.",
+    "Video": "Use clean but expressive shot design, motivated camera movement, natural timing, strong title cards and coherent motion-graphic modules. Each shot advances the message."
   },
   "rejectIf": [
-    "too much text or more information modules than the brief needs",
+    "plain product plus headline with no composed design system",
+    "empty or excessively sparse canvas",
+    "generic template layout with weak hierarchy",
     "multiple competing focal points",
     "three or more font families",
     "fake, warped or misspelled typography",
-    "random stickers, badges, blobs, arrows or decorative shapes",
+    "uncoordinated stickers, badges, blobs, arrows or shapes",
     "generic gradients, neon glow, particles, smoke, splashes or lens effects",
     "centered product on a pedestal without a concept reason",
     "overly glossy, plastic or visibly AI-generated surfaces",
@@ -85,17 +87,19 @@
     "any change to the locked product"
   ],
   "qaChecklist": [
+    "feels premium and fully designed rather than basic",
     "understandable in two seconds",
-    "one dominant focal point",
+    "one dominant product-and-headline relationship",
     "clear reading order",
-    "appropriate whitespace",
-    "short exact copy",
+    "intentional grid tension and whitespace",
+    "strong typographic scale contrast",
+    "one to three useful information modules",
+    "two to five coordinated graphic devices",
     "maximum two font families",
     "real readable glyphs",
     "controlled brand-compatible palette",
-    "one dominant graphic device",
-    "believable light and materials",
-    "human optical spacing",
+    "believable depth, light and materials",
+    "human optical spacing and tactile detail",
     "no visible generative artifacts",
     "unchanged product",
     "separate standalone output"
@@ -104,7 +108,8 @@
     "core": "11.3.0+",
     "humanStudio": "1.1.0+",
     "designSystems": "1.3.0+",
-    "dailyTrends": "2026.09.17+"
+    "dailyTrends": "2026.09.17+",
+    "minimumCoreVersion": "11.4.0"
   },
   "autoUpdate": {
     "enabled": true,
