@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.0.0",
-  "updatedAt": "2026-09-12T06:01:09.409Z",
-  "name": "Virag Human Studio Authenticity Engine",
+  "libraryVersion": "1.1.0",
+  "updatedAt": "2026-09-17T07:44:39.560Z",
+  "name": "Virag Human Studio — Clean Human Craft",
   "enabled": true,
   "defaultMode": "human-authored",
-  "globalRule": "HUMAN-AUTHORED VISUAL STANDARD. The result must feel art-directed, photographed, typeset and finished by an experienced human creative team. Begin with one clear communication idea and a purposeful layout—not an effects list. Prefer believable light, coherent perspective, real material response, controlled color, optical spacing, restrained depth and small tactile imperfections. Default to bright, clean commercial art direction unless the current request explicitly asks for dark or cinematic styling. Never imitate the common image-model aesthetic.",
+  "globalRule": "HUMAN-AUTHORED VISUAL STANDARD. The result must feel art-directed, photographed, typeset and finished by an experienced human creative team. Begin with one clear communication idea and a purposeful layout—not an effects list. Prefer believable light, coherent perspective, real material response, controlled color, optical spacing, restrained depth and small tactile imperfections. Default to bright, clean commercial art direction unless the current request explicitly asks for dark or cinematic styling. Never imitate the common image-model aesthetic. CLEAN DEFAULT: prioritize clarity, whitespace, short exact copy, optical spacing and restrained graphic devices over decoration or spectacle.",
   "process": [
     "REFERENCE READING: extract only the useful art-direction principles from supplied references—grid, hierarchy, crop, type character, color rhythm, texture and finish—without copying their subject arrangement.",
     "CONCEPT: write one silent one-sentence communication idea with a reason for every major element.",
@@ -22,7 +22,7 @@
     "Packaging": "Present packaging through practical design logic, print-aware hierarchy, credible materials and shelf context. Never add fake microcopy, imaginary claims or ornamental details merely to make it look complex.",
     "Video": "Build shots and edits like a human director and editor: motivated camera movement, plausible lens physics, stable object continuity, natural timing, intentional cuts and clean motion-graphic typography. Avoid AI morphing, texture boiling and endless synthetic drift."
   },
-  "typographyRule": "REAL HUMAN TYPESETTING. Use exact supplied wording. Prefer reliable families and believable pairings such as Inter, Helvetica Neue, Neue Haas Grotesk, Archivo, DM Sans, Manrope, Georgia, Times New Roman, Playfair Display or Cormorant Garamond according to the brand direction. Use no more than two families and three weights. Preserve real glyph structure, kerning, baseline, line breaks and optical margins. Reject warped letters, pseudo-fonts, gibberish, fake microcopy and decorative text generated inside photographic surfaces.",
+  "typographyRule": "REAL HUMAN TYPESETTING. Render all added copy as a separate clean 2D design layer using no more than two professional font families and three weights. Prefer Inter, Inter Tight, Neue Haas Grotesk, Helvetica Neue, Archivo, DM Sans, Manrope or Sora for clean commercial systems; use Playfair Display, Cormorant Garamond or Georgia only when an editorial serif is appropriate. Preserve exact wording, real glyph structure, kerning, baselines, line breaks and optical margins. Never generate pseudo-fonts, warped letters, fake logos, random microcopy or text fused into photographic surfaces.",
   "rejectIf": [
     "default centered product on a pedestal",
     "perfect bilateral symmetry without a concept reason",
@@ -38,7 +38,8 @@
     "uncanny hands, people, anatomy or expressions",
     "repeated template or merely changed background",
     "sterile perfection with no tactile material detail",
-    "any alteration to the pixel-locked product"
+    "any alteration to the pixel-locked product",
+    "excessive copy, crowded information modules or more than one dominant graphic idea"
   ],
   "qaChecklist": [
     "one clear communication idea",
@@ -50,12 +51,14 @@
     "real readable typography",
     "useful Instagram information hierarchy",
     "no obvious generative artifacts",
-    "visibly different from previous outputs"
+    "visibly different from previous outputs",
+    "clean two-second readability with generous whitespace and no unnecessary element"
   ],
   "compatibility": {
-    "core": "11.0.0+",
+    "core": "11.3.0+",
     "productFidelity": "1.0.0+",
-    "designSystems": "1.2.0+"
+    "designSystems": "1.2.0+",
+    "cleanStudio": "1.0.0+"
   },
   "autoUpdate": {
     "enabled": true,
@@ -63,5 +66,10 @@
     "intervalSeconds": 300,
     "refreshOnFocus": true,
     "refreshOnOnline": true
+  },
+  "cleanDefault": {
+    "enabled": true,
+    "module": "clean-studio.json",
+    "priority": "after trends and human authenticity"
   }
 }
