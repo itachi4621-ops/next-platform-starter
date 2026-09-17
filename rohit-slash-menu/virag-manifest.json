@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": "1.6.0",
-  "release": "11.1.0",
-  "updatedAt": "2026-09-15T05:46:34.495Z",
+  "manifestVersion": "1.7.0",
+  "release": "11.2.0",
+  "updatedAt": "2026-09-17T06:41:16.263Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 300,
@@ -15,7 +15,7 @@
     {
       "id": "core",
       "name": "Core",
-      "version": "11.1.0",
+      "version": "11.2.0",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
@@ -31,6 +31,13 @@
       "name": "Design Systems",
       "version": "1.2.0",
       "file": "design-systems.json",
+      "type": "json"
+    },
+    {
+      "id": "trends",
+      "name": "Daily Trends",
+      "version": "2026.09.17",
+      "file": "daily-trends.json",
       "type": "json"
     },
     {
