@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "libraryVersion": "2026.09.17",
   "trendDate": "2026-09-17",
-  "updatedAt": "2026-09-17T06:41:16.263Z",
+  "updatedAt": "2026-09-17T07:44:39.560Z",
   "name": "Virag Daily Social Design Trends",
   "enabled": true,
   "updateMode": "daily-researched-principles",
@@ -24,7 +24,7 @@
       "use": "High-level format, hierarchy and content-behavior observations only; never copy a post."
     }
   ],
-  "selectionRule": "For each requested output, choose one compatible active trend as a subtle art-direction layer. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, texture and graphic devices, but must never override the current user brief, brand identity, readable copy, Pixel-Locked Product Fidelity or Human Studio realism.",
+  "selectionRule": "For each requested output, choose one compatible active trend as a subtle art-direction layer. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, texture and graphic devices, but must never override the current user brief, brand identity, readable copy, Pixel-Locked Product Fidelity or Human Studio realism. CLEAN HUMAN OVERRIDE: apply a trend only when it improves the message; reduce it to one dominant device, short copy, strong whitespace and a maximum of two professional font families. If it creates clutter, do not use it.",
   "activeTrends": [
     {
       "id": "neo-deco-social",
@@ -166,7 +166,8 @@
     "fake fonts or gibberish",
     "product deformation",
     "unsupported claims",
-    "collages or multi-output boards unless explicitly requested"
+    "collages or multi-output boards unless explicitly requested",
+    "excessive text, crowded modules, more than two font families or multiple competing trend devices"
   ],
   "safeguards": {
     "originalConceptsOnly": true,
@@ -175,13 +176,18 @@
     "humanStudioRequired": true,
     "brightFirst": true,
     "realTypographyOnly": true,
-    "noCollageByDefault": true
+    "noCollageByDefault": true,
+    "cleanHumanDefault": true,
+    "maximumFontFamilies": 2,
+    "shortCopyDefault": true,
+    "trendCannotAddClutter": true
   },
   "compatibility": {
-    "core": "11.2.0+",
+    "core": "11.3.0+",
     "designSystems": "1.2.0+",
     "humanStudio": "1.0.0+",
-    "productFidelity": "1.0.0+"
+    "productFidelity": "1.0.0+",
+    "cleanStudio": "1.0.0+"
   },
   "autoUpdate": {
     "enabled": true,
