@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "libraryVersion": "2026.09.17",
   "trendDate": "2026-09-17",
-  "updatedAt": "2026-09-17T07:44:39.560Z",
+  "updatedAt": "2026-09-17T08:03:56.386Z",
   "name": "Virag Daily Social Design Trends",
   "enabled": true,
   "updateMode": "daily-researched-principles",
@@ -24,7 +24,7 @@
       "use": "High-level format, hierarchy and content-behavior observations only; never copy a post."
     }
   ],
-  "selectionRule": "For each requested output, choose one compatible active trend as a subtle art-direction layer. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, texture and graphic devices, but must never override the current user brief, brand identity, readable copy, Pixel-Locked Product Fidelity or Human Studio realism. CLEAN HUMAN OVERRIDE: apply a trend only when it improves the message; reduce it to one dominant device, short copy, strong whitespace and a maximum of two professional font families. If it creates clutter, do not use it.",
+  "selectionRule": "For each requested output, choose one compatible active trend as a subtle art-direction layer. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, texture and graphic devices, but must never override the current user brief, brand identity, readable copy, Pixel-Locked Product Fidelity or Human Studio realism. CLEAN HUMAN OVERRIDE: apply a trend only when it improves the message; reduce it to one dominant device, short copy, strong whitespace and a maximum of two professional font families. If it creates clutter, do not use it. Apply it as one part of a complete Premium Designed composition; never flatten the design into sparse minimalism.",
   "activeTrends": [
     {
       "id": "neo-deco-social",
@@ -180,7 +180,12 @@
     "cleanHumanDefault": true,
     "maximumFontFamilies": 2,
     "shortCopyDefault": true,
-    "trendCannotAddClutter": true
+    "trendCannotAddClutter": true,
+    "designRichnessDefault": "premium",
+    "cleanDoesNotMeanSparse": true,
+    "premiumArtDirectionRequired": true,
+    "informationModulesRange": "1-3",
+    "coordinatedGraphicDevicesRange": "2-5"
   },
   "compatibility": {
     "core": "11.3.0+",
