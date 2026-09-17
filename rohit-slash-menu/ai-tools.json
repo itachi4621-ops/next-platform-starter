@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "libraryVersion": "1.6.0",
-  "updatedAt": "2026-09-12T06:01:09.409Z",
-  "name": "Virag AI Tools — Human Studio Helpers",
+  "libraryVersion": "1.7.0",
+  "updatedAt": "2026-09-17T07:44:39.560Z",
+  "name": "Virag AI Tools — Clean Human Helpers",
   "commandCount": 30,
   "mode": "command-token-only",
   "commands": [
@@ -251,8 +251,9 @@
     "chatgpt": "current-web",
     "imageWorkflow": "current-built-in",
     "composerSelectors": "2026-09",
-    "core": "11.0.0+",
-    "humanStudio": "1.0.0+"
+    "core": "11.3.0+",
+    "humanStudio": "1.0.0+",
+    "cleanStudio": "1.0.0+"
   },
   "autoUpdate": {
     "enabled": true,
@@ -269,6 +270,7 @@
     "AI Tools remain non-visual command tokens; Instagram Output Format and Content Level affect visual-generation tabs only.",
     "Design Direction applies to visual and video generation; AI Tools remain non-visual command tokens.",
     "Product Fidelity settings apply to visual and video generation; AI Tools remain non-visual command tokens.",
-    "When a tool writes or improves a visual brief, enforce human-authored art direction, restrained effects, believable physical detail and real typography; explicitly reject common generative-image signatures."
+    "When a tool writes or improves a visual brief, enforce human-authored art direction, restrained effects, believable physical detail and real typography; explicitly reject common generative-image signatures.",
+    "When writing any visual brief, enforce clean human design: one focal point, short exact copy, generous whitespace, maximum two professional font families and no decorative clutter."
   ]
 }
