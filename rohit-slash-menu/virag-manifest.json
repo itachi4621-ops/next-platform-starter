@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": "1.8.0",
-  "release": "11.3.0",
-  "updatedAt": "2026-09-17T07:44:39.560Z",
+  "manifestVersion": "1.9.0",
+  "release": "11.4.0",
+  "updatedAt": "2026-09-17T08:03:56.386Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 300,
@@ -15,21 +15,21 @@
     {
       "id": "core",
       "name": "Core",
-      "version": "11.3.0",
+      "version": "11.4.0",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
     {
       "id": "brain",
       "name": "Creative Brain",
-      "version": "2.7.0",
+      "version": "2.8.0",
       "file": "creative-library.json",
       "type": "json"
     },
     {
       "id": "design",
       "name": "Design Systems",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "file": "design-systems.json",
       "type": "json"
     },
@@ -50,14 +50,14 @@
     {
       "id": "human",
       "name": "Human Studio",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "file": "human-studio.json",
       "type": "json"
     },
     {
       "id": "clean",
       "name": "Clean Human Design",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "file": "clean-studio.json",
       "type": "json"
     },
