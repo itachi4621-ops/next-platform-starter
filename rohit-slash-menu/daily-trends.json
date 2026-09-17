@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "2026.09.17",
+  "trendDate": "2026-09-17",
+  "updatedAt": "2026-09-17T06:41:16.263Z",
+  "name": "Virag Daily Social Design Trends",
+  "enabled": true,
+  "updateMode": "daily-researched-principles",
+  "purpose": "Translate current public visual-culture and social-design signals into original Instagram-ready art-direction principles without copying creators, brands or layouts.",
+  "sources": [
+    {
+      "name": "Pinterest Predicts 2026",
+      "url": "https://business.pinterest.com/pinterest-predicts/",
+      "use": "Broad visual and cultural trend signals."
+    },
+    {
+      "name": "Pinterest Trends",
+      "url": "https://trends.pinterest.com/",
+      "use": "Search-interest direction and palette/context signals."
+    },
+    {
+      "name": "Public social-design signals",
+      "url": "https://www.instagram.com/",
+      "use": "High-level format, hierarchy and content-behavior observations only; never copy a post."
+    }
+  ],
+  "selectionRule": "For each requested output, choose one compatible active trend as a subtle art-direction layer. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, texture and graphic devices, but must never override the current user brief, brand identity, readable copy, Pixel-Locked Product Fidelity or Human Studio realism.",
+  "activeTrends": [
+    {
+      "id": "neo-deco-social",
+      "label": "Neo-Deco Social Geometry",
+      "signal": "Modern Art Deco is returning through bold geometry and polished structure.",
+      "tabs": [
+        "Creative",
+        "Flyer",
+        "3D",
+        "Packaging",
+        "Video"
+      ],
+      "layout": "Asymmetric geometric frame, stepped alignment, one confident arch or fan motif and generous breathing room.",
+      "typography": "Condensed grotesk or refined editorial serif paired with Inter/Helvetica-style utility copy.",
+      "palette": "Brand palette first; optional jade, persimmon or pale blue accent.",
+      "texture": "Subtle paper, brushed metal or print grain—never plastic gloss.",
+      "avoid": "Literal 1920s imitation, ornamental overload and gold-on-black by default."
+    },
+    {
+      "id": "tactile-analog",
+      "label": "Tactile Analog Edit",
+      "signal": "Renewed interest in physical media and handmade craft favors imperfect, touchable visual systems.",
+      "tabs": [
+        "Creative",
+        "Flyer",
+        "Packaging",
+        "Video"
+      ],
+      "layout": "Layered cut shapes, imperfect masks, margin notes, taped edges or hand-marked dividers used with restraint.",
+      "typography": "Real typesetting with one handwritten annotation accent; body copy remains clean and readable.",
+      "palette": "Warm paper neutrals with one brand-color accent.",
+      "texture": "Scanned paper fibers, ink variation, soft grain and authentic edge wear.",
+      "avoid": "Fake scrapbook clutter, excessive torn paper and childish sticker overload."
+    },
+    {
+      "id": "cool-blue-clarity",
+      "label": "Cool Blue Clarity",
+      "signal": "Pale cool blue is rising as a calm, wellness and clarity color.",
+      "tabs": [
+        "Creative",
+        "Flyer",
+        "Packaging",
+        "Video"
+      ],
+      "layout": "Airy modular grid, translucent information cards and clear spacing with a strong product anchor.",
+      "typography": "Neutral modern sans with precise data hierarchy.",
+      "palette": "Cool Blue #D7EFFF supported by navy, white and the exact brand colors.",
+      "texture": "Soft matte surfaces and restrained translucency.",
+      "avoid": "Generic SaaS glassmorphism, excessive blur and low-contrast text."
+    },
+    {
+      "id": "persimmon-impact",
+      "label": "Persimmon Impact",
+      "signal": "Warm red-orange accents are gaining visibility across fashion, design and campaign imagery.",
+      "tabs": [
+        "Creative",
+        "Flyer",
+        "3D",
+        "Packaging",
+        "Video"
+      ],
+      "layout": "One energetic diagonal or cropped color field balanced by stable information blocks.",
+      "typography": "Bold condensed display type with disciplined small sans-serif facts.",
+      "palette": "Persimmon #FF5C34 as an accent only, adapted to brand compatibility.",
+      "texture": "Matte ink, screen-print density or practical colored light.",
+      "avoid": "Full-canvas orange overload, fire effects and oversaturated AI glow."
+    },
+    {
+      "id": "wasabi-utility",
+      "label": "Wasabi Utility Accent",
+      "signal": "Acid yellow-green is evolving into a warmer, functional high-visibility accent.",
+      "tabs": [
+        "Creative",
+        "Flyer",
+        "3D",
+        "Video"
+      ],
+      "layout": "Utility labels, compact fact tags, ruled lines and one high-visibility CTA or data point.",
+      "typography": "Industrial grotesk or mono accent paired with a clean brand sans.",
+      "palette": "Wasabi #E9F056 used in small controlled areas with black, white or brand neutrals.",
+      "texture": "Printed label stock, fabric weave or practical reflective material.",
+      "avoid": "Gaming-neon clichés, black-and-green overload and illegible fluorescent body text."
+    },
+    {
+      "id": "jade-organic",
+      "label": "Jade Organic Precision",
+      "signal": "Muted jade and biophilic color systems continue to signal natural wellbeing without rustic clichés.",
+      "tabs": [
+        "Creative",
+        "Flyer",
+        "Packaging",
+        "Video"
+      ],
+      "layout": "Structured editorial grid with organic curves used only as supporting dividers or masks.",
+      "typography": "Elegant humanist sans or restrained serif pairing.",
+      "palette": "Jade #AEB8A0, warm white and exact product/brand colors.",
+      "texture": "Natural fibers, stone, uncoated stock or subtle botanical shadow.",
+      "avoid": "Generic leaf borders, scattered ingredients and fake eco claims."
+    },
+    {
+      "id": "poet-editorial",
+      "label": "Poet Editorial",
+      "signal": "Bookish, literary and personal-expression aesthetics are influencing fashion and culture visuals.",
+      "tabs": [
+        "Creative",
+        "Flyer",
+        "Packaging",
+        "Video"
+      ],
+      "layout": "Magazine-like column rhythm, purposeful margins, intimate crop and one short pull-quote or factual line.",
+      "typography": "High-contrast editorial serif with a neutral sans; accurate punctuation and generous leading.",
+      "palette": "Warm white, ink black, muted brand color and one restrained accent.",
+      "texture": "Book paper, letterpress impression or soft photographic grain.",
+      "avoid": "Long unreadable paragraphs, vintage cosplay and decorative fake handwriting."
+    },
+    {
+      "id": "restrained-stripe",
+      "label": "Restrained Stripe Architecture",
+      "signal": "Bold stripes and sculptural shapes are appearing in expressive visual culture.",
+      "tabs": [
+        "Creative",
+        "Flyer",
+        "3D",
+        "Packaging",
+        "Video"
+      ],
+      "layout": "One directional stripe system that guides the eye toward product and information—not a decorative background.",
+      "typography": "Strong simple display type aligned to the stripe rhythm.",
+      "palette": "Two brand-compatible colors plus white or a quiet neutral.",
+      "texture": "Flat print color or believable painted/set-built surfaces.",
+      "avoid": "Circus literalism, rainbow clutter, warped products and optical noise behind text."
+    }
+  ],
+  "globalAvoid": [
+    "copying a specific Pinterest pin, Instagram post, brand campaign or creator",
+    "trend stacking",
+    "generic AI gloss",
+    "dark styling unless explicitly requested",
+    "fake fonts or gibberish",
+    "product deformation",
+    "unsupported claims",
+    "collages or multi-output boards unless explicitly requested"
+  ],
+  "safeguards": {
+    "originalConceptsOnly": true,
+    "currentBriefWins": true,
+    "productLockRequired": true,
+    "humanStudioRequired": true,
+    "brightFirst": true,
+    "realTypographyOnly": true,
+    "noCollageByDefault": true
+  },
+  "compatibility": {
+    "core": "11.2.0+",
+    "designSystems": "1.2.0+",
+    "humanStudio": "1.0.0+",
+    "productFidelity": "1.0.0+"
+  },
+  "autoUpdate": {
+    "enabled": true,
+    "scheduledResearch": "daily",
+    "clientSyncSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  }
+}
