@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Update Monitor
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      2.1.0
-// @description  Automatic live update status for every Virag module, including dynamic Daily Trends validation.
+// @version      2.2.0
+// @description  Daily Virag module status refresh after each new India date, including dynamic Daily Trends validation.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -23,7 +23,10 @@
 
   const ROOT = 'https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/';
   const MANIFEST_URL = ROOT + 'virag-manifest.json';
-  const CHECK_INTERVAL = 300000;
+  const IST_OFFSET_MS = 330 * 60 * 1000;
+  const DAILY_CHECK_HOUR = 1;
+  const DAILY_CHECK_MINUTE = 15;
+  const LAST_DAILY_CHECK_KEY = 'virag.monitor.lastDailyCheckDate';
   const DAILY_TRENDS_FRESH_MS = 36 * 60 * 60 * 1000;
   const REQUIRED_TREND_SAFEGUARDS = {
     cleanHumanDefault: true,
@@ -163,7 +166,7 @@
   const shadow = host.attachShadow({ mode: 'open' });
   shadow.innerHTML = `<style>
     :host{all:initial}.b{position:fixed;right:22px;bottom:140px;z-index:2147483646;height:34px;padding:0 11px;border:1px solid #9f72d766;border-radius:10px;background:#0b0910f2;color:#eee6f8;font:800 9px Inter,system-ui;cursor:pointer;box-shadow:0 10px 28px #0008}.p{position:fixed;right:22px;bottom:182px;z-index:2147483646;width:278px;display:none;overflow:hidden;border:1px solid #9f72d75c;border-radius:14px;background:#0b0910fa;color:#eee6f8;font:9px Inter,system-ui;box-shadow:0 22px 70px #000b}.p.on{display:block}.h,.f{display:flex;align-items:center;justify-content:space-between;padding:11px 10px}.h{font-weight:900}.time{color:#8f849a;font-size:8px}.rows{border-top:1px solid #ffffff12}.r{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid #ffffff0d}.v{font:800 8px ui-monospace,monospace}.ok{color:#6ee89a}.warn{color:#ffd166}.bad{color:#ff7b8d}.tag{font-size:7px;font-weight:950;letter-spacing:.08em}.f{background:#ffffff05}.check{height:30px;padding:0 11px;border:1px solid #a77bd080;border-radius:9px;background:#25172e;color:#f7efff;font:800 8px Inter,system-ui;cursor:pointer}.auto{color:#8f849a;font-size:7px}
-  </style><button class="b">Virag · CHECKING</button><div class="p on"><div class="h"><span>Virag Update Monitor</span><span class="time">—</span></div><div class="rows"></div><div class="f"><button class="check">Check Now</button><span class="auto">AUTO · 5 MIN</span></div></div>`;
+  </style><button class="b">Virag · CHECKING</button><div class="p on"><div class="h"><span>Virag Update Monitor</span><span class="time">—</span></div><div class="rows"></div><div class="f"><button class="check">Check Now</button><span class="auto">DAILY · 01:15 IST</span></div></div>`;
 
   const button = shadow.querySelector('.b');
   const panel = shadow.querySelector('.p');
@@ -211,6 +214,7 @@
       button.textContent = live === modules.length ? 'Virag · ALL LIVE' : `Virag · ${live}/${modules.length} LIVE`;
       time.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       await setStored('virag.last.check', Date.now());
+      if (isPastDailyWindow()) await setStored(LAST_DAILY_CHECK_KEY, indiaDateKey());
       const failedTrend = states[modules.findIndex(module => module.id === 'trends')];
       if (failedTrend && failedTrend.status !== 'LIVE') {
         console.warn('[Virag Monitor] Daily Trends validation failed:', failedTrend.note);
@@ -235,9 +239,46 @@
   }
 
   check.onclick = () => run(true);
-  const wake = () => { if (!document.hidden) run(); };
+  function indiaNow() {
+    return new Date(Date.now() + IST_OFFSET_MS);
+  }
+  function indiaDateKey() {
+    const date = indiaNow();
+    return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}-${String(date.getUTCDate()).padStart(2, '0')}`;
+  }
+  function isPastDailyWindow() {
+    const date = indiaNow();
+    return date.getUTCHours() > DAILY_CHECK_HOUR
+      || (date.getUTCHours() === DAILY_CHECK_HOUR && date.getUTCMinutes() >= DAILY_CHECK_MINUTE);
+  }
+  function delayUntilDailyWindow() {
+    const now = Date.now();
+    const india = new Date(now + IST_OFFSET_MS);
+    let shiftedTarget = Date.UTC(
+      india.getUTCFullYear(),
+      india.getUTCMonth(),
+      india.getUTCDate(),
+      DAILY_CHECK_HOUR,
+      DAILY_CHECK_MINUTE
+    );
+    if (shiftedTarget <= now + IST_OFFSET_MS) shiftedTarget += 24 * 60 * 60 * 1000;
+    return Math.max(60000, shiftedTarget - (now + IST_OFFSET_MS));
+  }
+  async function dailyWake(force = false) {
+    if (document.hidden && !force) return;
+    const lastDate = await getStored(LAST_DAILY_CHECK_KEY, '');
+    if (!force && isPastDailyWindow() && lastDate === indiaDateKey()) return;
+    await run(false);
+  }
+  function armDailyWake() {
+    setTimeout(async () => {
+      await dailyWake(false);
+      armDailyWake();
+    }, delayUntilDailyWindow());
+  }
+  const wake = () => { dailyWake(false); };
   run();
-  setInterval(wake, CHECK_INTERVAL);
+  armDailyWake();
   window.addEventListener('focus', wake);
   window.addEventListener('online', wake);
   document.addEventListener('visibilitychange', wake);
