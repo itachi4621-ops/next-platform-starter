@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "2026.09.17",
-  "trendDate": "2026-09-17",
-  "updatedAt": "2026-09-17T08:03:56.386Z",
+  "libraryVersion": "2026.09.18",
+  "trendDate": "2026-09-18",
+  "updatedAt": "2026-09-18T03:19:37.185Z",
   "name": "Virag Daily Social Design Trends",
   "enabled": true,
   "updateMode": "daily-researched-principles",
@@ -10,26 +10,51 @@
   "sources": [
     {
       "name": "Pinterest Predicts 2026",
-      "url": "https://business.pinterest.com/pinterest-predicts/",
-      "use": "Broad visual and cultural trend signals."
+      "url": "https://business.pinterest.com/en-gb/pinterest-predicts/",
+      "use": "Primary annual forecast used to confirm the broader visual-culture signals."
+    },
+    {
+      "name": "Pinterest Predicts 2026 — Neo Deco",
+      "url": "https://business.pinterest.com/en-gb/pinterest-predicts/2026/neo-deco/",
+      "use": "Evidence for disciplined geometric framing, polished structure and modern deco rhythm."
+    },
+    {
+      "name": "Pinterest Predicts 2026 — Gimme Gummy",
+      "url": "https://business.pinterest.com/en-gb/pinterest-predicts/2026/gimme-gummy/",
+      "use": "Evidence for tactile, sensory material cues translated into controlled 3D and packaging detail."
+    },
+    {
+      "name": "Pinterest Predicts 2026 — Poetcore",
+      "url": "https://business.pinterest.com/en-gb/pinterest-predicts/2026/poetcore/",
+      "use": "Evidence for literary editorial styling, intimate crops and refined serif-led hierarchy."
+    },
+    {
+      "name": "Pinterest Predicts 2026 — FunHaus",
+      "url": "https://business.pinterest.com/en-gb/pinterest-predicts/2026/funhaus/",
+      "use": "Evidence for bold stripes and sculptural geometry, simplified into one directional system."
+    },
+    {
+      "name": "Pinterest Palette 2026",
+      "url": "https://business.pinterest.com/pinterest-palette/",
+      "use": "Primary color evidence for Cool Blue, Jade, Plum Noir, Wasabi and Persimmon."
     },
     {
       "name": "Pinterest Trends",
       "url": "https://trends.pinterest.com/",
-      "use": "Search-interest direction and palette/context signals."
+      "use": "Live search-interest cross-check; directional evidence only, never a composition to copy."
     },
     {
-      "name": "Public social-design signals",
+      "name": "Instagram",
       "url": "https://www.instagram.com/",
-      "use": "High-level format, hierarchy and content-behavior observations only; never copy a post."
+      "use": "Public format observation for phone-scale hierarchy, short copy and immediate product recognition only."
     }
   ],
-  "selectionRule": "For each requested output, choose one compatible active trend as a subtle art-direction layer. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, texture and graphic devices, but must never override the current user brief, brand identity, readable copy, Pixel-Locked Product Fidelity or Human Studio realism. CLEAN HUMAN OVERRIDE: apply a trend only when it improves the message; reduce it to one dominant device, short copy, strong whitespace and a maximum of two professional font families. If it creates clutter, do not use it. Apply it as one part of a complete Premium Designed composition; never flatten the design into sparse minimalism.",
+  "selectionRule": "For each requested output, choose at most one compatible active trend as an optional art-direction layer. Build one clear idea around one dominant product-and-headline relationship, intentional grid tension, short exact copy, 1–3 compact supporting information modules, no more than two professional named font families and three weights, and 2–5 coordinated graphic devices from one coherent visual language. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, tactile detail, depth and restrained motion, but must never override the current brief, brand identity, two-second clarity, readable copy, Pixel-Locked Product Fidelity, Human Studio realism or Clean Human Design. Bright-first is the default unless dark styling is explicitly requested. Clean means edited and controlled, never sparse, basic, template-like or under-designed. If a trend reduces clarity, fidelity or coherence, omit or simplify it.",
   "activeTrends": [
     {
       "id": "neo-deco-social",
       "label": "Neo-Deco Social Geometry",
-      "signal": "Modern Art Deco is returning through bold geometry and polished structure.",
+      "signal": "Pinterest Predicts 2026 names Neo Deco as an emerging aesthetic, supporting polished geometry and structured decorative rhythm when simplified for social design.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -37,7 +62,7 @@
         "Packaging",
         "Video"
       ],
-      "layout": "Asymmetric geometric frame, stepped alignment, one confident arch or fan motif and generous breathing room.",
+      "layout": "Use an asymmetric geometric frame, stepped alignment and one arch or fan motif around a dominant product-and-headline relationship; reserve 1–3 compact fact modules. In Video, reveal the geometry in one measured sequence rather than looping ornaments.",
       "typography": "Condensed grotesk or refined editorial serif paired with Inter/Helvetica-style utility copy.",
       "palette": "Brand palette first; optional jade, persimmon or pale blue accent.",
       "texture": "Subtle paper, brushed metal or print grain—never plastic gloss.",
@@ -45,31 +70,32 @@
     },
     {
       "id": "tactile-analog",
-      "label": "Tactile Analog Edit",
-      "signal": "Renewed interest in physical media and handmade craft favors imperfect, touchable visual systems.",
+      "label": "Tactile Material Edit",
+      "signal": "Pinterest Predicts 2026’s Gimme Gummy signal foregrounds sensory, touchable materiality; translate it into controlled soft forms, physical texture and believable craft instead of synthetic AI gloss.",
       "tabs": [
         "Creative",
         "Flyer",
+        "3D",
         "Packaging",
         "Video"
       ],
-      "layout": "Layered cut shapes, imperfect masks, margin notes, taped edges or hand-marked dividers used with restraint.",
-      "typography": "Real typesetting with one handwritten annotation accent; body copy remains clean and readable.",
-      "palette": "Warm paper neutrals with one brand-color accent.",
-      "texture": "Scanned paper fibers, ink variation, soft grain and authentic edge wear.",
-      "avoid": "Fake scrapbook clutter, excessive torn paper and childish sticker overload."
+      "layout": "Use one tactile form or imperfect mask as the spatial anchor, with edited cut shapes and compact information modules on a disciplined grid. In Video, favor slow compression, peel or parallax motion with believable material response.",
+      "typography": "Real typesetting with one optional handwritten annotation accent; display and utility copy stay readable and use no more than two families.",
+      "palette": "Brand colors first, supported by warm paper neutrals or one soft confectionery accent.",
+      "texture": "Scanned fibers, soft-touch material, ink variation or subtle dimensional edges with realistic contact shadows.",
+      "avoid": "Plastic AI sheen, literal candy imitation, fake scrapbook clutter, excessive torn paper and childish sticker overload."
     },
     {
       "id": "cool-blue-clarity",
       "label": "Cool Blue Clarity",
-      "signal": "Pale cool blue is rising as a calm, wellness and clarity color.",
+      "signal": "Pinterest Palette 2026 identifies Cool Blue as a directional color; use it to support calm clarity while preserving exact brand and product colors.",
       "tabs": [
         "Creative",
         "Flyer",
         "Packaging",
         "Video"
       ],
-      "layout": "Airy modular grid, translucent information cards and clear spacing with a strong product anchor.",
+      "layout": "Use an airy but designed modular grid, one strong product anchor and 1–3 translucent or opaque information cards with deliberate overlap. In Video, use short linear card reveals and restrained depth shifts.",
       "typography": "Neutral modern sans with precise data hierarchy.",
       "palette": "Cool Blue #D7EFFF supported by navy, white and the exact brand colors.",
       "texture": "Soft matte surfaces and restrained translucency.",
@@ -78,7 +104,7 @@
     {
       "id": "persimmon-impact",
       "label": "Persimmon Impact",
-      "signal": "Warm red-orange accents are gaining visibility across fashion, design and campaign imagery.",
+      "signal": "Pinterest Palette 2026 identifies Persimmon as a directional warm color, supporting controlled red-orange emphasis in high-clarity social compositions.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -86,7 +112,7 @@
         "Packaging",
         "Video"
       ],
-      "layout": "One energetic diagonal or cropped color field balanced by stable information blocks.",
+      "layout": "Use one energetic diagonal or cropped color field to connect product and headline, balanced by stable fact modules. In Video, move the field once as a directional wipe or practical light cue.",
       "typography": "Bold condensed display type with disciplined small sans-serif facts.",
       "palette": "Persimmon #FF5C34 as an accent only, adapted to brand compatibility.",
       "texture": "Matte ink, screen-print density or practical colored light.",
@@ -95,14 +121,14 @@
     {
       "id": "wasabi-utility",
       "label": "Wasabi Utility Accent",
-      "signal": "Acid yellow-green is evolving into a warmer, functional high-visibility accent.",
+      "signal": "Pinterest Palette 2026 identifies Wasabi as a directional yellow-green; use it as a small functional visibility accent rather than a full visual identity.",
       "tabs": [
         "Creative",
         "Flyer",
         "3D",
         "Video"
       ],
-      "layout": "Utility labels, compact fact tags, ruled lines and one high-visibility CTA or data point.",
+      "layout": "Use compact fact tags, ruled lines and one high-visibility CTA or data point in a tense utility grid. In Video, animate labels with quick, precise position changes and no neon pulsing.",
       "typography": "Industrial grotesk or mono accent paired with a clean brand sans.",
       "palette": "Wasabi #E9F056 used in small controlled areas with black, white or brand neutrals.",
       "texture": "Printed label stock, fabric weave or practical reflective material.",
@@ -111,14 +137,14 @@
     {
       "id": "jade-organic",
       "label": "Jade Organic Precision",
-      "signal": "Muted jade and biophilic color systems continue to signal natural wellbeing without rustic clichés.",
+      "signal": "Pinterest Palette 2026 identifies Jade as a directional muted green, supporting natural wellbeing cues without generic eco styling.",
       "tabs": [
         "Creative",
         "Flyer",
         "Packaging",
         "Video"
       ],
-      "layout": "Structured editorial grid with organic curves used only as supporting dividers or masks.",
+      "layout": "Use a structured editorial grid with one organic curve acting as a supporting divider or mask and 1–3 factual modules. In Video, use a slow shadow drift or restrained mask transition.",
       "typography": "Elegant humanist sans or restrained serif pairing.",
       "palette": "Jade #AEB8A0, warm white and exact product/brand colors.",
       "texture": "Natural fibers, stone, uncoated stock or subtle botanical shadow.",
@@ -127,14 +153,14 @@
     {
       "id": "poet-editorial",
       "label": "Poet Editorial",
-      "signal": "Bookish, literary and personal-expression aesthetics are influencing fashion and culture visuals.",
+      "signal": "Pinterest Predicts 2026’s Poetcore signal supports literary, personal-expression aesthetics; translate it into concise editorial hierarchy rather than decorative nostalgia.",
       "tabs": [
         "Creative",
         "Flyer",
         "Packaging",
         "Video"
       ],
-      "layout": "Magazine-like column rhythm, purposeful margins, intimate crop and one short pull-quote or factual line.",
+      "layout": "Use magazine column rhythm, purposeful margins, an intimate crop and one short factual pull-line beside the product. In Video, reveal type line by line at a natural reading pace.",
       "typography": "High-contrast editorial serif with a neutral sans; accurate punctuation and generous leading.",
       "palette": "Warm white, ink black, muted brand color and one restrained accent.",
       "texture": "Book paper, letterpress impression or soft photographic grain.",
@@ -143,7 +169,7 @@
     {
       "id": "restrained-stripe",
       "label": "Restrained Stripe Architecture",
-      "signal": "Bold stripes and sculptural shapes are appearing in expressive visual culture.",
+      "signal": "Pinterest Predicts 2026’s FunHaus signal supports expressive stripes and sculptural shapes; simplify it into one directional architecture that improves navigation.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -151,7 +177,7 @@
         "Packaging",
         "Video"
       ],
-      "layout": "One directional stripe system that guides the eye toward product and information—not a decorative background.",
+      "layout": "Use one stripe system to guide the eye from headline to product to 1–3 information modules, with controlled foreground and background depth. In Video, let the stripes drive one clean directional transition.",
       "typography": "Strong simple display type aligned to the stripe rhythm.",
       "palette": "Two brand-compatible colors plus white or a quiet neutral.",
       "texture": "Flat print color or believable painted/set-built surfaces.",
@@ -159,15 +185,17 @@
     }
   ],
   "globalAvoid": [
-    "copying a specific Pinterest pin, Instagram post, brand campaign or creator",
-    "trend stacking",
-    "generic AI gloss",
-    "dark styling unless explicitly requested",
-    "fake fonts or gibberish",
-    "product deformation",
-    "unsupported claims",
-    "collages or multi-output boards unless explicitly requested",
-    "excessive text, crowded modules, more than two font families or multiple competing trend devices"
+    "copying a specific Pinterest pin, Instagram post, creator, brand campaign or composition",
+    "trend stacking or forcing a trend that weakens two-second clarity, product fidelity or coherence",
+    "generic AI gloss, cinematic packshot treatment or dark styling unless explicitly requested",
+    "fake fonts, warped glyphs, gibberish or unreadable microtext",
+    "product deformation, label reconstruction, recoloring or relighting inside the product silhouette",
+    "invented product claims, unsupported benefits, ingredients, numbers, certifications or offers",
+    "collages, grids, contact sheets or multi-output boards unless explicitly requested",
+    "excessive text, crowded or disconnected modules, random stickers or shapes and gradients without purpose",
+    "repeated templates, perfect template symmetry, empty minimalism or simplistic product-plus-headline layouts",
+    "more than two font families, more than three weights or competing typographic systems",
+    "flat compositions without useful information design, tactile detail or deliberate foreground/background depth"
   ],
   "safeguards": {
     "originalConceptsOnly": true,
