@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "manifestVersion": "2.0.0",
-  "release": "11.5.0",
-  "updatedAt": "2026-09-17T09:46:44.627Z",
+  "release": "11.6.0",
+  "updatedAt": "2026-09-18T05:53:37.273Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
-    "monitorIntervalSeconds": 300,
-    "moduleIntervalSeconds": 300,
+    "monitorIntervalSeconds": 86400,
+    "moduleIntervalSeconds": 86400,
     "refreshOnFocus": true,
     "refreshOnOnline": true,
     "cacheBust": true
@@ -15,7 +15,7 @@
     {
       "id": "core",
       "name": "Core",
-      "version": "11.5.0",
+      "version": "11.6.0",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
