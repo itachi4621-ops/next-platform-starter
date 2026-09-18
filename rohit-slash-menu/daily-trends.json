@@ -225,8 +225,9 @@
   "autoUpdate": {
     "enabled": true,
     "scheduledResearch": "daily",
-    "clientSyncSeconds": 300,
+    "clientSyncSeconds": 86400,
     "refreshOnFocus": true,
-    "refreshOnOnline": true
+    "refreshOnOnline": true,
+    "refreshOnNewDate": true
   }
 }
