@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.3.0",
-  "updatedAt": "2026-09-17T09:46:44.627Z",
-  "name": "Virag Human Creative Engine",
+  "libraryVersion": "1.4.0",
+  "updatedAt": "2026-09-19T06:25:35.043Z",
+  "name": "Virag Human Creative Engine — Independent Variations",
   "enabled": true,
   "defaultMode": "human-made-creative-master",
   "globalRule": "HUMAN-AUTHORED VISUAL STANDARD. The result must feel concepted, art-directed, photographed, typeset and finished by an experienced human creative team. Begin with one clear communication idea, then build a complete composition with decisive type scale, intentional asymmetry, coordinated graphic devices, tactile detail and believable spatial depth. Clean means edited and coherent—not sparse or basic. Prefer credible light, perspective and materials, controlled color, optical spacing and small imperfections. Default to bright commercial art direction unless the current request explicitly asks for dark or cinematic styling. Never imitate the common image-model aesthetic.",
@@ -56,7 +56,8 @@
     "intentional crop, depth and scale contrast",
     "no obvious generative artifacts",
     "visibly different from previous outputs",
-    "clean two-second readability without looking sparse or basic"
+    "clean two-second readability without looking sparse or basic",
+    "different headline and supporting-point architecture for every output in a batch"
   ],
   "compatibility": {
     "core": "11.3.0+",
@@ -131,7 +132,7 @@
       "more than two font families"
     ]
   },
-  "freshnessRule": "Every variation must begin from a genuinely new product-specific campaign idea—not a background swap. Change the concept, grid skeleton, hero scale and placement, crop, type architecture, information-module geometry, graphic language, palette, texture, supporting elements, lighting and content rhythm. Use current-turn references only for design principles such as hierarchy, density, type character, grid tension and finish; never copy their exact content or composition.",
+  "freshnessRule": "Every variation must begin from a genuinely new product-specific campaign idea and a different communication angle—not a background swap. Across one batch, change the headline wording, verified-fact emphasis, supporting-point selection or order, copy hierarchy, grid skeleton, hero scale and placement, crop, type architecture, information-module geometry, graphic language, palette, texture, supporting elements, lighting and content rhythm. Never reuse the same headline, pointer sequence, fact-card structure or layout skeleton in two outputs. Repeating the exact brand or product name is allowed. If only limited verified information exists, use neutral non-claim campaign language and distinct visual storytelling; never invent a benefit or claim. Use current-turn references only for design principles such as hierarchy, density, type character, grid tension and finish; never copy their exact content or composition.",
   "negativeAesthetic": [
     "AI-looking glossy product render",
     "cinematic photograph or CGI scene with text added afterward",
@@ -148,7 +149,8 @@
     "invented claims or filler microcopy",
     "repeated layout structure",
     "collage or multi-output board",
-    "any deformation, relighting, recolouring or redesign of the pixel-locked product"
+    "any deformation, relighting, recolouring or redesign of the pixel-locked product",
+    "same headline and supporting pointers repeated across multiple outputs"
   ],
   "finalProductionGate": [
     "looks deliberately human-designed and agency-finished",
@@ -160,6 +162,7 @@
     "preserves the exact original product pixels, shape, label, logo, printed text and colors",
     "contains no visible generative artifacts",
     "does not resemble a cinematic poster, raw render, basic template or background swap",
-    "is delivered as one separate standalone result"
+    "is delivered as one separate standalone result",
+    "uses a unique headline, factual emphasis and information-module structure within its batch"
   ]
 }
