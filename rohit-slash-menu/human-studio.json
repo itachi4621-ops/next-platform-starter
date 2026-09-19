@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.4.0",
-  "updatedAt": "2026-09-19T06:25:35.043Z",
-  "name": "Virag Human Creative Engine — Independent Variations",
+  "libraryVersion": "1.5.0",
+  "updatedAt": "2026-09-19T06:33:59.713Z",
+  "name": "Virag Human Creative Engine — Mixed Format Batches",
   "enabled": true,
   "defaultMode": "human-made-creative-master",
   "globalRule": "HUMAN-AUTHORED VISUAL STANDARD. The result must feel concepted, art-directed, photographed, typeset and finished by an experienced human creative team. Begin with one clear communication idea, then build a complete composition with decisive type scale, intentional asymmetry, coordinated graphic devices, tactile detail and believable spatial depth. Clean means edited and coherent—not sparse or basic. Prefer credible light, perspective and materials, controlled color, optical spacing and small imperfections. Default to bright commercial art direction unless the current request explicitly asks for dark or cinematic styling. Never imitate the common image-model aesthetic.",
@@ -57,7 +57,8 @@
     "no obvious generative artifacts",
     "visibly different from previous outputs",
     "clean two-second readability without looking sparse or basic",
-    "different headline and supporting-point architecture for every output in a batch"
+    "different headline and supporting-point architecture for every output in a batch",
+    "different social-content family for every output before any family repeats"
   ],
   "compatibility": {
     "core": "11.3.0+",
@@ -132,7 +133,7 @@
       "more than two font families"
     ]
   },
-  "freshnessRule": "Every variation must begin from a genuinely new product-specific campaign idea and a different communication angle—not a background swap. Across one batch, change the headline wording, verified-fact emphasis, supporting-point selection or order, copy hierarchy, grid skeleton, hero scale and placement, crop, type architecture, information-module geometry, graphic language, palette, texture, supporting elements, lighting and content rhythm. Never reuse the same headline, pointer sequence, fact-card structure or layout skeleton in two outputs. Repeating the exact brand or product name is allowed. If only limited verified information exists, use neutral non-claim campaign language and distinct visual storytelling; never invent a benefit or claim. Use current-turn references only for design principles such as hierarchy, density, type character, grid tension and finish; never copy their exact content or composition.",
+  "freshnessRule": "Every variation must begin from a genuinely different product-specific content family, campaign idea and communication angle—not a background swap. When multiple outputs are requested, rotate compatible standalone formats before repeating: Visual Campaign Creative, Benefit Infographic, Editorial Creative, Contextual Story Creative, Data & Callout Creative, Crafted/Tactile Creative, Art-Directed CGI Creative and Bold-Type Campaign Creative. For exactly two outputs, use one visual campaign creative and one benefit infographic unless the current request explicitly requires another pairing. Across the batch, change headline wording, verified-fact emphasis, supporting-point selection or order, copy hierarchy, grid skeleton, hero scale and placement, crop, type architecture, information-module geometry, graphic language, palette, texture, supporting elements, lighting and content rhythm. Never reuse the same content family, headline, pointer sequence, fact-card structure or layout skeleton in two outputs. Repeating the exact brand/product name or mandatory supplied legal line is allowed. If verified information is limited, use neutral non-claim campaign language and distinct visual storytelling; never invent a benefit or claim.",
   "negativeAesthetic": [
     "AI-looking glossy product render",
     "cinematic photograph or CGI scene with text added afterward",
@@ -150,7 +151,8 @@
     "repeated layout structure",
     "collage or multi-output board",
     "any deformation, relighting, recolouring or redesign of the pixel-locked product",
-    "same headline and supporting pointers repeated across multiple outputs"
+    "same headline and supporting pointers repeated across multiple outputs",
+    "multiple outputs presented as the same post type with cosmetic changes"
   ],
   "finalProductionGate": [
     "looks deliberately human-designed and agency-finished",
@@ -163,6 +165,7 @@
     "contains no visible generative artifacts",
     "does not resemble a cinematic poster, raw render, basic template or background swap",
     "is delivered as one separate standalone result",
-    "uses a unique headline, factual emphasis and information-module structure within its batch"
+    "uses a unique headline, factual emphasis and information-module structure within its batch",
+    "belongs to a different content family than the other outputs in its batch"
   ]
 }
