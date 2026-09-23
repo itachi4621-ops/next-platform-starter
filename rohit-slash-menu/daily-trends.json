@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "2026.09.23",
-  "trendDate": "2026-09-23",
-  "updatedAt": "2026-09-22T19:33:51.036Z",
+  "libraryVersion": "2026.09.24",
+  "trendDate": "2026-09-24",
+  "updatedAt": "2026-09-23T19:19:12.216Z",
   "name": "Virag Daily Social Design Trends",
   "enabled": true,
   "updateMode": "daily-researched-principles",
@@ -39,6 +39,11 @@
       "use": "Primary color evidence for Cool Blue, Jade, Plum Noir, Wasabi and Persimmon."
     },
     {
+      "name": "Pinterest Presents 2026 — Great Offline and Holiday Signals",
+      "url": "https://business.pinterest.com/en-au/pinterest-presents/",
+      "use": "Fresh official evidence for analog, real-world material cues, small statement-making details and refined experience design."
+    },
+    {
       "name": "Pinterest Trends",
       "url": "https://trends.pinterest.com/",
       "use": "Live search-interest cross-check; directional evidence only, never a composition to copy."
@@ -70,8 +75,8 @@
     },
     {
       "id": "tactile-analog",
-      "label": "Tactile Material Edit",
-      "signal": "Pinterest Predicts 2026’s Gimme Gummy signal foregrounds sensory, touchable materiality; translate it into controlled soft forms, physical texture and believable craft instead of synthetic AI gloss.",
+      "label": "Tactile Offline Material Edit",
+      "signal": "Pinterest Predicts 2026’s Gimme Gummy foregrounds sensory materiality, while Pinterest Presents 2026 reports rising interest in analog activities and nature film photography; translate both into believable physical craft and human-made detail instead of synthetic AI gloss.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -79,11 +84,11 @@
         "Packaging",
         "Video"
       ],
-      "layout": "Use one tactile form or imperfect mask as the spatial anchor, with edited cut shapes and compact information modules on a disciplined grid. In Video, favor slow compression, peel or parallax motion with believable material response.",
+      "layout": "Use one physical material or real-use cue as the spatial anchor, with edited cut shapes and 1–3 compact information modules on a disciplined grid. In Video, favor slow compression, peel, practical handling or shallow parallax with believable material response.",
       "typography": "Real typesetting with one optional handwritten annotation accent; display and utility copy stay readable and use no more than two families.",
       "palette": "Brand colors first, supported by warm paper neutrals or one soft confectionery accent.",
-      "texture": "Scanned fibers, soft-touch material, ink variation or subtle dimensional edges with realistic contact shadows.",
-      "avoid": "Plastic AI sheen, literal candy imitation, fake scrapbook clutter, excessive torn paper and childish sticker overload."
+      "texture": "Scanned fibers, film grain, soft-touch material, ink variation or subtle dimensional edges with realistic contact shadows.",
+      "avoid": "Plastic AI sheen, literal candy imitation, fake scrapbook clutter, excessive torn paper, staged nostalgia and childish sticker overload."
     },
     {
       "id": "cool-blue-clarity",
@@ -119,20 +124,21 @@
       "avoid": "Full-canvas orange overload, fire effects and oversaturated AI glow."
     },
     {
-      "id": "wasabi-utility",
-      "label": "Wasabi Utility Accent",
-      "signal": "Pinterest Palette 2026 identifies Wasabi as a directional yellow-green; use it as a small functional visibility accent rather than a full visual identity.",
+      "id": "intentional-detail-architecture",
+      "label": "Intentional Detail Architecture",
+      "signal": "Pinterest Presents 2026’s Trinket Effect and Artful Entertaining signals emphasize small statement-making extras, personal touches and refined experiences; translate them into a coherent micro-detail system that improves recognition and information flow.",
       "tabs": [
         "Creative",
         "Flyer",
         "3D",
+        "Packaging",
         "Video"
       ],
-      "layout": "Use compact fact tags, ruled lines and one high-visibility CTA or data point in a tense utility grid. In Video, animate labels with quick, precise position changes and no neon pulsing.",
-      "typography": "Industrial grotesk or mono accent paired with a clean brand sans.",
-      "palette": "Wasabi #E9F056 used in small controlled areas with black, white or brand neutrals.",
-      "texture": "Printed label stock, fabric weave or practical reflective material.",
-      "avoid": "Gaming-neon clichés, black-and-green overload and illegible fluorescent body text."
+      "layout": "Keep one dominant product-and-headline relationship, then use 1–3 compact modules as coordinated tags, seals, edge details or material callouts on an intentionally tense grid. In Video, reveal details sequentially only after the hero is clear.",
+      "typography": "One expressive professional display face paired with one precise utility sans, using a decisive scale jump and no more than three weights.",
+      "palette": "Exact brand colors first, with one controlled Pinterest Palette accent or warm metallic-neutral detail where compatible.",
+      "texture": "Believable foil edge, deboss, ribbon, enamel, paper grain or set-built trim with restrained foreground/background depth.",
+      "avoid": "Random charms, scattered stickers, disconnected miniatures, holiday clichés, ornamental clutter and any detail that competes with the product or headline."
     },
     {
       "id": "jade-organic",
