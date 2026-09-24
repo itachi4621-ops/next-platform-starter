@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.19.1
-// @description  Virag V11.19.1 Lite — forced-update installer with persistent route-resilient multi-product routing.
+// @version      11.20.0
+// @description  Virag V11.20.0 Lite — real-file one-product-per-turn routing with safe batch execution.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,12 +25,12 @@
 // @compatible   Opera
 // @compatible   Safari
 // @connect      raw.githubusercontent.com
-// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.19.1
-// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.19.1
+// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.0
+// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.0
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.19.1',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
-const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',BATCH_KEY='virag.batch.v119',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
+const V='11.20.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',BATCH_KEY='virag.batch.v120',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
 const A='CURRENT BRIEF LOCK. Use only current composer text, current-turn user uploads or attachments and the selected tool. Never import an older campaign, product, festival, offer, headline, CTA, script, visual style or topic unless the user explicitly references it. Earlier assistant-generated images are not current-turn source assets and are forbidden generation references unless the current request explicitly asks to edit or redesign one.',B='BLANK-CANVAS INPUT LOCK — EXECUTE BEFORE IMAGE GENERATION. Unless the current request explicitly says to edit or redesign a specific earlier output, this is a brand-new generation from a blank canvas. Never pass, attach, include, condition on, remix, extend, imitate or use any previous assistant-generated image, previous creative, previous background or last conversation image as an image-generation reference. If the image tool supports recent-image inclusion such as num_last_images_to_include, use zero or omit it. Include only the current-turn user-uploaded product and reference assets that are required by this brief. Earlier failed outputs may be analyzed only as negative examples of what to avoid; they must never enter the generation input. Do not preserve their camera, setting, composition, props, lighting or typography by accident. The only exception is an explicit current request to revise that exact earlier image.',E='DISTINCT INSTAGRAM CONCEPT-FAMILY ROUTER — FOR AUTOMATIC FRESH AND VARIATION TOOLS. Assign outputs in order to visibly different social-native creative families: Output 1 editorial feed composition with asymmetric grid and useful negative space; Output 2 conceptual or surreal product metaphor; Output 3 product-as-architecture or branded world; Output 4 tactile mixed-media, cut-paper or crafted collage; Output 5 benefit-led graphic-symbol story using supplied facts only; Output 6 restrained material and texture study; Output 7 believable human-use micro-story only when category-appropriate; Output 8 optical, kinetic or experimental feed composition. Each family must still read as a modern Instagram post, not a print poster. Change the core idea, spatial logic, content rhythm, product placement and art direction—not merely the background. Never choose the same family twice in a requested batch. For supplement products, gym walls, dumbbells, shaker bottles, sports balls, towels, benches, fruit piles and motivational wall slogans are prohibited unless explicitly requested.',L="PIXEL-LOCKED PRODUCT SOURCE — FINAL AUTHORITY. The uploaded product is an immutable source layer, not a prompt reference to redraw. In the default Pixel-Locked Composite mode, retain its original pixels and complete silhouette exactly. Do not regenerate, reconstruct, inpaint, retouch, relight, recolor, stretch, squash, bend, morph, mesh-warp, perspective-warp or change any part of the product, container, lid, cap, label, logo or printed text. Create the background and design around a reserved product-shaped area, then composite the unchanged source product into it. Only aspect-ratio-locked uniform scale and translation are allowed by default. Add contact shadows, cast shadows, reflections, rim separation and foreground overlap on separate layers outside the product source. Show the full product silhouette unless the current request explicitly asks for a crop. If the supplied view cannot fit the requested perspective, keep the supplied view or ask for the correct angle; never invent hidden geometry.",C="CONFLICT RULE. The user's explicit current request outranks the selected preset.",I="INSTAGRAM SOCIAL-CONTENT BLUEPRINT — POSITIVE CONSTRUCTION RULE. Build a complete 1080×1350 vertical 4:5 feed design, not a photograph with text added afterward. Use four coordinated zones: (1) a high-impact typographic hook with deliberate line breaks and scale contrast; (2) an asymmetric product-hero zone occupying roughly 35–55% of the canvas; (3) a clearly visible information system occupying roughly 20–35% of the canvas with one to three compact fact cards, metric tiles, icon modules, comparison bars or labelled callouts using exact facts only; and (4) micro-labels, framing or a restrained supplied CTA that completes the composition. Use two to five coordinated 2D devices—such as directional bands, blocks, frames, masks, rules, patterns, texture fields or data containers—that share one visual language. A photograph or CGI scene may support the design, but it can never be the entire undivided canvas.",G="INSTAGRAM CONTENT PRE-FLIGHT — REBUILD UNTIL ALL PASS. The output must read as a premium designed Instagram post at phone size; contain strong accurate readable typography; preserve the exact product; use a purposeful asymmetric grid; include a coordinated graphic system, one to three useful information modules and visible foreground/background depth; and differ structurally from every other requested variation. Reject and rebuild any simplistic product-plus-headline layout, empty minimal canvas, centered packshot, product-on-pedestal image, cinematic beauty shot, static title poster, giant duplicate package, decorative 3D room, generic glossy scene, text-free image, tiny unreadable copy, arbitrary shapes, background swap or layout with no designed content architecture.";
@@ -175,11 +175,8 @@ function rowfamily(x,row){
 }
 function batchlock(x,row,pos,total,id){
   const image=['Creative','Flyer','3D','Packaging'].includes(x.tab);
-  const exact=S.am==='together'?S.refs.slice(0,S.pc).join(' | '):(S.refs[row.product-1]||`attachment position ${row.product}`);
-  const assigned=S.am==='together'?`all ${S.pc} tagged products together`:`Product ${row.product} only — exact tagged source: ${exact}`;
-  const source=pos===0
-    ?`TAGGED SOURCE REGISTRATION. The current user message still contains all ${S.pc} original product tags or attachments. Register them in visible order and use only ${assigned} for this row.`
-    :`EXACT TAGGED SOURCE ROUTING. In the batch-start user message, locate the original user product whose visible attachment name or tag is exactly "${exact}". Use that original source only. Do not choose Product 1 unless that exact name is Product 1's assigned source.`;
+  const exact=S.am==='together'?S.refs.slice(0,S.pc).join(' | '):(S.refs[row.product-1]||`Product-${row.product}`);
+  const assigned=S.am==='together'?`all ${S.pc} current-turn product files together`:`Product ${row.product} only — current-turn attached original file: ${exact}`;
   return`AUTOMATIC PRODUCT ROUTER — FINAL EXECUTION AUTHORITY.
 RUN: ${id}
 CREATIVE: ${pos+1}/${total}
@@ -187,9 +184,9 @@ ASSIGNED SOURCE: ${assigned}
 VARIATION: ${row.variation}/${S.cc}
 FORMAT FAMILY: ${rowfamily(x,row)}
 
-${source}
+CURRENT-TURN FILE LOCK. Virag has physically reattached the assigned original product file to this exact user message. Use that current-turn file only. Never ask for an earlier filename, never reuse a previous product and never select Product 1 unless Product 1 is assigned above.
 
-ONE-DELIVERABLE LOCK. Execute only this creative. ${image?'Make exactly one image-generation call and return exactly one finished standalone image.':'Return exactly one finished standalone deliverable.'} Never return alternatives, a collage, contact sheet, grid, split screen, carousel board or multi-panel canvas. Preserve the assigned product exactly, include it once and exclude every unassigned product. After this response finishes, Virag will request the next tagged product automatically.`
+ONE-DELIVERABLE LOCK. Execute only this creative. ${image?'Make exactly one image-generation call and return exactly one finished standalone image.':'Return exactly one finished standalone deliverable.'} Never return alternatives, a collage, contact sheet, grid, split screen, carousel board or multi-panel canvas. Preserve the assigned product exactly, include it once and exclude every unassigned product. After this response finishes, Virag will physically attach the next product file in a new turn.`
 }
 function brainrow(x){
   const m=S.br?.modules||{},gen=x.tab!=='AI Tools',social=gen&&S.fm!=='native';
@@ -200,9 +197,9 @@ function promptrow(x,row,pos,rows,id,brief){
   const rowLock=batchlock(x,row,pos,rows.length,id);
   return[
     image?Z:'',
-    pos===0?A:'ACTIVE TAGGED-PRODUCT RUN. Continue only the same current brief and the exact named original user attachment assigned below.',
-    pos===0?B:'Never use any assistant-generated output as a reference. Resolve the assigned product from the original user-tagged sources by exact visible name.',
-    brief?`ORIGINAL REQUEST\n${brief}`:'ORIGINAL REQUEST\nUse the tagged products and current Virag settings.',
+    A,
+    B,
+    brief?`ORIGINAL REQUEST\n${brief}`:'ORIGINAL REQUEST\nUse the current-turn attached product and current Virag settings.',
     rowLock,
     `SELECTED ${x.tab.toUpperCase()} TOOL — TECHNIQUE ONLY\n${x.label}: ${x.ins}`,
     gen?format(x):'',
@@ -288,7 +285,7 @@ function turnsig(node,snap){
 }
 function turnerror(node){
   const t=String(node?.innerText||node?.textContent||'').toLowerCase();
-  const m=t.match(/something went wrong|failed to generate|could not generate|couldn't generate|unable to generate|rate limit|try again later|network error/);
+  const m=t.match(/please re-upload|please upload|re-upload the|upload the original|need the exact original|need that exact original|source file is not available|something went wrong|failed to generate|could not generate|couldn't generate|unable to generate|rate limit|try again later|network error/);
   return m?m[0]:''
 }
 function rowmarker(id,pos,total){
@@ -373,95 +370,130 @@ function batchui(label,done,total,state='running'){
   if(status)status.textContent=state==='running'?`v${V} · WORKING ${done}/${total}`:`v${V} · READY`;
   if(launch)launch.textContent=state==='running'?`${done}/${total} working`:'Open Virag'
 }
-function savebatch(batch){
-  batch.updatedAt=Date.now();
-  sv(BATCH_KEY,{...batch,running:true,cancelled:false})
+function filekey(f){return`${f?.name||''}|${f?.size||0}|${f?.lastModified||0}`}
+function rememberfiles(list,replace=0){
+  const incoming=[...(list||[])].filter(f=>f&&(/^image\//i.test(f.type||'')||/\.(?:png|jpe?g|webp|gif|avif|heic|heif|bmp|tiff?)$/i.test(f.name||'')));
+  if(!incoming.length)return[];
+  const out=replace?[]:[...(S.sourceFiles||[])],seen=new Set(out.map(filekey));
+  for(const f of incoming){const k=filekey(f);if(!seen.has(k)){seen.add(k);out.push(f)}}
+  S.sourceFiles=out;
+  return out
 }
-function clearbatch(){sv(BATCH_KEY,null)}
-async function processbatch(batch,resumed=0){
-  if(S.batch?.running&&S.batch!==batch)return;
-  S.batch=batch;
-  batch.running=true;
-  batch.cancelled=false;
-  hide();
-  console.log(resumed?'[Virag Supervisor] resumed':'[Virag Supervisor] started',{id:batch.id,done:batch.done,total:batch.total,phase:batch.phase});
+function currentinputfiles(){
+  const out=[];
+  for(const input of document.querySelectorAll('input[type="file"]'))for(const f of [...(input.files||[])])out.push(f);
+  return rememberfiles(out)
+}
+function picksourcefiles(count){
+  return new Promise(resolve=>{
+    const input=document.createElement('input');
+    input.type='file';
+    input.accept='image/png,image/jpeg,image/webp,image/avif,image/heic,image/heif,image/bmp,image/tiff';
+    input.multiple=count>1;
+    input.style.cssText='position:fixed;left:-9999px;top:-9999px;opacity:0';
+    const finish=files=>{try{input.remove()}catch{}resolve(files)};
+    input.onchange=()=>{
+      const files=rememberfiles(input.files,1);
+      if(files.length<count){toast(`Select ${count} original product image files. Only ${files.length} selected.`,1);finish([]);return}
+      finish(files.slice(0,count))
+    };
+    document.documentElement.appendChild(input);
+    input.click()
+  })
+}
+function composerscope(){
+  const e=ed();
+  return e?.closest?.('form')||e?.parentElement||document
+}
+function attachmentnodes(scope=composerscope()){
+  return [...(scope?.querySelectorAll?.('[data-testid*="attachment-preview"],[data-testid*="file-preview"],[data-testid*="composer-file"],[data-testid*="upload-preview"],[data-filename],button[aria-label*="Remove file" i],button[aria-label*="Remove attachment" i]')||[])].filter(vis)
+}
+async function clearcomposerattachments(){
+  const scope=composerscope();
+  const buttons=[...(scope?.querySelectorAll?.('button[aria-label*="Remove file" i],button[aria-label*="Remove attachment" i],button[title*="Remove file" i],button[title*="Remove attachment" i]')||[])];
+  for(const b of buttons)if(vis(b))b.click();
+  const e=ed();if(e)wr(e,'');
+  for(let i=0;i<80;i++){if(!attachmentnodes().length)return true;await wait(100)}
+  throw new Error('COMPOSER_ATTACHMENTS_COULD_NOT_CLEAR')
+}
+function productfileinput(){
+  const all=[...document.querySelectorAll('input[type="file"]')];
+  return all.find(i=>/image|png|jpeg|jpg|webp|avif|heic/i.test(i.accept||''))||all.find(i=>i.closest('form'))||all[0]||null
+}
+async function attachsource(file){
+  if(!file)throw new Error('PRODUCT_FILE_MISSING');
+  await clearcomposerattachments();
+  const e=ed(),input=productfileinput();
+  if(!e||!input)throw new Error('CHATGPT_FILE_INPUT_NOT_FOUND');
+  let dt;
+  try{dt=new DataTransfer();dt.items.add(file)}catch{throw new Error('FILE_TRANSFER_NOT_SUPPORTED')}
+  S.replayingFile=true;
   try{
-    for(let i=Number(batch.done)||0;i<batch.jobs.length;i++){
-      const job=batch.jobs[i],wasWaiting=batch.phase==='waiting'&&Number(batch.current)===i;
-      batch.current=i;
-      batchui('WORKING',i,batch.total);
-      if(!wasWaiting){
-        batch.before=turnsnapshot();
-        batch.sentAt=Date.now();
-        batch.phase='waiting';
-        savebatch(batch);
-        console.log('[Virag Supervisor] requesting',{id:batch.id,creative:i+1,total:batch.total,product:job.product,exactSource:job.exactSource,variation:job.variation,family:job.family});
-        await sendtext(job.prompt,i===0&&batch.firstPreserve?1:0)
-      }else{
-        console.log('[Virag Supervisor] restoring active row',{id:batch.id,creative:i+1,total:batch.total,sentAt:batch.sentAt});
-        await wait(2500)
-      }
-      const response=await waitturn(batch.before||{},batch,i,wasWaiting||resumed),error=turnerror(response);
-      if(error)throw new Error(`CREATIVE_${i+1}_FAILED_${error.replace(/\s+/g,'_').toUpperCase()}`);
+    const setter=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'files')?.set;
+    setter?setter.call(input,dt.files):(input.files=dt.files);
+    input.dispatchEvent(new Event('input',{bubbles:true}));
+    input.dispatchEvent(new Event('change',{bubbles:true}))
+  }finally{setTimeout(()=>{S.replayingFile=false},500)}
+  const name=String(file.name||'').toLowerCase();
+  for(let i=0;i<900;i++){
+    const scope=composerscope(),txt=String(scope?.innerText||scope?.textContent||'').toLowerCase();
+    const nodes=attachmentnodes(scope);
+    const uploading=[...(scope?.querySelectorAll?.('[role="progressbar"],[aria-busy="true"],[data-testid*="upload-progress"],[data-state="uploading"]')||[])].some(vis);
+    if((txt.includes(name)||nodes.length>0)&&!uploading){await wait(800);return true}
+    await wait(100)
+  }
+  throw new Error('PRODUCT_FILE_DID_NOT_ATTACH')
+}
+async function processbatch(batch){
+  if(S.batch?.running&&S.batch!==batch)return;
+  S.batch=batch;batch.running=true;batch.cancelled=false;hide();
+  console.log('[Virag File Router] started',{id:batch.id,total:batch.total,files:batch.jobs.map(j=>j.file?.name)});
+  try{
+    for(let i=0;i<batch.jobs.length;i++){
+      const job=batch.jobs[i];
+      batch.current=i;batchui('WORKING',i,batch.total);
+      console.log('[Virag File Router] attaching',{creative:i+1,total:batch.total,product:job.product,file:job.file?.name});
+      await attachsource(job.file);
+      batch.before=turnsnapshot();batch.sentAt=Date.now();
+      console.log('[Virag File Router] requesting',{creative:i+1,total:batch.total,product:job.product,file:job.file?.name,family:job.family});
+      await sendtext(job.prompt,0);
+      const response=await waitturn(batch.before,batch,i,0),error=turnerror(response);
+      if(error)throw new Error(`CREATIVE_${i+1}_STOPPED_${error.replace(/\s+/g,'_').toUpperCase()}`);
       batch.done=i+1;
-      batch.phase='queued';
-      batch.before=null;
-      batch.sentAt=0;
-      savebatch(batch);
-      console.log('[Virag Supervisor] completed',{id:batch.id,creative:i+1,total:batch.total,product:job.product});
+      console.log('[Virag File Router] completed',{creative:i+1,total:batch.total,product:job.product});
       if(i<batch.jobs.length-1)await wait(1800)
     }
-    batch.running=false;
-    batchui('READY',batch.total,batch.total,'complete');
-    clearbatch();
+    batch.running=false;batchui('READY',batch.total,batch.total,'complete');
     toast(`Virag completed ${batch.total}/${batch.total} separate creatives.`);
-    console.log('[Virag Supervisor] complete',{id:batch.id,total:batch.total})
+    console.log('[Virag File Router] complete',{id:batch.id,total:batch.total})
   }catch(error){
     batch.running=false;
     const code=String(error?.message||error);
-    savebatch(batch);
-    batchui('READY',batch.done,batch.total,'paused');
-    show();
-    toast(`Virag paused after ${batch.done}/${batch.total}: ${code}. Reloading this same chat will resume it.`,1);
-    console.error('[Virag Supervisor] paused',{id:batch.id,done:batch.done,total:batch.total,error:code})
+    batchui('READY',batch.done,batch.total,'paused');show();
+    toast(`Virag stopped safely after ${batch.done}/${batch.total}: ${code}.`,1);
+    console.error('[Virag File Router] stopped',{id:batch.id,done:batch.done,total:batch.total,error:code})
   }
-}
-async function resumeSavedBatch(){
-  if(S.batch?.running)return;
-  const batch=gv(BATCH_KEY,null);
-  if(!batch||!Array.isArray(batch.jobs)||!batch.jobs.length||Number(batch.done)>=Number(batch.total)){if(batch)clearbatch();return}
-  const age=Date.now()-Number(batch.updatedAt||batch.startedAt||0);
-  if(!Number.isFinite(age)||age>6*60*60*1000){clearbatch();console.warn('[Virag Supervisor] discarded stale batch');return}
-  S.batch=batch;
-  toast(`Resuming Virag batch at ${Number(batch.done)||0}/${batch.total}.`);
-  return processbatch(batch,1)
 }
 async function runbatch(x){
   if(S.batch?.running)return toast(`Virag is already working on ${S.batch.done}/${S.batch.total}.`,1);
-  const e=ed();
-  if(!e)return toast('ChatGPT composer not found.',1);
+  const e=ed();if(!e)return toast('ChatGPT composer not found.',1);
   const brief=base();
-  S.refs=capturetagrefs(e);
-  if(S.pc>1&&S.refs.length<S.pc){
-    show();
-    st('TAG PRODUCTS FIRST');
-    return toast(`Tag ${S.pc} products in the ChatGPT composer before selecting a tool. Virag detected ${S.refs.length}.`,1)
-  }
-  if(S.am==='separate'&&S.cc===1&&total()!==S.pc){
-    show();
-    return toast('Quantity check failed: one creative per product must equal the selected product count.',1)
-  }
+  let files=currentinputfiles();
+  if(files.length<S.pc)files=await picksourcefiles(S.pc);
+  if(files.length<S.pc){show();st('SOURCE FILES REQUIRED');return toast(`Virag needs ${S.pc} real product image files to create ${S.pc} separate current-turn generations.`,1)}
+  files=files.slice(0,S.pc);
+  S.refs=files.map(f=>f.name||`Product-${S.refs.length+1}`);
+  if(S.am==='separate'&&S.cc===1&&total()!==S.pc){show();return toast('Quantity check failed: one creative per product must equal the selected product count.',1)}
   const rows=batchrows(x),id=`VR-${Date.now().toString(36).toUpperCase()}`;
   const jobs=rows.map((row,i)=>({
-    product:row.product,
-    variation:row.variation,
-    family:rowfamily(x,row),
-    exactSource:S.am==='together'?S.refs.slice(0,S.pc).join(' | '):S.refs[row.product-1],
+    product:row.product,variation:row.variation,family:rowfamily(x,row),
+    file:S.am==='together'?files[0]:files[row.product-1],
     prompt:promptrow(x,row,i,rows,id,brief)
   }));
-  const batch={id,running:true,cancelled:false,done:0,total:jobs.length,current:-1,phase:'queued',before:null,sentAt:0,firstPreserve:true,jobs,startedAt:Date.now(),updatedAt:Date.now()};
-  savebatch(batch);
-  return processbatch(batch,0)
+  if(S.am==='together'&&S.pc>1){show();return toast('Together mode needs a dedicated multi-file router. Use Separate for one product per creative.',1)}
+  const batch={id,running:true,cancelled:false,done:0,total:jobs.length,current:-1,jobs,startedAt:Date.now()};
+  sv('virag.batch.v119',null);sv(BATCH_KEY,null);
+  return processbatch(batch)
 }
 async function ex(x){
   if(!x)return;
@@ -825,10 +857,15 @@ function mount(){if(S.p)return;S.h=document.createElement('div');document.docume
 function st(x){mount();theme();S.s.querySelector('.status').textContent=`v${V} · ${x}`}function toast(x,b=0){mount();theme();S.to.textContent=x;S.to.className='toast on';clearTimeout(toast.t);toast.t=setTimeout(()=>S.to.className='toast',5200)}
 function qp(){if(!S.s)return;const gen=S.m!=='AI Tools',p=S.s.querySelector('.planner');p?.classList.toggle('on',gen);if(!gen)return;const separate={Creative:'Creatives per product',Flyer:'Flyers per product','3D':'3D creatives per product',Packaging:'Designs per product',Video:'Video outputs per product'},together={Creative:'Combined Instagram post variations',Flyer:'Combined flyer variations','3D':'Combined 3D variations',Packaging:'Combined design variations',Video:'Combined video variations'},t=S.s.querySelector('.total b'),small=S.s.querySelector('.total small'),pt=S.s.querySelector('.ptype');if(t)t.textContent=total();if(small)small.textContent=S.am==='separate'&&S.cc===1?'ONE PER PRODUCT':(S.fm==='native'?'TOTAL NATIVE OUTPUTS':(S.m==='Video'?'TOTAL SEPARATE REELS':'TOTAL SEPARATE IMAGES'));if(pt)pt.textContent=(S.am==='together'?together:separate)[S.m]||'Output quantity'}
 function rd(){if(!S.p)return;const tb=S.s.querySelector('.tabs');tb.innerHTML='';T.forEach(t=>{const b=document.createElement('button');b.className='tab'+(S.m===t?' on':'');b.dataset.t=t;b.textContent=t;b.onclick=async()=>{S.m=t;S.g='All';S.q='';S.s.querySelector('.q').value='';st('LOADING '+t.toUpperCase());await sy(0,0);rd()};tb.appendChild(b)});const gg=S.s.querySelector('.groups');gg.innerHTML='';gg.classList.toggle('on',S.m==='3D');if(S.m==='3D')gs().forEach(g=>{const n=g==='All'?S.l['3D'].size:[...S.l['3D'].values()].filter(x=>x.group===g).length,b=document.createElement('button');b.className='gb'+(S.g===g?' on':'');b.textContent=`${g} (${n})`;b.onclick=()=>{S.g=g;S.q='';S.s.querySelector('.q').value='';rd()};gg.appendChild(b)});qp();const a=ls(),n=total(),gen=S.m!=='AI Tools',q=S.s.querySelector('.q'),layout=S.am==='together'?'together':'separate',ad=['Creative','3D'].includes(S.m);q.placeholder=`Search inside ${S.m}…`;S.s.querySelector('.title').textContent=S.m==='3D'?`CGI + SOCIAL CONTENT ENGINE · ${S.g}`:S.m==='Creative'?'CREATIVE · INSTAGRAM CONTENT DESIGN ENGINE':gen?`${S.m} · UNIVERSAL MASTER OUTPUT PLAN`:S.m;S.s.querySelector('.meta').textContent=`Library ${S.v[S.m]} · Brain ${S.bv} · ${S.l[S.m].size} tools${gen?' · ALL MASTER LOCKS ACTIVE · PRODUCT IDENTITY LOCKED · REAL FONT ONLY · HUMAN-STUDIO QA · HUMAN-MADE MASTER · PREMIUM-DESIGNED DEFAULT · CROSS-BROWSER · TAGGED-PRODUCT AUTO ROUTER · MIXED-FORMAT VARIATIONS':''}${ad?' · INSTAGRAM 4:5 · POST-READY · DESIGN-LAYER GATE · NOT A POSTER · BLANK CANVAS · PREVIOUS OUTPUTS EXCLUDED · RAW RENDERS REJECTED · HUMAN-MADE CREATIVE MASTER · PREMIUM ART DIRECTION · ORIGINAL CONCEPT LOCK':''}${gen?' · FORMAT '+FM[S.fm][0].toUpperCase()+' · CONTENT '+CL[S.cl][0].toUpperCase()+' · RICHNESS '+AR[S.ar][0].toUpperCase()+' · DESIGN '+DS[S.ds][0].toUpperCase()+' · FIDELITY '+PL[S.pl][0].toUpperCase()+' · TYPE '+Y[S.ty][0].split(' — ')[0].toUpperCase()+' · DAILY TREND '+String(S.mods.trends?.trendDate||'SYNCING').toUpperCase():''}${S.m==='3D'?` · ${S.d.size}/${D.length} sections · showing ${a.length} · ${S.pc} product${S.pc===1?'':'s'} ${layout} · ${n} output${n===1?'':'s'}`:gen?` · ${S.pc} product${S.pc===1?'':'s'} ${layout} · ${n} output${n===1?'':'s'}`:''}`;const gr=S.s.querySelector('.grid');gr.innerHTML='';a.forEach(x=>{const c=document.createElement('div');c.className='card';c.innerHTML='<span class="cmd"></span><span class="tag"></span><div class="name"></div><div class="desc"></div>';c.querySelector('.cmd').textContent=x.cmd;c.querySelector('.tag').textContent=x.tab==='3D'?x.group:'';c.querySelector('.tag').style.display=x.tab==='3D'?'inline-block':'none';c.querySelector('.name').textContent=x.label;c.querySelector('.desc').textContent=x.desc;c.onclick=()=>ex(x);gr.appendChild(c)});if(!a.length)gr.innerHTML='<div class="empty">No tools found. Press SYNC to retry.</div>';const ft=S.s.querySelector('.foot');ft.innerHTML='';T.forEach(t=>{const c=document.createElement('span');c.className='chip';c.textContent=`${t} ${S.v[t]}${t==='3D'?` · ${S.l[t].size}`:''}`;ft.appendChild(c)})}
+document.addEventListener('change',e=>{
+  const input=e.target;
+  if(S.replayingFile||!input?.matches?.('input[type="file"]')||!input.files?.length)return;
+  rememberfiles(input.files,input.files.length>1)
+},true);
 function show(){mount();S.p.classList.add('on')}function hide(){S.p?.classList.remove('on')}
 document.addEventListener('input',e=>{const t=e.target;if(!(t?.tagName==='TEXTAREA'||t?.isContentEditable||t?.closest?.('[contenteditable="true"]')))return;const x=t.tagName==='TEXTAREA'||t.isContentEditable?t:t.closest('[contenteditable="true"]'),m=read(x).match(/(?:^|\n)\s*\/([A-Za-z0-9_-]*)$/);if(!m)return;mount();S.q=m[1]||'';const h=hit(S.q);if(h){S.m=h.tab;S.g=h.tab==='3D'?h.group:'All'}show();S.s.querySelector('.q').value=S.q;rd()},true);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()},true);
-function indiaNow(){return new Date(Date.now()+IST_OFFSET)}function indiaDate(){const d=indiaNow();return`${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`}function pastDailyWindow(){const d=indiaNow();return d.getUTCHours()>DAILY_HOUR||(d.getUTCHours()===DAILY_HOUR&&d.getUTCMinutes()>=DAILY_MINUTE)}function dailyDelay(){const now=Date.now(),d=new Date(now+IST_OFFSET);let t=Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate(),DAILY_HOUR,DAILY_MINUTE);if(t<=now+IST_OFFSET)t+=86400000;return Math.max(60000,t-(now+IST_OFFSET))}async function dailySync(force=0){if(!force&&document.hidden)return;const today=indiaDate();if(!force&&pastDailyWindow()&&gv(DAILY_KEY,'')===today)return;const ok=await sy();if(ok&&pastDailyWindow())sv(DAILY_KEY,today)}function armDaily(){setTimeout(async()=>{await dailySync();armDaily()},dailyDelay())}const autosync=()=>dailySync();(window.requestIdleCallback||((f)=>setTimeout(f,450)))(async()=>{await cleanupLegacyCaches();mount();st('BROWSER READY');dailySync(1);setTimeout(resumeSavedBatch,1800);armDaily()});window.addEventListener('focus',autosync);window.addEventListener('online',autosync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)dailySync()});
+function indiaNow(){return new Date(Date.now()+IST_OFFSET)}function indiaDate(){const d=indiaNow();return`${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`}function pastDailyWindow(){const d=indiaNow();return d.getUTCHours()>DAILY_HOUR||(d.getUTCHours()===DAILY_HOUR&&d.getUTCMinutes()>=DAILY_MINUTE)}function dailyDelay(){const now=Date.now(),d=new Date(now+IST_OFFSET);let t=Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate(),DAILY_HOUR,DAILY_MINUTE);if(t<=now+IST_OFFSET)t+=86400000;return Math.max(60000,t-(now+IST_OFFSET))}async function dailySync(force=0){if(!force&&document.hidden)return;const today=indiaDate();if(!force&&pastDailyWindow()&&gv(DAILY_KEY,'')===today)return;const ok=await sy();if(ok&&pastDailyWindow())sv(DAILY_KEY,today)}function armDaily(){setTimeout(async()=>{await dailySync();armDaily()},dailyDelay())}const autosync=()=>dailySync();(window.requestIdleCallback||((f)=>setTimeout(f,450)))(async()=>{await cleanupLegacyCaches();sv('virag.batch.v119',null);sv(BATCH_KEY,null);mount();st('BROWSER READY');dailySync(1);armDaily()});window.addEventListener('focus',autosync);window.addEventListener('online',autosync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)dailySync()});
 })();
 
 
