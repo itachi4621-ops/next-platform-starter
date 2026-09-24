@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.18.0
-// @description  Virag V11.18.0 Lite — compact neo-tactile UI with resilient uninterrupted multi-product routing.
+// @version      11.19.0
+// @description  Virag V11.19.0 Lite — compact neo-tactile UI with persistent route-resilient multi-product routing.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -29,8 +29,8 @@
 // @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.18.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
-const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
+const V='11.19.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',BATCH_KEY='virag.batch.v119',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
 const A='CURRENT BRIEF LOCK. Use only current composer text, current-turn user uploads or attachments and the selected tool. Never import an older campaign, product, festival, offer, headline, CTA, script, visual style or topic unless the user explicitly references it. Earlier assistant-generated images are not current-turn source assets and are forbidden generation references unless the current request explicitly asks to edit or redesign one.',B='BLANK-CANVAS INPUT LOCK — EXECUTE BEFORE IMAGE GENERATION. Unless the current request explicitly says to edit or redesign a specific earlier output, this is a brand-new generation from a blank canvas. Never pass, attach, include, condition on, remix, extend, imitate or use any previous assistant-generated image, previous creative, previous background or last conversation image as an image-generation reference. If the image tool supports recent-image inclusion such as num_last_images_to_include, use zero or omit it. Include only the current-turn user-uploaded product and reference assets that are required by this brief. Earlier failed outputs may be analyzed only as negative examples of what to avoid; they must never enter the generation input. Do not preserve their camera, setting, composition, props, lighting or typography by accident. The only exception is an explicit current request to revise that exact earlier image.',E='DISTINCT INSTAGRAM CONCEPT-FAMILY ROUTER — FOR AUTOMATIC FRESH AND VARIATION TOOLS. Assign outputs in order to visibly different social-native creative families: Output 1 editorial feed composition with asymmetric grid and useful negative space; Output 2 conceptual or surreal product metaphor; Output 3 product-as-architecture or branded world; Output 4 tactile mixed-media, cut-paper or crafted collage; Output 5 benefit-led graphic-symbol story using supplied facts only; Output 6 restrained material and texture study; Output 7 believable human-use micro-story only when category-appropriate; Output 8 optical, kinetic or experimental feed composition. Each family must still read as a modern Instagram post, not a print poster. Change the core idea, spatial logic, content rhythm, product placement and art direction—not merely the background. Never choose the same family twice in a requested batch. For supplement products, gym walls, dumbbells, shaker bottles, sports balls, towels, benches, fruit piles and motivational wall slogans are prohibited unless explicitly requested.',L="PIXEL-LOCKED PRODUCT SOURCE — FINAL AUTHORITY. The uploaded product is an immutable source layer, not a prompt reference to redraw. In the default Pixel-Locked Composite mode, retain its original pixels and complete silhouette exactly. Do not regenerate, reconstruct, inpaint, retouch, relight, recolor, stretch, squash, bend, morph, mesh-warp, perspective-warp or change any part of the product, container, lid, cap, label, logo or printed text. Create the background and design around a reserved product-shaped area, then composite the unchanged source product into it. Only aspect-ratio-locked uniform scale and translation are allowed by default. Add contact shadows, cast shadows, reflections, rim separation and foreground overlap on separate layers outside the product source. Show the full product silhouette unless the current request explicitly asks for a crop. If the supplied view cannot fit the requested perspective, keep the supplied view or ask for the correct angle; never invent hidden geometry.",C="CONFLICT RULE. The user's explicit current request outranks the selected preset.",I="INSTAGRAM SOCIAL-CONTENT BLUEPRINT — POSITIVE CONSTRUCTION RULE. Build a complete 1080×1350 vertical 4:5 feed design, not a photograph with text added afterward. Use four coordinated zones: (1) a high-impact typographic hook with deliberate line breaks and scale contrast; (2) an asymmetric product-hero zone occupying roughly 35–55% of the canvas; (3) a clearly visible information system occupying roughly 20–35% of the canvas with one to three compact fact cards, metric tiles, icon modules, comparison bars or labelled callouts using exact facts only; and (4) micro-labels, framing or a restrained supplied CTA that completes the composition. Use two to five coordinated 2D devices—such as directional bands, blocks, frames, masks, rules, patterns, texture fields or data containers—that share one visual language. A photograph or CGI scene may support the design, but it can never be the entire undivided canvas.",G="INSTAGRAM CONTENT PRE-FLIGHT — REBUILD UNTIL ALL PASS. The output must read as a premium designed Instagram post at phone size; contain strong accurate readable typography; preserve the exact product; use a purposeful asymmetric grid; include a coordinated graphic system, one to three useful information modules and visible foreground/background depth; and differ structurally from every other requested variation. Reject and rebuild any simplistic product-plus-headline layout, empty minimal canvas, centered packshot, product-on-pedestal image, cinematic beauty shot, static title poster, giant duplicate package, decorative 3D room, generic glossy scene, text-free image, tiny unreadable copy, arbitrary shapes, background swap or layout with no designed content architecture.";
@@ -291,33 +291,52 @@ function turnerror(node){
   const m=t.match(/something went wrong|failed to generate|could not generate|couldn't generate|unable to generate|rate limit|try again later|network error/);
   return m?m[0]:''
 }
-async function waitturn(before,batch){
-  const started=Date.now(),deadline=started+15*60*1000;
-  let sawBusy=false,last='',stableAt=0;
+function rowmarker(id,pos,total){
+  const run=`RUN: ${id}`,creative=`CREATIVE: ${pos+1}/${total}`;
+  const nodes=turnnodes();
+  for(let i=nodes.length-1;i>=0;i--){
+    const t=String(nodes[i]?.innerText||nodes[i]?.textContent||'');
+    if(t.includes(run)&&t.includes(creative))return true
+  }
+  return false
+}
+function composerready(){
+  const e=ed(),b=sb(e);
+  return !!(e&&b&&!b.disabled&&vis(b)&&!turnbusy())
+}
+async function waitturn(before,batch,pos,resumed=0){
+  const started=Number(batch.sentAt)||Date.now(),deadline=Math.max(Date.now()+3*60*1000,started+15*60*1000);
+  let sawBusy=false,sawRow=false,last='',stableAt=0;
   while(Date.now()<deadline){
     if(batch.cancelled)throw new Error('BATCH_CANCELLED');
     const snap=turnsnapshot(),node=lastresultnode(),busy=turnbusy(),pending=generationpending(),elapsed=Date.now()-started;
     if(busy)sawBusy=true;
-    const readyMedia=snap.resultReady>before.resultReady;
-    const assistantAdvanced=snap.assistant>before.assistant;
-    const conversationAdvanced=snap.roles>=before.roles+2||snap.turns>=before.turns+2;
+    if(!sawRow)sawRow=rowmarker(batch.id,pos,batch.total);
+    const readyMedia=snap.resultReady>Number(before?.resultReady||0);
+    const assistantAdvanced=snap.assistant>Number(before?.assistant||0);
+    const conversationAdvanced=snap.roles>=Number(before?.roles||0)+2||snap.turns>=Number(before?.turns||0)+2;
     const completedBusyCycle=sawBusy&&!busy;
-    const evidence=readyMedia||assistantAdvanced||conversationAdvanced||completedBusyCycle;
-    const minimum=readyMedia?10000:(completedBusyCycle?15000:45000);
-    const sig=turnsig(node,snap);
-    if(evidence&&!busy&&!pending&&elapsed>=minimum){
+    const ready=composerready();
+    const strongReady=ready&&readyMedia;
+    const normalReady=ready&&!busy&&!pending&&(assistantAdvanced||conversationAdvanced||completedBusyCycle);
+    const restoredReady=resumed&&ready&&!busy&&!pending&&sawRow&&elapsed>=45000;
+    const stalePendingRecovery=ready&&!busy&&sawRow&&elapsed>=120000;
+    const evidence=strongReady||normalReady||restoredReady||stalePendingRecovery;
+    const minimum=strongReady?8000:(completedBusyCycle?12000:20000);
+    const sig=turnsig(node,snap)+`|${ready?'ready':'blocked'}|${sawRow?'row':'norow'}`;
+    if(evidence&&elapsed>=minimum){
       if(sig===last){
         if(!stableAt)stableAt=Date.now();
-        if(Date.now()-stableAt>=7000){
-          console.log('[Virag Detector] response complete',{elapsed,readyMedia,assistantAdvanced,conversationAdvanced,completedBusyCycle,before,after:snap});
+        if(Date.now()-stableAt>=6000){
+          console.log('[Virag Supervisor] row complete',{elapsed,readyMedia,assistantAdvanced,conversationAdvanced,completedBusyCycle,restoredReady,stalePendingRecovery,before,after:snap});
           return node
         }
       }else{last=sig;stableAt=Date.now()}
     }else{last=sig;stableAt=0}
     await wait(1000)
   }
-  console.error('[Virag Detector] timeout',{before,after:turnsnapshot(),busy:turnbusy(),pending:generationpending()});
-  throw new Error('IMAGE_RESPONSE_NOT_DETECTED')
+  console.error('[Virag Supervisor] timeout',{row:pos+1,before,after:turnsnapshot(),busy:turnbusy(),pending:generationpending(),rowSeen:sawRow});
+  throw new Error('ROW_COMPLETION_NOT_DETECTED')
 }
 async function sendtext(y,preserve=0){
   const e=ed();
@@ -354,6 +373,69 @@ function batchui(label,done,total,state='running'){
   if(status)status.textContent=state==='running'?`v${V} · WORKING ${done}/${total}`:`v${V} · READY`;
   if(launch)launch.textContent=state==='running'?`${done}/${total} working`:'Open Virag'
 }
+function savebatch(batch){
+  batch.updatedAt=Date.now();
+  sv(BATCH_KEY,{...batch,running:true,cancelled:false})
+}
+function clearbatch(){sv(BATCH_KEY,null)}
+async function processbatch(batch,resumed=0){
+  if(S.batch?.running&&S.batch!==batch)return;
+  S.batch=batch;
+  batch.running=true;
+  batch.cancelled=false;
+  hide();
+  console.log(resumed?'[Virag Supervisor] resumed':'[Virag Supervisor] started',{id:batch.id,done:batch.done,total:batch.total,phase:batch.phase});
+  try{
+    for(let i=Number(batch.done)||0;i<batch.jobs.length;i++){
+      const job=batch.jobs[i],wasWaiting=batch.phase==='waiting'&&Number(batch.current)===i;
+      batch.current=i;
+      batchui('WORKING',i,batch.total);
+      if(!wasWaiting){
+        batch.before=turnsnapshot();
+        batch.sentAt=Date.now();
+        batch.phase='waiting';
+        savebatch(batch);
+        console.log('[Virag Supervisor] requesting',{id:batch.id,creative:i+1,total:batch.total,product:job.product,exactSource:job.exactSource,variation:job.variation,family:job.family});
+        await sendtext(job.prompt,i===0&&batch.firstPreserve?1:0)
+      }else{
+        console.log('[Virag Supervisor] restoring active row',{id:batch.id,creative:i+1,total:batch.total,sentAt:batch.sentAt});
+        await wait(2500)
+      }
+      const response=await waitturn(batch.before||{},batch,i,wasWaiting||resumed),error=turnerror(response);
+      if(error)throw new Error(`CREATIVE_${i+1}_FAILED_${error.replace(/\s+/g,'_').toUpperCase()}`);
+      batch.done=i+1;
+      batch.phase='queued';
+      batch.before=null;
+      batch.sentAt=0;
+      savebatch(batch);
+      console.log('[Virag Supervisor] completed',{id:batch.id,creative:i+1,total:batch.total,product:job.product});
+      if(i<batch.jobs.length-1)await wait(1800)
+    }
+    batch.running=false;
+    batchui('READY',batch.total,batch.total,'complete');
+    clearbatch();
+    toast(`Virag completed ${batch.total}/${batch.total} separate creatives.`);
+    console.log('[Virag Supervisor] complete',{id:batch.id,total:batch.total})
+  }catch(error){
+    batch.running=false;
+    const code=String(error?.message||error);
+    savebatch(batch);
+    batchui('READY',batch.done,batch.total,'paused');
+    show();
+    toast(`Virag paused after ${batch.done}/${batch.total}: ${code}. Reloading this same chat will resume it.`,1);
+    console.error('[Virag Supervisor] paused',{id:batch.id,done:batch.done,total:batch.total,error:code})
+  }
+}
+async function resumeSavedBatch(){
+  if(S.batch?.running)return;
+  const batch=gv(BATCH_KEY,null);
+  if(!batch||!Array.isArray(batch.jobs)||!batch.jobs.length||Number(batch.done)>=Number(batch.total)){if(batch)clearbatch();return}
+  const age=Date.now()-Number(batch.updatedAt||batch.startedAt||0);
+  if(!Number.isFinite(age)||age>6*60*60*1000){clearbatch();console.warn('[Virag Supervisor] discarded stale batch');return}
+  S.batch=batch;
+  toast(`Resuming Virag batch at ${Number(batch.done)||0}/${batch.total}.`);
+  return processbatch(batch,1)
+}
 async function runbatch(x){
   if(S.batch?.running)return toast(`Virag is already working on ${S.batch.done}/${S.batch.total}.`,1);
   const e=ed();
@@ -370,35 +452,16 @@ async function runbatch(x){
     return toast('Quantity check failed: one creative per product must equal the selected product count.',1)
   }
   const rows=batchrows(x),id=`VR-${Date.now().toString(36).toUpperCase()}`;
-  const batch={id,running:true,cancelled:false,done:0,total:rows.length,startedAt:new Date().toISOString()};
-  S.batch=batch;
-  hide();
-  console.log('[Virag Router] started',{id,products:S.pc,taggedSources:S.refs,creativesPerProduct:S.cc,total:rows.length,layout:S.am,tool:x.cmd});
-  try{
-    for(let i=0;i<rows.length;i++){
-      const row=rows[i];
-      batchui('WORKING',i,rows.length);console.log('[Virag Router] waiting for image completion signal',{creative:i+1,total:rows.length});
-      const y=promptrow(x,row,i,rows,id,brief),before=turnsnapshot();
-      console.log('[Virag Router] requesting',{id,creative:i+1,total:rows.length,product:row.product,exactSource:S.am==='together'?S.refs:S.refs[row.product-1],variation:row.variation,family:rowfamily(x,row)});
-      await sendtext(y,i===0);
-      const response=await waitturn(before,batch),error=turnerror(response);
-      if(error)throw new Error(`CREATIVE_${i+1}_FAILED_${error.replace(/\s+/g,'_').toUpperCase()}`);
-      batch.done=i+1;
-      console.log('[Virag Router] completed',{id,creative:i+1,total:rows.length,product:row.product});
-      if(i<rows.length-1)await wait(1800)
-    }
-    batch.running=false;
-    batchui('READY',rows.length,rows.length,'complete');
-    toast(`Virag completed ${rows.length}/${rows.length} separate creatives.`);
-    console.log('[Virag Router] complete',{id,total:rows.length})
-  }catch(error){
-    batch.running=false;
-    const code=String(error?.message||error);
-    batchui('READY',batch.done,rows.length,'paused');
-    show();
-    toast(`Virag stopped after ${batch.done}/${rows.length}: ${code}.`,1);
-    console.error('[Virag Router] stopped',{id,done:batch.done,total:rows.length,error:code})
-  }
+  const jobs=rows.map((row,i)=>({
+    product:row.product,
+    variation:row.variation,
+    family:rowfamily(x,row),
+    exactSource:S.am==='together'?S.refs.slice(0,S.pc).join(' | '):S.refs[row.product-1],
+    prompt:promptrow(x,row,i,rows,id,brief)
+  }));
+  const batch={id,running:true,cancelled:false,done:0,total:jobs.length,current:-1,phase:'queued',before:null,sentAt:0,firstPreserve:true,jobs,startedAt:Date.now(),updatedAt:Date.now()};
+  savebatch(batch);
+  return processbatch(batch,0)
 }
 async function ex(x){
   if(!x)return;
@@ -765,7 +828,7 @@ function rd(){if(!S.p)return;const tb=S.s.querySelector('.tabs');tb.innerHTML=''
 function show(){mount();S.p.classList.add('on')}function hide(){S.p?.classList.remove('on')}
 document.addEventListener('input',e=>{const t=e.target;if(!(t?.tagName==='TEXTAREA'||t?.isContentEditable||t?.closest?.('[contenteditable="true"]')))return;const x=t.tagName==='TEXTAREA'||t.isContentEditable?t:t.closest('[contenteditable="true"]'),m=read(x).match(/(?:^|\n)\s*\/([A-Za-z0-9_-]*)$/);if(!m)return;mount();S.q=m[1]||'';const h=hit(S.q);if(h){S.m=h.tab;S.g=h.tab==='3D'?h.group:'All'}show();S.s.querySelector('.q').value=S.q;rd()},true);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()},true);
-function indiaNow(){return new Date(Date.now()+IST_OFFSET)}function indiaDate(){const d=indiaNow();return`${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`}function pastDailyWindow(){const d=indiaNow();return d.getUTCHours()>DAILY_HOUR||(d.getUTCHours()===DAILY_HOUR&&d.getUTCMinutes()>=DAILY_MINUTE)}function dailyDelay(){const now=Date.now(),d=new Date(now+IST_OFFSET);let t=Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate(),DAILY_HOUR,DAILY_MINUTE);if(t<=now+IST_OFFSET)t+=86400000;return Math.max(60000,t-(now+IST_OFFSET))}async function dailySync(force=0){if(!force&&document.hidden)return;const today=indiaDate();if(!force&&pastDailyWindow()&&gv(DAILY_KEY,'')===today)return;const ok=await sy();if(ok&&pastDailyWindow())sv(DAILY_KEY,today)}function armDaily(){setTimeout(async()=>{await dailySync();armDaily()},dailyDelay())}const autosync=()=>dailySync();(window.requestIdleCallback||((f)=>setTimeout(f,450)))(async()=>{await cleanupLegacyCaches();mount();st('BROWSER READY');dailySync(1);armDaily()});window.addEventListener('focus',autosync);window.addEventListener('online',autosync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)dailySync()});
+function indiaNow(){return new Date(Date.now()+IST_OFFSET)}function indiaDate(){const d=indiaNow();return`${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`}function pastDailyWindow(){const d=indiaNow();return d.getUTCHours()>DAILY_HOUR||(d.getUTCHours()===DAILY_HOUR&&d.getUTCMinutes()>=DAILY_MINUTE)}function dailyDelay(){const now=Date.now(),d=new Date(now+IST_OFFSET);let t=Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate(),DAILY_HOUR,DAILY_MINUTE);if(t<=now+IST_OFFSET)t+=86400000;return Math.max(60000,t-(now+IST_OFFSET))}async function dailySync(force=0){if(!force&&document.hidden)return;const today=indiaDate();if(!force&&pastDailyWindow()&&gv(DAILY_KEY,'')===today)return;const ok=await sy();if(ok&&pastDailyWindow())sv(DAILY_KEY,today)}function armDaily(){setTimeout(async()=>{await dailySync();armDaily()},dailyDelay())}const autosync=()=>dailySync();(window.requestIdleCallback||((f)=>setTimeout(f,450)))(async()=>{await cleanupLegacyCaches();mount();st('BROWSER READY');dailySync(1);setTimeout(resumeSavedBatch,1800);armDaily()});window.addEventListener('focus',autosync);window.addEventListener('online',autosync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)dailySync()});
 })();
 
 
