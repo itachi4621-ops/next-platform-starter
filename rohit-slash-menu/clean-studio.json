@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.2.0",
-  "updatedAt": "2026-09-17T09:46:44.627Z",
+  "libraryVersion": "1.3.0",
+  "updatedAt": "2026-09-24T05:33:53.099Z",
   "name": "Virag Clean Human Design Engine",
   "enabled": true,
   "defaultMode": "clean-art-directed",
@@ -14,25 +14,26 @@
     "rich": "Use one short hook plus four to six exact supplied facts in a disciplined infographic system with clear grouping and breathing room."
   },
   "fontSystem": {
-    "rule": "Typeset all added copy as a separate clean 2D design layer. Use actual, named, professional font behavior with correct glyphs, kerning, baselines, line breaks and optical margins. Use a maximum of two font families and three weights. If optional copy cannot be rendered accurately, remove that optional copy instead of inventing or warping letters.",
+    "rule": "PROFESSIONAL TYPOGRAPHY LOCK — FINAL FONT AUTHORITY. Use the exact supplied wording and selected content level. Render all added copy as a separate clean 2D typesetting layer using no more than two named professional font families and three weights. Default to Inter, Inter Tight, Neue Haas Grotesk, Helvetica Neue, Archivo, Archivo Narrow, Roboto Condensed, DM Sans, Manrope or Sora. Use Playfair Display or Georgia only for a restrained editorial contrast when the category suits it. Create personality through scale, weight, line breaks, tracking, alignment and product interaction—not through funky fonts. Prohibit playful, bubbly, balloon, overly rounded novelty, graffiti, comic, hand-drawn, handwritten, signature, script, psychedelic, warped, distorted, quirky, retro-novelty and ornamental display fonts unless the user's current brief explicitly requests that exact typography style. Never replace required copy with a text-free cinematic image. Check every word character by character and regenerate or correct any misspelling, pseudo-font, distorted glyph, fake logo or random microcopy before delivery. Original product-label typography remains unchanged.",
     "preferredSans": [
       "Inter",
       "Inter Tight",
       "Neue Haas Grotesk",
       "Helvetica Neue",
       "Archivo",
+      "Archivo Narrow",
+      "Roboto Condensed",
       "DM Sans",
       "Manrope",
       "Sora"
     ],
     "preferredSerif": [
       "Playfair Display",
-      "Cormorant Garamond",
-      "Georgia",
-      "Times New Roman"
+      "Georgia"
     ],
     "pairingRules": [
-      "Use one display family and one highly readable supporting family.",
+      "Default to one professional sans family; add one restrained serif only when editorial contrast materially improves the concept.",
+      "Create visual character through scale, weight, line breaks, tracking and alignment—not novelty letterforms.",
       "Use sentence case or restrained uppercase according to the brand; never mix many casing styles.",
       "Keep tracking, line height and line breaks consistent.",
       "Never place important text across busy photographic detail."
@@ -43,10 +44,17 @@
       "random glyphs",
       "fake logos",
       "decorative AI lettering",
+      "playful or bubbly novelty fonts",
+      "graffiti or comic lettering",
+      "handwritten, signature or script fonts",
+      "psychedelic, distorted or quirky display fonts",
+      "retro novelty lettering",
       "three or more font families",
       "unreadable microcopy",
       "text baked into product surfaces"
-    ]
+    ],
+    "defaultDirection": "Professional Auto",
+    "decorativeFontsRequireExplicitCurrentBrief": true
   },
   "layoutSystem": {
     "hierarchy": [
@@ -84,7 +92,9 @@
     "duplicate product name, claim or CTA",
     "copied trend layouts",
     "collage or multi-output board",
-    "any change to the locked product"
+    "any change to the locked product",
+    "funky or novelty typography",
+    "playful, bubbly, graffiti, handwritten, signature, script, psychedelic or distorted fonts without an explicit current-brief request"
   ],
   "qaChecklist": [
     "passes the Human-Made Creative Master gate",
@@ -103,7 +113,8 @@
     "human optical spacing and tactile detail",
     "no visible generative artifacts",
     "unchanged product",
-    "separate standalone output"
+    "separate standalone output",
+    "professional non-novelty typography"
   ],
   "compatibility": {
     "core": "11.3.0+",
