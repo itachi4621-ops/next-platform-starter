@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.6.0",
-  "updatedAt": "2026-09-24T05:33:53.099Z",
-  "name": "Virag Human Creative Engine — Mixed Format Batches",
+  "libraryVersion": "1.7.0",
+  "updatedAt": "2026-09-24T11:44:30.047Z",
+  "name": "Virag Human Creative Engine — Real Human Master",
   "enabled": true,
   "defaultMode": "human-made-creative-master",
   "globalRule": "HUMAN-AUTHORED VISUAL STANDARD. The result must feel concepted, art-directed, photographed, typeset and finished by an experienced human creative team. Begin with one clear communication idea, then build a complete composition with decisive type scale, intentional asymmetry, coordinated graphic devices, tactile detail and believable spatial depth. Clean means edited and coherent—not sparse or basic. Prefer credible light, perspective and materials, controlled color, optical spacing and small imperfections. Default to bright commercial art direction unless the current request explicitly asks for dark or cinematic styling. Never imitate the common image-model aesthetic.",
@@ -13,6 +13,7 @@
     "IMAGE CRAFT: use physically credible lens behavior, light direction, shadows, scale, surface texture and environmental context.",
     "TYPE CRAFT: typeset exact short copy as a separate clean 2D design layer using real named font behavior; never ask the image model to invent pseudo-lettering.",
     "RESTRAINT: use one dominant visual idea, one supporting device and a limited palette; remove effects that do not communicate.",
+    "CHARACTER REALISM: when a person appears, lock identity, anatomy, natural skin microtexture, credible eyes and hair, human pose, physically coherent lighting and lens behavior before final design assembly.",
     "AUTHENTICITY QA: inspect the full result at phone size and reject anything that feels synthetic, templated, over-rendered or impossible."
   ],
   "categoryRules": {
@@ -43,7 +44,9 @@
     "empty minimalism used as a substitute for art direction",
     "generic template geometry with no product-specific idea",
     "funky or novelty typography",
-    "playful, bubbly, graffiti, handwritten, signature, script, psychedelic or distorted fonts without an explicit request"
+    "playful, bubbly, graffiti, handwritten, signature, script, psychedelic or distorted fonts without an explicit request",
+    "AI-looking, mannequin-like, waxy, beautified or identity-drifting human character",
+    "incorrect hands, fingers, anatomy, gaze, teeth, hair physics, body mechanics or human-scene lighting"
   ],
   "qaChecklist": [
     "one clear communication idea",
@@ -60,14 +63,17 @@
     "visibly different from previous outputs",
     "clean two-second readability without looking sparse or basic",
     "different headline and supporting-point architecture for every output in a batch",
-    "different social-content family for every output before any family repeats"
+    "different social-content family for every output before any family repeats",
+    "real-human face, skin, eyes, hair, anatomy, hands, pose and camera realism whenever a person appears",
+    "stable supplied human identity across every output and frame"
   ],
   "compatibility": {
     "core": "11.3.0+",
     "productFidelity": "1.0.0+",
     "designSystems": "1.2.0+",
     "cleanStudio": "1.0.0+",
-    "minimumCoreVersion": "11.5.0"
+    "minimumCoreVersion": "11.21.0",
+    "characterRealismCore": "11.21.0+"
   },
   "autoUpdate": {
     "enabled": true,
@@ -164,7 +170,8 @@
     "same headline and supporting pointers repeated across multiple outputs",
     "multiple outputs presented as the same post type with cosmetic changes",
     "funky or novelty typography",
-    "playful, bubbly, graffiti, handwritten, signature, script, psychedelic or distorted fonts without an explicit request"
+    "playful, bubbly, graffiti, handwritten, signature, script, psychedelic or distorted fonts without an explicit request",
+    "AI-looking human, plastic skin, generic influencer face, mannequin pose or broken anatomy"
   ],
   "finalProductionGate": [
     "looks deliberately human-designed and agency-finished",
@@ -179,6 +186,49 @@
     "is delivered as one separate standalone result",
     "uses a unique headline, factual emphasis and information-module structure within its batch",
     "belongs to a different content family than the other outputs in its batch",
-    "professional non-novelty typography"
-  ]
+    "professional non-novelty typography",
+    "every human passes face, skin, eye, hair, hand, anatomy, lighting and identity-continuity QA"
+  ],
+  "characterRealismDefault": true,
+  "realHumanPhotographyRequired": true,
+  "characterCannotLookAI": true,
+  "identityLockWhenReferenceProvided": true,
+  "characterRealismSystem": {
+    "enabled": true,
+    "trigger": "Apply whenever any human, model, influencer, presenter, actor, face, hand, body or human-like character appears in an image or video.",
+    "rule": "REAL-HUMAN PHOTOGRAPHY LOCK. Every depicted person must look like a genuinely photographed human being captured in a physically plausible real environment. Preserve natural individuality, asymmetry and age-appropriate detail. The person must never look AI-generated, illustrated, game-rendered, mannequin-like, waxy, airbrushed or beauty-filtered. Do not add a person when the current brief does not need one.",
+    "identityLock": "When a current-turn person reference is supplied, preserve the same recognizable identity across every output and shot: facial geometry, head shape, eye spacing, nose, lips, jaw, ears, skin tone, hairline, hairstyle, facial hair, age, body proportions and distinctive asymmetry. No face replacement, beautification, slimming, widening, symmetry correction, age change or identity drift.",
+    "skin": "Render real skin with pores, peach fuzz, fine lines, subtle blemishes, under-eye texture, natural tonal variation, believable subsurface scattering and restrained highlights. Keep retouching minimal. Never use porcelain, wax, rubber, plastic, overly smooth, oversharpened or glowing skin.",
+    "eyesHairTeeth": "Use anatomically credible eyes with natural sclera color, iris detail, moist tear lines, plausible catchlights and gaze direction; individual hair strands, flyaways and realistic density; natural teeth and lips without synthetic whitening, duplicated detail or melted edges.",
+    "anatomy": "Maintain correct anatomy and body mechanics: coherent shoulders, elbows, wrists, fingers, nails, joints, ears and teeth; natural weight distribution, garment tension, contact and occlusion. Reject extra, missing, fused or malformed fingers and limbs.",
+    "expressionPose": "Use restrained micro-expressions, believable muscle tension, natural posture and candid gesture. Avoid frozen mannequin poses, exaggerated commercial smiles, vacant staring, theatrical expressions or mirrored body symmetry unless the brief requires them.",
+    "camera": "Use physically plausible photographic perspective, focal length, exposure, depth of field, sensor texture and lens behavior. Keep facial proportions natural, avoid wide-angle distortion near faces, and use blur, grain and sharpness only when motivated by the shot.",
+    "lightingEnvironment": "Light direction, color temperature, contact shadows, reflections, skin response and environmental bounce must agree. Hair, fabric and props must react naturally to gravity, wind, motion and contact. The person must belong to the scene rather than appear pasted in.",
+    "motion": "For video, preserve face, body, wardrobe and hair continuity across frames. Use human-speed movement, natural blinking, breathing and weight shifts with motivated motion blur. Reject morphing, sliding feet, rubber limbs, flicker and identity changes.",
+    "explicitStyleException": "Only use a non-photoreal illustrated or stylized character when the current brief explicitly requests that exact style. Even then, preserve coherent anatomy, identity and material logic; never silently convert a requested real person into CGI or illustration.",
+    "reject": [
+      "AI-generated face or generic influencer look",
+      "plastic, waxy, airbrushed or over-smoothed skin",
+      "beauty filter, face reshaping or artificial symmetry",
+      "identity drift between outputs or frames",
+      "incorrect hands, fingers, limbs, teeth, ears or joints",
+      "synthetic eyes, vacant gaze or inconsistent catchlights",
+      "helmet hair, fused strands or impossible hair density",
+      "mannequin pose, theatrical expression or frozen body",
+      "pasted-in subject, mismatched light or missing contact shadow",
+      "unmotivated bokeh, excessive HDR, sharpening, bloom or skin glow",
+      "CGI, game-engine, anime, doll or illustration look when realism is required",
+      "face distortion from implausible lens perspective",
+      "motion morphing, flicker, sliding feet or broken continuity"
+    ],
+    "qa": [
+      "full-frame read: person belongs naturally in the environment",
+      "face crop: identity, anatomy, eyes, skin and hair are believable",
+      "hand crop: finger count, joints, nails, contact and grip are correct",
+      "body crop: pose, balance, clothing tension and proportions are credible",
+      "light check: subject and environment share one coherent light model",
+      "continuity check: identity and wardrobe remain stable across every output or frame",
+      "artifact check: no plastic skin, morphing, duplicated detail or generative residue"
+    ]
+  }
 }
