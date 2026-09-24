@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.16.0
-// @description  Virag V11.16.0 Lite — neo-tactile frosted interface with simple tagged-product routing and one creative per product by default.
+// @version      11.17.0
+// @description  Virag V11.17.0 Lite — neo-tactile UI with resilient image-completion detection for uninterrupted multi-product runs.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -29,7 +29,7 @@
 // @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.16.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const V='11.17.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
 const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
@@ -228,12 +228,43 @@ function promptrow(x,row,pos,rows,id,brief){
     C
   ].filter(Boolean).join('\n\n')
 }
-function assistantcount(){
-  return document.querySelectorAll('[data-message-author-role="assistant"]').length;
+function assistantcount(){return document.querySelectorAll('[data-message-author-role="assistant"]').length}
+function turnnodes(){
+  const nodes=[...document.querySelectorAll('[data-message-author-role],[data-testid^="conversation-turn"],article[data-testid*="conversation"]')];
+  return [...new Set(nodes)]
 }
-function lastassistant(){
+function resultmedia(){
+  const main=document.querySelector('main')||document.body,total=[],ready=[];
+  for(const el of main.querySelectorAll('img,canvas,video')){
+    if(el.closest?.('form,[data-testid*="composer"],#prompt-textarea'))continue;
+    const role=el.closest?.('[data-message-author-role]'),turn=el.closest?.('[data-testid^="conversation-turn"],article[data-testid*="conversation"]');
+    if(role?.getAttribute('data-message-author-role')==='user'||(!role&&turn?.querySelector?.('[data-message-author-role="user"]')))continue;
+    total.push(el);
+    if(el.tagName==='IMG'&&el.complete&&el.naturalWidth>80)ready.push(el);
+    else if(el.tagName==='CANVAS'&&el.width>80&&el.height>80)ready.push(el);
+    else if(el.tagName==='VIDEO'&&el.readyState>=2)ready.push(el)
+  }
+  return{total:total.length,ready:ready.length}
+}
+function turnsnapshot(){
+  const roles=document.querySelectorAll('[data-message-author-role]'),turns=turnnodes(),media=resultmedia();
+  return{
+    assistant:assistantcount(),
+    roles:roles.length,
+    turns:turns.length,
+    resultMedia:media.total,
+    resultReady:media.ready,
+    allImages:document.querySelectorAll('main img').length,
+    canvases:document.querySelectorAll('main canvas').length
+  }
+}
+function lastresultnode(){
+  const nodes=turnnodes();
+  for(let i=nodes.length-1;i>=0;i--){
+    if(!nodes[i].matches?.('[data-message-author-role="user"]')&&!nodes[i].querySelector?.(':scope > [data-message-author-role="user"]'))return nodes[i]
+  }
   const a=[...document.querySelectorAll('[data-message-author-role="assistant"]')];
-  return a[a.length-1]||null;
+  return a[a.length-1]||document.querySelector('main')||document.body
 }
 function turnbusy(){
   const q=[
@@ -243,42 +274,50 @@ function turnbusy(){
     'button[aria-label*="Stop response" i]',
     'button[aria-label="Stop"]'
   ];
-  return q.some(s=>[...document.querySelectorAll(s)].some(vis));
+  return q.some(s=>[...document.querySelectorAll(s)].some(vis))
 }
-function turnsig(node){
-  if(!node)return'';
-  const text=String(node.innerText||node.textContent||'').trim();
-  const imgs=[...node.querySelectorAll('img')];
-  return`${text.length}|${imgs.length}|${imgs.filter(i=>i.complete).length}|${node.querySelectorAll('button').length}`;
+function generationpending(){
+  const node=lastresultnode(),text=String(node?.innerText||node?.textContent||'').toLowerCase();
+  if(/creating (?:an )?image|generating (?:an )?image|image generation in progress|working on (?:the|your) image|starting image generation|rendering image/.test(text))return true;
+  return [...(node?.querySelectorAll?.('[role="progressbar"],[aria-busy="true"],[data-testid*="progress"],[data-testid*="loading"]')||[])].some(vis)
+}
+function turnsig(node,snap){
+  const text=String(node?.innerText||node?.textContent||'').trim();
+  const imgs=[...(node?.querySelectorAll?.('img')||[])];
+  return`${snap.assistant}|${snap.roles}|${snap.turns}|${snap.resultMedia}|${snap.resultReady}|${snap.allImages}|${snap.canvases}|${text.length}|${imgs.length}|${imgs.filter(i=>i.complete).length}|${node?.querySelectorAll?.('button')?.length||0}`
 }
 function turnerror(node){
   const t=String(node?.innerText||node?.textContent||'').toLowerCase();
   const m=t.match(/something went wrong|failed to generate|could not generate|couldn't generate|unable to generate|rate limit|try again later|network error/);
-  return m?m[0]:'';
+  return m?m[0]:''
 }
 async function waitturn(before,batch){
-  const deadline=Date.now()+15*60*1000;
-  let seen=false,last='',stableAt=0;
+  const started=Date.now(),deadline=started+15*60*1000;
+  let sawBusy=false,last='',stableAt=0;
   while(Date.now()<deadline){
     if(batch.cancelled)throw new Error('BATCH_CANCELLED');
-    const count=assistantcount(),node=lastassistant(),busy=turnbusy();
-    if(count>before||busy)seen=true;
-    const sig=turnsig(node);
-    if(seen&&count>before&&!busy&&sig){
+    const snap=turnsnapshot(),node=lastresultnode(),busy=turnbusy(),pending=generationpending(),elapsed=Date.now()-started;
+    if(busy)sawBusy=true;
+    const readyMedia=snap.resultReady>before.resultReady;
+    const assistantAdvanced=snap.assistant>before.assistant;
+    const conversationAdvanced=snap.roles>=before.roles+2||snap.turns>=before.turns+2;
+    const completedBusyCycle=sawBusy&&!busy;
+    const evidence=readyMedia||assistantAdvanced||conversationAdvanced||completedBusyCycle;
+    const minimum=readyMedia?10000:(completedBusyCycle?15000:45000);
+    const sig=turnsig(node,snap);
+    if(evidence&&!busy&&!pending&&elapsed>=minimum){
       if(sig===last){
         if(!stableAt)stableAt=Date.now();
-        if(Date.now()-stableAt>=12000)return node;
-      }else{
-        last=sig;
-        stableAt=Date.now();
-      }
-    }else{
-      last=sig;
-      stableAt=0;
-    }
-    await wait(1000);
+        if(Date.now()-stableAt>=7000){
+          console.log('[Virag Detector] response complete',{elapsed,readyMedia,assistantAdvanced,conversationAdvanced,completedBusyCycle,before,after:snap});
+          return node
+        }
+      }else{last=sig;stableAt=Date.now()}
+    }else{last=sig;stableAt=0}
+    await wait(1000)
   }
-  throw new Error('BATCH_RESPONSE_TIMEOUT');
+  console.error('[Virag Detector] timeout',{before,after:turnsnapshot(),busy:turnbusy(),pending:generationpending()});
+  throw new Error('IMAGE_RESPONSE_NOT_DETECTED')
 }
 async function sendtext(y,preserve=0){
   const e=ed();
@@ -338,8 +377,8 @@ async function runbatch(x){
   try{
     for(let i=0;i<rows.length;i++){
       const row=rows[i];
-      batchui('WORKING',i,rows.length);
-      const y=promptrow(x,row,i,rows,id,brief),before=assistantcount();
+      batchui('WORKING',i,rows.length);console.log('[Virag Router] waiting for image completion signal',{creative:i+1,total:rows.length});
+      const y=promptrow(x,row,i,rows,id,brief),before=turnsnapshot();
       console.log('[Virag Router] requesting',{id,creative:i+1,total:rows.length,product:row.product,exactSource:S.am==='together'?S.refs:S.refs[row.product-1],variation:row.variation,family:rowfamily(x,row)});
       await sendtext(y,i===0);
       const response=await waitturn(before,batch),error=turnerror(response);
