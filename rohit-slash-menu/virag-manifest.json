@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "manifestVersion": "2.0.0",
-  "release": "11.20.2",
-  "updatedAt": "2026-09-24T11:39:57.465Z",
+  "release": "11.21.0",
+  "updatedAt": "2026-09-24T11:46:26.943Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 86400,
@@ -15,7 +15,7 @@
     {
       "id": "core",
       "name": "Core",
-      "version": "11.20.2",
+      "version": "11.21.0",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
@@ -50,7 +50,7 @@
     {
       "id": "human",
       "name": "Human Creative Engine",
-      "version": "1.6.0",
+      "version": "1.7.0",
       "file": "human-studio.json",
       "type": "json"
     },
