@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.5.0",
-  "updatedAt": "2026-09-19T06:33:59.713Z",
+  "libraryVersion": "1.6.0",
+  "updatedAt": "2026-09-24T05:33:53.099Z",
   "name": "Virag Human Creative Engine — Mixed Format Batches",
   "enabled": true,
   "defaultMode": "human-made-creative-master",
@@ -16,13 +16,13 @@
     "AUTHENTICITY QA: inspect the full result at phone size and reject anything that feels synthetic, templated, over-rendered or impossible."
   ],
   "categoryRules": {
-    "Creative": "Create a finished contemporary Instagram campaign design with expressive typography, purposeful product interaction, compact useful information modules and one coherent graphic language. The photography or illustration supports the designed system; it is not a standalone beauty render.",
+    "Creative": "Create a finished contemporary Instagram campaign design with professional commercial typography with strong scale contrast, purposeful product interaction, compact useful information modules and one coherent graphic language. The photography or illustration supports the designed system; it is not a standalone beauty render.",
     "Flyer": "Create a promotional composition with a dynamic reading path, intentional type scale, disciplined grouping, campaign-specific shape language and tactile finishing. Avoid generic templates.",
     "3D": "Use CGI as one campaign mechanism within a finished Instagram composition. Keep materials, gravity, scale, contact, reflections and shadows physically coherent, then integrate real typesetting, information design and controlled graphic layers.",
     "Packaging": "Present packaging through practical design logic, print-aware hierarchy, credible materials and an art-directed launch system. Never add fake copy or ornamental complexity.",
     "Video": "Build shots and edits like a human director and designer: motivated movement, plausible lens physics, stable continuity, natural timing, intentional cuts, expressive title cards and clean information graphics."
   },
-  "typographyRule": "REAL HUMAN TYPESETTING. Render all added copy as a separate clean 2D design layer using no more than two professional font families and three weights. Prefer Inter, Inter Tight, Neue Haas Grotesk, Helvetica Neue, Archivo, DM Sans, Manrope or Sora for clean commercial systems; use Playfair Display, Cormorant Garamond or Georgia only when an editorial serif is appropriate. Preserve exact wording, real glyph structure, kerning, baselines, line breaks and optical margins. Never generate pseudo-fonts, warped letters, fake logos, random microcopy or text fused into photographic surfaces.",
+  "typographyRule": "PROFESSIONAL TYPOGRAPHY LOCK — FINAL FONT AUTHORITY. Use the exact supplied wording and selected content level. Render all added copy as a separate clean 2D typesetting layer using no more than two named professional font families and three weights. Default to Inter, Inter Tight, Neue Haas Grotesk, Helvetica Neue, Archivo, Archivo Narrow, Roboto Condensed, DM Sans, Manrope or Sora. Use Playfair Display or Georgia only for a restrained editorial contrast when the category suits it. Create personality through scale, weight, line breaks, tracking, alignment and product interaction—not through funky fonts. Prohibit playful, bubbly, balloon, overly rounded novelty, graffiti, comic, hand-drawn, handwritten, signature, script, psychedelic, warped, distorted, quirky, retro-novelty and ornamental display fonts unless the user's current brief explicitly requests that exact typography style. Never replace required copy with a text-free cinematic image. Check every word character by character and regenerate or correct any misspelling, pseudo-font, distorted glyph, fake logo or random microcopy before delivery. Original product-label typography remains unchanged.",
   "rejectIf": [
     "default centered product on a pedestal",
     "perfect bilateral symmetry without a concept reason",
@@ -41,7 +41,9 @@
     "any alteration to the pixel-locked product",
     "under-designed product-plus-headline composition",
     "empty minimalism used as a substitute for art direction",
-    "generic template geometry with no product-specific idea"
+    "generic template geometry with no product-specific idea",
+    "funky or novelty typography",
+    "playful, bubbly, graffiti, handwritten, signature, script, psychedelic or distorted fonts without an explicit request"
   ],
   "qaChecklist": [
     "one clear communication idea",
@@ -108,17 +110,19 @@
     "spacing": "Use optical alignment, confident margins, varied internal spacing and intentional negative space that creates tension and focus rather than emptiness."
   },
   "humanTypographySystem": {
-    "rule": "Typeset exact supplied copy as a clean separate 2D design layer using a maximum of two named professional font families and three weights. Use confident scale contrast, deliberate line breaks, optical kerning, correct baselines, consistent tracking and strong interaction between type and product.",
+    "rule": "Typeset exact supplied copy as a clean separate 2D design layer using a maximum of two named professional font families and three weights. Default to modern grotesk, geometric sans or disciplined condensed sans systems; use a restrained editorial serif only when suitable. Create distinction through scale, weight, line breaks, tracking and alignment—not novelty letterforms.",
     "preferred": [
+      "Inter",
       "Inter Tight",
       "Neue Haas Grotesk",
       "Helvetica Neue",
       "Archivo",
+      "Archivo Narrow",
+      "Roboto Condensed",
       "DM Sans",
       "Manrope",
       "Sora",
       "Playfair Display",
-      "Cormorant Garamond",
       "Georgia"
     ],
     "fallback": "If optional copy cannot be rendered accurately, remove that optional copy instead of inventing, warping or misspelling text. Original product-label typography remains unchanged.",
@@ -129,9 +133,15 @@
       "misspellings",
       "fake logos",
       "decorative AI lettering",
+      "playful, bubbly or balloon fonts",
+      "graffiti or comic fonts",
+      "handwritten, signature or script fonts",
+      "psychedelic, distorted, quirky or retro-novelty display fonts",
       "unreadable microcopy",
       "more than two font families"
-    ]
+    ],
+    "defaultDirection": "Professional Auto",
+    "decorativeFontsRequireExplicitCurrentBrief": true
   },
   "freshnessRule": "Every variation must begin from a genuinely different product-specific content family, campaign idea and communication angle—not a background swap. When multiple outputs are requested, rotate compatible standalone formats before repeating: Visual Campaign Creative, Benefit Infographic, Editorial Creative, Contextual Story Creative, Data & Callout Creative, Crafted/Tactile Creative, Art-Directed CGI Creative and Bold-Type Campaign Creative. For exactly two outputs, use one visual campaign creative and one benefit infographic unless the current request explicitly requires another pairing. Across the batch, change headline wording, verified-fact emphasis, supporting-point selection or order, copy hierarchy, grid skeleton, hero scale and placement, crop, type architecture, information-module geometry, graphic language, palette, texture, supporting elements, lighting and content rhythm. Never reuse the same content family, headline, pointer sequence, fact-card structure or layout skeleton in two outputs. Repeating the exact brand/product name or mandatory supplied legal line is allowed. If verified information is limited, use neutral non-claim campaign language and distinct visual storytelling; never invent a benefit or claim.",
   "negativeAesthetic": [
@@ -152,7 +162,9 @@
     "collage or multi-output board",
     "any deformation, relighting, recolouring or redesign of the pixel-locked product",
     "same headline and supporting pointers repeated across multiple outputs",
-    "multiple outputs presented as the same post type with cosmetic changes"
+    "multiple outputs presented as the same post type with cosmetic changes",
+    "funky or novelty typography",
+    "playful, bubbly, graffiti, handwritten, signature, script, psychedelic or distorted fonts without an explicit request"
   ],
   "finalProductionGate": [
     "looks deliberately human-designed and agency-finished",
@@ -166,6 +178,7 @@
     "does not resemble a cinematic poster, raw render, basic template or background swap",
     "is delivered as one separate standalone result",
     "uses a unique headline, factual emphasis and information-module structure within its batch",
-    "belongs to a different content family than the other outputs in its batch"
+    "belongs to a different content family than the other outputs in its batch",
+    "professional non-novelty typography"
   ]
 }
