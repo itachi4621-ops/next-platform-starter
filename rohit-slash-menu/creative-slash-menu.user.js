@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.20.0
-// @description  Virag V11.20.0 Lite — real-file one-product-per-turn routing with safe batch execution.
+// @version      11.20.1
+// @description  Virag V11.20.1 Lite — verified real-file routing for separate and together batches.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,11 +25,11 @@
 // @compatible   Opera
 // @compatible   Safari
 // @connect      raw.githubusercontent.com
-// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.0
-// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.0
+// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.1
+// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.1
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.20.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const V='11.20.1',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
 const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',BATCH_KEY='virag.batch.v120',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
@@ -285,7 +285,7 @@ function turnsig(node,snap){
 }
 function turnerror(node){
   const t=String(node?.innerText||node?.textContent||'').toLowerCase();
-  const m=t.match(/please re-upload|please upload|re-upload the|upload the original|need the exact original|need that exact original|source file is not available|something went wrong|failed to generate|could not generate|couldn't generate|unable to generate|rate limit|try again later|network error/);
+  const m=t.match(/please re-upload|please upload|please attach|re-upload the|upload the original|attach the original|can't access|cannot access|don't have access|do not have access|not available in this message|need the exact original|need that exact original|source file is not available|something went wrong|failed to generate|could not generate|couldn't generate|unable to generate|rate limit|try again later|network error/);
   return m?m[0]:''
 }
 function rowmarker(id,pos,total){
@@ -391,12 +391,22 @@ function picksourcefiles(count){
     input.accept='image/png,image/jpeg,image/webp,image/avif,image/heic,image/heif,image/bmp,image/tiff';
     input.multiple=count>1;
     input.style.cssText='position:fixed;left:-9999px;top:-9999px;opacity:0';
-    const finish=files=>{try{input.remove()}catch{}resolve(files)};
+    let settled=false,focusHandler=null;
+    const finish=files=>{
+      if(settled)return;
+      settled=true;
+      if(focusHandler)window.removeEventListener('focus',focusHandler,true);
+      try{input.remove()}catch{}
+      resolve(files)
+    };
     input.onchange=()=>{
       const files=rememberfiles(input.files,1);
-      if(files.length<count){toast(`Select ${count} original product image files. Only ${files.length} selected.`,1);finish([]);return}
+      if(files.length!==count){S.sourceFiles=[];toast(`Select exactly ${count} original product image file${count===1?'':'s'}. You selected ${files.length}.`,1);finish([]);return}
       finish(files.slice(0,count))
     };
+    input.oncancel=()=>{S.sourceFiles=[];finish([])};
+    focusHandler=()=>setTimeout(()=>{if(!settled&&!input.files?.length){S.sourceFiles=[];finish([])}},700);
+    window.addEventListener('focus',focusHandler,true);
     document.documentElement.appendChild(input);
     input.click()
   })
@@ -420,51 +430,59 @@ function productfileinput(){
   const all=[...document.querySelectorAll('input[type="file"]')];
   return all.find(i=>/image|png|jpeg|jpg|webp|avif|heic/i.test(i.accept||''))||all.find(i=>i.closest('form'))||all[0]||null
 }
-async function attachsource(file){
-  if(!file)throw new Error('PRODUCT_FILE_MISSING');
+async function attachsources(files){
+  files=[...(Array.isArray(files)?files:[files])].filter(Boolean);
+  if(!files.length)throw new Error('PRODUCT_FILE_MISSING');
   await clearcomposerattachments();
   const e=ed(),input=productfileinput();
   if(!e||!input)throw new Error('CHATGPT_FILE_INPUT_NOT_FOUND');
-  let dt;
-  try{dt=new DataTransfer();dt.items.add(file)}catch{throw new Error('FILE_TRANSFER_NOT_SUPPORTED')}
+  const groups=input.multiple===false&&files.length>1?files.map(f=>[f]):[files];
   S.replayingFile=true;
   try{
     const setter=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'files')?.set;
-    setter?setter.call(input,dt.files):(input.files=dt.files);
-    input.dispatchEvent(new Event('input',{bubbles:true}));
-    input.dispatchEvent(new Event('change',{bubbles:true}))
-  }finally{setTimeout(()=>{S.replayingFile=false},500)}
-  const name=String(file.name||'').toLowerCase();
+    for(const group of groups){
+      let dt;
+      try{dt=new DataTransfer();for(const file of group)dt.items.add(file)}catch{throw new Error('FILE_TRANSFER_NOT_SUPPORTED')}
+      setter?setter.call(input,dt.files):(input.files=dt.files);
+      input.dispatchEvent(new Event('input',{bubbles:true}));
+      input.dispatchEvent(new Event('change',{bubbles:true}));
+      if(groups.length>1)await wait(500)
+    }
+  }finally{setTimeout(()=>{S.replayingFile=false},700)}
+  const names=files.map(f=>String(f.name||'').toLowerCase()).filter(Boolean);
   for(let i=0;i<900;i++){
     const scope=composerscope(),txt=String(scope?.innerText||scope?.textContent||'').toLowerCase();
     const nodes=attachmentnodes(scope);
     const uploading=[...(scope?.querySelectorAll?.('[role="progressbar"],[aria-busy="true"],[data-testid*="upload-progress"],[data-state="uploading"]')||[])].some(vis);
-    if((txt.includes(name)||nodes.length>0)&&!uploading){await wait(800);return true}
+    const allNames=names.length===files.length&&names.every(name=>txt.includes(name));
+    const enoughPreviews=nodes.length>=files.length;
+    if((allNames||enoughPreviews)&&!uploading){await wait(800);return true}
     await wait(100)
   }
-  throw new Error('PRODUCT_FILE_DID_NOT_ATTACH')
+  throw new Error(files.length>1?'PRODUCT_FILES_DID_NOT_ATTACH':'PRODUCT_FILE_DID_NOT_ATTACH')
 }
 async function processbatch(batch){
   if(S.batch?.running&&S.batch!==batch)return;
   S.batch=batch;batch.running=true;batch.cancelled=false;hide();
-  console.log('[Virag File Router] started',{id:batch.id,total:batch.total,files:batch.jobs.map(j=>j.file?.name)});
+  console.log('[Virag File Router] started',{id:batch.id,total:batch.total,files:batch.jobs.map(j=>j.files?.map(f=>f.name))});
   try{
     for(let i=0;i<batch.jobs.length;i++){
-      const job=batch.jobs[i];
+      const job=batch.jobs[i],names=job.files.map(f=>f.name);
       batch.current=i;batchui('WORKING',i,batch.total);
-      console.log('[Virag File Router] attaching',{creative:i+1,total:batch.total,product:job.product,file:job.file?.name});
-      await attachsource(job.file);
+      console.log('[Virag File Router] attaching',{creative:i+1,total:batch.total,product:job.product,files:names});
+      await attachsources(job.files);
       batch.before=turnsnapshot();batch.sentAt=Date.now();
-      console.log('[Virag File Router] requesting',{creative:i+1,total:batch.total,product:job.product,file:job.file?.name,family:job.family});
+      console.log('[Virag File Router] requesting',{creative:i+1,total:batch.total,product:job.product,files:names,family:job.family});
       await sendtext(job.prompt,0);
-      const response=await waitturn(batch.before,batch,i,0),error=turnerror(response);
+      const response=await waitturn(batch.before,batch,i,0),error=turnerror(response),after=turnsnapshot();
       if(error)throw new Error(`CREATIVE_${i+1}_STOPPED_${error.replace(/\s+/g,'_').toUpperCase()}`);
+      if(job.expectsMedia&&after.resultReady<=Number(batch.before?.resultReady||0))throw new Error(`CREATIVE_${i+1}_RETURNED_NO_IMAGE`);
       batch.done=i+1;
       console.log('[Virag File Router] completed',{creative:i+1,total:batch.total,product:job.product});
       if(i<batch.jobs.length-1)await wait(1800)
     }
     batch.running=false;batchui('READY',batch.total,batch.total,'complete');
-    toast(`Virag completed ${batch.total}/${batch.total} separate creatives.`);
+    toast(`Virag completed ${batch.total}/${batch.total} requested output${batch.total===1?'':'s'}.`);
     console.log('[Virag File Router] complete',{id:batch.id,total:batch.total})
   }catch(error){
     batch.running=false;
@@ -472,6 +490,10 @@ async function processbatch(batch){
     batchui('READY',batch.done,batch.total,'paused');show();
     toast(`Virag stopped safely after ${batch.done}/${batch.total}: ${code}.`,1);
     console.error('[Virag File Router] stopped',{id:batch.id,done:batch.done,total:batch.total,error:code})
+  }finally{
+    S.sourceFiles=[];S.replayingFile=false;
+    for(const job of batch.jobs)job.files=[];
+    S.batch=null
   }
 }
 async function runbatch(x){
@@ -479,18 +501,17 @@ async function runbatch(x){
   const e=ed();if(!e)return toast('ChatGPT composer not found.',1);
   const brief=base();
   let files=currentinputfiles();
-  if(files.length<S.pc)files=await picksourcefiles(S.pc);
-  if(files.length<S.pc){show();st('SOURCE FILES REQUIRED');return toast(`Virag needs ${S.pc} real product image files to create ${S.pc} separate current-turn generations.`,1)}
-  files=files.slice(0,S.pc);
-  S.refs=files.map(f=>f.name||`Product-${S.refs.length+1}`);
-  if(S.am==='separate'&&S.cc===1&&total()!==S.pc){show();return toast('Quantity check failed: one creative per product must equal the selected product count.',1)}
+  if(files.length!==S.pc)files=await picksourcefiles(S.pc);
+  if(files.length!==S.pc){S.sourceFiles=[];show();st('SOURCE FILES REQUIRED');return toast(`Virag needs exactly ${S.pc} real product image file${S.pc===1?'':'s'} for this batch.`,1)}
+  S.refs=files.map((f,i)=>f.name||`Product-${i+1}`);
+  if(S.am==='separate'&&S.cc===1&&total()!==S.pc){S.sourceFiles=[];show();return toast('Quantity check failed: one creative per product must equal the selected product count.',1)}
   const rows=batchrows(x),id=`VR-${Date.now().toString(36).toUpperCase()}`;
   const jobs=rows.map((row,i)=>({
     product:row.product,variation:row.variation,family:rowfamily(x,row),
-    file:S.am==='together'?files[0]:files[row.product-1],
+    expectsMedia:['Creative','Flyer','3D','Packaging'].includes(x.tab),
+    files:S.am==='together'?[...files]:[files[row.product-1]],
     prompt:promptrow(x,row,i,rows,id,brief)
   }));
-  if(S.am==='together'&&S.pc>1){show();return toast('Together mode needs a dedicated multi-file router. Use Separate for one product per creative.',1)}
   const batch={id,running:true,cancelled:false,done:0,total:jobs.length,current:-1,jobs,startedAt:Date.now()};
   sv('virag.batch.v119',null);sv(BATCH_KEY,null);
   return processbatch(batch)
