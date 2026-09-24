@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.17.0
-// @description  Virag V11.17.0 Lite — neo-tactile UI with resilient image-completion detection for uninterrupted multi-product runs.
+// @version      11.18.0
+// @description  Virag V11.18.0 Lite — compact neo-tactile UI with resilient uninterrupted multi-product routing.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -29,7 +29,7 @@
 // @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.17.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const V='11.18.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
 const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
@@ -713,6 +713,45 @@ const BOARD=`:host{
   .planner,.grid{grid-template-columns:1fr}
   .brand{font-size:17px}
   .meta{display:none}
+}
+
+@media(min-width:901px){
+  .p{
+    right:15px;
+    top:70px;
+    bottom:auto;
+    width:min(860px,calc(100vw - 30px));
+    height:min(650px,calc(100vh - 130px));
+    border-radius:28px
+  }
+  .top{padding:12px 15px}
+  .brand{font-size:18px}
+  .brand:before{width:27px;height:27px;margin-right:9px;border-radius:9px}
+  .sub{margin-top:5px;font-size:7px}
+  .status{min-width:106px;padding:7px 10px}
+  .close{width:34px;height:34px;border-radius:11px}
+  .tabs{gap:7px;padding:9px 10px 8px}
+  .tab{height:37px;border-radius:13px}
+  .groups{gap:6px;padding:0 10px 8px}
+  .gb{height:28px;padding:0 10px}
+  .planner{gap:8px;margin:3px 10px 4px;padding:11px;border-radius:19px}
+  .planner label{gap:4px;font-size:7px}
+  .planner select{height:37px;padding:0 9px;border-radius:12px;font-size:9px}
+  .total{height:37px;border-radius:12px}
+  .total b{font-size:16px}
+  .total small{font-size:7px}
+  .search{gap:8px;padding:8px 10px}
+  .q,.sync{height:39px;border-radius:13px}
+  .sync{padding:0 13px}
+  .bar{padding:9px 10px}
+  .title{font-size:11px}
+  .meta{font-size:7px}
+  .grid{padding:2px 10px 10px;gap:8px}
+  .card{min-height:92px;padding:9px;border-radius:17px}
+  .cmd,.tag,.chip{padding:3px 6px;font-size:7px}
+  .name{margin-top:8px;font-size:11px}
+  .desc{margin-top:4px;font-size:8px}
+  .foot{gap:5px;padding:7px 10px}
 }
 @media(prefers-reduced-motion:reduce){
   .launch{animation:none}
