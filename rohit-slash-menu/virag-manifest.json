@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "manifestVersion": "2.0.0",
   "release": "11.20.1",
-  "updatedAt": "2026-09-24T11:24:06.026Z",
+  "updatedAt": "2026-09-24T11:28:42.143Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 86400,
@@ -36,7 +36,7 @@
     {
       "id": "trends",
       "name": "Daily Trends",
-      "version": "2026.09.17",
+      "version": "2026.09.24",
       "file": "daily-trends.json",
       "type": "json"
     },
