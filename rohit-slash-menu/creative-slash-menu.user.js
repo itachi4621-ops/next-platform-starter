@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.20.1
-// @description  Virag V11.20.1 Lite — verified real-file routing for separate and together batches.
+// @version      11.20.2
+// @description  Virag V11.20.2 Lite — active-chat composer routing with staged batch diagnostics.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,11 +25,11 @@
 // @compatible   Opera
 // @compatible   Safari
 // @connect      raw.githubusercontent.com
-// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.1
-// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.1
+// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.2
+// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.20.2
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.20.1',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const V='11.20.2',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
 const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',BATCH_KEY='virag.batch.v120',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
@@ -71,9 +71,12 @@ const tabOk=S.m==='3D'?b===D.length:a===(U[S.m]?1:0),healthy=tabOk&&(!base||!!S.
 st(healthy?(base?'DAILY SYNCED':'READY · '+S.m.toUpperCase()):'READY · PARTIAL SYNC');rd();
 if(man)toast(`MODULES CHECKED · ACTIVE ${S.m} · BRAIN ${S.bv} · ${extraOk} CORE RULES LIVE`,!healthy);return healthy
 }
-function vis(e){if(!e||!e.isConnected)return 0;const r=e.getBoundingClientRect?.();return !!(r&&r.width>20&&r.height>12)}function ed(){for(const s of ['#prompt-textarea','[data-testid="composer-input"]','textarea[data-testid="prompt-textarea"]','[data-lexical-editor="true"][contenteditable="true"]','div.ProseMirror[contenteditable="true"]','[contenteditable="true"][role="textbox"]','form textarea','main textarea'])for(const e of document.querySelectorAll(s))if(vis(e)&&!e.closest('[aria-hidden="true"]'))return e;return null}const read=e=>e?.tagName==='TEXTAREA'?e.value:(e?.innerText||e?.textContent||'');
+function vis(e){if(!e||!e.isConnected)return 0;const r=e.getBoundingClientRect?.();return !!(r&&r.width>20&&r.height>12)}
+function onscreen(e){if(!vis(e))return 0;const r=e.getBoundingClientRect(),c=getComputedStyle(e);return !!(c.display!=='none'&&c.visibility!=='hidden'&&Number(c.opacity||1)!==0&&r.bottom>0&&r.right>0&&r.top<innerHeight&&r.left<innerWidth)}
+function ed(){for(const s of ['#prompt-textarea','[data-testid="composer-input"]','textarea[data-testid="prompt-textarea"]','[data-lexical-editor="true"][contenteditable="true"]','div.ProseMirror[contenteditable="true"]','[contenteditable="true"][role="textbox"]','form textarea','main textarea'])for(const e of document.querySelectorAll(s))if(onscreen(e)&&!e.closest('[aria-hidden="true"]'))return e;return null}const read=e=>e?.tagName==='TEXTAREA'?e.value:(e?.innerText||e?.textContent||'');
 function wr(e,t){if(!e)return 0;try{e.focus({preventScroll:true})}catch{}if(e.tagName==='TEXTAREA'){const p=Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value')?.set;p?p.call(e,t):e.value=t;e.dispatchEvent(iev(t));return 1}try{const s=getSelection(),r=document.createRange();r.selectNodeContents(e);s.removeAllRanges();s.addRange(r);const ok=document.execCommand(t?'insertText':'delete',false,t||'');s.removeAllRanges();if(ok)return 1;repl(e,document.createTextNode(t));e.dispatchEvent(iev(t));return 0}catch{return 0}}
 const norm=v=>String(v||'').replace(/\u00a0/g,' ').replace(/\s+/g,' ').trim(),wait=ms=>new Promise(r=>setTimeout(r,ms));
+function projectnewchatcontrol(){return [...document.querySelectorAll('button,a,[role="button"]')].find(e=>onscreen(e)&&/^new chat in\b/i.test(norm(e.innerText||e.textContent||e.getAttribute('aria-label'))))||null}
 function base(){const e=ed();if(!e)return'';const known=new Set;T.forEach(t=>S.l[t].forEach((_,k)=>known.add(k)));return read(e).replace(/(?:^|\n)\s*\/[A-Za-z0-9_-]*\s*$/,'').replace(/\/[A-Za-z0-9_-]+/g,m=>known.has(m.toLowerCase())?'':m).replace(/[ \t]{2,}/g,' ').trim()}
 const total=()=>S.am==='together'?S.cc:S.pc*S.cc;
 function cleanref(v){
@@ -83,7 +86,8 @@ function cleanref(v){
   return x
 }
 function capturetagrefs(e){
-  const scope=e?.closest?.('form')||e?.parentElement||document,refs=[],seen=new Set();
+  const scope=e?.closest?.('form')||e?.parentElement,refs=[],seen=new Set();
+  if(!scope)return[];
   const add=v=>{const x=cleanref(v),k=x.toLowerCase();if(x&&!seen.has(k)){seen.add(k);refs.push(x)}};
   const nodes=scope.querySelectorAll('[data-testid*="attachment"],[data-testid*="file"],[data-testid*="mention"],[data-lexical-decorator="true"],[contenteditable="false"],button[aria-label*="Remove file" i],button[aria-label*="Remove attachment" i]');
   for(const n of nodes){
@@ -91,7 +95,7 @@ function capturetagrefs(e){
     const preferred=values.find(v=>/\.(?:png|jpe?g|webp|gif|avif|heic|heif|bmp|tiff?)\b/i.test(String(v||'')))||values.find(v=>cleanref(v));
     if(preferred)add(preferred)
   }
-  for(const input of document.querySelectorAll('input[type="file"]'))for(const f of [...(input.files||[])])add(f.name);
+  for(const input of scope.querySelectorAll('input[type="file"]'))for(const f of [...(input.files||[])])add(f.name);
   const text=String(read(e)||''),files=text.match(/[^\n,;]{2,160}\.(?:png|jpe?g|webp|gif|avif|heic|heif|bmp|tiff?)/gi)||[];
   files.forEach(add);
   return refs.slice(0,S.pc)
@@ -366,9 +370,9 @@ async function sendtext(y,preserve=0){
 function batchui(label,done,total,state='running'){
   mount();
   theme();
-  const status=S.s.querySelector('.status'),launch=S.s.querySelector('.launch b');
-  if(status)status.textContent=state==='running'?`v${V} · WORKING ${done}/${total}`:`v${V} · READY`;
-  if(launch)launch.textContent=state==='running'?`${done}/${total} working`:'Open Virag'
+  const status=S.s.querySelector('.status'),launch=S.s.querySelector('.launch b'),stage=String(label||'WORKING').toUpperCase();
+  if(status)status.textContent=state==='running'?`v${V} · ${stage} ${done}/${total}`:`v${V} · READY`;
+  if(launch)launch.textContent=state==='running'?`${done}/${total} ${stage.toLowerCase()}`:'Open Virag'
 }
 function filekey(f){return`${f?.name||''}|${f?.size||0}|${f?.lastModified||0}`}
 function rememberfiles(list,replace=0){
@@ -380,14 +384,15 @@ function rememberfiles(list,replace=0){
   return out
 }
 function currentinputfiles(){
-  const out=[];
-  for(const input of document.querySelectorAll('input[type="file"]'))for(const f of [...(input.files||[])])out.push(f);
-  return rememberfiles(out)
+  const input=productfileinput(),live=[...(input?.files||[])];
+  if(live.length)return rememberfiles(live,1);
+  return [...(S.sourceFiles||[])]
 }
 function picksourcefiles(count){
   return new Promise(resolve=>{
     const input=document.createElement('input');
     input.type='file';
+    input.dataset.viragPicker='1';
     input.accept='image/png,image/jpeg,image/webp,image/avif,image/heic,image/heif,image/bmp,image/tiff';
     input.multiple=count>1;
     input.style.cssText='position:fixed;left:-9999px;top:-9999px;opacity:0';
@@ -411,24 +416,34 @@ function picksourcefiles(count){
     input.click()
   })
 }
-function composerscope(){
+function composercontext(){
   const e=ed();
-  return e?.closest?.('form')||e?.parentElement||document
+  if(!e||!onscreen(e))return null;
+  const form=e.closest?.('form')||null;
+  const root=form||e.closest?.('[data-testid*="composer"]:not([data-testid="composer-input"])')||e.parentElement?.parentElement||e.parentElement||null;
+  return root?{e,form,root}:null
 }
+function composerscope(){const c=composercontext();return c?.form||c?.root||null}
+function composerroots(){
+  const c=composercontext();
+  return c?[...new Set([c.form,c.root,c.form?.parentElement,c.root?.parentElement].filter(Boolean))]:[]
+}
+function iscomposerfileinput(input){return !!input&&!input.dataset?.viragPicker&&composerroots().some(root=>root===input||root.contains(input))}
 function attachmentnodes(scope=composerscope()){
   return [...(scope?.querySelectorAll?.('[data-testid*="attachment-preview"],[data-testid*="file-preview"],[data-testid*="composer-file"],[data-testid*="upload-preview"],[data-filename],button[aria-label*="Remove file" i],button[aria-label*="Remove attachment" i]')||[])].filter(vis)
 }
 async function clearcomposerattachments(){
-  const scope=composerscope();
-  const buttons=[...(scope?.querySelectorAll?.('button[aria-label*="Remove file" i],button[aria-label*="Remove attachment" i],button[title*="Remove file" i],button[title*="Remove attachment" i]')||[])];
-  for(const b of buttons)if(vis(b))b.click();
-  const e=ed();if(e)wr(e,'');
-  for(let i=0;i<80;i++){if(!attachmentnodes().length)return true;await wait(100)}
+  const scope=composerscope(),e=ed();
+  if(!scope||!e)throw new Error('ACTIVE_CHAT_COMPOSER_NOT_FOUND');
+  const buttons=[...(scope.querySelectorAll?.('button[aria-label*="Remove file" i],button[aria-label*="Remove attachment" i],button[title*="Remove file" i],button[title*="Remove attachment" i]')||[])];
+  for(const b of buttons)if(onscreen(b))b.click();
+  wr(e,'');
+  for(let i=0;i<80;i++){if(!attachmentnodes(scope).length)return true;await wait(100)}
   throw new Error('COMPOSER_ATTACHMENTS_COULD_NOT_CLEAR')
 }
 function productfileinput(){
-  const all=[...document.querySelectorAll('input[type="file"]')];
-  return all.find(i=>/image|png|jpeg|jpg|webp|avif|heic/i.test(i.accept||''))||all.find(i=>i.closest('form'))||all[0]||null
+  const all=[...new Set(composerroots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]))].filter(i=>!i.dataset?.viragPicker);
+  return all.find(i=>/image|png|jpeg|jpg|webp|avif|heic/i.test(i.accept||''))||all[0]||null
 }
 async function attachsources(files){
   files=[...(Array.isArray(files)?files:[files])].filter(Boolean);
@@ -450,7 +465,7 @@ async function attachsources(files){
     }
   }finally{setTimeout(()=>{S.replayingFile=false},700)}
   const names=files.map(f=>String(f.name||'').toLowerCase()).filter(Boolean);
-  for(let i=0;i<900;i++){
+  for(let i=0;i<300;i++){
     const scope=composerscope(),txt=String(scope?.innerText||scope?.textContent||'').toLowerCase();
     const nodes=attachmentnodes(scope);
     const uploading=[...(scope?.querySelectorAll?.('[role="progressbar"],[aria-busy="true"],[data-testid*="upload-progress"],[data-state="uploading"]')||[])].some(vis);
@@ -468,11 +483,12 @@ async function processbatch(batch){
   try{
     for(let i=0;i<batch.jobs.length;i++){
       const job=batch.jobs[i],names=job.files.map(f=>f.name);
-      batch.current=i;batchui('WORKING',i,batch.total);
+      batch.current=i;batchui('ATTACHING',i+1,batch.total);
       console.log('[Virag File Router] attaching',{creative:i+1,total:batch.total,product:job.product,files:names});
       await attachsources(job.files);
       batch.before=turnsnapshot();batch.sentAt=Date.now();
       console.log('[Virag File Router] requesting',{creative:i+1,total:batch.total,product:job.product,files:names,family:job.family});
+      batchui('GENERATING',i+1,batch.total);
       await sendtext(job.prompt,0);
       const response=await waitturn(batch.before,batch,i,0),error=turnerror(response),after=turnsnapshot();
       if(error)throw new Error(`CREATIVE_${i+1}_STOPPED_${error.replace(/\s+/g,'_').toUpperCase()}`);
@@ -498,8 +514,18 @@ async function processbatch(batch){
 }
 async function runbatch(x){
   if(S.batch?.running)return toast(`Virag is already working on ${S.batch.done}/${S.batch.total}.`,1);
-  const e=ed();if(!e)return toast('ChatGPT composer not found.',1);
-  const brief=base();
+  const context=composercontext();
+  if(!context){
+    const open=projectnewchatcontrol();
+    if(open){
+      hide();open.click();
+      setTimeout(()=>toast('New BBI chat opened. When the composer appears, select the Virag tool once more.'),400);
+      return
+    }
+    show();st('OPEN A CHAT FIRST');
+    return toast('Open a ChatGPT conversation before running Virag.',1)
+  }
+  const e=context.e,brief=base();
   let files=currentinputfiles();
   if(files.length!==S.pc)files=await picksourcefiles(S.pc);
   if(files.length!==S.pc){S.sourceFiles=[];show();st('SOURCE FILES REQUIRED');return toast(`Virag needs exactly ${S.pc} real product image file${S.pc===1?'':'s'} for this batch.`,1)}
@@ -881,6 +907,7 @@ function rd(){if(!S.p)return;const tb=S.s.querySelector('.tabs');tb.innerHTML=''
 document.addEventListener('change',e=>{
   const input=e.target;
   if(S.replayingFile||!input?.matches?.('input[type="file"]')||!input.files?.length)return;
+  if(!input.dataset?.viragPicker&&!iscomposerfileinput(input))return;
   rememberfiles(input.files,input.files.length>1)
 },true);
 function show(){mount();S.p.classList.add('on')}function hide(){S.p?.classList.remove('on')}
