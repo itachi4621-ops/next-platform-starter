@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.22.0
-// @description  Virag V11.22.0 Lite — manual-composer multi-product routing with Real Human Character Master.
+// @version      11.22.1
+// @description  Virag V11.22.1 Lite — lossless manual-composer multi-product routing with Real Human Character Master.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,11 +25,11 @@
 // @compatible   Opera
 // @compatible   Safari
 // @connect      raw.githubusercontent.com
-// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.22.0
-// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.22.0
+// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.22.1
+// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.22.1
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.22.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const V='11.22.1',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
 const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',BATCH_KEY='virag.batch.v120',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
@@ -415,7 +415,8 @@ function currentinputfiles(){
     const at=unused.findIndex(f=>{const name=String(f?.name||'').toLowerCase();return name&&(key===name||key.includes(name)||name.includes(key))});
     if(at>=0)ordered.push(unused.splice(at,1)[0])
   }
-  if(ordered.length){S.sourceFiles=ordered;return [...ordered]}
+  if(ordered.length===pool.length){S.sourceFiles=ordered;return [...ordered]}
+  if(ordered.length&&ordered.length!==pool.length)console.warn('[Virag Manual Router] Partial DOM filename map ignored',{captured:pool.length,mapped:ordered.length,visibleRefs:refs.length});
   return pool
 }
 function composercontext(){
@@ -912,7 +913,9 @@ function rd(){if(!S.p)return;const tb=S.s.querySelector('.tabs');tb.innerHTML=''
 document.addEventListener('change',e=>{
   const input=e.target;
   if(S.replayingFile||!input?.matches?.('input[type="file"]')||!input.files?.length||!iscomposerfileinput(input))return;
-  const files=rememberfiles(input.files,input.files.length>1);
+  const visibleBefore=attachmentnodes().length,incoming=[...input.files];
+  const files=rememberfiles(incoming,visibleBefore===0);
+  console.log('[Virag Manual Router] composer files captured',{incoming:incoming.length,visibleBefore,total:files.length,expected:S.pc,names:files.map(f=>f.name)});
   st(files.length===S.pc?`PRODUCTS READY ${files.length}/${S.pc}`:`PRODUCTS ${files.length}/${S.pc}`);
   if(files.length===S.pc)toast(`${files.length} manually added product image${files.length===1?'':'s'} ready. Choose a Virag tool.`);
 },true);
