@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.23.1
-// @description  Virag V11.23.1 Lite — exact visible-quantity prompt builder with Real Human Character Master.
+// @version      11.24.0
+// @description  Virag V11.24.0 — exact manual-upload product routing with Real Human Character Master.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,11 +25,11 @@
 // @compatible   Opera
 // @compatible   Safari
 // @connect      raw.githubusercontent.com
-// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.23.1
-// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.23.1
+// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.24.0
+// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.24.0
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.23.1',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const V='11.24.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
 const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',BATCH_KEY='virag.batch.v120',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
@@ -461,6 +461,15 @@ function productfileinput(){
   const all=[...new Set(composerroots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]))];
   return all.find(i=>/image|png|jpeg|jpg|webp|avif|heic/i.test(i.accept||''))||all[0]||null
 }
+document.addEventListener('change',e=>{
+  const input=e.target;
+  if(S.replayingFile||!(input instanceof HTMLInputElement)||input.type!=='file'||!iscomposerfileinput(input))return;
+  const files=rememberfiles([...(input.files||[])],0);
+  if(files.length){
+    console.log('[Virag Manual Router] captured product files',{captured:files.length,names:files.map(f=>f.name)});
+    st(`PRODUCTS READY ${files.length}/${S.pc}`)
+  }
+},true);
 async function attachsources(files){
   files=[...(Array.isArray(files)?files:[files])].filter(Boolean);
   if(!files.length)throw new Error('PRODUCT_FILE_MISSING');
@@ -568,17 +577,7 @@ async function ex(x){
   if(!e)return toast('ChatGPT composer not found',1);
   const selected=syncplanfromui();
   console.log('[Virag Quantity Lock] current run',selected);
-  const y=prompt(x),ok=wr(e,y);
-  hide();
-  await wait(450);
-  if(!ok||norm(read(e))!==norm(y))return toast('Prompt inserted; press Send.',1);
-  for(let i=0;i<80;i++){
-    if(norm(read(e))!==norm(y))return toast('Composer changed; prompt not sent.',1);
-    const b=sb(e);
-    if(b&&!b.disabled){b.click();return}
-    await wait(80)
-  }
-  toast('Prompt inserted; press Send.',1)
+  return runbatch(x)
 }
 function gs(){if(S.m!=='3D')return['All'];const p=new Set([...S.l['3D'].values()].map(x=>x.group));return['All',...D.map(x=>x[0]).filter(x=>p.has(x))]}function ls(){let a=[...S.l[S.m].values()].sort((a,b)=>a.id-b.id);if(S.m==='3D'&&S.g!=='All')a=a.filter(x=>x.group===S.g);const q=S.q.toLowerCase().replace(/^\//,'');return q?a.filter(x=>(x.cmd+' '+x.label+' '+x.desc+' '+x.group).toLowerCase().includes(q)):a}
 function hit(q){q=String(q||'').toLowerCase();if(!q)return null;const h=[];T.forEach(t=>S.l[t].forEach(x=>{const c=x.cmd.slice(1).toLowerCase();if(c===q||c.startsWith(q))h.push(x)}));return h.length===1?h[0]:null}
@@ -942,7 +941,6 @@ document.addEventListener('input',e=>{const t=e.target;if(!(t?.tagName==='TEXTAR
 document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()},true);
 function indiaNow(){return new Date(Date.now()+IST_OFFSET)}function indiaDate(){const d=indiaNow();return`${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}-${String(d.getUTCDate()).padStart(2,'0')}`}function pastDailyWindow(){const d=indiaNow();return d.getUTCHours()>DAILY_HOUR||(d.getUTCHours()===DAILY_HOUR&&d.getUTCMinutes()>=DAILY_MINUTE)}function dailyDelay(){const now=Date.now(),d=new Date(now+IST_OFFSET);let t=Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate(),DAILY_HOUR,DAILY_MINUTE);if(t<=now+IST_OFFSET)t+=86400000;return Math.max(60000,t-(now+IST_OFFSET))}async function dailySync(force=0){if(!force&&document.hidden)return;const today=indiaDate();if(!force&&pastDailyWindow()&&gv(DAILY_KEY,'')===today)return;const ok=await sy();if(ok&&pastDailyWindow())sv(DAILY_KEY,today)}function armDaily(){setTimeout(async()=>{await dailySync();armDaily()},dailyDelay())}const autosync=()=>dailySync();(window.requestIdleCallback||((f)=>setTimeout(f,450)))(async()=>{await cleanupLegacyCaches();sv('virag.batch.v119',null);sv(BATCH_KEY,null);mount();st('BROWSER READY');dailySync(1);armDaily()});window.addEventListener('focus',autosync);window.addEventListener('online',autosync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)dailySync()});
 })();
-
 
 
 
