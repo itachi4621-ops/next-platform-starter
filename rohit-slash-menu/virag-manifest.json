@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "manifestVersion": "2.0.0",
-  "release": "11.26.0",
-  "updatedAt": "2026-09-25T10:18:09.779Z",
+  "release": "11.27.0",
+  "updatedAt": "2026-09-25T10:24:26.505Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 86400,
@@ -15,7 +15,7 @@
     {
       "id": "core",
       "name": "Virag OS Core",
-      "version": "11.26.0",
+      "version": "11.27.0",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
@@ -36,7 +36,7 @@
     {
       "id": "trends",
       "name": "Daily Trends",
-      "version": "2026.09.24",
+      "version": "2026.09.25",
       "file": "daily-trends.json",
       "type": "json"
     },
