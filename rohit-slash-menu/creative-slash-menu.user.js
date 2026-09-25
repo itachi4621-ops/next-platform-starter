@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Creative OS
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      11.21.0
-// @description  Virag V11.21.0 Lite — active-chat batching with Real Human Character Master.
+// @version      11.22.0
+// @description  Virag V11.22.0 Lite — manual-composer multi-product routing with Real Human Character Master.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,11 +25,11 @@
 // @compatible   Opera
 // @compatible   Safari
 // @connect      raw.githubusercontent.com
-// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.21.0
-// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.21.0
+// @updateURL    https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.22.0
+// @downloadURL  https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/creative-slash-menu.user.js?channel=stable-11.22.0
 // ==/UserScript==
 (()=>{'use strict';
-const V='11.21.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
+const V='11.22.0',R='https://raw.githubusercontent.com/itachi4621-ops/next-platform-starter/main/rohit-slash-menu/',T=['Creative','Flyer','3D','Packaging','Video','AI Tools'],U={Creative:R+'creative-presets.json',Flyer:R+'flyer-presets.json',Packaging:R+'packaging-presets.json',Video:R+'video-presets.json','AI Tools':R+'ai-tools.json'},D=[['Signature CGI Concepts',R+'3d-signature.json'],['FOOH & Experiential',R+'3d-fooh.json'],['Transformations & Kinetics',R+'3d-transform.json'],['Materials & Simulation',R+'3d-materials.json'],['Environment Themes',R+'3d-environments.json']],K='virag.cache.';
 const MAN=R+'virag-manifest.json',BRAIN=R+'creative-library.json',BATCH_KEY='virag.batch.v120',CORE_MODS=new Set(['design','trends','product','human','clean']),IST_OFFSET=19800000,DAILY_HOUR=1,DAILY_MINUTE=15,DAILY_KEY='virag.dailySyncDate';
 const M={"Creative":"CREATIVE TOOL ROLE. Build the selected Instagram content format. The preset controls the visual idea; the social-content blueprint controls the final composition.","Flyer":"FLYER TOOL ROLE. Use the selected flyer mechanic as the information and promotion structure. Under an Instagram format, deliver it as a polished 4:5 social flyer with readable content modules; under Native mode, return the standalone flyer.","3D":"3D TOOL ROLE. Use CGI only as the campaign mechanism inside the selected final format. Under an Instagram format, the result must be a designed 4:5 social post with information graphics—not a cinematic render or product beauty shot.","Packaging":"PACKAGING TOOL ROLE. Use the selected packaging mechanic without changing protected source facts. Under an Instagram format, present the packaging idea inside a complete 4:5 launch or information creative; under Native mode, return the packaging solution itself.","Video":"VIDEO TOOL ROLE. Produce the selected video deliverable. Under Instagram formats, return a coherent vertical Reel or information-led motion-graphics plan; never return one static product poster."};
 const Z='CURRENT CHATGPT IMAGE WORKFLOW. Generate the actual image now with ChatGPT current built-in image-generation capability; do not return a prompt, plan, concept note or written description instead of the image. Treat new generation and editing as different workflows. For a new creative, use only the current-turn user-uploaded product and reference assets. Attach an earlier generated image only when the user explicitly asks to edit that exact image. Generate every requested result as its own separate image, never a collage or multi-output board. Use concise, structured instructions and keep all invariant product details fixed on every generation.';
@@ -405,36 +405,18 @@ function rememberfiles(list,replace=0){
 }
 function currentinputfiles(){
   const input=productfileinput(),live=[...(input?.files||[])];
-  if(live.length)return rememberfiles(live,1);
-  return [...(S.sourceFiles||[])]
-}
-function picksourcefiles(count){
-  return new Promise(resolve=>{
-    const input=document.createElement('input');
-    input.type='file';
-    input.dataset.viragPicker='1';
-    input.accept='image/png,image/jpeg,image/webp,image/avif,image/heic,image/heif,image/bmp,image/tiff';
-    input.multiple=count>1;
-    input.style.cssText='position:fixed;left:-9999px;top:-9999px;opacity:0';
-    let settled=false,focusHandler=null;
-    const finish=files=>{
-      if(settled)return;
-      settled=true;
-      if(focusHandler)window.removeEventListener('focus',focusHandler,true);
-      try{input.remove()}catch{}
-      resolve(files)
-    };
-    input.onchange=()=>{
-      const files=rememberfiles(input.files,1);
-      if(files.length!==count){S.sourceFiles=[];toast(`Select exactly ${count} original product image file${count===1?'':'s'}. You selected ${files.length}.`,1);finish([]);return}
-      finish(files.slice(0,count))
-    };
-    input.oncancel=()=>{S.sourceFiles=[];finish([])};
-    focusHandler=()=>setTimeout(()=>{if(!settled&&!input.files?.length){S.sourceFiles=[];finish([])}},700);
-    window.addEventListener('focus',focusHandler,true);
-    document.documentElement.appendChild(input);
-    input.click()
-  })
+  if(live.length)rememberfiles(live,0);
+  const pool=[...(S.sourceFiles||[])];
+  const refs=capturetagrefs(ed());
+  if(!refs.length||!pool.length)return pool;
+  const unused=[...pool],ordered=[];
+  for(const ref of refs){
+    const key=String(ref||'').toLowerCase();
+    const at=unused.findIndex(f=>{const name=String(f?.name||'').toLowerCase();return name&&(key===name||key.includes(name)||name.includes(key))});
+    if(at>=0)ordered.push(unused.splice(at,1)[0])
+  }
+  if(ordered.length){S.sourceFiles=ordered;return [...ordered]}
+  return pool
 }
 function composercontext(){
   const e=ed();
@@ -448,7 +430,7 @@ function composerroots(){
   const c=composercontext();
   return c?[...new Set([c.form,c.root,c.form?.parentElement,c.root?.parentElement].filter(Boolean))]:[]
 }
-function iscomposerfileinput(input){return !!input&&!input.dataset?.viragPicker&&composerroots().some(root=>root===input||root.contains(input))}
+function iscomposerfileinput(input){return !!input&&composerroots().some(root=>root===input||root.contains(input))}
 function attachmentnodes(scope=composerscope()){
   return [...(scope?.querySelectorAll?.('[data-testid*="attachment-preview"],[data-testid*="file-preview"],[data-testid*="composer-file"],[data-testid*="upload-preview"],[data-filename],button[aria-label*="Remove file" i],button[aria-label*="Remove attachment" i]')||[])].filter(vis)
 }
@@ -462,7 +444,7 @@ async function clearcomposerattachments(){
   throw new Error('COMPOSER_ATTACHMENTS_COULD_NOT_CLEAR')
 }
 function productfileinput(){
-  const all=[...new Set(composerroots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]))].filter(i=>!i.dataset?.viragPicker);
+  const all=[...new Set(composerroots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]))];
   return all.find(i=>/image|png|jpeg|jpg|webp|avif|heic/i.test(i.accept||''))||all[0]||null
 }
 async function attachsources(files){
@@ -546,9 +528,12 @@ async function runbatch(x){
     return toast('Open a ChatGPT conversation before running Virag.',1)
   }
   const e=context.e,brief=base();
-  let files=currentinputfiles();
-  if(files.length!==S.pc)files=await picksourcefiles(S.pc);
-  if(files.length!==S.pc){S.sourceFiles=[];show();st('SOURCE FILES REQUIRED');return toast(`Virag needs exactly ${S.pc} real product image file${S.pc===1?'':'s'} for this batch.`,1)}
+  const files=currentinputfiles();
+  if(files.length!==S.pc){
+    show();
+    st(`ADD PRODUCTS ${files.length}/${S.pc}`);
+    return toast(`First add exactly ${S.pc} original product image${S.pc===1?'':'s'} in the ChatGPT composer. Virag captured ${files.length}/${S.pc}; it will not open a separate file picker.`,1)
+  }
   S.refs=files.map((f,i)=>f.name||`Product-${i+1}`);
   if(S.am==='separate'&&S.cc===1&&total()!==S.pc){S.sourceFiles=[];show();return toast('Quantity check failed: one creative per product must equal the selected product count.',1)}
   const rows=batchrows(x),id=`VR-${Date.now().toString(36).toUpperCase()}`;
@@ -923,12 +908,13 @@ function theme(){if(!S.s||S.s.querySelector('style[data-board]'))return;const e=
 function mount(){if(S.p)return;S.h=document.createElement('div');document.documentElement.appendChild(S.h);S.s=typeof S.h.attachShadow==='function'?S.h.attachShadow({mode:'open'}):S.h;S.s.innerHTML=`<style>${CSS}${NEON}</style><div class="p"><div class="top"><div><div class="brand">Virag Creative OS</div><div class="sub">NEON GLASS COMMAND CENTER · SIX CREATIVE LIBRARIES</div></div><div class="top-actions"><div class="status">v${V} · READY</div><button class="close" aria-label="Close Virag" title="Close Virag">×</button></div></div><div class="tabs"></div><div class="groups"></div><div class="planner"><label>Number of products<select class="products" aria-label="Number of products"></select></label><label>Product layout<select class="arrangement" aria-label="Product layout"><option value="separate">Separate — one product each</option><option value="together">Together — all products in each</option></select></label><label><span class="ptype">Creatives per product</span><select class="creatives" aria-label="Output quantity"></select></label><label>Real font style<select class="typography" aria-label="Real font style"></select></label><label>Output format<select class="format" aria-label="Output format"></select></label><label>Content level<select class="contentlevel" aria-label="Content level"></select></label><label>Design richness<select class="richness" aria-label="Design richness"></select></label><label>Design direction<select class="design" aria-label="Design direction"></select></label><label>Product fidelity<select class="productlock" aria-label="Product fidelity"></select></label><div class="total"><b></b><small>SEPARATE OUTPUTS</small></div></div><div class="search"><input class="q" placeholder="Search inside Creative…"><button class="sync">SYNC</button></div><div class="bar"><b class="title"></b><span class="meta"></span></div><div class="grid"></div><div class="foot"></div></div><button class="launch" aria-label="Open Virag" title="Open Virag"><span>V</span><b>Open Virag</b></button><div class="toast"></div>`;S.p=S.s.querySelector('.p');S.to=S.s.querySelector('.toast');S.s.querySelector('.launch').onclick=show;S.s.querySelector('.close').onclick=hide;S.s.querySelector('.sync').onclick=()=>sy(1);const fill=(e,n,v)=>{for(let i=1;i<=n;i++){const o=document.createElement('option');o.value=i;o.textContent=i;o.selected=i===v;e.appendChild(o)}};const ps=S.s.querySelector('.products'),cs=S.s.querySelector('.creatives'),as=S.s.querySelector('.arrangement'),ts=S.s.querySelector('.typography'),fs=S.s.querySelector('.format'),cls=S.s.querySelector('.contentlevel'),ars=S.s.querySelector('.richness'),ds=S.s.querySelector('.design'),pls=S.s.querySelector('.productlock');fill(ps,20,S.pc);fill(cs,10,S.cc);as.value=S.am;Object.entries(Y).forEach(([v,y])=>{const o=document.createElement('option');o.value=v;o.textContent=y[0];o.selected=v===S.ty;ts.appendChild(o)});ts.value=S.ty;Object.entries(FM).forEach(([v,y])=>{const o=document.createElement('option');o.value=v;o.textContent=y[0];o.selected=v===S.fm;fs.appendChild(o)});fs.value=S.fm;Object.entries(CL).forEach(([v,y])=>{const o=document.createElement('option');o.value=v;o.textContent=y[0];o.selected=v===S.cl;cls.appendChild(o)});cls.value=S.cl;Object.entries(AR).forEach(([v,y])=>{const o=document.createElement('option');o.value=v;o.textContent=y[0];o.selected=v===S.ar;ars.appendChild(o)});ars.value=S.ar;Object.entries(DS).forEach(([v,y])=>{const o=document.createElement('option');o.value=v;o.textContent=y[0];o.selected=v===S.ds;ds.appendChild(o)});ds.value=S.ds;Object.entries(PL).forEach(([v,y])=>{const o=document.createElement('option');o.value=v;o.textContent=y[0];o.selected=v===S.pl;pls.appendChild(o)});pls.value=S.pl;ps.onchange=()=>{S.pc=+ps.value;if(S.am==='separate'&&S.pc>1){S.cc=1;cs.value='1';sv('virag.plan.outputs.v115',1)}sv('virag.plan.products',S.pc);rd()};cs.onchange=()=>{S.cc=+cs.value;sv('virag.plan.outputs.v115',S.cc);rd()};as.onchange=()=>{S.am=as.value==='together'?'together':'separate';sv('virag.plan.arrangement',S.am);rd()};ts.onchange=()=>{S.ty=Y[ts.value]?ts.value:'auto';sv('virag.plan.type',S.ty);rd()};fs.onchange=()=>{S.fm=FM[fs.value]?fs.value:'instagram';sv('virag.plan.format',S.fm);rd()};cls.onchange=()=>{S.cl=CL[cls.value]?cls.value:'balanced';sv('virag.plan.content.v114',S.cl);rd()};ars.onchange=()=>{S.ar=AR[ars.value]?ars.value:'premium';sv('virag.plan.richness.v114',S.ar);rd()};ds.onchange=()=>{S.ds=DS[ds.value]?ds.value:'auto';sv('virag.plan.design',S.ds);rd()};pls.onchange=()=>{S.pl=PL[pls.value]?pls.value:'exact-composite';sv('virag.plan.productlock',S.pl);rd()};const q=S.s.querySelector('.q');q.oninput=()=>{S.q=q.value;rd()};q.onkeydown=e=>{if(e.key==='Enter'){const x=ls()[0];if(x){e.preventDefault();ex(x)}}};rd()}
 function st(x){mount();theme();S.s.querySelector('.status').textContent=`v${V} · ${x}`}function toast(x,b=0){mount();theme();S.to.textContent=x;S.to.className='toast on';clearTimeout(toast.t);toast.t=setTimeout(()=>S.to.className='toast',5200)}
 function qp(){if(!S.s)return;const gen=S.m!=='AI Tools',p=S.s.querySelector('.planner');p?.classList.toggle('on',gen);if(!gen)return;const separate={Creative:'Creatives per product',Flyer:'Flyers per product','3D':'3D creatives per product',Packaging:'Designs per product',Video:'Video outputs per product'},together={Creative:'Combined Instagram post variations',Flyer:'Combined flyer variations','3D':'Combined 3D variations',Packaging:'Combined design variations',Video:'Combined video variations'},t=S.s.querySelector('.total b'),small=S.s.querySelector('.total small'),pt=S.s.querySelector('.ptype');if(t)t.textContent=total();if(small)small.textContent=S.am==='separate'&&S.cc===1?'ONE PER PRODUCT':(S.fm==='native'?'TOTAL NATIVE OUTPUTS':(S.m==='Video'?'TOTAL SEPARATE REELS':'TOTAL SEPARATE IMAGES'));if(pt)pt.textContent=(S.am==='together'?together:separate)[S.m]||'Output quantity'}
-function rd(){if(!S.p)return;const tb=S.s.querySelector('.tabs');tb.innerHTML='';T.forEach(t=>{const b=document.createElement('button');b.className='tab'+(S.m===t?' on':'');b.dataset.t=t;b.textContent=t;b.onclick=async()=>{S.m=t;S.g='All';S.q='';S.s.querySelector('.q').value='';st('LOADING '+t.toUpperCase());await sy(0,0);rd()};tb.appendChild(b)});const gg=S.s.querySelector('.groups');gg.innerHTML='';gg.classList.toggle('on',S.m==='3D');if(S.m==='3D')gs().forEach(g=>{const n=g==='All'?S.l['3D'].size:[...S.l['3D'].values()].filter(x=>x.group===g).length,b=document.createElement('button');b.className='gb'+(S.g===g?' on':'');b.textContent=`${g} (${n})`;b.onclick=()=>{S.g=g;S.q='';S.s.querySelector('.q').value='';rd()};gg.appendChild(b)});qp();const a=ls(),n=total(),gen=S.m!=='AI Tools',q=S.s.querySelector('.q'),layout=S.am==='together'?'together':'separate',ad=['Creative','3D'].includes(S.m);q.placeholder=`Search inside ${S.m}…`;S.s.querySelector('.title').textContent=S.m==='3D'?`CGI + SOCIAL CONTENT ENGINE · ${S.g}`:S.m==='Creative'?'CREATIVE · INSTAGRAM CONTENT DESIGN ENGINE':gen?`${S.m} · UNIVERSAL MASTER OUTPUT PLAN`:S.m;S.s.querySelector('.meta').textContent=`Library ${S.v[S.m]} · Brain ${S.bv} · ${S.l[S.m].size} tools${gen?' · ALL MASTER LOCKS ACTIVE · PRODUCT IDENTITY LOCKED · REAL FONT ONLY · HUMAN-STUDIO QA · HUMAN-MADE MASTER · PREMIUM-DESIGNED DEFAULT · CROSS-BROWSER · TAGGED-PRODUCT AUTO ROUTER · MIXED-FORMAT VARIATIONS':''}${ad?' · INSTAGRAM 4:5 · POST-READY · DESIGN-LAYER GATE · NOT A POSTER · BLANK CANVAS · PREVIOUS OUTPUTS EXCLUDED · RAW RENDERS REJECTED · HUMAN-MADE CREATIVE MASTER · PREMIUM ART DIRECTION · ORIGINAL CONCEPT LOCK':''}${gen?' · FORMAT '+FM[S.fm][0].toUpperCase()+' · CONTENT '+CL[S.cl][0].toUpperCase()+' · RICHNESS '+AR[S.ar][0].toUpperCase()+' · DESIGN '+DS[S.ds][0].toUpperCase()+' · FIDELITY '+PL[S.pl][0].toUpperCase()+' · TYPE '+Y[S.ty][0].split(' — ')[0].toUpperCase()+' · DAILY TREND '+String(S.mods.trends?.trendDate||'SYNCING').toUpperCase():''}${S.m==='3D'?` · ${S.d.size}/${D.length} sections · showing ${a.length} · ${S.pc} product${S.pc===1?'':'s'} ${layout} · ${n} output${n===1?'':'s'}`:gen?` · ${S.pc} product${S.pc===1?'':'s'} ${layout} · ${n} output${n===1?'':'s'}`:''}`;const gr=S.s.querySelector('.grid');gr.innerHTML='';a.forEach(x=>{const c=document.createElement('div');c.className='card';c.innerHTML='<span class="cmd"></span><span class="tag"></span><div class="name"></div><div class="desc"></div>';c.querySelector('.cmd').textContent=x.cmd;c.querySelector('.tag').textContent=x.tab==='3D'?x.group:'';c.querySelector('.tag').style.display=x.tab==='3D'?'inline-block':'none';c.querySelector('.name').textContent=x.label;c.querySelector('.desc').textContent=x.desc;c.onclick=()=>ex(x);gr.appendChild(c)});if(!a.length)gr.innerHTML='<div class="empty">No tools found. Press SYNC to retry.</div>';const ft=S.s.querySelector('.foot');ft.innerHTML='';T.forEach(t=>{const c=document.createElement('span');c.className='chip';c.textContent=`${t} ${S.v[t]}${t==='3D'?` · ${S.l[t].size}`:''}`;ft.appendChild(c)})}
+function rd(){if(!S.p)return;const tb=S.s.querySelector('.tabs');tb.innerHTML='';T.forEach(t=>{const b=document.createElement('button');b.className='tab'+(S.m===t?' on':'');b.dataset.t=t;b.textContent=t;b.onclick=async()=>{S.m=t;S.g='All';S.q='';S.s.querySelector('.q').value='';st('LOADING '+t.toUpperCase());await sy(0,0);rd()};tb.appendChild(b)});const gg=S.s.querySelector('.groups');gg.innerHTML='';gg.classList.toggle('on',S.m==='3D');if(S.m==='3D')gs().forEach(g=>{const n=g==='All'?S.l['3D'].size:[...S.l['3D'].values()].filter(x=>x.group===g).length,b=document.createElement('button');b.className='gb'+(S.g===g?' on':'');b.textContent=`${g} (${n})`;b.onclick=()=>{S.g=g;S.q='';S.s.querySelector('.q').value='';rd()};gg.appendChild(b)});qp();const a=ls(),n=total(),gen=S.m!=='AI Tools',q=S.s.querySelector('.q'),layout=S.am==='together'?'together':'separate',ad=['Creative','3D'].includes(S.m);q.placeholder=`Search inside ${S.m}…`;S.s.querySelector('.title').textContent=S.m==='3D'?`CGI + SOCIAL CONTENT ENGINE · ${S.g}`:S.m==='Creative'?'CREATIVE · INSTAGRAM CONTENT DESIGN ENGINE':gen?`${S.m} · UNIVERSAL MASTER OUTPUT PLAN`:S.m;S.s.querySelector('.meta').textContent=`Library ${S.v[S.m]} · Brain ${S.bv} · ${S.l[S.m].size} tools${gen?' · ALL MASTER LOCKS ACTIVE · PRODUCT IDENTITY LOCKED · REAL FONT ONLY · HUMAN-STUDIO QA · HUMAN-MADE MASTER · PREMIUM-DESIGNED DEFAULT · CROSS-BROWSER · MANUAL-COMPOSER PRODUCT ROUTER · MIXED-FORMAT VARIATIONS':''}${ad?' · INSTAGRAM 4:5 · POST-READY · DESIGN-LAYER GATE · NOT A POSTER · BLANK CANVAS · PREVIOUS OUTPUTS EXCLUDED · RAW RENDERS REJECTED · HUMAN-MADE CREATIVE MASTER · PREMIUM ART DIRECTION · ORIGINAL CONCEPT LOCK':''}${gen?' · FORMAT '+FM[S.fm][0].toUpperCase()+' · CONTENT '+CL[S.cl][0].toUpperCase()+' · RICHNESS '+AR[S.ar][0].toUpperCase()+' · DESIGN '+DS[S.ds][0].toUpperCase()+' · FIDELITY '+PL[S.pl][0].toUpperCase()+' · TYPE '+Y[S.ty][0].split(' — ')[0].toUpperCase()+' · DAILY TREND '+String(S.mods.trends?.trendDate||'SYNCING').toUpperCase():''}${S.m==='3D'?` · ${S.d.size}/${D.length} sections · showing ${a.length} · ${S.pc} product${S.pc===1?'':'s'} ${layout} · ${n} output${n===1?'':'s'}`:gen?` · ${S.pc} product${S.pc===1?'':'s'} ${layout} · ${n} output${n===1?'':'s'}`:''}`;const gr=S.s.querySelector('.grid');gr.innerHTML='';a.forEach(x=>{const c=document.createElement('div');c.className='card';c.innerHTML='<span class="cmd"></span><span class="tag"></span><div class="name"></div><div class="desc"></div>';c.querySelector('.cmd').textContent=x.cmd;c.querySelector('.tag').textContent=x.tab==='3D'?x.group:'';c.querySelector('.tag').style.display=x.tab==='3D'?'inline-block':'none';c.querySelector('.name').textContent=x.label;c.querySelector('.desc').textContent=x.desc;c.onclick=()=>ex(x);gr.appendChild(c)});if(!a.length)gr.innerHTML='<div class="empty">No tools found. Press SYNC to retry.</div>';const ft=S.s.querySelector('.foot');ft.innerHTML='';T.forEach(t=>{const c=document.createElement('span');c.className='chip';c.textContent=`${t} ${S.v[t]}${t==='3D'?` · ${S.l[t].size}`:''}`;ft.appendChild(c)})}
 document.addEventListener('change',e=>{
   const input=e.target;
-  if(S.replayingFile||!input?.matches?.('input[type="file"]')||!input.files?.length)return;
-  if(!input.dataset?.viragPicker&&!iscomposerfileinput(input))return;
-  rememberfiles(input.files,input.files.length>1)
+  if(S.replayingFile||!input?.matches?.('input[type="file"]')||!input.files?.length||!iscomposerfileinput(input))return;
+  const files=rememberfiles(input.files,input.files.length>1);
+  st(files.length===S.pc?`PRODUCTS READY ${files.length}/${S.pc}`:`PRODUCTS ${files.length}/${S.pc}`);
+  if(files.length===S.pc)toast(`${files.length} manually added product image${files.length===1?'':'s'} ready. Choose a Virag tool.`);
 },true);
 function show(){mount();S.p.classList.add('on')}function hide(){S.p?.classList.remove('on')}
 document.addEventListener('input',e=>{const t=e.target;if(!(t?.tagName==='TEXTAREA'||t?.isContentEditable||t?.closest?.('[contenteditable="true"]')))return;const x=t.tagName==='TEXTAREA'||t.isContentEditable?t:t.closest('[contenteditable="true"]'),m=read(x).match(/(?:^|\n)\s*\/([A-Za-z0-9_-]*)$/);if(!m)return;mount();S.q=m[1]||'';const h=hit(S.q);if(h){S.m=h.tab;S.g=h.tab==='3D'?h.group:'All'}show();S.s.querySelector('.q').value=S.q;rd()},true);
