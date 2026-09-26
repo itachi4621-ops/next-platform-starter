@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "2026.09.26",
-  "trendDate": "2026-09-26",
-  "updatedAt": "2026-09-25T19:25:28.264Z",
+  "libraryVersion": "2026.09.27",
+  "trendDate": "2026-09-27",
+  "updatedAt": "2026-09-26T19:27:30.873Z",
   "name": "Virag Daily Social Design Trends",
   "enabled": true,
   "updateMode": "daily-researched-principles",
@@ -52,6 +52,16 @@
       "name": "Instagram",
       "url": "https://www.instagram.com/",
       "use": "Public format observation for phone-scale hierarchy, short copy and immediate product recognition only."
+    },
+    {
+      "name": "Pinterest Hobbies Trend Report 2026",
+      "url": "https://newsroom.pinterest.com/news/2026-pinterest-hobbies-trend-report/",
+      "use": "Fresh official evidence for tactile crafts, edited collections, analog practices, repair detail, zine-like information systems and intentionally arranged micro-collections."
+    },
+    {
+      "name": "Pinterest Men’s Trend Report 2026",
+      "url": "https://newsroom.pinterest.com/news/men-trend-report-2026/",
+      "use": "Fresh official evidence for offline hobbies, workshop craft, analog entertaining and a few high-visibility details that read instantly."
     }
   ],
   "selectionRule": "For each requested output, choose at most one compatible active trend as an optional art-direction layer. Build one clear idea around one dominant product-and-headline relationship, intentional grid tension, short exact copy, 1–3 compact supporting information modules, no more than two professional named font families and three weights, and 2–5 coordinated graphic devices from one coherent visual language. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, tactile detail, depth and restrained motion, but must never override the current brief, brand identity, two-second clarity, readable copy, Pixel-Locked Product Fidelity, Human Studio realism or Clean Human Design. Bright-first is the default unless dark styling is explicitly requested. Clean means edited and controlled, never sparse, basic, template-like or under-designed. If a trend reduces clarity, fidelity or coherence, omit or simplify it.",
@@ -76,7 +86,7 @@
     {
       "id": "tactile-analog",
       "label": "Tactile Offline Material Edit",
-      "signal": "Pinterest Predicts 2026’s Gimme Gummy foregrounds sensory materiality, while Pinterest Presents 2026 reports rising interest in analog activities and nature film photography; translate both into believable physical craft and human-made detail instead of synthetic AI gloss.",
+      "signal": "Pinterest Predicts 2026’s Gimme Gummy foregrounds sensory materiality; Pinterest’s August Hobbies and September Men’s Trend reports add current momentum for tactile craft, offline hobbies, workshop practices and analog entertaining. Translate this into believable physical craft and human-made detail instead of synthetic AI gloss.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -126,7 +136,7 @@
     {
       "id": "intentional-detail-architecture",
       "label": "Intentional Detail Architecture",
-      "signal": "Pinterest Presents 2026’s Trinket Effect and Artful Entertaining signals emphasize small statement-making extras, personal touches and refined experiences; translate them into a coherent micro-detail system that improves recognition and information flow.",
+      "signal": "Pinterest Presents 2026’s Trinket Effect and Artful Entertaining signals, reinforced by the Hobbies report’s intentionally arranged micro-collections and zine- and packaging-forward craft, support a coherent micro-detail system that improves recognition and information flow.",
       "tabs": [
         "Creative",
         "Flyer",
