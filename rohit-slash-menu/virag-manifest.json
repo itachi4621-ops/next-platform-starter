@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "manifestVersion": "2.0.0",
-  "release": "11.28.0",
-  "updatedAt": "2026-09-25T10:49:53.886Z",
+  "release": "11.29.0",
+  "updatedAt": "2026-09-30T09:38:53.945Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 86400,
@@ -15,7 +15,7 @@
     {
       "id": "core",
       "name": "Virag OS Core",
-      "version": "11.28.0",
+      "version": "11.29.0",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
@@ -78,7 +78,7 @@
     {
       "id": "3d",
       "name": "3D Studio",
-      "version": "5.7.0",
+      "version": "5.8.0",
       "file": "3d-library.json",
       "type": "json"
     },
@@ -127,27 +127,27 @@
     },
     {
       "name": "3d-signature",
-      "version": "5.7.0",
+      "version": "5.8.0",
       "file": "3d-signature.json"
     },
     {
       "name": "3d-fooh",
-      "version": "5.7.0",
+      "version": "5.8.0",
       "file": "3d-fooh.json"
     },
     {
       "name": "3d-transform",
-      "version": "5.7.0",
+      "version": "5.8.0",
       "file": "3d-transform.json"
     },
     {
       "name": "3d-materials",
-      "version": "5.7.0",
+      "version": "5.8.0",
       "file": "3d-materials.json"
     },
     {
       "name": "3d-environments",
-      "version": "5.7.0",
+      "version": "5.8.0",
       "file": "3d-environments.json"
     }
   ]
