@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "libraryVersion": "1.0.0",
+  "updatedAt": "2026-10-01T05:22:21.414Z",
+  "name": "Virag Super-Real UGC Creative Library",
+  "commandCount": 20,
+  "mode": "super-real-human-ugc-static-creative",
+  "principles": [
+    "Authentic creator realism outranks studio polish.",
+    "Current-turn identity and product fidelity are immutable.",
+    "Human anatomy, hands, grip, gaze, contact, lighting and environment must survive close inspection.",
+    "Typography is short, exact, phone-readable and native to the scene.",
+    "No fake social proof, invented claims or platform interface.",
+    "Every variation is structurally different and delivered separately."
+  ],
+  "commands": [
+    {
+      "id": 601,
+      "category": "UGC",
+      "cmd": "/ugccreative",
+      "label": "Natural UGC Creative",
+      "desc": "Premium authentic creator-style product post.",
+      "instruction": "Create one natural creator-style product moment with believable human behavior, phone-native framing and a short supplied hook. Keep the setting lived-in and the product interaction unforced."
+    },
+    {
+      "id": 602,
+      "category": "UGC",
+      "cmd": "/selfieugc",
+      "label": "Selfie Product Story",
+      "desc": "Realistic arm-length selfie with product.",
+      "instruction": "Use a believable arm-length selfie perspective, natural expression and realistic product grip. Keep the face unobstructed and do not invent spoken testimony."
+    },
+    {
+      "id": 603,
+      "category": "UGC",
+      "cmd": "/productinhandugc",
+      "label": "Product in Hand",
+      "desc": "Natural hand-held product moment.",
+      "instruction": "Make the hand-product relationship the visual anchor with correct fingers, grip, occlusion and contact shadows. Use a real everyday background and restrained caption copy."
+    },
+    {
+      "id": 604,
+      "category": "UGC",
+      "cmd": "/povugc",
+      "label": "First-Person POV",
+      "desc": "Hands and product from the creator’s viewpoint.",
+      "instruction": "Use a first-person view with anatomically correct hands performing a plausible action. Keep the product readable and the surface/context truthful rather than staged."
+    },
+    {
+      "id": 605,
+      "category": "UGC",
+      "cmd": "/unboxingugc",
+      "label": "Unboxing Moment",
+      "desc": "Believable package opening and first look.",
+      "instruction": "Show a realistic current-turn package opening with correct hand mechanics, packaging materials and contents only when supplied. Do not invent accessories, inserts or reactions."
+    },
+    {
+      "id": 606,
+      "category": "UGC",
+      "cmd": "/routineugc",
+      "label": "Daily Routine",
+      "desc": "Product integrated into a real routine.",
+      "instruction": "Place the product naturally inside one believable daily step in a home, gym, kitchen or work context appropriate to the brief. Avoid presenting it like a studio hero shot."
+    },
+    {
+      "id": 607,
+      "category": "UGC",
+      "cmd": "/problemsolutionugc",
+      "label": "Problem → Solution UGC",
+      "desc": "Supplied problem and solution in one authentic moment.",
+      "instruction": "Use only the exact supplied problem and solution. Build a credible human situation and concise hook; never fabricate symptoms, benefits, performance or transformation."
+    },
+    {
+      "id": 608,
+      "category": "UGC",
+      "cmd": "/testimonialugc",
+      "label": "Supplied Testimonial",
+      "desc": "Creator testimonial using exact provided words.",
+      "instruction": "Use the exact current-turn testimonial and supplied person identity only. If no testimonial is supplied, omit testimonial language and create a neutral product-in-use hook."
+    },
+    {
+      "id": 609,
+      "category": "UGC",
+      "cmd": "/reviewugc",
+      "label": "Supplied Review Creative",
+      "desc": "Review-style UGC using verified supplied copy.",
+      "instruction": "Use only the exact supplied review, rating and reviewer details. Never invent stars, usernames, quotes or social proof; omit any element not provided."
+    },
+    {
+      "id": 610,
+      "category": "UGC",
+      "cmd": "/creatorugc",
+      "label": "Creator Recommendation",
+      "desc": "Authentic creator recommendation when authorized.",
+      "instruction": "Present a natural recommendation only when exact endorsement copy or authorization is supplied. Otherwise create a neutral personal-use moment without endorsement claims."
+    },
+    {
+      "id": 611,
+      "category": "UGC",
+      "cmd": "/homeugc",
+      "label": "Lived-In Home UGC",
+      "desc": "Natural product moment in a believable home.",
+      "instruction": "Use a realistic lived-in home with ordinary objects, coherent daylight and small imperfections. Avoid luxury showroom staging and generic perfect interiors."
+    },
+    {
+      "id": 612,
+      "category": "UGC",
+      "cmd": "/gymugc",
+      "label": "Real Gym Moment",
+      "desc": "Authentic gym-use content without fitness clichés.",
+      "instruction": "Use a believable training environment, natural exertion and correct equipment interaction only when appropriate. Avoid fake sweat, bodybuilding poses and invented performance claims."
+    },
+    {
+      "id": 613,
+      "category": "UGC",
+      "cmd": "/kitchenugc",
+      "label": "Kitchen Counter UGC",
+      "desc": "Realistic kitchen or food-use creator frame.",
+      "instruction": "Use a believable kitchen or dining context with truthful ingredients and handling only when supplied. Preserve food/product appearance and avoid immaculate set styling."
+    },
+    {
+      "id": 614,
+      "category": "UGC",
+      "cmd": "/officeugc",
+      "label": "Workday UGC",
+      "desc": "Natural desk or workplace creator content.",
+      "instruction": "Integrate the product into a plausible workday moment with realistic desk clutter, posture and practical lighting. Do not imply productivity claims unless supplied."
+    },
+    {
+      "id": 615,
+      "category": "UGC",
+      "cmd": "/outdoorugc",
+      "label": "Outdoor Everyday UGC",
+      "desc": "Candid outdoor product-use moment.",
+      "instruction": "Use real daylight, grounded shadows, believable clothing movement and an unstaged environment. Keep the product interaction practical rather than hero-posed."
+    },
+    {
+      "id": 616,
+      "category": "UGC",
+      "cmd": "/mirrorugc",
+      "label": "Mirror Check UGC",
+      "desc": "Natural mirror moment with accurate reflections.",
+      "instruction": "Create an off-centre mirror capture with correct phone, body and product reflections. Avoid impossible reflection geometry, face changes and fashion-editorial polish."
+    },
+    {
+      "id": 617,
+      "category": "UGC",
+      "cmd": "/countertopugc",
+      "label": "Countertop Detail UGC",
+      "desc": "Close everyday product detail with human presence.",
+      "instruction": "Use a lived-in surface, partial hand or body cue and truthful material texture. Keep contextual objects few and relevant; no decorative prop pile."
+    },
+    {
+      "id": 618,
+      "category": "UGC",
+      "cmd": "/offerugc",
+      "label": "Supplied Offer UGC",
+      "desc": "Native offer creative using exact supplied details.",
+      "instruction": "Use only the supplied price, discount, dates and CTA in a restrained creator-style overlay. Never invent urgency, savings, coupon codes or availability."
+    },
+    {
+      "id": 619,
+      "category": "UGC",
+      "cmd": "/faqugc",
+      "label": "FAQ UGC",
+      "desc": "Creator-style answer using supplied facts.",
+      "instruction": "Build one question-and-answer frame from exact supplied facts. Keep the answer brief and readable; never fill missing information with assumptions."
+    },
+    {
+      "id": 620,
+      "category": "UGC",
+      "cmd": "/beforeafterugc",
+      "label": "Verified Before / After",
+      "desc": "Evidence-based comparison only when both sources exist.",
+      "instruction": "Use a before/after comparison only when both genuine source images and exact context are supplied. Do not fabricate transformation, alter bodies or create a split-screen board unless explicitly requested; otherwise use a neutral progress-free routine moment."
+    }
+  ],
+  "compatibility": {
+    "chatgpt": "current-web",
+    "imageWorkflow": "current-built-in",
+    "composerSelectors": "2026-09",
+    "core": "11.31.0+",
+    "humanStudio": "1.0.0+",
+    "cleanStudio": "1.0.0+",
+    "productFidelity": "1.0.0+"
+  },
+  "autoUpdate": {
+    "enabled": true,
+    "manifest": "virag-manifest.json",
+    "intervalSeconds": 300,
+    "refreshOnFocus": true,
+    "refreshOnOnline": true
+  },
+  "globalRules": [
+    "Create super-real creator content that looks captured by a real person in a believable moment, never an AI influencer or cinematic studio advertisement.",
+    "Use only the current-turn brief, current-turn people and current-turn product assets.",
+    "When a person reference is supplied, preserve exact identity, facial proportions, skin tone, body proportions, hair, clothing and distinguishing details with no beautification or generic face replacement.",
+    "Render anatomically correct eyes, teeth, limbs and natural five-finger hands with realistic grip, pressure, occlusion and contact shadows.",
+    "Preserve the uploaded product as an immutable pixel source: no redraw, regeneration, relighting, recoloring, warping, label change or invented geometry.",
+    "Never invent reviews, testimonials, star ratings, handles, follower counts, verified badges, before/after results, prices, offers, benefits, certifications or endorsements.",
+    "Use believable phone-native perspective, natural exposure and white balance, slight human framing imperfection, restrained sensor grain and realistic focus falloff.",
+    "Reject plastic skin, waxy faces, beauty filters, fake bokeh, excessive sharpening, haze, cinematic color grading, impossible anatomy and generic AI environments.",
+    "Use short exact caption-style 2D typography, maximum two professional font families and three weights; no fake social-platform interface.",
+    "Every output is a separate standalone image, never a collage, contact sheet, carousel board, split screen or multi-panel result."
+  ]
+}
