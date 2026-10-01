@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "1.5.0",
-  "updatedAt": "2026-09-24T05:33:53.099Z",
+  "libraryVersion": "1.6.0",
+  "updatedAt": "2026-10-01T05:03:00.151Z",
   "name": "Virag Clean Human Instagram Design Systems",
   "enabled": true,
   "mode": "principle-based-social-design-router",
@@ -315,6 +315,55 @@
       "quirky",
       "retro novelty",
       "ornamental display"
+    ]
+  },
+  "creativeRescueEngine": {
+    "enabled": true,
+    "mode": "conditional-diagnose-then-correct",
+    "finalQa": true,
+    "applyOnlyFailedStates": true,
+    "diagnostics": {
+      "boring": {
+        "test": "The idea is understandable but the typography feels generic, passive, predictable or disconnected from the product.",
+        "action": "Change the typography personality and hierarchy using approved professional families. Rebuild line breaks, width, case, weight rhythm, alignment and product/type interaction. Do not merely recolor the same lockup.",
+        "reject": "Random font swapping, novelty fonts, fake glyphs, decorative scripts or the same type composition in a different family."
+      },
+      "simple": {
+        "test": "The composition is clear but feels basic, template-like, timid or visually under-designed.",
+        "action": "Exaggerate one headline-to-support relationship with decisive scale contrast, crop tension, overlap, masking or edge interaction. Enlarge one typographic gesture instead of adding more copy.",
+        "reject": "Making every word huge, losing two-second clarity, covering the product label or using more than two families and three weights."
+      },
+      "flat": {
+        "test": "The product, type and background sit at similar visual weight and the composition lacks separation, energy or depth.",
+        "action": "Create one controlled contrast move using light versus dark, warm versus cool, saturated versus quiet, or sharp versus soft fields. Maintain accessible text contrast and add restrained foreground/background separation.",
+        "reject": "Recoloring or relighting protected product pixels, purposeless gradients, neon glow, muddy shadows or full-canvas color overload."
+      },
+      "uncreative": {
+        "test": "The main structure works but the piece feels unfinished, generic or lacks authored specificity.",
+        "action": "Add two to five coordinated graphic devices from one visual language, such as fine rules, index numbers, micro-labels, leader lines, crop marks, framed modules, material edges or tactile texture. Place them along the reading path and connect them to real information.",
+        "reject": "Random stickers, disconnected icons, decorative clutter, invented facts, fake certifications or details that compete with the product and headline."
+      }
+    },
+    "correctionOrder": [
+      "two-second clarity and exact product fidelity",
+      "typography personality and hierarchy",
+      "type-scale exaggeration",
+      "value, hue or temperature contrast",
+      "purposeful coordinated micro-details"
+    ],
+    "stopCondition": "Stop at the first premium, authored and coherent result. Do not stack every remedy by default, and never use added detail to hide a weak idea or repeated template.",
+    "goldenRatioRule": "Use Golden Ratio or Fibonacci spacing to tune the dominant product-and-headline relationship and the rhythm of supporting details, but never force a visible spiral or weaken the assigned grid.",
+    "globalGuardrails": [
+      "current brief and exact supplied copy win",
+      "Pixel-Locked Product Fidelity is immutable",
+      "one clear idea and one dominant product-and-headline relationship",
+      "one to three compact information modules",
+      "two to five coordinated graphic devices from one visual language",
+      "maximum two named professional font families and three weights",
+      "bright-first unless dark styling is explicitly requested",
+      "every output remains a separate standalone image",
+      "no repeated template, background-only variation, collage or multi-output board",
+      "clean means edited and controlled, never sparse, basic or under-designed"
     ]
   }
 }
