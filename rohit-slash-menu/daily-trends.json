@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "2026.10.19",
-  "trendDate": "2026-10-19",
-  "updatedAt": "2026-10-18T19:18:55.484Z",
+  "libraryVersion": "2026.10.20",
+  "trendDate": "2026-10-20",
+  "updatedAt": "2026-10-19T18:54:26.214Z",
   "name": "Virag Daily Social Design Trends",
   "enabled": true,
   "updateMode": "daily-researched-principles",
@@ -72,6 +72,11 @@
       "name": "Pinterest — Why Intention Matters More Than Attention",
       "url": "https://newsroom.pinterest.com/news/why-intention-matters-more-than-attention/",
       "use": "Fresh official evidence for the Great Unplugging: analog aesthetics, phone-free activity, nature-film photography and digital experiences that lead to useful real-world action."
+    },
+    {
+      "name": "Pinterest Restyle Personalization Signal — October 19, 2026",
+      "url": "https://newsroom.pinterest.com/en-ca/news/barbie-x-pinterest-restyle/",
+      "use": "Fresh official evidence for making broad aesthetics personally specific through one believable in-context edit, real-space visualization and clearly differentiated options; use only as a general principle, never copy the partnership, brand world or composition."
     }
   ],
   "selectionRule": "For each requested output, choose at most one compatible active trend as an optional art-direction layer. Build one clear idea around one dominant product-and-headline relationship, intentional grid tension, short exact copy, 1–3 compact supporting information modules, no more than two professional named font families and three weights, and 2–5 coordinated graphic devices from one coherent visual language. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, tactile detail, depth and restrained motion, but must never override the current brief, brand identity, two-second clarity, readable copy, Pixel-Locked Product Fidelity, Human Studio realism or Clean Human Design. Bright-first is the default unless dark styling is explicitly requested. Clean means edited and controlled, never sparse, basic, template-like or under-designed. If a trend reduces clarity, fidelity or coherence, omit or simplify it. Human Studio realism is the final visual test: lighting, shadows, reflections, materials, food texture and human detail must feel physically photographed or practically art-directed. Use 3D only when believable and brief-relevant, never as default spectacle.",
@@ -162,8 +167,8 @@
     },
     {
       "id": "specificity-finish",
-      "label": "Specificity-First Finish Edit",
-      "signal": "Pinterest’s October 6, 2026 Beauty Trend Report identifies specificity and personal editing—not beat-for-beat copying—as the key shift, with momentum around single amplified details, frosted metallics, reflective finishes and precise copper, cherry-cola, dusty-rose and icy accents. Translate this into one distinctive finish or detail that sharpens recognition without turning the design into a beauty literal.",
+      "label": "Specificity-First Personal Edit",
+      "signal": "Pinterest’s October 6 Beauty Trend Report identifies specificity and personal editing—not beat-for-beat copying—as the key shift. Pinterest’s October 19 Restyle signal extends that evidence into real environments: people want to test one precise aesthetic change in a space that is recognizably their own. Translate this into a distinctive finish, color, crop or believable in-context detail that sharpens recognition without copying any campaign or defaulting to AI transformation.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -171,11 +176,11 @@
         "Packaging",
         "Video"
       ],
-      "layout": "Keep one dominant product-and-headline relationship, then magnify one exact finish, edge, crop or material cue as the secondary focal device; support it with 1–3 compact factual modules on an intentionally tense grid. In Video, reveal the finish through one controlled focus shift, light pass or macro-to-hero transition.",
-      "typography": "Use one professional display family with a specific descriptive phrase at expressive scale, paired with one neutral utility sans; no more than two families and three weights.",
-      "palette": "Exact brand colors first, with one controlled icy silver, copper, cherry-cola, dusty-rose or milky accent chosen for brand compatibility; remain bright-first unless the brief explicitly requests dark styling.",
-      "texture": "Believable satin, foil, translucent glaze, brushed metal, lacquer or soft powder detail with physical reflections and restrained foreground/background depth.",
-      "avoid": "Literal makeup or nail imitation, mirror chrome across the whole canvas, scattered gems, dark beauty-editorial defaults, generic AI gloss, excessive shine and any amplified detail that competes with product fidelity or two-second clarity."
+      "layout": "Keep one dominant product-and-headline relationship, then use one precise, brief-relevant personal-context cue—an exact finish, practical setting detail, controlled crop or real-use object—as the secondary focal device; support it with 1–3 compact factual modules on an intentionally tense grid. In Video, show one credible in-context adjustment or practical transition, then settle quickly into the product hero.",
+      "typography": "Use one professional display family with a specific, audience-relevant phrase at expressive scale, paired with one neutral utility sans; no more than two families and three weights.",
+      "palette": "Exact brand colors first, with one context-specific accent chosen for the audience and setting; icy silver, copper, cherry-cola, dusty rose or milky tones are optional evidence-led cues, never defaults. Remain bright-first unless the brief explicitly requests dark styling.",
+      "texture": "Believable satin, foil, translucent glaze, brushed metal, lacquer, soft powder or real environmental material detail with physical reflections, contact shadows and restrained foreground/background depth.",
+      "avoid": "Copying the Barbie/DreamHouse partnership, default pink rooms, generic makeover imagery, literal beauty imitation, obvious AI inpainting, whole-canvas mirror chrome, scattered gems, excessive shine or any personal detail that competes with product fidelity or two-second clarity."
     },
     {
       "id": "poet-editorial",
