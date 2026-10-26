@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Virag Update Monitor
 // @namespace    https://github.com/itachi4621-ops/next-platform-starter
-// @version      2.2.0
-// @description  Daily Virag module status refresh after each new India date, including dynamic Daily Trends validation.
+// @version      2.3.0
+// @description  Cache-free Virag release and module monitor with the detected core version shown directly in the status button.
 // @author       Rohit
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -174,6 +174,7 @@
   const time = shadow.querySelector('.time');
   const check = shadow.querySelector('.check');
   let busy = false;
+  let detectedRelease = '?';
 
   button.onclick = () => panel.classList.toggle('on');
 
@@ -202,6 +203,8 @@
       const manifestText = await requestText(MANIFEST_URL);
       const manifest = JSON.parse(manifestText);
       const modules = Array.isArray(manifest.modules) ? manifest.modules : [];
+      const coreModule = modules.find(module => module.id === 'core');
+      detectedRelease = String(manifest.release || coreModule?.version || '?');
       await setStored('virag.manifest.cache', manifestText);
       const results = await Promise.allSettled(modules.map(module => requestText(ROOT + module.file)));
       const states = modules.map((module, index) => {
@@ -211,7 +214,9 @@
       });
       render(modules, states);
       const live = states.filter(state => state.status === 'LIVE').length;
-      button.textContent = live === modules.length ? 'Virag · ALL LIVE' : `Virag · ${live}/${modules.length} LIVE`;
+      button.textContent = live === modules.length
+        ? `Virag ${detectedRelease} · ALL LIVE`
+        : `Virag ${detectedRelease} · ${live}/${modules.length} LIVE`;
       time.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       await setStored('virag.last.check', Date.now());
       if (isPastDailyWindow()) await setStored(LAST_DAILY_CHECK_KEY, indiaDateKey());
@@ -223,8 +228,10 @@
       try {
         const cached = JSON.parse(await getStored('virag.manifest.cache', '{}'));
         const modules = cached.modules || [];
+        const coreModule = modules.find(module => module.id === 'core');
+        detectedRelease = String(cached.release || coreModule?.version || '?');
         render(modules, modules.map(module => ({ status: 'CACHED', actual: module.version, note: 'offline cached manifest' })));
-        button.textContent = 'Virag · OFFLINE';
+        button.textContent = `Virag ${detectedRelease} · OFFLINE`;
       } catch {
         button.textContent = 'Virag · CHECK';
       }
@@ -283,3 +290,4 @@
   window.addEventListener('online', wake);
   document.addEventListener('visibilitychange', wake);
 })();
+
