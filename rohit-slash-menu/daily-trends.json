@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "libraryVersion": "2026.11.09",
-  "trendDate": "2026-11-09",
-  "updatedAt": "2026-11-08T19:13:35.000Z",
+  "libraryVersion": "2026.10.08",
+  "trendDate": "2026-10-08",
+  "updatedAt": "2026-10-07T18:51:55.518Z",
   "name": "Virag Daily Social Design Trends",
   "enabled": true,
   "updateMode": "daily-researched-principles",
@@ -35,8 +35,8 @@
     },
     {
       "name": "Pinterest Palette 2026",
-      "url": "https://business.pinterest.com/en-gb/pinterest-palette/",
-      "use": "Official 2026 palette reference for Cool Blue, Jade, Plum Noir, Wasabi and Persimmon. Treat colors as optional accents only; exact brand and protected product colors take priority."
+      "url": "https://business.pinterest.com/pinterest-palette/",
+      "use": "Primary color evidence for Cool Blue, Jade, Plum Noir, Wasabi and Persimmon."
     },
     {
       "name": "Pinterest Presents 2026 — Great Offline and Holiday Signals",
@@ -46,7 +46,12 @@
     {
       "name": "Pinterest Trends",
       "url": "https://trends.pinterest.com/",
-      "use": "Official search-interest discovery reference; no fresh query-level values were readable in this refresh, so no live growth or ranking claims are inferred from it."
+      "use": "Live search-interest cross-check; directional evidence only, never a composition to copy."
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/",
+      "use": "Public format observation for phone-scale hierarchy, short copy and immediate product recognition only."
     },
     {
       "name": "Pinterest Hobbies Trend Report 2026",
@@ -62,59 +67,14 @@
       "name": "Pinterest Beauty Trend Report 2026",
       "url": "https://newsroom.pinterest.com/news/beauty-trend-report-2026/",
       "use": "Fresh official evidence for specificity-first styling, one amplified detail, frosted or reflective finishes, precise seasonal color edits and personalized rather than copied aesthetics."
-    },
-    {
-      "name": "Pinterest — Why Intention Matters More Than Attention",
-      "url": "https://newsroom.pinterest.com/news/why-intention-matters-more-than-attention/",
-      "use": "Fresh official evidence for the Great Unplugging: analog aesthetics, phone-free activity, nature-film photography and digital experiences that lead to useful real-world action."
-    },
-    {
-      "name": "Pinterest Restyle Personalization Signal — October 19, 2026",
-      "url": "https://newsroom.pinterest.com/en-ca/news/barbie-x-pinterest-restyle/",
-      "use": "Fresh official evidence for making broad aesthetics personally specific through one believable in-context edit, real-space visualization and clearly differentiated options; use only as a general principle, never copy the partnership, brand world or composition."
-    },
-    {
-      "name": "Pinterest Predicts 2026 — Official Trend Report",
-      "url": "https://business.pinterest.com/en-ca/pdf/pinterest-predicts/2026-trend-report/",
-      "use": "Direct official report corroborating Neo Deco, FunHaus, Gimme Gummy, Poetcore and Cool Blue; these are annual forecast signals, not newly measured daily growth."
-    },
-    {
-      "name": "Pinterest Creators — Trends to Try",
-      "url": "https://create.pinterest.com/creators/trends/",
-      "use": "Official seasonal selection reviewed 2026-11-05. Suede styling and home café craft support tactile set surfaces and practical handling. Opera-inspired accessories and handmade party details support one controlled crafted accent. The page gives no publication date, and linked trend charts were unavailable in the public view."
-    },
-    {
-      "name": "Pinterest Predicts 2026 — Newsroom",
-      "url": "https://newsroom.pinterest.com/news/pinterest-predicts-nonconformity-self-preservation-and-escapism-drive-21-trends-for-2026/",
-      "use": "Official 21-trend forecast published 2025-12-09. Supports comfort, authenticity, personal curation over copying, Gimme Gummy tactility, Neo Deco geometry, FunHaus stripes, Poetcore, Scent Stacking and Cool Blue. Search-growth figures are annual-report evidence based on the stated historical comparison window, not live November 2026 rankings."
-    },
-    {
-      "name": "Pinterest Trends — live discovery",
-      "url": "https://trends.pinterest.com/",
-      "use": "Official live trend-discovery reference reviewed 2026-11-09. The public page identifies Pinterest Predicts 2026, but its Editors’ Picks section reports temporary unavailability and no readable query-level chart data was exposed; no fresh live ranking or growth claim is inferred."
-    },
-    {
-      "name": "Adobe Creative Trends 2026",
-      "url": "https://blog.adobe.com/en/publish/2025/12/09/four-creative-trends-define-marketing-2026",
-      "use": "Adobe’s official 2026 forecast identifies sensory depth, human connection, playful imagination and local cultural authenticity. Its practical guidance supports tactile material cues, sound-led or POV video, immediate emotional clarity and real local context; apply selectively without borrowing examples or campaign styling."
-    },
-    {
-      "name": "Canva Design Trends 2026 — Imperfect by Design",
-      "url": "https://www.canva.com/newsroom/news/design-trends-2026/",
-      "use": "Canva’s official 2026 forecast draws on creator and platform signals for tactile texture, purposeful motion, editorial exploration, human-feeling process details and regionally specific visual culture including an India-focused heritage remix. Translate only the general principles; do not reproduce its named trend aesthetics or examples."
-    },
-    {
-      "name": "Canva — From Polish to Presence",
-      "url": "https://www.canva.com/newsroom/news/design-trends-2026-polish-to-presence/",
-      "use": "Canva’s 2026 editorial argues that human intention and evidence of thought matter more than flawless polish. Useful for one controlled, purposeful human detail—not careless roughness, clutter or reduced production quality."
     }
   ],
-  "selectionRule": "For each requested output, choose at most one compatible active trend as an optional art-direction layer. Build one clear idea around one dominant product-and-headline relationship, intentional grid tension, short exact copy, 1–3 compact supporting information modules, no more than two professional named font families and three weights, and 2–5 coordinated graphic devices from one coherent visual language. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, tactile detail, depth and restrained motion, but must never override the current brief, brand identity, two-second clarity, readable copy, Pixel-Locked Product Fidelity, Human Studio realism or Clean Human Design as final authority. Bright-first is the default unless dark styling is explicitly requested. Clean means edited and controlled, never sparse, basic, template-like or under-designed. If a trend reduces clarity, fidelity or coherence, omit or simplify it. Human Studio realism is the final visual test: lighting, shadows, reflections, materials, food texture and human detail must feel physically photographed or practically art-directed. Use 3D only when believable and brief-relevant, never as default spectacle. Named font pairs are Virag implementation choices, not font recommendations made by the cited trend publishers. The current brief and purpose-specific font assignment take priority; keep that assignment when it already supplies a compatible professional pair. Apply upright professional sans typography by default; cursive, handwritten, brush, signature and novelty styles are excluded. Do not change typography merely to simulate a new trend.",
+  "selectionRule": "For each requested output, choose at most one compatible active trend as an optional art-direction layer. Build one clear idea around one dominant product-and-headline relationship, intentional grid tension, short exact copy, 1–3 compact supporting information modules, no more than two professional named font families and three weights, and 2–5 coordinated graphic devices from one coherent visual language. In a batch, rotate through compatible trends without repeating until all have been used. A trend may shape grid, typography, palette, tactile detail, depth and restrained motion, but must never override the current brief, brand identity, two-second clarity, readable copy, Pixel-Locked Product Fidelity, Human Studio realism or Clean Human Design. Bright-first is the default unless dark styling is explicitly requested. Clean means edited and controlled, never sparse, basic, template-like or under-designed. If a trend reduces clarity, fidelity or coherence, omit or simplify it.",
   "activeTrends": [
     {
       "id": "neo-deco-social",
       "label": "Neo-Deco Social Geometry",
-      "signal": "Pinterest Predicts 2026’s Neo Deco forecast identifies crisp geometric rhythm, fan-like forms and polished material accents. Translate that signal into original, restrained framing and structured hierarchy rather than literal period revival or copied campaign styling.",
+      "signal": "Pinterest Predicts 2026 names Neo Deco as an emerging aesthetic, supporting polished geometry and structured decorative rhythm when simplified for social design.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -123,7 +83,7 @@
         "Video"
       ],
       "layout": "Use an asymmetric geometric frame, stepped alignment and one arch or fan motif around a dominant product-and-headline relationship; reserve 1–3 compact fact modules. In Video, reveal the geometry in one measured sequence rather than looping ornaments.",
-      "typography": "Use upright Space Grotesk for a geometric headline and DM Sans for compact facts. Use expressive scale and stepped line breaks, with no more than three weights across the two families.",
+      "typography": "Condensed grotesk or refined editorial serif paired with Inter/Helvetica-style utility copy.",
       "palette": "Brand palette first; optional jade, persimmon or pale blue accent.",
       "texture": "Subtle paper, brushed metal or print grain—never plastic gloss.",
       "avoid": "Literal 1920s imitation, ornamental overload and gold-on-black by default."
@@ -131,7 +91,7 @@
     {
       "id": "tactile-analog",
       "label": "Tactile Offline Material Edit",
-      "signal": "Pinterest Predicts 2026’s Gimme Gummy forecast, Adobe’s All the Feels direction and Canva’s Texture Check signal all point toward sensory, tactile visual communication. Adobe specifically highlights material cues, sound-led video and first-person immersion; Canva highlights touchable surface treatment. Translate these into believable human-studio materials and practical handling, never synthetic gloss or a literal trend costume.",
+      "signal": "Pinterest Predicts 2026’s Gimme Gummy foregrounds sensory materiality; Pinterest’s August Hobbies and September Men’s Trend reports add current momentum for tactile craft, offline hobbies, workshop practices and analog entertaining. Translate this into believable physical craft and human-made detail instead of synthetic AI gloss.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -139,16 +99,16 @@
         "Packaging",
         "Video"
       ],
-      "layout": "Use one physically credible material or real-use cue as the spatial anchor, with 2–4 coordinated devices from the same material language and 1–3 compact information modules on a disciplined grid. Keep the product-and-headline relationship dominant. In Video, favor one slow compression, peel, practical handling action or shallow parallax with believable material response.",
-      "typography": "Use upright Barlow for the headline and Public Sans for facts or short typeset annotations. Convey craft through material and spacing; no cursive, handwriting, brush or signature fonts. Maximum two families and three weights.",
+      "layout": "Use one physical material or real-use cue as the spatial anchor, with edited cut shapes and 1–3 compact information modules on a disciplined grid. In Video, favor slow compression, peel, practical handling or shallow parallax with believable material response.",
+      "typography": "Real typesetting with one optional handwritten annotation accent; display and utility copy stay readable and use no more than two families.",
       "palette": "Brand colors first, supported by warm paper neutrals or one soft confectionery accent.",
-      "texture": "Scanned fibers, film grain, soft-touch paper, cotton, restrained suede-like dry nap, ink variation or subtle dimensional edges with realistic contact shadows. Keep any tactile treatment on the set or background; never alter protected product materials, label or pixels.",
-      "avoid": "Plastic AI sheen, waxy or gummy product deformation, literal candy imitation, fake scrapbook clutter, excessive torn paper, staged nostalgia and childish sticker overload."
+      "texture": "Scanned fibers, film grain, soft-touch material, ink variation or subtle dimensional edges with realistic contact shadows.",
+      "avoid": "Plastic AI sheen, literal candy imitation, fake scrapbook clutter, excessive torn paper, staged nostalgia and childish sticker overload."
     },
     {
       "id": "cool-blue-clarity",
       "label": "Cool Blue Clarity",
-      "signal": "Pinterest Palette 2026 identifies Cool Blue (#D7EFFF) as a forecast color, while the official palette also includes Jade, Plum Noir, Wasabi and Persimmon. Use these only as optional, brief-compatible set accents; exact brand colors and protected product colors always win.",
+      "signal": "Pinterest Palette 2026 identifies Cool Blue as a directional color; use it to support calm clarity while preserving exact brand and product colors.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -156,31 +116,32 @@
         "Video"
       ],
       "layout": "Use an airy but designed modular grid, one strong product anchor and 1–3 translucent or opaque information cards with deliberate overlap. In Video, use short linear card reveals and restrained depth shifts.",
-      "typography": "Use upright Instrument Sans for headline and body, with IBM Plex Mono only for short supplied numbers or data labels. Make hierarchy through scale and alignment; maximum two families and three weights.",
+      "typography": "Neutral modern sans with precise data hierarchy.",
       "palette": "Cool Blue #D7EFFF supported by navy, white and the exact brand colors.",
       "texture": "Soft matte surfaces and restrained translucency.",
       "avoid": "Generic SaaS glassmorphism, excessive blur and low-contrast text."
     },
     {
-      "id": "layered-scent-architecture",
-      "label": "Layered Scent Architecture",
-      "signal": "Pinterest Predicts 2026’s Scent Stacking forecast reports rising interest in niche perfume collections (+500%) and perfume-layering combinations (+125%), with the report’s stated comparison period ending August 2025. Treat this as an annual forecast signal—not a live November 2026 ranking—and apply only when the brief genuinely involves fragrance, scent variants or a compatible layered product story.",
+      "id": "persimmon-impact",
+      "label": "Persimmon Impact",
+      "signal": "Pinterest Palette 2026 identifies Persimmon as a directional warm color, supporting controlled red-orange emphasis in high-clarity social compositions.",
       "tabs": [
         "Creative",
+        "Flyer",
         "3D",
         "Packaging",
         "Video"
       ],
-      "layout": "Keep one dominant product-and-headline relationship. Build 2–4 coordinated graphic devices from a single system: two or three offset planes, one thin divider, one compact note marker and a controlled contact shadow. Use 1–3 compact support modules only for supplied scent notes, variants or factual details. In Video, reveal those real details in a short, measured sequence, then hold on the unchanged product hero.",
-      "typography": "Use upright Sora for the expressive headline and Inter for compact supplied facts. Create hierarchy through scale, spacing and a clear reading path; maximum two professional font families and three weights.",
-      "palette": "Exact brand and product colors first. If the supplied fragrance brief supports it, use one or two restrained note-coded accents against a bright neutral set; never invent a color-to-scent association or default to dark luxury styling.",
-      "texture": "Believable glass, matte paper, soft-touch stock, restrained foil or embossed edges, with physically plausible reflections and contact shadows. Keep all added depth outside the protected product silhouette and label.",
-      "avoid": "Invented fragrance notes, unsupported benefits or ingredients, smoke trails presented as product evidence, floating bottles, extra product variants, label reconstruction, bottle deformation, excessive metallic gloss and any layered device that weakens two-second clarity."
+      "layout": "Use one energetic diagonal or cropped color field to connect product and headline, balanced by stable fact modules. In Video, move the field once as a directional wipe or practical light cue.",
+      "typography": "Bold condensed display type with disciplined small sans-serif facts.",
+      "palette": "Persimmon #FF5C34 as an accent only, adapted to brand compatibility.",
+      "texture": "Matte ink, screen-print density or practical colored light.",
+      "avoid": "Full-canvas orange overload, fire effects and oversaturated AI glow."
     },
     {
       "id": "intentional-detail-architecture",
       "label": "Intentional Detail Architecture",
-      "signal": "Pinterest’s 2026 forecast emphasizes personal curation over copying; Adobe’s sensory direction and Canva’s Texture Check and Imperfect by Design forecasts reinforce tactile, intentional details. The transferable principle is one purposeful crafted accent that improves recognition and information flow—not decorative accumulation or surface-level analog cosplay.",
+      "signal": "Pinterest Presents 2026’s Trinket Effect and Artful Entertaining signals, reinforced by the Hobbies report’s intentionally arranged micro-collections and zine- and packaging-forward craft, support a coherent micro-detail system that improves recognition and information flow.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -188,16 +149,16 @@
         "Packaging",
         "Video"
       ],
-      "layout": "Keep one dominant product-and-headline relationship, then use 1–3 compact modules as coordinated tags, seals, edge details or material callouts on an intentionally tense grid. In Video, reveal details sequentially only after the hero is clear. When the brief calls for a celebratory or dressed-up tone, echo one folded-edge shape between a foreground set detail and the aligned information markers. For a finish-led Video variation, let one practical light pass reveal the edge, then hold the product and readable 2D headline.",
-      "typography": "Use upright Epilogue for the expressive headline and Inclusive Sans for precise utility copy. Tie short labels to the same reading path with a decisive scale jump; maximum two families and three weights.",
+      "layout": "Keep one dominant product-and-headline relationship, then use 1–3 compact modules as coordinated tags, seals, edge details or material callouts on an intentionally tense grid. In Video, reveal details sequentially only after the hero is clear.",
+      "typography": "One expressive professional display face paired with one precise utility sans, using a decisive scale jump and no more than three weights.",
       "palette": "Exact brand colors first, with one controlled Pinterest Palette accent or warm metallic-neutral detail where compatible.",
-      "texture": "Believable foil edge, deboss, ribbon, enamel, paper grain or set-built trim with restrained foreground/background depth. A single satin fold or folded-paper edge on the set can supply the accent; keep the product silhouette, label and surface untouched.",
-      "avoid": "Random charms, scattered stickers, disconnected miniatures, holiday clichés, ornamental clutter and any detail that competes with the product or headline. Skip theatrical costume props and loose party decorations."
+      "texture": "Believable foil edge, deboss, ribbon, enamel, paper grain or set-built trim with restrained foreground/background depth.",
+      "avoid": "Random charms, scattered stickers, disconnected miniatures, holiday clichés, ornamental clutter and any detail that competes with the product or headline."
     },
     {
       "id": "specificity-finish",
-      "label": "Specificity-First Personal Edit",
-      "signal": "Pinterest Predicts 2026 reports that audiences increasingly curate trends to fit their own identity rather than copy them; Canva’s 2026 forecast also points to regionally grounded visual identity, including an India-specific heritage remix. Translate this into one precise, brief-supported finish, crop, local material or in-context cue. Cultural specificity must be grounded in the actual brand, audience and place—not generic motifs or borrowed aesthetics.",
+      "label": "Specificity-First Finish Edit",
+      "signal": "Pinterest’s October 6, 2026 Beauty Trend Report identifies specificity and personal editing—not beat-for-beat copying—as the key shift, with momentum around single amplified details, frosted metallics, reflective finishes and precise copper, cherry-cola, dusty-rose and icy accents. Translate this into one distinctive finish or detail that sharpens recognition without turning the design into a beauty literal.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -205,16 +166,16 @@
         "Packaging",
         "Video"
       ],
-      "layout": "Keep one dominant product-and-headline relationship, then use one precise, brief-relevant personal-context cue—an exact finish, practical setting detail, controlled crop or real-use object—as the secondary focal device; support it with 1–3 compact factual modules on an intentionally tense grid. In Video, show one credible in-context adjustment or practical transition, then settle quickly into the product hero.",
-      "typography": "Use upright Plus Jakarta Sans for the audience-relevant headline and Overpass for compact support. Vary headline width, case and line breaks to suit the brief; maximum two families and three weights.",
-      "palette": "Exact brand colors first, with one context-specific accent chosen for the audience and setting; icy silver, copper, cherry-cola, dusty rose or milky tones are optional evidence-led cues, never defaults. Remain bright-first unless the brief explicitly requests dark styling.",
-      "texture": "Believable satin, foil, translucent glaze, brushed metal, lacquer, soft powder or real environmental material detail with physical reflections, contact shadows and restrained foreground/background depth.",
-      "avoid": "Copying the Barbie/DreamHouse partnership, default pink rooms, generic makeover imagery, literal beauty imitation, obvious AI inpainting, whole-canvas mirror chrome, scattered gems, excessive shine or any personal detail that competes with product fidelity or two-second clarity."
+      "layout": "Keep one dominant product-and-headline relationship, then magnify one exact finish, edge, crop or material cue as the secondary focal device; support it with 1–3 compact factual modules on an intentionally tense grid. In Video, reveal the finish through one controlled focus shift, light pass or macro-to-hero transition.",
+      "typography": "Use one professional display family with a specific descriptive phrase at expressive scale, paired with one neutral utility sans; no more than two families and three weights.",
+      "palette": "Exact brand colors first, with one controlled icy silver, copper, cherry-cola, dusty-rose or milky accent chosen for brand compatibility; remain bright-first unless the brief explicitly requests dark styling.",
+      "texture": "Believable satin, foil, translucent glaze, brushed metal, lacquer or soft powder detail with physical reflections and restrained foreground/background depth.",
+      "avoid": "Literal makeup or nail imitation, mirror chrome across the whole canvas, scattered gems, dark beauty-editorial defaults, generic AI gloss, excessive shine and any amplified detail that competes with product fidelity or two-second clarity."
     },
     {
       "id": "poet-editorial",
       "label": "Poet Editorial",
-      "signal": "Pinterest Predicts 2026’s Poetcore and Pen Pals forecasts support renewed interest in literary identity, letter writing and tangible correspondence; Canva’s Explorecore and Zinegeist signals add layered editorial storytelling and analog print tactility. Translate these into concise editorial hierarchy, purposeful margins and one typeset annotation—not copied zines, collage layouts or long text.",
+      "signal": "Pinterest Predicts 2026’s Poetcore signal supports literary, personal-expression aesthetics; translate it into concise editorial hierarchy rather than decorative nostalgia.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -222,7 +183,7 @@
         "Video"
       ],
       "layout": "Use magazine column rhythm, purposeful margins, an intimate crop and one short factual pull-line beside the product. In Video, reveal type line by line at a natural reading pace.",
-      "typography": "Use upright IBM Plex Sans for a literary editorial headline and short body copy, with IBM Plex Mono only for a brief factual index or caption. Build the editorial character through column rhythm, punctuation and leading; no cursive or decorative handwriting. Maximum two families and three weights.",
+      "typography": "High-contrast editorial serif with a neutral sans; accurate punctuation and generous leading.",
       "palette": "Warm white, ink black, muted brand color and one restrained accent.",
       "texture": "Book paper, letterpress impression or soft photographic grain.",
       "avoid": "Long unreadable paragraphs, vintage cosplay and decorative fake handwriting."
@@ -230,7 +191,7 @@
     {
       "id": "restrained-stripe",
       "label": "Restrained Stripe Architecture",
-      "signal": "Pinterest Predicts 2026’s FunHaus forecast points to bold stripes and sculptural forms, balanced by restraint; Canva’s 2026 forecast encourages deliberate grid play and purposeful motion. Use one original directional stripe system as navigation, not as a literal circus aesthetic or repeated template.",
+      "signal": "Pinterest Predicts 2026’s FunHaus signal supports expressive stripes and sculptural shapes; simplify it into one directional architecture that improves navigation.",
       "tabs": [
         "Creative",
         "Flyer",
@@ -239,7 +200,7 @@
         "Video"
       ],
       "layout": "Use one stripe system to guide the eye from headline to product to 1–3 information modules, with controlled foreground and background depth. In Video, let the stripes drive one clean directional transition.",
-      "typography": "Use upright Archivo for strong headline structure and Source Sans 3 for supporting facts. Align type to the stripe rhythm while keeping clear space behind every word; maximum two families and three weights.",
+      "typography": "Strong simple display type aligned to the stripe rhythm.",
       "palette": "Two brand-compatible colors plus white or a quiet neutral.",
       "texture": "Flat print color or believable painted/set-built surfaces.",
       "avoid": "Circus literalism, rainbow clutter, warped products and optical noise behind text."
@@ -248,7 +209,7 @@
   "globalAvoid": [
     "copying a specific Pinterest pin, Instagram post, creator, brand campaign or composition",
     "trend stacking or forcing a trend that weakens two-second clarity, product fidelity or coherence",
-    "generic AI gloss, waxy or plastic surfaces, impossible lighting or reflections, arbitrary floating objects, excessive particles, cinematic CGI spectacle or dark styling unless explicitly requested",
+    "generic AI gloss, cinematic packshot treatment or dark styling unless explicitly requested",
     "fake fonts, warped glyphs, gibberish or unreadable microtext",
     "product deformation, label reconstruction, recoloring or relighting inside the product silhouette",
     "invented product claims, unsupported benefits, ingredients, numbers, certifications or offers",
@@ -256,8 +217,7 @@
     "excessive text, crowded or disconnected modules, random stickers or shapes and gradients without purpose",
     "repeated templates, perfect template symmetry, empty minimalism or simplistic product-plus-headline layouts",
     "more than two font families, more than three weights or competing typographic systems",
-    "flat compositions without useful information design, tactile detail or deliberate foreground/background depth",
-    "cursive, handwritten, brush, signature or novelty font treatments in added creative typography; preserve original product-label typography unchanged"
+    "flat compositions without useful information design, tactile detail or deliberate foreground/background depth"
   ],
   "safeguards": {
     "originalConceptsOnly": true,

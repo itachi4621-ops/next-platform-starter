@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": "2.1.2",
-  "release": "12.0.2",
-  "updatedAt": "2026-11-13T06:36:46.206Z",
+  "manifestVersion": "3.0.0",
+  "release": "12.1.0",
+  "updatedAt": "2026-11-13T06:48:47.758Z",
   "name": "Virag Live Module Manifest",
   "autoUpdate": {
     "monitorIntervalSeconds": 86400,
@@ -14,8 +14,8 @@
   "modules": [
     {
       "id": "core",
-      "name": "Virag OS Core",
-      "version": "12.0.2",
+      "name": "Virag Classic Restore Core",
+      "version": "12.1.0",
       "file": "creative-slash-menu.user.js",
       "type": "userscript"
     },
@@ -36,7 +36,7 @@
     {
       "id": "trends",
       "name": "Daily Trends",
-      "version": "2026.10.08",
+      "version": "2026.09.25",
       "file": "daily-trends.json",
       "type": "json"
     },
@@ -127,27 +127,27 @@
     },
     {
       "name": "3d-signature",
-      "version": "6.0.0",
+      "version": "5.8.0",
       "file": "3d-signature.json"
     },
     {
       "name": "3d-fooh",
-      "version": "6.0.0",
+      "version": "5.8.0",
       "file": "3d-fooh.json"
     },
     {
       "name": "3d-transform",
-      "version": "6.0.0",
+      "version": "5.8.0",
       "file": "3d-transform.json"
     },
     {
       "name": "3d-materials",
-      "version": "6.0.0",
+      "version": "5.8.0",
       "file": "3d-materials.json"
     },
     {
       "name": "3d-environments",
-      "version": "6.0.0",
+      "version": "5.8.0",
       "file": "3d-environments.json"
     },
     {
